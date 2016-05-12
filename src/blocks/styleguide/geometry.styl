@@ -1,0 +1,27 @@
+triangle(way, trh, trw, trc)
+	width 0
+	height 0
+	
+	if way == up
+		border-top none
+		border-bottom trh solid trc
+		border-left trw solid transparent
+		border-right trw solid transparent
+	
+	if way == down
+		border-bottom none
+		border-top trh solid trc
+		border-left trw solid transparent
+		border-right trw solid transparent
+	
+	if way == left
+		border-left none
+		border-right trh solid trc
+		border-top trw solid transparent
+		border-bottom trw solid transparent
+	
+	if way == right
+		border-right none
+		border-left trh solid trc
+		border-top trw solid transparent
+		border-bottom trw solid transparent

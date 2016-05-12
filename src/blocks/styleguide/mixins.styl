@@ -1,0 +1,23 @@
+btn-color(color)
+	colLight	= lightness(color)
+	colPlus	= colLight + 5%
+	colMinus	= colLight - 5%
+	
+	background-color color
+	transition background-color .3s
+	
+	&:hover
+		background-color lightness(color, colPlus)
+	
+	&:active
+		background-color lightness(color, colMinus)
+
+placeholder()
+	&::-webkit-input-placeholder
+		{block}
+	&::-moz-placeholder
+		{block}
+	&:-moz-placeholder
+		{block}
+	&:-ms-input-placeholder
+		{block}

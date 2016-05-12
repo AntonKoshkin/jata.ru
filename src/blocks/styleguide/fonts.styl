@@ -1,0 +1,39 @@
+// font names
+// exo			= 'Exo 2', sans-serif
+// yefimov		= 'yefimov', sans-serif
+
+text-font	= 'museo', sans-serif
+// title-font	= 'yefimov', sans-serif
+
+// weights
+thin			= 100
+light			= 300
+regular		= 400
+medium		= 500
+semibold		= 600
+bold			= 700
+extrabold	= 900
+
+// size
+fz				= 16px
+
+font(family, name, style, weight)
+	@font-face
+		font-family family
+		font-weight weight
+		font-style style
+		src url('../fonts/'+name+'/'+style+'/'+weight+'.eot')
+		src url('../fonts/'+name+'/'+style+'/'+weight+'.woff') format('woff'),
+			url('../fonts/'+name+'/'+style+'/'+weight+'.ttf') format('truetype')
+
+font('museo', 'museo', normal, 100)
+font('museo', 'museo', normal, 300)
+font('museo', 'museo', normal, 500)
+font('museo', 'museo', normal, 700)
+font('museo', 'museo', normal, 900)
+
+font('museo', 'museo', italic, 100)
+font('museo', 'museo', italic, 300)
+font('museo', 'museo', italic, 500)
+font('museo', 'museo', italic, 700)
+font('museo', 'museo', italic, 900)

@@ -1,0 +1,20 @@
+mixin navigation
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'navigation--' + mod
+
+	.navigation(class=mods)
+		.navigation__bg
+		ul.navigation__list
+			if block
+				block
+
+mixin navItem(link, title)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'navigation__item--' + mod
+
+	li.navigation__item(class=mods)
+		a.navigation__link!=title

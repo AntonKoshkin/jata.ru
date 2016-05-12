@@ -1,0 +1,37 @@
+//- инклюды
+include ../sprites/svg-sprite
+include ../header/header
+include ../logo/logo
+include ../burger/burger
+include ../navigation/navigation
+
+block page_id
+
+<!DOCTYPE html>
+html(lang='ru')
+	head
+		block title
+		include head
+	body
+		+header
+			+logo
+			+burger
+			+navigation
+				+navItem('#', 'О Jata.ru')
+				+navItem('#', 'Как это работает?')
+				+navItem('#', 'Контакты')
+				+navItem('#', 'Рекламные места')
+				+navItem('#', 'Блог.новости')
+				+navItem('#', 'Рекламодателям')
+				+navItem('#', 'Владельцам ТС')
+				+navItem('#', 'Войти')
+
+		block content
+
+		//- загружаем жЫквери с цдн
+		script(
+			src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
+		//- если не загружается, то подтягиваем свой
+		script window.jQuery || document.write('<script src=\'js/jquery.min.js\'><\/script>')
+		script(
+			src='js/main.js')

@@ -1,0 +1,11 @@
+mixin logo
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'logo--' + mod
+
+	.logo(class=mods)
+		img.logo__img(
+			src='/img/logo.svg'
+			alt='jata.ru'
+			title='Jata.ru')

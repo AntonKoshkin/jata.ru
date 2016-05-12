@@ -1,0 +1,218 @@
+// using example
+// .qwe
+// 	+ff1-2()
+// 		background-color #333
+
+
+// chrome*, safari*, opera >= 14, android*
+webKit()
+	&:not(*:root)
+		{block}
+
+//	//	//	//	//	//	//	//	//	//
+//		FIREFOX					//
+//	//	//	//	//	//	//	//	//	//
+// 1.5/2
+ff1_5-2()
+	body:empty &
+		{block}
+
+// >= 2
+ffGTE2()
+	body:last-child &
+	x:-moz-any-link
+		{block}
+
+// <= 3
+ffLTE3()
+	@media \0 all
+		{block}
+
+// >=3
+ffGTE3()
+	body:last-child &
+	x:-moz-any-link
+	x:default
+		{block}
+
+// >=3
+ffGTE3misc()
+	@-moz-document url-prefix()
+		{block}
+
+// >= 3.5
+ffGTE3_5()
+	body:not(:-moz-handler-blocked)
+	&
+		{block}
+
+// >= 3.6
+ffGTE3_6()
+	@media screen and (-moz-images-in-menus:0)
+		{block}
+
+// >= 4
+ffGTE4()
+	@media screen and (min--moz-device-pixel-ratio:0)
+		{block}
+
+// >= 6
+ffGTE6()
+	_::-moz-progress-bar
+	body:last-child &
+		{block}
+
+// >= 8
+ffGTE8()
+	@media all and (min--moz-device-pixel-ratio:0) and (min-resolution: .001dpcm)
+		{block}
+
+ffGTE8__onemore()
+	@media all and (-moz-images-in-menus:0) and (min-resolution: .001dpcm)
+		{block}
+
+// >=11
+ffGTE11()
+	@media all and (min--moz-device-pixel-ratio:0)
+		@media (min-width: 0px)
+			{block}
+
+ffGTE11--onemore()
+	@media all and (-moz-images-in-menus:0)
+		@media (min-width: 0px)
+			{block}
+
+// >= 16
+ffGTE16()
+	@supports (-moz-appearance:meterbar)
+		{block}
+
+// >= 21
+ffGTE21()
+	_::-moz-range-track
+	body:last-child &
+		{block}
+
+// >= 22
+ffGTE22()
+	@supports (-moz-appearance:meterbar) and (display:flex)
+		{block}
+
+// >= 24
+ffGTE24()
+	@supports (-moz-appearance:meterbar) and (cursor:zoom-in)
+		{block}
+
+// >= 25
+ffGTE25()
+	@supports (-moz-appearance:meterbar) and (background-attachment:local)
+		{block}
+
+// >= 26
+ffGTE26()
+	@supports (-moz-appearance:meterbar) and (image-orientation:90deg)
+		{block}
+
+// >= 27
+ffGTE27()
+	@supports (-moz-appearance:meterbar) and (all:initial)
+		{block}
+
+// >= 28
+ffGTE28()
+	@supports (-moz-appearance:meterbar) and (list-style-type:japanese-formal)
+		{block}
+
+// >= 29
+ffGTE29()
+	@media all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm)
+		{block}
+
+// >= 30
+ffGTE30()
+	@supports (-moz-appearance:meterbar) and (background-blend-mode:difference,normal)
+		{block}
+
+// all
+ffALL()
+	_:-moz-tree-row(hover)
+	&
+		{block}
+
+
+//	//	//	//	//	//	//	//	//	//
+//		IE	/	EDGE				//
+//	//	//	//	//	//	//	//	//	//
+
+// ie <= 8 ------- stylus doesn't like it :(
+// ieLTE8()
+// 	@media \0screen\,screen\9
+// 		{block}
+
+// ie 8
+ie8()
+	@media \0screen
+		{block}
+
+// ie/edge >= 10
+ieGTE10()
+	_:-ms-input-placeholder
+	:root &
+		{block}
+
+
+//	//	//	//	//	//	//	//	//	//
+//		OPERA						//
+//	//	//	//	//	//	//	//	//	//
+
+// >= 9.5
+opGTE9_5()
+	_:-o-prefocus
+	body:last-child &
+		{block}
+
+// <= 11
+opLTE11()
+	@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0)
+		{block}
+
+// >= 12
+opGTE12()
+	@media (min-resolution: .001dpcm)
+		_:-o-prefocus
+		&
+			{block}
+
+
+//	//	//	//	//	//	//	//	//	//
+//		SAFARI					//
+//	//	//	//	//	//	//	//	//	//
+
+// 2/3
+sa2-3()
+	html[xmlns*='']
+		body:last-child
+			&
+				{block}
+
+sa2-3--onemore()
+	html[xmlns*='']:root
+		&
+			{block}
+
+// 5.1 - 6
+sa5_1-6()
+	_::-moz-svg-foreign-content
+	:root &
+		{block}
+
+
+//	//	//	//	//	//	//	//	//	//
+//		CHOME						//
+//	//	//	//	//	//	//	//	//	//
+
+// all
+chALL()
+	body:nth-of-type(1)
+		&
+			{block}

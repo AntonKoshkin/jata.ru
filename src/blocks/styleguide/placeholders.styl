@@ -1,0 +1,138 @@
+$text-center
+	text-align center
+
+$text-right
+	text-align right
+
+$text-left
+	text-align left
+
+$float-right
+	float right
+
+$float-left
+	float left
+
+$float-none
+	float none
+
+$clearfix
+	&:before
+	&:after
+		content ''
+		display table
+		height 0
+		width 100%
+	
+	&:after
+		clear both
+
+$hidden-input
+	position absolute
+	clip rect(0, 0, 0, 0)
+		
+//	//	//	//	//	//	//	//	//	//
+//		PSEUDOELEMENTS			//
+//	//	//	//	//	//	//	//	//	//
+$pseudo
+	display inline-block
+	content ''
+
+$abs
+	position absolute
+
+$right
+	right 0
+	top 50%
+	transform translateY(-50%)
+
+$left
+	left 0
+	top 50%
+	transform translateY(-50%)
+
+$bottom
+	bottom 0
+	left 50%
+	transform translateX(-50%)
+
+$left-old
+	top 0
+	bottom 0
+	left 0
+	margin auto
+
+$left-top
+	left 0
+	top 0
+	
+$right-top
+	right 0
+	top 0
+
+$top
+	top 0
+	left 50%
+	transform translateX(-50%)
+
+$top-old
+	top 0
+	left 0
+	right 0
+	margin auto
+
+$center
+	top 50%
+	left 50%
+	transform translate(-50%, -50%)
+
+$center-old
+	pos 0
+
+$hor-center
+	left 50%
+	transform translateX(-50%)
+
+$pseudo-right
+	@extend $pseudo, $abs, $right
+
+$pseudo-left
+	@extend $pseudo, $abs, $left
+
+$pseudo-left-old
+	@extend $pseudo, $abs, $left-old
+
+$pseudo-left-top
+	@extend $pseudo, $abs, $left-top
+
+$pseudo-right-top
+	@extend $pseudo, $abs, $right-top
+
+$pseudo-top
+	@extend $pseudo, $abs, $top
+
+$pseudo-bottom
+	@extend $pseudo, $abs, $bottom
+
+$pseudo-fullbottom
+	@extend $pseudo, $abs
+	
+	bottom 0
+	left 0
+	width 100%
+
+$pseudo-top-old
+	@extend $pseudo, $abs, $top-old
+
+$pseudo-center
+	@extend $pseudo, $abs, $center
+
+$pseudo-center-old
+	@extend $pseudo, $abs, $center-old
+	
+//	//	//	//	//	//	//	//	//	//
+//		BICON						//
+//	//	//	//	//	//	//	//	//	//
+$bg-one
+	background-repeat no-repeat
+	background-position center

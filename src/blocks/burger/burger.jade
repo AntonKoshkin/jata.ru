@@ -1,0 +1,12 @@
+mixin burger
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'burger--' + mod
+
+	button.burger(
+		type='button'
+		class=mods)
+		span.burger__strip
+		span.burger__strip
+		span.burger__strip

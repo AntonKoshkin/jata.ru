@@ -1,0 +1,12 @@
+bicon(icon, icon_size=0, bg_size=icon_size)
+	@extend $bg-one
+	
+	background-image icon
+	
+	if typeof(icon_size) != 'unit'
+		@extend {icon_size}
+
+	else if icon_size != 0
+		background-size (icon_size)px (icon_size)px
+		width (bg_size)px
+		height @width

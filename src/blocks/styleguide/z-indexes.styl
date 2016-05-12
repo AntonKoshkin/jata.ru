@@ -1,0 +1,14 @@
+for i in 0..30
+	$zi{i}
+		z-index i
+
+zi(index, classes...)
+	for item in classes
+		.{item}
+			@extend $zi{index}
+
+zi(3, modals)
+
+zi(2, header)
+
+zi(1, pop-error, variants)
