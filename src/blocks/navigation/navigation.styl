@@ -1,11 +1,90 @@
 .navigation
-	display none
+	width 450px
+	height 0
+	overflow hidden
+	position absolute
+	top 100%
+	right 15px
+	transform translateY(-16px)
+	slow height
+
+	&--open
+		height 440px
 	
+	&__list
+		background-color blue-dark
+		padding 10px
+		position absolute
+		bottom 0
+		width 100%
+		left 0
+		border-radius 0 0 5px 5px
+
 	&__item
-		display inline-block
-	
+		text-align center
+		
+		&:not(:last-child)
+			border-bottom 1px solid rgba(white, .2)
+
+		&--enter
+			padding 15px 0 5px
+
 	&__link
+		@extend $fw500, $very-small-text
+		
+		color white
+		display block
+		text-transform uppercase
+		padding 15px
+		
+	&__item--enter &__link
+		position relative
+		padding 9px 24px 7px 40px
+		text-transform none
+		background-color blue
+		border-radius 3px
 		display inline-block
+		
+		&:before
+			@extend $pseudo-left
+			bicon lock 12px
+			
+			left 24px
 	
 	@media (min-width tablet)
-		display block
+		flex-basis 100%
+		flex-shrink 1
+		height auto
+		position static
+		transform translateY(0)
+		
+		&--open
+			height auto
+		
+		&__bg
+			display none
+		
+		&__list
+			position static
+			padding 0
+			display flex
+			max-width 1000px
+			margin-left auto
+			justify-content space-between
+			align-items center
+			margin-bottom 15px
+		
+		&__item
+			display inline-block
+			
+			&:not(:last-child)
+				border-bottom 0
+			
+			&:hover
+				text-decoration underline
+			
+			&--enter
+				padding 0
+
+		&__link
+			padding 5px

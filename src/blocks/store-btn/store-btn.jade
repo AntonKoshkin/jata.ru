@@ -1,0 +1,22 @@
+mixin storeBtn(type)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'store-btn--' + mod
+
+	.store-btn(class=mods)
+		case type
+			when apple
+				a.store-btn__link(
+					href='http://play.google.com'
+					target='_blank')
+					img.store-btn__img(
+						src='/img/app-store.svg'
+						alt='Загрузите в App Store')
+			when google
+				a.store-btn__link(
+					href='http://appstore.com'
+					target='_blank')
+					img.store-btn__img(
+						src='/img/google-play.svg'
+						alt='Загрузите в Google Play')

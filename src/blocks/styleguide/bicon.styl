@@ -1,12 +1,21 @@
-bicon(icon, icon_size=0, bg_size=icon_size)
-	@extend $bg-one
-	
-	background-image icon
-	
-	if typeof(icon_size) != 'unit'
-		@extend {icon_size}
+icon(name, path)
+	${name}
+		background-image url(path)
 
-	else if icon_size != 0
-		background-size (icon_size)px (icon_size)px
-		width (bg_size)px
+icon(ikonka, '/img/img.img')
+icon(lock, 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTAwIDEwMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGlkPSJGb3JtYV8xIiBzdHlsZT0iZmlsbDojRkZGRkZGOyIgZD0iTTg1LjgsNDAuNGgtMi4xdi05LjFDODMuMSwxMy43LDY4LjYtMC4yLDUxLDBjLTAuNSwwLTEuNSwwLTIsMEMzMS40LTAuMiwxNi45LDEzLjcsMTYuMywzMS4zdjkuMWgtMi4xYy0zLjUsMC4zLTYuMiwzLjQtNS45LDYuOVY5M2MtMC4zLDMuNSwyLjQsNi42LDUuOSw3aDcxLjVjMy41LTAuMyw2LjItMy40LDUuOS03VjQ3LjNDOTEuOSw0My44LDg5LjMsNDAuNyw4NS44LDQwLjR6IE01Ni43LDcwLjF2MTMuOGMtMC4xLDEuNi0xLjQsMi45LTMuMSwyLjloLTcuMmMtMS42LDAtMy0xLjMtMy4xLTIuOVY3MC4xYy0xLjctMS41LTIuNy0zLjctMi43LTUuOWMwLjEtNC42LDMuOC04LjIsOC4zLTguM2MwLjUsMCwxLjUsMCwyLDBjNC42LDAuMSw4LjIsMy44LDguMyw4LjNDNTkuMyw2Ni41LDU4LjQsNjguNiw1Ni43LDcwLjF6IE02OS44LDQwLjRIMzAuM3YtOS4xQzMxLDIwLjQsNDAuNSwxMi4xLDUxLjQsMTIuOWM5LjgsMC43LDE3LjYsOC41LDE4LjMsMTguM1Y0MC40eiIvPjwvc3ZnPg==')
+
+
+
+
+
+bicon(icon, icon_size=0, bg_size=icon_size)
+	@extend ${icon}, $bg-one
+	
+	if icon_size != 0
+		background-size icon_size icon_size
+		width bg_size
 		height @width
+
+// .qwe
+// 	bicon ikonka 15px 17px

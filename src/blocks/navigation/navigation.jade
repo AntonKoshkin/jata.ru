@@ -17,4 +17,6 @@ mixin navItem(link, title)
 			-mods[i] = 'navigation__item--' + mod
 
 	li.navigation__item(class=mods)
-		a.navigation__link!=title
+		a.navigation__link(
+			href=link
+			title=attributes.title)!=title

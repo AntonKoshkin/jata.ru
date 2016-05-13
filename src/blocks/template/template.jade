@@ -4,6 +4,8 @@ include ../header/header
 include ../logo/logo
 include ../burger/burger
 include ../navigation/navigation
+include ../store-btn/store-btn
+include ../role-btn/role-btn
 
 block page_id
 
@@ -17,14 +19,16 @@ html(lang='ru')
 			+logo
 			+burger
 			+navigation
-				+navItem('#', 'О Jata.ru')
-				+navItem('#', 'Как это работает?')
-				+navItem('#', 'Контакты')
-				+navItem('#', 'Рекламные места')
-				+navItem('#', 'Блог.новости')
-				+navItem('#', 'Рекламодателям')
-				+navItem('#', 'Владельцам ТС')
-				+navItem('#', 'Войти')
+				+navItem('#', 'О Jata.ru')(title='О Jata.ru')
+				+navItem('#', 'Как это работает?')(title='Как это работает?')
+				+navItem('#', 'Контакты')(title='Контакты')
+				+navItem('#', 'Рекламные места')(title='Рекламные места')
+				+navItem('#', 'Блог/новости')(title='Блог/новости')
+				+navItem('#', 'Рекламодателям')(title='Рекламодателям')
+				+navItem('#', 'Владельцам ТС')(title='Владельцам ТС')
+				+navItem('#', 'Войти')(
+					mods=['enter']
+					title='Войти')
 
 		block content
 
