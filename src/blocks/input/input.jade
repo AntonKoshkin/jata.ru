@@ -1,0 +1,23 @@
+//- styled input
+
+mixin input(type)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'input--' + mod
+
+	.input(
+		data-status=attributes['data-status']
+		class=mods)
+		input.input__input(
+			data-mask=attributes['data-mask']
+			type=type
+			id=attributes.id
+			placeholder=attributes.placeholder
+			disabled=attributes.disabled
+			value=attributes.value
+			autocomplete=attributes.autocomplete
+			name=attributes.name
+			maxlength=attributes.maxlength)
+		if block
+			block

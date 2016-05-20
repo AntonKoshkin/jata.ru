@@ -1,0 +1,8 @@
+mixin emptyBtn(text)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'empty-btn--' + mod
+
+	.empty-btn(class=mods)
+		button.empty-btn__btn(type='button')=text

@@ -1,0 +1,49 @@
+.input
+	@extend $font-reset
+	
+	position relative
+	
+	&:before
+		@extend $pseudo-right
+		
+		right 14px
+
+	&[data-status='ok']
+		&:before
+			bicon(round-galka-green, 16)
+
+	&[data-status='error']
+		&:before
+			bicon(round-cross-red, 16)
+	
+	&--mb10
+		margin-bottom 10px
+
+	&__input
+		@extend $main-text
+		
+		width 100%
+		background-color white
+		font-weight light
+		padding 13px 35px 13px 15px
+		border none
+		border-left 1px solid gray-mid-dark
+		border-right 1px solid gray-mid-dark
+		color blue-dark
+		
+		+placeholder()
+			font-weight light
+			text-transform lowercase
+			color gray-light
+	
+	&--top &__input
+		border-radius 10px 10px 0 0
+		border-top 1px solid gray-mid-dark
+		border-bottom 1px solid gray-mid-dark
+	
+	&--mid &__input
+	&--bot &__input
+		border-bottom 1px solid gray-mid-dark
+	
+	&--bot &__input
+		border-radius 0 0 10px 10px

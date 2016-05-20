@@ -1,0 +1,20 @@
+.clear-btn
+	&--tac
+		text-align center
+		
+	&__btn
+		@extend $btn-reset, $main-text
+		
+		position relative
+		color blue-dark
+		padding 13px 34px 13px 27px
+		font-weight light
+		border 1px solid blue-dark
+		border-radius 3px
+
+	&--arrow-right &__btn
+		&:before
+			@extend $pseudo-right
+			bicon('arrow-right', 12)
+			
+			right 16px

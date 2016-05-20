@@ -1,0 +1,37 @@
+.checkbox
+	&--small
+		.checkbox
+			&__text
+				@extend $very-small-text
+				
+				// margin-left 30px
+				padding-left 22px
+				
+				&:before
+					size 16px
+			
+			&__input:checked + .checkbox__text
+				&:after
+					size 16px
+					
+					background-size 16px
+	
+	&--left-pad
+		.checkbox
+			&__text
+				margin-left 30px
+					
+	&--blocked
+		.checkbox
+			&__label
+				cursor auto
+					
+			&__text
+				&:before
+					border-color gray
+	
+	&--margined
+		margin-bottom 20px
+	
+	&--fat &__text
+		font-weight semibold

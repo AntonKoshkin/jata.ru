@@ -19,21 +19,37 @@ $fw500
 $text
 	font-weight normal
 	color text-black
+	line-height 1.3em
 
 $main-text
 	@extend $text
 	
 	font-size 1rem
 
-$small-text
-	@extend $text
+// $small-text
+// 	@extend $text
 	
-	font-size .875rem
+// 	font-size .875rem
 
 $very-small-text
 	@extend $text
 	
 	font-size .75rem
+
+$text-12
+	@extend $text
+	
+	font-size .75rem
+
+$text-18
+	@extend $text
+	
+	font-size 1.125rem
+
+$text-24
+	@extend $text
+	
+	font-size 1.5rem
 
 //	//	//	//	//	//	//	//	//	//
 //		TITLES					//
@@ -41,20 +57,27 @@ $very-small-text
 $title
 	color blue-dark
 
-$title-h1
-	@extend $title
-	
+$title-reg
+	font-weight thin
 	font-size 3.125rem
-	font-weight medium
+	text-align center
+	color blue
+	margin-bottom 35px
 
-$title-h2
-	@extend $title
+// $title-h1
+// 	@extend $title
 	
-	font-size 2.5rem
-	font-weight medium
+// 	font-size 3.125rem
+// 	font-weight medium
 
-$title-h3
-	@extend $title
+// $title-h2
+// 	@extend $title
 	
-	font-size 1.5rem
-	font-weight light
+// 	font-size 2.5rem
+// 	font-weight medium
+
+// $title-h3
+// 	@extend $title
+	
+// 	font-size 1.5rem
+// 	font-weight light

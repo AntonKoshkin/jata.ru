@@ -1,0 +1,13 @@
+mixin checkbox(id, text)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'checkbox--' + mod
+
+	.checkbox(class=mods)
+		label.checkbox__label(
+			for!=id)
+			input.checkbox__input(
+				id!=id
+				type='checkbox')
+			span.checkbox__text!=text

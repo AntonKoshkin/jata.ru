@@ -1,0 +1,17 @@
+.checkbox
+	@extend $font-reset
+	
+	&__label
+		cursor pointer
+
+	&__input
+		@extend $hidden-input
+	
+	&__text
+		position relative
+		
+		&:before
+			@extend $pseudo-left
+	
+	// &__input:checked + &__text
+	// 	&:before

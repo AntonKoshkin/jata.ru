@@ -1,0 +1,8 @@
+mixin regBtn(text)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'reg-btn--' + mod
+	
+	.reg-btn
+		button(type='button').reg-btn__btn!=text

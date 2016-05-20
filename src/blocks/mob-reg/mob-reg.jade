@@ -1,0 +1,10 @@
+mixin mobReg(title)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'mob-reg--' + mod
+
+	.mob-reg
+		p.mob-reg__title!=title
+		if block
+			block

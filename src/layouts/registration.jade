@@ -1,0 +1,96 @@
+extends ../blocks/template/template
+
+block page_id
+	-var page_id = 'registration'
+
+block title
+	title Jata | Регистрация
+
+block content
+	+page(mods=['registration'])
+		+mobReg('Для регистрации на сайте зайдите с компьютера либо скачайте наше приложение:')
+			+storeBtn(apple)(mods=['margin-bottom'])
+			+storeBtn(google)(mods=['margin-bottom'])
+
+		+pageTitle(1, 'Регистрация')(mods=['reg'])
+
+		+registration
+			+regPage(
+				mods=['pt40', 'show']
+				id='roleChoose')
+				+roleBtn('regRole', 'regDriverRole', 'Я владелец рекламного места')(
+					mods=['top']
+					checked='')
+				+roleBtn('regRole', 'regAdverRole', 'Я рекламодатель')(
+					mods=['bottom', 'mb30'])
+
+				+clearBtn('Продолжить регистрацию')(
+					data-next-block='regDriver'
+					mods=['arrow-right', 'tac'])
+
+			+regPage(
+				id='regDriver')
+				+radio('fisOrUr', 'fiz', 'Я физическое лицо')(
+					mods=['mb10']
+					checked='')
+				+radio('fisOrUr', 'ur', 'Я юридическое лицо')(
+					mods=['mb20'])
+				+input('email')(
+					mods=['top']
+					data-mask='email'
+					data-status='ok'
+					placeholder='Ваш E-mail'
+					name='email')
+					+inputError('Данный e-mail уже зарегистрирован')
+				+input('number')(
+					mods=['mid']
+					data-mask='phone'
+					data-status='error'
+					placeholder='+7 (___) ___ - __ - __'
+					name='phone')
+					+inputError('Данный номер телефона уже зарегистрирован')
+				+input('text')(
+					mods=['mid']
+					placeholder='Город'
+					name='city')
+					+inputError('К сожалению, мы пока не работаем в данном городе')
+				+input('password')(
+					mods=['bot', 'mb10']
+					data-mask='password'
+					data-status='empty'
+					placeholder='Пароль'
+					name='password')
+					+inputError('Пароль должен содержать не менее 5 символов')
+				+emptyBtn('Проверить пароль')
+				+regBtn('Зарегистрироваться')
+
+			+regPage(
+				id='regAdver')
+				+input('email')(
+					mods=['top']
+					data-mask='email'
+					data-status='ok'
+					placeholder='Ваш E-mail'
+					name='email')
+					+inputError('Данный e-mail уже зарегистрирован')
+				+input('number')(
+					mods=['mid']
+					data-mask='phone'
+					data-status='error'
+					placeholder='+7 (___) ___ - __ - __'
+					name='phone')
+					+inputError('Данный номер телефона уже зарегистрирован')
+				+input('text')(
+					mods=['mid']
+					placeholder='Город'
+					name='city')
+					+inputError('К сожалению, мы пока не работаем в данном городе')
+				+input('password')(
+					mods=['bot', 'mb10']
+					data-mask='password'
+					data-status='empty'
+					placeholder='Пароль'
+					name='password')
+					+inputError('Пароль должен содержать не менее 5 символов')
+				+emptyBtn('Проверить пароль')
+				+regBtn('Зарегистрироваться')

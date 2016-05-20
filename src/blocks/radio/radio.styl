@@ -1,0 +1,36 @@
+.radio
+	@extend $font-reset
+	
+	&--mb10
+		margin-bottom 10px
+	
+	&--mb20
+		margin-bottom 20px
+		
+	&__label
+		@extend $main-text
+		
+		cursor pointer
+		
+	&__input
+		@extend $hidden-input
+	
+	&__text
+		@extend $main-text
+		
+		color blue-dark
+		position relative
+		padding-left 22px
+		
+		&:before
+			@extend $pseudo-left
+			size 16px
+			
+			border 1px solid blue-dark
+			border-radius 50%
+	
+	&__input:checked + &__text
+		&:before
+			bicon(round-galka, 16)
+			
+			border none

@@ -1,0 +1,46 @@
+mixin page
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'page--' + mod
+
+	.page(class=mods)
+		if block
+			block
+
+mixin pageTitle(h, title)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'page__title--' + mod
+
+	case h
+		when 1
+			h1.page__title.page__title(
+				contenteditable=attributes.edit
+				class=mods)!=title
+				
+		when 2
+			h2.page__title.page__title(
+				contenteditable=attributes.edit
+				class=mods)!=title
+				
+		when 3
+			h3.page__title.page__title(
+				contenteditable=attributes.edit
+				class=mods)!=title
+				
+		when 4
+			h4.page__title.page__title(
+				contenteditable=attributes.edit
+				class=mods)!=title
+				
+		when 1
+			h1.page__title.page__title(
+				contenteditable=attributes.edit
+				class=mods)!=title
+				
+		when 1
+			h1.page__title.page__title(
+				contenteditable=attributes.edit
+				class=mods)!=title

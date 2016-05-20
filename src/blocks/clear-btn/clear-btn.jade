@@ -1,0 +1,10 @@
+mixin clearBtn(text)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'clear-btn--' + mod
+
+	.clear-btn(class=mods)
+		button.clear-btn__btn(
+			type='button'
+			data-next-block=attributes['data-next-block'])=text

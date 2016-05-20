@@ -1,0 +1,18 @@
+//- mixin inputErrors
+//- 	if attributes.mods
+//- 		-var mods = []
+//- 		each mod, i in attributes.mods
+//- 			-mods[i] = 'input-errors--' + mod
+
+//- 	.input-errors(class=mods)
+//- 		if block
+//- 			block
+
+mixin inputError(text)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'input-error--' + mod
+
+	.input-error(class=mods)
+		p.input-error__text!=text

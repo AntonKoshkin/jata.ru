@@ -1,0 +1,35 @@
+.input-error
+	display none
+	position absolute
+	right 22px
+	top 50%
+	background-color pink-light
+	border 1px solid pink
+	transform translate(50%, 16px)
+	padding 8px
+	padding-left 40px
+	border-radius 5px
+	max-width 200px
+	
+	&:before
+		@extend $pseudo-left
+		bicon(triangle-screamer-white, 20)
+		
+		left 10px
+	
+	&:after
+		@extend $top-center-triangle
+		size 10px
+		
+		background-color pink-light
+		border-top 1px solid pink
+		border-left 1px solid pink
+	
+	[data-status='error'] &
+		display inline-block
+		animation errorShow .3s linear
+	
+	&__text
+		@extend $text-12
+		
+		color white

@@ -1,0 +1,15 @@
+mixin radio(name, id, text)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'radio--' + mod
+
+	.radio(class=mods)
+		label.radio__label(for=id)
+			input.radio__input(
+				id=id
+				value=id
+				name=name
+				type='radio'
+				checked=attributes.checked)
+			span.radio__text!=text

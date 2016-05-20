@@ -3,3 +3,6 @@
 
 // бургер
 //= ../blocks/burger/burger.js
+
+// регистрация
+//= ../blocks/registration/registration.js
