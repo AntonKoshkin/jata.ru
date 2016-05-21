@@ -5,7 +5,8 @@ mixin logo
 			-mods[i] = 'logo--' + mod
 
 	.logo(class=mods)
-		img.logo__img(
-			src='/img/logo.svg'
-			alt='jata.ru'
-			title='Jata.ru')
+		a.logo__link(href='/')
+			img.logo__img(
+				src='/img/logo.svg'
+				alt='jata.ru'
+				title='Jata.ru')

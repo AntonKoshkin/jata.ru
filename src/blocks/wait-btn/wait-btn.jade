@@ -1,0 +1,9 @@
+mixin waitBtn(text)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'wait-btn--' + mod
+
+	//- wait-btn--waiting - анимация кручения стрелок и таймер
+	.wait-btn(class=mods)
+		button.wait-btn__btn(type='button')=text

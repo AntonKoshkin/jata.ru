@@ -23,17 +23,107 @@ jQuery(document).ready(function($) {
 
 		var nextBlock = $('#' + $(this).attr('data-next-block'));
 
-		if ($('#regAdverRole').prop('checked')) {
-			nextBlock = $('#regAdver');
+		if ($(this).attr('data-vared') === 'true') {
+			if ($('#regAdverRole').prop('checked')) {
+				nextBlock = $('#regAdver');
+			}
 		}
 
-		console.log($('#regAdverRole').prop('checked'))
+		if ($(this).closest('.registration').length) {
+			$(this)
+				.closest('.registration__page')
+				.removeClass('registration__page--show');
+
+			nextBlock.addClass('registration__page--show');
+		}
+	});
+});
+
+// выпадающие варианты
+$('.variants')
+	.hide();
+
+jQuery(document).ready(function($) {
+	// open/close by changing text in input/select
+	$('body').on('input', '.input__input', function(event) {
+		if ($(this).val() !== '') {
+			$(this)
+				.siblings('.variants')
+				.show();
+		} else {
+			$(this)
+				.siblings('.variants')
+				.hide();
+		}
+	});
+
+	$('body').on('click', '.custom-select__input', function(event) {
+		event.preventDefault();
 
 		$(this)
-			.closest('.registration__page')
-			.removeClass('registration__page--show');
+			.next('.variants')
+			.toggle();
+	});
 
-		nextBlock.addClass('registration__page--show');
+	// click on variant
+	$('body').on('click', '.variants__item', function(event) {
+		event.preventDefault();
+
+		$(this)
+			.closest('.variants')
+			.hide()
+			.siblings('input')
+			.val($(this).text());
+	});
+
+	// close when ESC pressed
+	$('.input, .select').keyup(function(event) {
+		if ((event.keyCode === 27) && ($(this).find('.variants').length)) {
+			$(this)
+			.find('.variants')
+			.hide();
+		}
+	});
+
+	// close on focusOut FUCKES UP CLICK ON VARIANTS!!!
+	// $('.input, .select').focusout(function(event) {
+	// 	if ($(this).find('.variants').length) {
+	// 		$(this)
+	// 			.find('.variants')
+	// 			.hide();
+	// 	}
+	// });
+
+	// close when click on eraser
+	$('body').on('click', '.eraser', function(event) {
+		event.preventDefault();
+
+		$(this)
+			.siblings('.variants')
+			.hide();
+	});
+});
+
+// линковка
+$('body').on('click', '[data-link]', function(event) {
+	event.preventDefault();
+	location.href = $(this).attr('data-link');
+});
+
+// вход
+jQuery(document).ready(function($) {
+	$('body').on('click', '[data-next-block]', function(event) {
+		event.preventDefault();
+
+		var nextBlock = $('#' + $(this).attr('data-next-block'));
+
+		if ($(this).closest('.enter').length) {
+			$(this)
+				.closest('.enter__page')
+				.removeClass('enter__page--show');
+
+			nextBlock.addClass('enter__page--show');
+		}
 	});
 });
 /*!

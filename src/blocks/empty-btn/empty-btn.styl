@@ -1,6 +1,8 @@
 .empty-btn
 	text-align center
-	margin-bottom 30px
+	
+	&--mb30
+		margin-bottom 30px
 	
 	&__btn
 		@extend $btn-reset, $main-text
@@ -8,3 +10,10 @@
 		color blue
 		text-decoration underline
 		font-weight light
+	
+	&--skip &__btn
+		color gray-light
+		text-decoration none
+	
+	&--forgot &__btn
+		color gray-light

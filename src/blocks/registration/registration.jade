@@ -17,6 +17,23 @@ mixin regPage
 	.registration__page(
 		class=mods
 		id=attributes.id)
-		.registration__content
-			if block
-				block
+		if block
+			block
+
+mixin regCont
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'registration__content--' + mod
+
+	.registration__content
+		if block
+			block
+
+mixin regTitle(text)
+	p.registration__title!=text
+
+mixin regBtns
+	.registration__btns
+		if block
+			block

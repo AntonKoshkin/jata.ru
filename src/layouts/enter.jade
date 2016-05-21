@@ -1,0 +1,65 @@
+extends ../blocks/template/template
+
+block page_id
+	-var page_id = 'enter'
+
+block title
+	title Jata | Вход в личный кабинет
+
+block content
+	+page(mods=['enter'])
+
+		+mobReg('Зайдите с компьютера либо скачайте наше приложение:')
+			+storeBtn(apple)(mods=['margin-bottom'])
+			+storeBtn(google)(mods=['margin-bottom'])
+
+		+enter
+			+enterPage(
+				mods=['show']
+				id='enterPage')
+				+pageTitle(1, 'Войти в личный кабинет')(mods=['enter'])
+				+enterCont
+					+input('email')(
+						mods=['top']
+						data-mask='email'
+						data-status='empty'
+						placeholder='Логин'
+						name='email')
+					+input('password')(
+						mods=['bot', 'mb10']
+						data-mask='password'
+						data-status='empty'
+						placeholder='Пароль'
+						name='password')
+						+inputError('Логин или пароль введены неверно')
+					+enterBtns
+						+checkbox('rememberMe', 'Запомнить меня')
+						+emptyBtn('Забыли пароль?')(
+							data-next-block='recoverEmail'
+							mods=['forgot'])
+					+mainBtn('Войти')(mods=['fullwidth', 'mb20'])
+					+emptyBtn('Пройти регистрацию')(
+						data-link='/registration.html')
+
+			+enterPage(
+				id='recoverEmail')
+				+pageTitle(1, 'Восстановить забытый пароль')(mods=['enter'])
+				+enterCont
+					+input('email')(
+						mods=['single', 'mb20']
+						data-mask='email'
+						data-status='empty'
+						placeholder='Введите e-mail'
+						name='email')
+						+inputError('Данный e-mail не зарегистрирован')
+					+mainBtn('Отправить')(
+						data-next-block='emailSent'
+						mods=['fat', 'center'])
+
+			+enterPage(
+				id='emailSent')
+				+pageTitle(1, 'Новый пароль отправлен на Ваш E-MAIL')(mods=['enter'])
+				+enterCont
+					+mainBtn('Ок')(
+						data-next-block='enterPage'
+						mods=['fat', 'center'])

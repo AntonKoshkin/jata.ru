@@ -1,0 +1,11 @@
+mixin mainBtn(text)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'main-btn--' + mod
+	
+	.main-btn(class=mods)
+		button(
+			data-next-block=attributes['data-next-block']
+			data-vared=attributes['data-vars']
+			type='button').main-btn__btn!=text

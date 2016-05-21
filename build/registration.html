@@ -3,7 +3,7 @@
 	<head>
 		<title>Jata | Регистрация</title>
 		<meta charset="UTF-8"/>
-		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 		<meta name="HandheldFriendly" content="true"/>
 		<meta property="og:image" content="http://placekitten.com/100/100"/>
@@ -23,7 +23,7 @@
 	<body>
 		<div class="header">
 			<div class="header__content">
-				<div class="logo"><img src="/img/logo.svg" alt="jata.ru" title="Jata.ru" class="logo__img"/></div>
+				<div class="logo"><a href="/" class="logo__link"><img src="/img/logo.svg" alt="jata.ru" title="Jata.ru" class="logo__img"/></a></div>
 				<button type="button" class="burger"><span class="burger__strip"></span><span class="burger__strip"></span><span class="burger__strip"></span></button>
 				<div class="navigation">
 					<div class="navigation__bg"></div>
@@ -41,6 +41,7 @@
 			</div>
 		</div>
 		<div class="page page--registration">
+			<h1 class="page__title page__title page__title--reg">Регистрация</h1>
 			<div class="mob-reg">
 				<p class="mob-reg__title">Для регистрации на сайте зайдите с компьютера либо скачайте наше приложение:</p>
 				<div class="store-btn store-btn--margin-bottom"><a href="http://play.google.com" target="_blank" class="store-btn__link"><img src="/img/app-store.svg" alt="Загрузите в App Store" class="store-btn__img"/></a>
@@ -48,7 +49,6 @@
 				<div class="store-btn store-btn--margin-bottom"><a href="http://play.google.com" target="_blank" class="store-btn__link"><img src="/img/app-store.svg" alt="Загрузите в App Store" class="store-btn__img"/></a>
 				</div>
 			</div>
-			<h1 class="page__title page__title page__title--reg">Регистрация</h1>
 			<div class="registration">
 				<div id="roleChoose" class="registration__page registration__page--pt40 registration__page--show">
 					<div class="registration__content">
@@ -79,13 +79,13 @@
 								<input id="ur" value="ur" name="fisOrUr" type="radio" class="radio__input"/><span class="radio__text">Я юридическое лицо</span>
 							</label>
 						</div>
-						<div data-status="ok" class="input input--top">
+						<div data-status="empty" class="input input--top">
 							<input data-mask="email" type="email" placeholder="Ваш E-mail" name="email" class="input__input"/>
 							<div class="input-error">
 								<p class="input-error__text">Данный e-mail уже зарегистрирован</p>
 							</div>
 						</div>
-						<div data-status="error" class="input input--mid">
+						<div data-status="empty" class="input input--mid">
 							<input data-mask="phone" type="number" placeholder="+7 (___) ___ - __ - __" name="phone" class="input__input"/>
 							<div class="input-error">
 								<p class="input-error__text">Данный номер телефона уже зарегистрирован</p>
@@ -93,6 +93,15 @@
 						</div>
 						<div class="input input--mid">
 							<input type="text" placeholder="Город" name="city" class="input__input"/>
+							<div class="variants">
+								<ul class="variants__list">
+									<li class="variants__item">option 1</li>
+									<li class="variants__item">option 2</li>
+									<li class="variants__item">option 3</li>
+									<li class="variants__item">option 4</li>
+									<li class="variants__item">option 5</li>
+								</ul>
+							</div>
 							<div class="input-error">
 								<p class="input-error__text">К сожалению, мы пока не работаем в данном городе</p>
 							</div>
@@ -103,23 +112,26 @@
 								<p class="input-error__text">Пароль должен содержать не менее 5 символов</p>
 							</div>
 						</div>
-						<div class="empty-btn">
+						<div class="empty-btn empty-btn--mb30">
 							<button type="button" class="empty-btn__btn">Проверить пароль</button>
 						</div>
-						<div class="reg-btn">
-							<button type="button" class="reg-btn__btn">Зарегистрироваться</button>
+						<div class="main-btn main-btn--fullwidth main-btn--mb10">
+							<button data-next-block="confirmPhone" type="button" class="main-btn__btn">Зарегистрироваться</button>
+						</div>
+						<div class="main-btn main-btn--center main-btn--fat">
+							<button data-next-block="roleChoose" type="button" class="main-btn__btn">Назад</button>
 						</div>
 					</div>
 				</div>
 				<div id="regAdver" class="registration__page">
 					<div class="registration__content">
-						<div data-status="ok" class="input input--top">
+						<div data-status="empty" class="input input--top">
 							<input data-mask="email" type="email" placeholder="Ваш E-mail" name="email" class="input__input"/>
 							<div class="input-error">
 								<p class="input-error__text">Данный e-mail уже зарегистрирован</p>
 							</div>
 						</div>
-						<div data-status="error" class="input input--mid">
+						<div data-status="empty" class="input input--mid">
 							<input data-mask="phone" type="number" placeholder="+7 (___) ___ - __ - __" name="phone" class="input__input"/>
 							<div class="input-error">
 								<p class="input-error__text">Данный номер телефона уже зарегистрирован</p>
@@ -137,11 +149,36 @@
 								<p class="input-error__text">Пароль должен содержать не менее 5 символов</p>
 							</div>
 						</div>
-						<div class="empty-btn">
+						<div class="empty-btn empty-btn--mb30">
 							<button type="button" class="empty-btn__btn">Проверить пароль</button>
 						</div>
-						<div class="reg-btn">
-							<button type="button" class="reg-btn__btn">Зарегистрироваться</button>
+						<div class="main-btn main-btn--fullwidth main-btn--mb10">
+							<button data-next-block="confirmPhone" type="button" class="main-btn__btn">Зарегистрироваться</button>
+						</div>
+						<div class="main-btn main-btn--center main-btn--fat">
+							<button data-next-block="roleChoose" type="button" class="main-btn__btn">Назад</button>
+						</div>
+					</div>
+				</div>
+				<div id="confirmPhone" class="registration__page">
+					<p class="registration__title">Для подтверждения номера Вым выслан одноразовый коды</p>
+					<div class="registration__content">
+						<div data-status="empty" class="input input--single input--mb10">
+							<input type="number" placeholder="Введите код" autocomplete="off" name="confirmationCode" maxlength="5" class="input__input"/>
+							<div class="input-error">
+								<p class="input-error__text">Превышено максимальное число запросов</p>
+							</div>
+						</div>
+						<div class="registration__btns">
+							<div class="wait-btn">
+								<button type="button" class="wait-btn__btn">SMS не пришло</button>
+							</div>
+							<div class="empty-btn empty-btn--skip">
+								<button type="button" class="empty-btn__btn">Пропустить</button>
+							</div>
+						</div>
+						<div class="main-btn main-btn--fat main-btn--center">
+							<button type="button" class="main-btn__btn">Ок</button>
 						</div>
 					</div>
 				</div>

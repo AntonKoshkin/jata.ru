@@ -4,16 +4,18 @@ jQuery(document).ready(function($) {
 
 		var nextBlock = $('#' + $(this).attr('data-next-block'));
 
-		if ($('#regAdverRole').prop('checked')) {
-			nextBlock = $('#regAdver');
+		if ($(this).attr('data-vared') === 'true') {
+			if ($('#regAdverRole').prop('checked')) {
+				nextBlock = $('#regAdver');
+			}
 		}
 
-		console.log($('#regAdverRole').prop('checked'))
+		if ($(this).closest('.registration').length) {
+			$(this)
+				.closest('.registration__page')
+				.removeClass('registration__page--show');
 
-		$(this)
-			.closest('.registration__page')
-			.removeClass('registration__page--show');
-
-		nextBlock.addClass('registration__page--show');
+			nextBlock.addClass('registration__page--show');
+		}
 	});
 });

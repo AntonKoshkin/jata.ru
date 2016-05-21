@@ -6,3 +6,12 @@
 
 // регистрация
 //= ../blocks/registration/registration.js
+
+// выпадающие варианты
+//= ../blocks/variants/variants.js
+
+// линковка
+//= ../blocks/template/links.js
+
+// вход
+//= ../blocks/enter/enter.js

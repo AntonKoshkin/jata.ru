@@ -5,4 +5,7 @@ mixin emptyBtn(text)
 			-mods[i] = 'empty-btn--' + mod
 
 	.empty-btn(class=mods)
-		button.empty-btn__btn(type='button')=text
+		button.empty-btn__btn(
+			data-next-block=attributes['data-next-block']
+			data-link=attributes['data-link']
+			type='button')=text

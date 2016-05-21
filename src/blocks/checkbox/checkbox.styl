@@ -1,6 +1,8 @@
 .checkbox
 	@extend $font-reset
 	
+	position relative
+	
 	&__label
 		cursor pointer
 
@@ -8,10 +10,21 @@
 		@extend $hidden-input
 	
 	&__text
+		@extend $main-text
+		
+		color blue-dark
 		position relative
+		padding-left 22px
 		
 		&:before
 			@extend $pseudo-left
+			size 16px
+			
+			border 1px solid blue
+			border-radius 50%
 	
-	// &__input:checked + &__text
-	// 	&:before
+	&__input:checked + &__text
+		&:before
+			bicon(round-galka-blue, 16)
+			
+			border none

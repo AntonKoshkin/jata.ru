@@ -1,6 +1,4 @@
-//	//	//	//	//	//	//	//	//	//
-//		MAIN						//
-//	//	//	//	//	//	//	//	//	//
+// MAIN
 $main-lh
 	line-height 1.3em
 	
@@ -10,14 +8,19 @@ $main-fz
 $main-ff
 	font-family text-font
 
-$fw500
-	font-weight 500
+// FONT WEIGHTS
+$fw100
+	font-weight thin
 
-//	//	//	//	//	//	//	//	//	//
-//		TEXTS						//
-//	//	//	//	//	//	//	//	//	//
+$fw300
+	font-weight light
+
+$fw500
+	font-weight medium
+
+// TEXTS
 $text
-	font-weight normal
+	// font-weight normal
 	color text-black
 	line-height 1.3em
 
@@ -46,38 +49,28 @@ $text-18
 	
 	font-size 1.125rem
 
+$text-22
+	@extend $text
+	
+	font-size 1.375rem
+
 $text-24
 	@extend $text
 	
 	font-size 1.5rem
 
-//	//	//	//	//	//	//	//	//	//
-//		TITLES					//
-//	//	//	//	//	//	//	//	//	//
+// TITLES
 $title
 	color blue-dark
 
 $title-reg
-	font-weight thin
+	@extend $fw100
 	font-size 3.125rem
 	text-align center
 	color blue
 	margin-bottom 35px
 
-// $title-h1
-// 	@extend $title
+$title-30
+	@extend $title
 	
-// 	font-size 3.125rem
-// 	font-weight medium
-
-// $title-h2
-// 	@extend $title
-	
-// 	font-size 2.5rem
-// 	font-weight medium
-
-// $title-h3
-// 	@extend $title
-	
-// 	font-size 1.5rem
-// 	font-weight light
+	font-size 1.875rem

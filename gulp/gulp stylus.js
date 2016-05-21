@@ -37,8 +37,8 @@ module.exports = function() {
 				// fonts({
 				// 	formats: 'woff'
 				// }),
-				short(),
-				flexFix(),
+				// short(),
+				// flexFix(),
 				prefixes({browsers: [
 					'> 1%',
 					'ie > 9',
