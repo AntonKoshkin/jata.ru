@@ -1,0 +1,26 @@
+mixin footNav
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'foot-nav--' + mod
+
+	nav.foot-nav(class='mods')
+		ul.foot-nav__list
+			if block
+				block
+
+mixin fnHalf
+	.foot-nav__half
+		if block
+			block
+
+mixin fnItem(link, text)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'foot-nav--' + mod
+
+	li.foot-nav__item(class=mods)
+		a.foot-nav__link(
+			href=link
+			title=attributes.title)!=text

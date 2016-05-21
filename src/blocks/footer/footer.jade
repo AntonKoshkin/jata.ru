@@ -1,10 +1,10 @@
-mixin header
+mixin footer
 	if attributes.mods
 		-var mods = []
 		each mod, i in attributes.mods
-			-mods[i] = 'header--' + mod
+			-mods[i] = 'footer--' + mod
 
-	header.header
-		.header__content
+	footer.footer
+		.footer__content
 			if block
 				block

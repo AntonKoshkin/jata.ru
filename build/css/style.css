@@ -1274,5 +1274,11 @@ body {
 .variants__item:hover {
   background-color: #ededed;
 }
+.footer {
+  background-image: url("/img/footer__bg.png");
+}
+.footer__content {
+  padding: 30px 20px;
+}
 
 /*# sourceMappingURL=style.css.map */

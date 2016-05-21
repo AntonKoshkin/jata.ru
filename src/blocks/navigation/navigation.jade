@@ -4,7 +4,7 @@ mixin navigation
 		each mod, i in attributes.mods
 			-mods[i] = 'navigation--' + mod
 
-	.navigation(class=mods)
+	nav.navigation(class=mods)
 		.navigation__bg
 		ul.navigation__list
 			if block
