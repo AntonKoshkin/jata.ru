@@ -1,0 +1,56 @@
+.perk
+	padding 175px 15px 0
+	position relative
+	flex-basis 50%
+	text-align center
+	margin-bottom 30px
+	max-width 233px
+	
+	&:before
+		@extend $pseudo-top
+		
+		border 2px solid white
+		border-radius 50%
+	
+	&--one
+		&:before
+			bicon(perk-img-1, 84, 150)
+		
+	&--two
+		&:before
+			bicon(perk-img-2, 84, 150)
+		
+	&--three
+		&:before
+			bicon(perk-img-3, 70, 150)
+		
+	&--four
+		&:before
+			bicon(perk-img-4, 84, 150)
+	
+	&__title
+		@extend $text-18, $fw900
+		
+		color white
+		text-transform uppercase
+		padding-bottom 18px
+		position relative
+		margin-bottom 8px
+		
+		&:before
+			@extend $pseudo-bottom
+			
+			width 200px
+			height 1px
+			background-color blue-darker
+	
+	&__text
+		color white
+	
+	@media (min-width desktop)
+		flex-basis 25%
+		max-width none
+		
+		&__text
+			max-width 290px
+			margin auto

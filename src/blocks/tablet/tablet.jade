@@ -1,0 +1,19 @@
+mixin tablet
+	.tablett
+		.tablett__face
+			img.tablett__img#tablet(
+				src='/img/tablet__placeholder.png'
+				alt=''
+				data-mob-x1='/img/tablet__mobile.png'
+				data-mob-x2='/img/tablet__mobile--@2.png'
+				data-mob-x3='/img/tablet__mobile--@3.png'
+				data-tab-x1='/img/tablet__tablet.png'
+				data-tab-x2='/img/tablet__tablet--@2.png'
+				data-tab-x3='/img/tablet__tablet--@3.png'
+				data-original='')
+			noscript
+				img.tablett__img(
+					src='/img/tablet__desktop.png'
+					alt='')
+			if block
+				block

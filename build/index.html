@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
-		<title>Title of this page</title>
+		<title>Jata</title>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
@@ -18,14 +18,13 @@
 		<meta name="format-detection" content="telephone=no"/><!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--><script>if(/*@cc_on!@*/false){document.documentElement.className+=' ie10';};if(top.VBArray){document.documentElement.className+=' ie11';}</script>
 		<link href="https://fonts.googleapis.com/css?family=Exo+2:400,300,500,600&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css"/>
-		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="css/style.maped.css"/>
 	</head>
 	<body>
 		<header class="header">
 			<div class="header__content">
-				<div class="logo"><a href="/" class="logo__link"><img src="/img/logo.svg" alt="jata.ru" title="Jata.ru" class="logo__img"/></a></div>
-				<button type="button" class="burger"><span class="burger__strip"></span><span class="burger__strip"></span><span class="burger__strip"></span></button>
-				<nav class="navigation">
+				<div class="logo logo--index"><a href="/" class="logo__link"><img src="/img/logo.svg" alt="jata.ru" title="Jata.ru" class="logo__img"/></a></div>
+				<nav class="navigation navigation--index">
 					<div class="navigation__bg"></div>
 					<ul class="navigation__list">
 						<li class="navigation__item"><a href="#" title="О Jata.ru" class="navigation__link">О Jata.ru</a></li>
@@ -33,18 +32,297 @@
 						<li class="navigation__item"><a href="#" title="Контакты" class="navigation__link">Контакты</a></li>
 						<li class="navigation__item"><a href="#" title="Рекламные места" class="navigation__link">Рекламные места</a></li>
 						<li class="navigation__item"><a href="#" title="Блог/новости" class="navigation__link">Блог/новости</a></li>
-						<li class="navigation__item"><a href="#" title="Рекламодателям" class="navigation__link">Рекламодателям</a></li>
-						<li class="navigation__item"><a href="#" title="Владельцам ТС" class="navigation__link">Владельцам ТС</a></li>
-						<li class="navigation__item navigation__item--enter"><a href="#" title="Войти" class="navigation__link">Войти</a></li>
 					</ul>
-				</nav>
+				</nav><a href="/enter.html" class="header__btn header__btn--enter">Войти</a><a href="foradv.html" class="header__btn header__btn--for-advers">Рекламодателям</a>
+				<button type="button" class="burger burger--mb14"><span class="burger__strip"></span><span class="burger__strip"></span><span class="burger__strip"></span></button>
 			</div>
 		</header>
-		<p>Some test paragraph</p>
-		<div class="store-btn store-btn--margin-bottom"><a href="http://play.google.com" target="_blank" class="store-btn__link"><img src="/img/app-store.svg" alt="Загрузите в App Store" class="store-btn__img"/></a>
-		</div><a href="/enter.html">eqweqweqweqweqweqweqweqw</a>
+		<main class="main">
+			<div class="page page--index">
+				<div class="section section--promo">
+					<div class="section__bg"></div>
+					<div class="section__content">
+						<div class="block block--promo"><img src="/img/promo-logo.svg" alt="jata.ru" class="promo-logo promo-logo--index"/>
+							<div class="paragraph paragraph--promo">
+								<p class="paragraph__text">В крупных городах количество маршрутов исчисляется сотнями и даже тысячами. Это открывает безграничные возможности для того, чтобы донести до огромной аудитории информацию о товаре, услуге, компании, магазине.</p>
+							</div>
+						</div>
+						<div class="driver-form">
+							<div class="driver-form__form">
+								<div class="driver-form__header">
+									<h3 class="driver-form__title">Стать водителем</h3>
+								</div>
+								<div class="driver-form__pagination">
+									<div class="driver-form__pag-item active">
+										<div class="driver-form__ball">1</div><span class="driver-form__text">Шаг 1</span>
+									</div>
+									<div class="driver-form__dots"></div>
+									<div class="driver-form__pag-item active">
+										<div class="driver-form__ball">2</div><span class="driver-form__text">Шаг 2</span>
+									</div>
+									<div class="driver-form__dots"></div>
+									<div class="driver-form__pag-item active">
+										<div class="driver-form__ball">3</div><span class="driver-form__text">Шаг 3</span>
+									</div>
+								</div>
+								<div class="driver-form__main">
+									<div data-show="true" id="pageOne" class="driver-form__page driver-form__page--one">
+										<div class="input input--fxb46p">
+											<input data-filled="false" pattern="[A-Za-zА-Яа-яЁё]{1,}" type="text" id="name" name="firstname" class="input__input"/>
+											<label for="name" class="input__label">Имя</label>
+										</div>
+										<div class="input input--fxb46p">
+											<input data-filled="false" pattern="[A-Za-zА-Яа-яЁё]{1,}" type="text" id="lastName" name="lastname" class="input__input"/>
+											<label for="lastName" class="input__label">Фамилия</label>
+										</div>
+										<div class="input input--fxb46p">
+											<input data-filled="false" pattern="[A-Za-z0-9]{1,}@[A-Za-z0-9]{1,}\.[A-Za-z0-9]{1,}" type="email" id="email" name="email" class="input__input"/>
+											<label for="email" class="input__label">E-mail</label>
+										</div>
+										<div class="input input--fxb46p">
+											<input data-filled="false" pattern="^[0-9]+$" type="number" id="phone" name="phone" class="input__input"/>
+											<label for="phone" class="input__label">Телефон</label>
+										</div>
+										<div class="input input--fxb100p">
+											<input data-filled="false" type="text" id="how" class="input__input"/>
+											<label for="how" class="input__label">Как Вы узнали о нас</label>
+										</div>
+									</div>
+									<div data-show="false" id="pageTwo" class="driver-form__page driver-form__page--two">
+										<div class="driver-form__row driver-form__row--select">
+											<p class="driver-form__select-title">Год:</p>
+											<div class="select">
+												<input type="text" readonly="readonly" class="select__input"/>
+												<ul class="select__variants">
+													<li class="select__variant">variant 2004</li>
+													<li class="select__variant">variant 2005</li>
+													<li class="select__variant">variant 2006</li>
+													<li class="select__variant">variant 2007</li>
+													<li class="select__variant">variant 2008</li>
+													<li class="select__variant">variant 2009</li>
+													<li class="select__variant">variant 2010</li>
+													<li class="select__variant">variant 2011</li>
+													<li class="select__variant">variant 2012</li>
+													<li class="select__variant">variant 2013</li>
+													<li class="select__variant">variant 2014</li>
+													<li class="select__variant">variant 2015</li>
+													<li class="select__variant">variant 2016</li>
+												</ul>
+											</div>
+										</div>
+										<div class="driver-form__row driver-form__row--select">
+											<p class="driver-form__select-title">Марка:</p>
+											<div class="select">
+												<input type="text" readonly="readonly" class="select__input"/>
+												<ul class="select__variants">
+													<li class="select__variant">variant 1</li>
+													<li class="select__variant">variant 2</li>
+													<li class="select__variant">variant 3</li>
+													<li class="select__variant">variant 4</li>
+													<li class="select__variant">variant 5</li>
+													<li class="select__variant">variant 6</li>
+													<li class="select__variant">variant 7</li>
+													<li class="select__variant">variant 8</li>
+													<li class="select__variant">variant 9</li>
+													<li class="select__variant">variant 10</li>
+												</ul>
+											</div>
+										</div>
+										<div class="driver-form__row driver-form__row--select">
+											<p class="driver-form__select-title">Модель:</p>
+											<div class="select">
+												<input type="text" readonly="readonly" class="select__input"/>
+												<ul class="select__variants">
+													<li class="select__variant">variant 1</li>
+													<li class="select__variant">variant 2</li>
+													<li class="select__variant">variant 3</li>
+													<li class="select__variant">variant 4</li>
+													<li class="select__variant">variant 5</li>
+													<li class="select__variant">variant 6</li>
+													<li class="select__variant">variant 7</li>
+													<li class="select__variant">variant 8</li>
+													<li class="select__variant">variant 9</li>
+													<li class="select__variant">variant 10</li>
+												</ul>
+											</div>
+										</div>
+										<div class="driver-form__row driver-form__row--select">
+											<p class="driver-form__select-title">Цвет:</p>
+											<div class="select">
+												<input type="text" readonly="readonly" class="select__input"/>
+												<ul class="select__variants">
+													<li class="select__variant">variant 1</li>
+													<li class="select__variant">variant 2</li>
+													<li class="select__variant">variant 3</li>
+													<li class="select__variant">variant 4</li>
+													<li class="select__variant">variant 5</li>
+													<li class="select__variant">variant 6</li>
+													<li class="select__variant">variant 7</li>
+													<li class="select__variant">variant 8</li>
+													<li class="select__variant">variant 9</li>
+													<li class="select__variant">variant 10</li>
+												</ul>
+											</div>
+										</div>
+										<div class="driver-form__row driver-form__row--select">
+											<p class="driver-form__select-title">Состояние:</p>
+											<div class="select">
+												<input type="text" readonly="readonly" class="select__input"/>
+												<ul class="select__variants">
+													<li class="select__variant">variant 1</li>
+													<li class="select__variant">variant 2</li>
+													<li class="select__variant">variant 3</li>
+													<li class="select__variant">variant 4</li>
+													<li class="select__variant">variant 5</li>
+													<li class="select__variant">variant 6</li>
+													<li class="select__variant">variant 7</li>
+													<li class="select__variant">variant 8</li>
+													<li class="select__variant">variant 9</li>
+													<li class="select__variant">variant 10</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div data-show="false" id="pageThree" class="driver-form__page driver-form__page--three">
+										<div class="input input--fxb46p input--small">
+											<input data-filled="false" pattern="^[0-9]+$" type="number" id="avDay" class="input__input"/>
+											<label for="avDay" class="input__label">Ср. пробег за день</label>
+										</div>
+										<div class="input input--fxb46p input--small">
+											<input data-filled="false" pattern="^[0-9]+$" type="number" id="avWeekend" class="input__input"/>
+											<label for="avWeekend" class="input__label">Ср. пробег за выходные</label>
+										</div>
+										<p class="driver-form__com-title">Комментарий</p>
+										<textarea class="driver-form__comment"></textarea>
+									</div>
+								</div>
+								<div class="driver-form__footer">
+									<button id="prevPage" class="driver-form__btn driver-form__btn--prev">Назад</button>
+									<button id="nextPage" class="driver-form__btn driver-form__btn--next">Вперед</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="section section--we-do">
+					<div class="section__content">
+						<div class="block block--we-do-left">
+							<h2 class="title title--we-do">Что мы делаем</h2>
+							<div class="paragraph paragraph--we-do">
+								<p class="paragraph__text">В крупных городах количество маршрутов исчисляется сотнями и даже тысячами. Это открывает безграничные возможности для того, чтобы донести до огромной аудитории информацию о товаре, услуге, компании, магазине.</p>
+							</div>
+						</div>
+						<div class="block block--we-do-right">
+							<div class="wd-slider">
+								<div class="wd-slider__slides">
+									<div class="wd-slider__slide wd-slider__slide--one"><img src="/img/wd-slider__slide--1.png" alt="" class="wd-slider__car"/></div>
+									<div class="wd-slider__slide wd-slider__slide--two"><img src="/img/wd-slider__slide--2.png" alt="" class="wd-slider__car"/></div>
+								</div>
+								<div class="wd-slider__cards">
+									<div class="wd-slider__card-wrapper">
+										<div class="wd-slider__card">
+											<div class="wd-slider__face"><img src="/img/wd-slider__face--1.jpg" alt="" class="wd-slider__img"/></div>
+											<div class="wd-slider__title">
+												<p class="wd-slider__text">Алексей Иванов<br/>25 лет, Менеджер<br/>Toyota Corolla 2010 г.<br/>300 км/день<br/>
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="wd-slider__card-wrapper">
+										<div class="wd-slider__card">
+											<div class="wd-slider__face"><img src="/img/wd-slider__face--2.jpg" alt="" class="wd-slider__img"/></div>
+											<div class="wd-slider__title">
+												<p class="wd-slider__text">ИП, Олег Гончаров<br/>37 лет, Водитель автобуса<br/>Маршрут №373<br/>Автобус ЛИАЗ, 1000 км/месяц<br/>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="wd-slider__pagination">
+									<button type="button" class="wd-slider__pag wd-slider__pag--active"></button>
+									<button type="button" class="wd-slider__pag"></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="section section--how-works">
+					<div class="section__content">
+						<h2 class="title title--how-works">Как это работает</h2>
+						<div class="perk perk--one">
+							<p class="perk__title">Зарегистрируйтесь в системе</p>
+							<p class="perk__text">Заполните информацию о своём ТС и маршрутах передвижения.</p>
+						</div>
+						<div class="perk perk--two">
+							<p class="perk__title">Выбирайте лучших рекламодателей</p>
+							<p class="perk__text">Обклейте свою машину по своему вкусу.</p>
+						</div>
+						<div class="perk perk--three">
+							<p class="perk__title">Рулите и получайте деньги</p>
+							<p class="perk__text">Деньги из системы можно вывести в любое время на банковскую карту.</p>
+						</div>
+						<div class="perk perk--four">
+							<p class="perk__title">Никаких неудобств</p>
+							<p class="perk__text">Мы сами демонтируем наклейки в конце рекламной кампании.</p>
+						</div>
+					</div>
+				</div>
+				<div class="section section--earn">
+					<div class="section__content">
+						<h2 class="title title--earn">Зарабатывай</h2>
+						<div class="paragraph paragraph--fz40 paragraph--fw100">
+							<p class="paragraph__text">от 5 000 - 20 000 руб</p>
+						</div>
+						<div class="paragraph paragraph--fz24 paragraph--mb65">
+							<p class="paragraph__text">За рекламную кампанию</p>
+						</div>
+						<div class="paragraph paragraph--cr-fz30-ttu-mb10">
+							<p class="paragraph__text">Требования:</p>
+						</div>
+						<div class="paragraph paragraph--with-checker">
+							<p class="paragraph__text">Возраст от 21 года</p>
+						</div>
+						<div class="paragraph paragraph--with-checker">
+							<p class="paragraph__text">Модель машины от 2005г.</p>
+						</div>
+						<div class="paragraph paragraph--with-checker">
+							<p class="paragraph__text">от 800 км/месяц</p>
+						</div>
+						<div class="paragraph paragraph--with-checker">
+							<p class="paragraph__text">Наличие телефона с системой андроид</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
 		<footer class="footer">
 			<div class="footer__content">
+				<nav class="foot-nav mods">
+					<ul class="foot-nav__list">
+						<div class="foot-nav__half">
+							<li class="foot-nav__item"><a href="#" class="foot-nav__link">О компании</a></li>
+							<li class="foot-nav__item"><a href="#" class="foot-nav__link">Правила пользования</a></li>
+							<li class="foot-nav__item"><a href="#" class="foot-nav__link">Защита данных</a></li>
+							<li class="foot-nav__item"><a href="#" class="foot-nav__link">Вопросы и ответы</a></li>
+						</div>
+						<div class="foot-nav__half">
+							<li class="foot-nav__item"><a href="#" class="foot-nav__link">Контакты</a></li>
+							<li class="foot-nav__item"><a href="#" class="foot-nav__link">О нас</a></li>
+							<li class="foot-nav__item"><a href="#" class="foot-nav__link">Команда</a></li>
+							<li class="foot-nav__item"><a href="#" class="foot-nav__link">Пресса о нас</a></li>
+						</div>
+					</ul>
+				</nav>
+				<div class="footer__info">
+					<div class="address">
+						<address class="address__address"><a href="https://goo.gl/XVmE2b" title="Наш адрес" class="address__link">г. Санкт-Петербург, Московский&nbsp;проспект, 97а</a></address><span title="Часы работы" class="address__work-hours">(10:00-22:00)</span>
+					</div>
+					<div class="phone-number"><a href="tel:+78003757575" class="phone-number__number">8 (800) <span class="phone-number__number--fat">375-75-75</span></a></div>
+					<div class="copy">
+						<p class="copy__text">&copy; 2016 Jata All Rights Reservet
+						</p>
+					</div>
+				</div>
 			</div>
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>

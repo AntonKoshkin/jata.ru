@@ -1,56 +1,37 @@
 .input
-	@extend $font-reset
-	
 	position relative
+	margin 18px 0
 	
-	&:before
-		@extend $pseudo-right
-		
-		right 14px
-
-	&[data-status='ok']
-		&:before
-			bicon(round-galka-green, 16)
-
-	&[data-status='error']
-		&:before
-			bicon(round-cross-red, 16)
+	&--fxb46p
+		flex-basis 46%
 	
-	&--mb10
-		margin-bottom 10px
+	&--fxb100p
+		flex-basis 100%
 	
-	&--mb20
-		margin-bottom 20px
-
 	&__input
-		@extend $main-text
-		
 		width 100%
-		background-color white
-		font-weight light
-		padding 13px 35px 13px 15px
 		border none
-		border-left 1px solid gray-mid-dark
-		border-right 1px solid gray-mid-dark
-		color blue-dark
+		border-bottom 2px solid gray-border
+		position relative
+		background-color transparent
+	
+	&__label
+		@extend $text-14, $fw500
+		slow all
 		
-		+placeholder()
-			font-weight light
-			text-transform lowercase
-			color gray-light
+		transform-origin left center
+		color gray-border
+		position absolute
+		top 0
+		left 0
 	
-	&--top &__input
-		border-radius 10px 10px 0 0
-		border-top 1px solid gray-mid-dark
-		border-bottom 1px solid gray-mid-dark
+	&__input:focus + &__label
+	&__input[data-filled='true'] + &__label
+		transform translateY(-16px) scale(.75)
 	
-	&--mid &__input
-	&--bot &__input
-		border-bottom 1px solid gray-mid-dark
+
+	&__input[data-filled='true']:valid + &__label
+		color blue
 	
-	&--bot &__input
-		border-radius 0 0 10px 10px
-	
-	&--single &__input
-		border-radius 10px
-		border 1px solid gray-mid-dark
+	&__input[data-filled='true']:invalid + &__label
+		color red

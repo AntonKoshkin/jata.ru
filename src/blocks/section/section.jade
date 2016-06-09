@@ -1,0 +1,20 @@
+mixin section(withBg)
+	if attributes.mods
+		if typeof attributes.mods === 'string'
+			-var mods = 'section--' + attributes.mods
+		else
+			-var mods = []
+			each mod, i in attributes.mods
+				-mods[i] = 'section--' + mod
+
+	if withBg === true
+		.section(class=mods)
+			.section__bg
+			.section__content
+				if block
+					block
+	else
+		.section(class=mods)
+			.section__content
+				if block
+					block

@@ -1,0 +1,11 @@
+mixin phoneNumber(correct, notFat, fat)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'phone-number--' + mod
+
+	.phone-number(class=mods)
+		a.phone-number__number(
+			href='tel:'+correct)=notFat
+			| 
+			span.phone-number__number--fat!=fat

@@ -6,6 +6,7 @@ mixin emptyBtn(text)
 
 	.empty-btn(class=mods)
 		button.empty-btn__btn(
+			ng-click=attributes["ng-click"]
 			data-next-block=attributes['data-next-block']
 			data-link=attributes['data-link']
 			type='button')=text

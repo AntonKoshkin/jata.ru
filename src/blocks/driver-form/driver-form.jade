@@ -1,0 +1,77 @@
+mixin driverForm
+	.driver-form
+		.driver-form__form
+			if block
+				block
+
+mixin dfHeader(title)
+	.driver-form__header
+		h3.driver-form__title=title
+
+mixin dfPagination
+	.driver-form__pagination
+		if block
+			block
+
+mixin dfPagItem(step)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'driver-form__pag-item--' + mod
+
+	.driver-form__pag-item(class='active')
+		.driver-form__ball=step
+		span.driver-form__text
+			| Шаг 
+			=step
+
+mixin dfMain
+	.driver-form__main
+		if block
+			block
+
+mixin dfPage
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'driver-form__page--' + mod
+
+	.driver-form__page(
+		data-show=attributes['data-show']
+		id=attributes.id
+		class=mods
+		ng-show=attributes['ng-show'])
+		if block
+			block
+
+mixin dfFooter
+	.driver-form__footer
+		if block
+			block
+
+mixin dfBtn(name)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'driver-form__btn--' + mod
+
+	button.driver-form__btn(
+		id=attributes.id
+		class=mods
+		ng-click=attributes['ng-click'])=name
+
+mixin dfDots
+	.driver-form__dots
+
+mixin dfRow
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'driver-form__row--' + mod
+
+	.driver-form__row(class=mods)
+		if block
+			block
+
+mixin dfTitle(text)
+	p.driver-form__select-title=text

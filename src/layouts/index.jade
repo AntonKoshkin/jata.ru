@@ -1,13 +1,165 @@
 extends ../blocks/template/template
 
+block includes
+	include ../blocks/page/page
+
+	include ../blocks/block/block
+	include ../blocks/driver-form/driver-form
+	include ../blocks/input/input
+	include ../blocks/select/select
+	include ../blocks/paragraph/paragraph
+	include ../blocks/perk/perk
+	include ../blocks/promo-logo/promo-logo
+	include ../blocks/section/section
+	include ../blocks/title/title
+	include ../blocks/wd-slider/wd-slider
+
 block page_id
-	-var page_id = 'index'
+	-var pageId = 'index'
 
 block title
-	title Title of this page
+	title Jata
 
 block content
-	//- content here
-	p Some test paragraph
-	+storeBtn(apple)(mods=['margin-bottom'])
-	a(href='/enter.html') eqweqweqweqweqweqweqweqw
+	+page(mods=['index'])
+		+section(true)(mods=['promo'])
+			+block(mods=['promo'])
+				+promoLogo('/img/promo-logo.svg')(mods=['index'])
+				+paragraph('В крупных городах количество маршрутов исчисляется сотнями и даже тысячами. Это открывает безграничные возможности для того, чтобы донести до огромной аудитории информацию о товаре, услуге, компании, магазине.')(mods=['promo'])
+			+driverForm
+				+dfHeader('Стать водителем')
+				+dfPagination
+					+dfPagItem(1)
+					+dfDots
+					+dfPagItem(2)
+					+dfDots
+					+dfPagItem(3)
+				+dfMain
+					+dfPage(
+						id='pageOne'
+						data-show='true'
+						mods=['one'])
+						+input('text', 'Имя')(
+							data-filled='false'
+							mods=['fxb46p']
+							id='name'
+							name='firstname'
+							pattern='[A-Za-zА-Яа-яЁё]{1,}')
+						+input('text', 'Фамилия')(
+							data-filled='false'
+							mods=['fxb46p']
+							id='lastName'
+							name='lastname'
+							pattern='[A-Za-zА-Яа-яЁё]{1,}')
+						+input('email', 'E-mail')(
+							pattern='[A-Za-z0-9]{1,}@[A-Za-z0-9]{1,}\\.[A-Za-z0-9]{1,}'
+							data-filled='false'
+							mods=['fxb46p']
+							id='email'
+							name='email')
+						+input('number', 'Телефон')(
+							pattern='^[0-9]+$'
+							data-filled='false'
+							mods=['fxb46p']
+							id='phone'
+							name='phone')
+						+input('text', 'Как Вы узнали о нас')(
+							data-filled='false'
+							mods=['fxb100p']
+							id='how')
+					+dfPage(
+						id='pageTwo'
+						data-show='false'
+						mods=['two'])
+						+dfRow(mods=['select'])
+							+dfTitle('Год:')
+							+select
+								-var year = 2004
+								while year <= 2016
+									+isVariant('variant ' + year)
+									-year++
+						+dfRow(mods=['select'])
+							+dfTitle('Марка:')
+							+select
+								-var year = 1
+								while year <= 10
+									+isVariant('variant ' + year)
+									-year++
+						+dfRow(mods=['select'])
+							+dfTitle('Модель:')
+							+select
+								-var year = 1
+								while year <= 10
+									+isVariant('variant ' + year)
+									-year++
+						+dfRow(mods=['select'])
+							+dfTitle('Цвет:')
+							+select
+								-var year = 1
+								while year <= 10
+									+isVariant('variant ' + year)
+									-year++
+
+						+dfRow(mods=['select'])
+							+dfTitle('Состояние:')
+							+select
+								-var year = 1
+								while year <= 10
+									+isVariant('variant ' + year)
+									-year++
+					+dfPage(
+						id='pageThree'
+						data-show='false'
+						mods=['three'])
+						+input('number', 'Ср. пробег за день')(
+							pattern='^[0-9]+$'
+							data-filled='false'
+							mods=['fxb46p', 'small']
+							id='avDay')
+						+input('number', 'Ср. пробег за выходные')(
+							pattern='^[0-9]+$'
+							data-filled='false'
+							mods=['fxb46p', 'small']
+							id='avWeekend')
+						p.driver-form__com-title Комментарий
+						textarea.driver-form__comment
+				+dfFooter
+					+dfBtn('Назад')(
+						id='prevPage'
+						mods=['prev'])
+					+dfBtn('Вперед')(
+						id='nextPage'
+						mods=['next'])
+
+		+section(mods=['we-do'])
+			+block(mods=['we-do-left'])
+				+title(2, 'Что мы делаем')(mods=['we-do'])
+				+paragraph('В крупных городах количество маршрутов исчисляется сотнями и даже тысячами. Это открывает безграничные возможности для того, чтобы донести до огромной аудитории информацию о товаре, услуге, компании, магазине.')(mods=['we-do'])
+			+block(mods=['we-do-right'])
+				+wdSlider
+					+wdsSlides
+						+wdsSlide('/img/wd-slider__slide--1.png')(mods=['one'])
+						+wdsSlide('/img/wd-slider__slide--2.png')(mods=['two'])
+					+wdsCards
+						+wdsCard('/img/wd-slider__face--1.jpg', ['Алексей Иванов', '25 лет, Менеджер', 'Toyota Corolla 2010 г.', '300 км/день'])
+						+wdsCard('/img/wd-slider__face--2.jpg', ['ИП, Олег Гончаров', '37 лет, Водитель автобуса', 'Маршрут №373', 'Автобус ЛИАЗ, 1000 км/месяц'])
+					+wdsPagination
+						+wdsPag(mods=['active'])
+						+wdsPag
+
+		+section(mods=['how-works'])
+			+title(2, 'Как это работает')(mods=['how-works'])
+			+perk('Зарегистрируйтесь в системе', 'Заполните информацию о своём ТС и маршрутах передвижения.')(mods=['one'])
+			+perk('Выбирайте лучших рекламодателей', 'Обклейте свою машину по своему вкусу.')(mods=['two'])
+			+perk('Рулите и получайте деньги', 'Деньги из системы можно вывести в любое время на банковскую карту.')(mods=['three'])
+			+perk('Никаких неудобств', 'Мы сами демонтируем наклейки в конце рекламной кампании.')(mods=['four'])
+
+		+section(mods=['earn'])
+			+title(2, 'Зарабатывай')(mods=['earn'])
+			+paragraph('от 5 000 - 20 000 руб')(mods=['fz40', 'fw100'])
+			+paragraph('За рекламную кампанию')(mods=['fz24', 'mb65'])
+			+paragraph('Требования:')(mods=['cr-fz30-ttu-mb10'])
+			+paragraph('Возраст от 21 года')(mods=['with-checker'])
+			+paragraph('Модель машины от 2005г.')(mods=['with-checker'])
+			+paragraph('от 800 км/месяц')(mods=['with-checker'])
+			+paragraph('Наличие телефона с системой андроид')(mods=['with-checker'])

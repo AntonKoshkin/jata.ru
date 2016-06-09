@@ -1,17 +1,19 @@
-// загрузка спрайта в local storage
-// ../blocks/sprites/svgCash.js
+jQuery(document).ready(function($) {
+	// бургер
+	//= ../blocks/burger/burger.js
+	
+	// убогие селекты
+	//= ../blocks/select/select.js
 
-// бургер
-//= ../blocks/burger/burger.js
+	// слайдер ви-ду
+	//= ../blocks/wd-slider/wd-slider.js
 
-// регистрация
-//= ../blocks/registration/registration.js
+	// driver-form
+	//= ../blocks/driver-form/driver-form.js
 
-// выпадающие варианты
-//= ../blocks/variants/variants.js
+	// input
+	//= ../blocks/input/input.js
 
-// линковка
-//= ../blocks/template/links.js
-
-// вход
-//= ../blocks/enter/enter.js
+	// tablet
+	//= ../blocks/tablet/tablet.js
+});

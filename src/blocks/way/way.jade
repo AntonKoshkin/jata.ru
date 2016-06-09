@@ -1,0 +1,17 @@
+mixin way(side)
+	if attributes.mods
+		if typeof attributes.mods === 'string'
+			-var mods = 'way--' + attributes.mods
+		else
+			-var mods = []
+			each mod, i in attributes.mods
+				-mods[i] = 'way--' + mod
+
+	if side === 'ltr'
+		.way.way--lb(class=mods)
+			.way__content
+				if block
+					block
+			.way__strips
+				.way__strip.way__strip--tr
+				.way__strip.way__strip--lb

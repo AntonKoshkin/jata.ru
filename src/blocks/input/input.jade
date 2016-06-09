@@ -1,16 +1,16 @@
-//- styled input
-
-mixin input(type)
+mixin input(type, title)
 	if attributes.mods
 		-var mods = []
 		each mod, i in attributes.mods
 			-mods[i] = 'input--' + mod
 
-	.input(
-		data-status=attributes['data-status']
-		class=mods)
+	.input(class=mods)
 		input.input__input(
 			data-mask=attributes['data-mask']
+			data-filled=attributes['data-filled']
+			pattern=attributes.pattern
+			min=attributes.min
+			max=attributes.max
 			type=type
 			id=attributes.id
 			placeholder=attributes.placeholder
@@ -19,5 +19,6 @@ mixin input(type)
 			autocomplete=attributes.autocomplete
 			name=attributes.name
 			maxlength=attributes.maxlength)
+		label.input__label(for=attributes.id)=title
 		if block
 			block

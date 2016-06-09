@@ -5,7 +5,8 @@ mixin mainBtn(text)
 			-mods[i] = 'main-btn--' + mod
 	
 	.main-btn(class=mods)
-		button(
+		button.main-btn__btn(
+			ng-click=attributes['ng-click']
 			data-next-block=attributes['data-next-block']
 			data-vared=attributes['data-vars']
-			type='button').main-btn__btn!=text
+			type='button')!=text

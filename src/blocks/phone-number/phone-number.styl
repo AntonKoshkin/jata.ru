@@ -1,0 +1,20 @@
+.phone-number
+	text-align right
+	
+	&--mb15
+		margin-bottom 15px
+	
+	&__number
+		@extend $text-22, $fw300
+
+		display inline-block
+		color white
+		padding-left 22px
+		position relative
+
+		&:before
+			@extend $pseudo-left
+			bicon(handset-phone-red, 16)
+	
+		&--fat
+			font-weight extrabold

@@ -1,0 +1,158 @@
+.driver-form
+	background-image url('/img/driver-form__bg.png')
+	padding 30px 20px
+	
+	&__form
+		border-radius 3px
+		border 5px solid rgba(white, .3)
+	
+	&__header
+		background-color blue
+		border-radius 3px 3px 0 0
+		overflow hidden
+
+	&__title
+		@extend $text-28, $fw900
+		
+		text-transform uppercase
+		color white
+		text-align center
+		padding 12px 0
+	
+	&__pagination
+		display flex
+		justify-content space-between
+		padding 30px 55px
+		position relative
+		background-color white
+		
+		&:before
+			@extend $pseudo, $abs
+			
+			height 1px
+			width calc(100% - 20px)
+			left 10px
+			bottom 0
+			background-color gray-lighter
+	
+	&__pag-item
+		text-align center
+	
+	&__ball
+		@extend $text-20
+		ballBtn(false)
+		
+		color white
+		display block
+		margin-bottom 5px
+		line-height 50px
+		cursor default
+		
+	&__text
+		@extend $text-18, $fw500
+		
+	&__dots
+		bicon(round-dot-gray)
+		
+		flex-grow 1
+		background-size 6px 4px
+		background-repeat space no-repeat
+		background-position center
+		height 50px
+		margin-left 5px
+		margin-right 5px
+	
+	&__btn
+		@extend $font-reset
+		ballBtn()
+		
+		color white
+		display block
+		position relative
+		
+		&:before
+			@extend $pseudo-center-old
+			bicon(down-arrow-white, 24)
+		
+		&:active
+			&:before
+				top 1px
+				left 1px
+
+		&--prev
+			margin-right 30px
+			
+			&:before
+				transform rotate(90deg)
+		
+		&--next
+			&:before
+				transform rotate(-90deg)
+	
+	&__main
+		background-color white
+	
+	&__page
+		flex-wrap wrap
+		justify-content space-between
+		display none
+		min-height 235px
+		
+		&--one
+			padding 35px 35px 22px
+		
+		&--two
+			padding 20px
+		
+		&--three
+			padding 25px 35px
+		
+		&[data-show='true']
+			display flex
+	
+	&__row
+		width 100%
+		
+		&--select
+			display flex
+			justify-content flex-end
+			margin-bottom 10px
+			padding-right 75px
+			align-items center
+	
+	&__select-title
+		@extend $text-18, $fw500
+		
+		margin-right 5px
+	
+	&__com-title
+		@extend $text-14, $fw500
+		
+		color gray-border
+		width 100%
+		margin-bottom 5px
+	
+	&__comment
+		width 100%
+		border 2px solid gray-border
+		height 90px
+		resize none
+		padding 5px
+
+	&__footer
+		background-color white
+		display flex
+		justify-content center
+		padding-bottom 40px
+		border-radius 0 0 3px 3px
+	
+	@media (min-width tablet)
+		width 430px
+		background none
+		padding 0
+		
+		&__form
+			padding 5px
+			border none
+			background-color rgba(white, .25)
+		

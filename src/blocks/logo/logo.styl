@@ -1,8 +1,24 @@
 .logo
 	@extend $font-reset
 	
+	&--index
+		flex-basis 100%
+		flex-shrink 1
+	
 	&__href
 		display inline-block
 	
 	&__img
 		height 68px
+		width auto
+	
+	&--index &__img
+		height 55px
+	
+	@media (min-width tablet)
+		&--index
+			flex-basis auto
+
+	@media (min-width 1920px)
+		&--index	&__img
+			height 68px

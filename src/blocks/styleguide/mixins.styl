@@ -28,3 +28,20 @@ slow(prop)
 size(x)
 	width x
 	height @width
+
+ballBtn(no=0)
+	width 50px
+	height @width
+	background-color blue
+	border-radius 50%
+	box-shadow inset -2px -2px 5px rgba(black, .25)
+	transition background-color .3s
+	
+	if no != false
+		@extend $btn-reset
+		
+		&:hover
+			background-color lightness(blue, lightness(blue) + 5%)
+		
+		&:active
+			box-shadow inset 2px 2px 5px rgba(black, .25)

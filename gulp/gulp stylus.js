@@ -48,9 +48,14 @@ module.exports = function() {
 				// cssLint({'extends':'src/'}),
 			]))
 			.on('error', notify.onError())
+			.pipe(gulp
+				.dest(config.pathTo.build.stylus))
 			.pipe(gulpIf(
 				config.isDev,
-				maps.write('.'),
+				combine(
+					rename({suffix: '.maped'}),
+					maps.write('.')
+				),
 				postCss([
 					cssNano(),
 					doiuse({browsers: 'last 2 versions'})

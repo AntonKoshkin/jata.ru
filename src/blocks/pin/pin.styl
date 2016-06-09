@@ -1,0 +1,120 @@
+.pin
+	position absolute
+
+	&--first
+		top 90px
+		left 125px
+
+	&--second
+		top 130px
+		left 170px
+
+	&--third
+		top 80px
+		left 250px
+
+	&__pointer
+		slow all
+		
+		size 24px
+		position relative
+		cursor pointer
+		
+		&:after
+			@extend $pseudo-center
+			bicon(round-pointer-blue, 24)
+		
+		&:hover
+			transform translateY(-5px)
+		
+	&__ring
+		@extend $abs
+		slow all
+		
+		width 40px
+		height 15px
+		border 3px solid blue
+		bottom -8px
+		left -8px
+		border-radius 50%
+		animation pulsate 3s ease-out infinite
+		opacity 0
+
+	&__card
+		slow all
+		
+		position absolute
+		bottom calc(100% + 15px)
+		background-color white
+		width 185px
+		text-align left
+		border 1px solid blue
+		border-radius 2px
+		left -100px
+		right -100px
+		margin auto
+		transform translateY(20%)
+		opacity 0
+		visibility hidden
+		cursor pointer
+		
+		&:after
+			content ''
+			position absolute
+			bottom -6px
+			left 87px
+			border-bottom 5px solid blue
+			border-right 5px solid blue-shadow
+			border-top 5px solid transparent
+			border-left 5px solid transparent
+			transform rotate(45deg)
+	
+	&--show &__card
+	&__card:hover
+	&__pointer:hover + &__card
+		opacity 1
+		visibility visible
+		transform translateY(0)
+	
+	&__title
+		@extend $text-14
+		
+		padding 4px 8px
+		background-color gray-lightest
+	
+	&__texts
+		padding-left 9px
+		padding-top 2px
+		padding-bottom 5px
+	
+	&__text
+		@extend $text-12
+		
+		color gray
+	
+	&__face
+		position absolute
+		width 60px
+		border-radius 50%
+		border 1px solid blue
+		overflow hidden
+		top 50%
+		right 5px
+		transform translateY(-50%)
+	
+	&__img
+		width 100%
+		border-radius 50%
+	
+	@media (min-width tablet)
+		&--first
+			top 195px
+			left 230px
+
+		&--second
+			top 270px
+			left 340px
+
+		&--third
+			top 175px
+			left 490px

@@ -1,0 +1,136 @@
+.wd-slider
+	width mobile - 50
+	margin auto
+	overflow hidden
+	position relative
+	
+	&__slides
+		@extend $font-reset
+		
+		width 300%
+		display flex
+		align-items center
+		transition transform .3s ease-out
+		justify-content space-between
+		transform translateX(0)
+		margin-bottom 93px
+		
+	&--two &__slides
+		transform translateX(-66.66%)
+	
+	&__slide
+		width 33.33%
+		text-align center
+
+	&__car
+		width 100%
+	
+	&__slide--one &__car
+		width @width
+	
+	&__slide--two &__car
+		width 336px
+	
+	&__cards
+		width 300%
+		display flex
+		align-items center
+		justify-content space-between
+		transform translateX(-66.66%)
+		transition transform .3s ease-out
+		position absolute
+		bottom 35px
+		left 0
+		
+	&--two &__cards
+		transform translateX(0)
+	
+	&__card-wrapper
+		width 33.33%
+
+	&__card
+		width 390px
+		height 110px
+		position relative
+		margin 0 auto
+		display flex
+		align-items stretch
+		background-color rgba(white, .98)
+		border 5px solid gray-lighter
+		border-radius (@height/2) 5px 5px (@height/2)
+	
+	&__face
+		width 110px
+		border-radius 50%
+		overflow hidden
+		position absolute
+		top -5px
+		left -5px
+	
+	&__img
+		width 100%
+		border-radius 50%
+	
+	&__title
+		padding-left 135px
+		display flex
+		align-items center
+	
+	&__text
+		@extend $fw500
+		
+		color blue-dark
+		line-height 1.25em
+	
+	&__pagination
+		display flex
+		justify-content center
+	
+	&__pag
+		@extend $btn-reset
+		
+		size 16px
+		border 2px solid blue
+		border-radius 50%
+		background-color white
+
+		&:not(:last-child)
+			margin-right 5px
+
+		&--active
+			background-color blue
+	
+	@media (min-width tablet)
+		width 480px
+		
+		&__slides
+			margin-bottom 115px
+		
+		&__slide--one &__car
+			width @width
+			
+		&__slide--two &__car
+			width 360px
+		
+		&__card
+			height 140px
+			width 416px
+			border-radius (@height/2) 5px 5px (@height/2)
+
+		&__face
+			width 140px
+		
+		&__title
+			padding-left 160px
+	
+	@media (min-width desktop)
+		width 660px
+		
+		&__slides
+			margin-bottom 110px
+		
+		&__slide--one &__car
+			width @width
+			
+		&__slide--two &__car
+			width 490px

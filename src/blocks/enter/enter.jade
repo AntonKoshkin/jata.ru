@@ -4,7 +4,8 @@ mixin enter
 		each mod, i in attributes.mods
 			-mods[i] = 'enter--' + mod
 
-	.enter(class=mods)
+	.enter(class=mods
+		ng-if=attributes['ng-if'])
 		if block
 			block
 
@@ -16,7 +17,8 @@ mixin enterPage
 
 	.enter__page(
 		class=mods
-		id=attributes.id)
+		id=attributes.id
+		ng-show=attributes['ng-show'])
 		if block
 			block
 

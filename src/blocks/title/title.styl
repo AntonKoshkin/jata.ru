@@ -1,0 +1,60 @@
+.title
+		
+	&--we-do
+		@extend $text-40, $fw500
+		
+		color blue-dark
+		margin-bottom 15px
+	
+	&--how-works
+		@extend $text-30, $fw900
+		
+		color white
+		text-align center
+		text-transform uppercase
+		margin-bottom 30px
+		width 100%
+	
+	&--earn
+		@extend $text-40, $fw500
+		
+		color red
+	
+	&--jataru
+		@extend $text-60, $fw700
+	
+	&--red
+		color red
+	
+	&--jataru-sub
+		@extend $fw500, $main-text
+		
+		margin-bottom 50px
+	
+	&--way
+		@extend $text-28, $fw500
+		
+		margin-bottom 3px
+	
+	@media (min-width tablet)
+		&--jataru
+			font-size 4.375rem
+
+		&--jataru-sub
+			margin-bottom 90px
+			font-size 1.25rem
+		
+		&--way
+			font-size 2rem
+	
+	@media (min-width desktop)
+		&--jataru
+			font-size 5.625rem
+
+		&--jataru-sub
+			margin-bottom 130px
+			font-size 1.5rem
+			transform translate(3px, -75%)
+		
+		&--way
+			font-size 2.25rem

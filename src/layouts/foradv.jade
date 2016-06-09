@@ -1,0 +1,50 @@
+extends ../blocks/template/template
+
+block includes
+	include ../blocks/page/page
+
+	include ../blocks/block/block
+	include ../blocks/cars/cars
+	//- include ../blocks/driver-form/driver-form
+	//- include ../blocks/index-input/index-input
+	//- include ../blocks/index-select/index-select
+	include ../blocks/paragraph/paragraph
+	include ../blocks/pin/pin
+	//- include ../blocks/perk/perk
+	include ../blocks/promo-logo/promo-logo
+	include ../blocks/section/section
+	include ../blocks/tablet/tablet
+	include ../blocks/title/title
+	include ../blocks/way/way
+	//- include ../blocks/wd-slider/wd-slider
+
+block page_id
+	-var pageId = 'foradv'
+
+block title
+	title Jata
+
+block content
+	+page(mods='index-adv')
+		+section(mods=['promo-adv'])
+			+promoLogo('/img/promo-logo--full.svg')(mods=['promo-adv'])
+		
+		+section(mods=['jataru'])
+			+title(1, 'jata')(mods=['jataru'])
+				+tSpan('.ru')(mods=['red'])
+			+title(2, 'Рекламное агенство')(mods=['jataru-sub'])
+			+block(mods=['cars'])
+				+cars('/img/cars.svg')
+				+paragraph('Тысячи жителей СПб ежедневно ждут автобусов, стоят в пробках или просто гуляют по улицам города. Бигборды и ситилайты, яркие вывески кафе и магазинов давно не привлекают особого внимания горожан и гостей Северной столицы. А яркий транспорт, обклеенный вашей рекламой, запомнится прохожим надолго…')(
+					mods='jataru')
+
+		+section(mods='way')
+			+way('ltr')(mods='tablet')
+				+block(mods='way-tablet')
+					+title(2, 'Как это работает')(mods=['way'])
+					+paragraph('JATA.RU - уникальный проект, площадка, позволяющая напрямую взаимодействовать между владельцами рекламного места и рекламодателем. Таким образом Вы можете заработать на своем рекламном месте либо, если Вы рекламодатель, найти по минимальным ценам необходимое рекламное место, минуя рекламные агентства.')(mods=['way'])
+
+				+tablet
+					+pin('Алексей, 33', 'Менеджер', 'Shkoda Octavia', '2007 г., 300 км/день', '/img/pin.png')(mods=['first', 'show'])
+					+pin('Алексей, 33', 'Менеджер', 'Shkoda Octavia', '2007 г., 300 км/день', '/img/pin.png')(mods='second')
+					+pin('Алексей, 33', 'Менеджер', 'Shkoda Octavia', '2007 г., 300 км/день', '/img/pin.png')(mods='third')

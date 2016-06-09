@@ -1,8 +1,11 @@
 mixin page
 	if attributes.mods
-		-var mods = []
-		each mod, i in attributes.mods
-			-mods[i] = 'page--' + mod
+		if typeof attributes.mods === 'string'
+			-var mods = 'page--' + attributes.mods
+		else
+			-var mods = []
+			each mod, i in attributes.mods
+				-mods[i] = 'page--' + mod
 
 	.page(class=mods)
 		if block

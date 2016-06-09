@@ -1,0 +1,13 @@
+mixin address(text, link, time)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'address--' + mod
+
+	.address(class=mods)
+		address.address__address
+			a.address__link(
+				href=link
+				title='Наш адрес')!=text
+		span.address__work-hours(
+			title='Часы работы')!=time

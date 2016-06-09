@@ -1,0 +1,22 @@
+mixin paragraph(strings)
+	if attributes.mods
+		if typeof attributes.mods === 'string'
+			-var mods = 'paragraph--' + attributes.mods
+		else
+			-var mods = []
+			each mod, i in attributes.mods
+				-mods[i] = 'paragraph--' + mod
+
+	.paragraph(class=mods)
+		if typeof strings === 'string'
+			p.paragraph__text=strings
+		else
+			-var i = 0
+			each string in strings
+				if typeof string === 'string'
+					p.paragraph__text=string
+				else
+					-var mods = []
+					each mod, i in string[1]
+						-mods[i] = 'paragraph__text--' + mod
+					p.paragraph__text(class=mods)=string[0]

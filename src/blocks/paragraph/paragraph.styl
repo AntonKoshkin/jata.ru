@@ -1,0 +1,89 @@
+.paragraph
+	&--promo
+		display none
+	
+	&--mb65
+		margin-bottom 65px
+	
+	&--cr-fz30-ttu-mb10
+		margin-bottom 10px
+	
+	&--with-checker
+		display flex
+		align-items center
+		justify-content center
+		
+		&:not(:last-child)
+			margin-bottom 10px
+		
+		&:after
+			bicon(square-galka-red, 22)
+			
+			display inline-block
+			content ''
+			margin-left 10px
+	
+	&--cr &__text
+		color red
+	
+	&--fz24 &__text
+		@extend $text-24
+
+	&--fz30 &__text
+		@extend $text-30
+
+	&--fz40 &__text
+		@extend $text-40
+	
+	&--fw100 &__text
+		@extend $fw100
+	
+	&--fw500 &__text
+		@extend $fw500
+	
+	&--ttu &__text
+		text-transform uppercase
+	
+	&--with-checker &__text
+		@extend $text-20
+	
+	&--cr-fz30-ttu-mb10 &__text
+		@extend $text-30
+
+		color red
+		text-transform uppercase
+	
+	&--promo &__text
+		@extend $text-18, $fw500
+		
+		color white
+		text-align justify
+	
+	&--way &__text
+		@extend $fw100
+
+	@media (min-width tablet)
+		&--with-checker
+			justify-content flex-end
+		
+		&--jataru
+			width 820px
+			margin auto
+		
+		&--cr-fz30-ttu-mb10 &__text
+			text-align right
+		
+		&--jataru &__text
+			@extend $text-18
+			
+			line-height 1.9em
+		
+		&--way &__text
+			line-height 1.5em
+	
+	@media (min-width desktop)
+		&--promo
+			display block
+		
+		&--jataru
+			width 980px

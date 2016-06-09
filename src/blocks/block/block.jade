@@ -1,0 +1,12 @@
+mixin block
+	if attributes.mods
+		if typeof attributes.mods === 'string'
+			-var mods = 'block--' + attributes.mods
+		else
+			-var mods = []
+			each mod, i in attributes.mods
+				-mods[i] = 'block--' + mod
+
+	.block(class=mods)
+		if block
+			block

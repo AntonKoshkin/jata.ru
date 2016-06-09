@@ -4,6 +4,7 @@ module.exports = {
 	isDev		: true,
 	pathTo	: {
 		src	: {
+			angJade		: 'src/forAng/**/*.jade',
 			assets		: [
 				'bower_components/jquery/dist/jquery.min.js',
 				'src/assets/fonts/**/*.*',
@@ -20,6 +21,7 @@ module.exports = {
 			svgSprite	: 'src/blocks/**/svg-*.svg',
 		},
 		build	: {
+			angJade		: '../dev/jade/',
 			assets		: {
 				fonts	: 'build/fonts/',
 				js		: 'build/js/',
@@ -32,6 +34,7 @@ module.exports = {
 			svgSprite	: 'build/img/',
 		},
 		watch	: {
+			angJade		: 'src/forAng/*.jade',
 			assets		: 'src/assets/**/*.*',
 			all			: 'src/**/*.*',
 			img			: [

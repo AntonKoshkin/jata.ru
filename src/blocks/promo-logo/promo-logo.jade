@@ -1,0 +1,10 @@
+mixin promoLogo(img)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'promo-logo--' + mod
+
+	img.promo-logo(
+		class=mods
+		src=img
+		alt='jata.ru')

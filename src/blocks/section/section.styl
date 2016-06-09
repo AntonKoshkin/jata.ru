@@ -1,0 +1,114 @@
+.section
+	&--promo-adv
+		// background-color #17253a
+		background-image url('/img/section__bg--promo-rek.jpg')
+		background-size cover
+		background-repeat no-repeat
+		background-position center
+
+	&--we-do
+		padding 40px 15px
+	
+	&--how-works
+		padding-top 30px
+		background-color #1a1b22
+		background-repeat no-repeat
+		background-image url('/img/section__bg--how-works.jpg')
+		background-size cover
+		background-position center
+		position relative
+	
+	&--earn
+		box-shadow 0 10px 20px -5px rgba(black, .75)
+		background-color #e1ebf4
+		background-image url('/img/section__bg--earn.jpg')
+		background-repeat no-repeat
+		background-position 48% 13%
+		position relative
+		padding 30px 0 150px
+	
+	&--jataru
+		padding-top 30px
+	
+	&--way
+		background-color white
+		
+	&__bg
+		position absolute
+		right 0
+		left 0
+		width 100%
+		height 460px
+		background-image url('/img/section__bg--promo.jpg')
+		background-size cover
+		background-position 20% center
+		background-repeat no-repeat
+	
+	&--promo &__content
+		padding-top 105px
+		position relative
+	
+	&--promo-adv &__content
+		display flex
+		justify-content center
+		align-items center
+		min-height 418px
+	
+	&--how-works &__content
+		display flex
+		flex-wrap wrap
+		justify-content space-around
+	
+	&--earn &__content
+		text-align center
+	
+	&--jataru &__content
+		text-align center
+		overflow hidden
+	
+	@media (min-width tablet)
+		&--promo
+			min-height 100vh
+			
+		&--we-do
+			padding 55px 40px
+		
+		&__bg
+			height 100%
+			background-position 37% center
+		
+		&--promo &__content
+			display flex
+			justify-content space-between
+			padding 100px 50px 40px
+		
+		&--promo-adv &__content
+			height 100vh
+	
+		&--we-do &__content
+			display flex
+			justify-content space-between
+			align-items flex-start
+		
+		&--how-works
+			padding-bottom 30px
+		
+		&--earn
+			padding 50px 80px 100px
+			background-position center top
+			background-size 130%
+		
+		&--jataru
+			padding-top 70px
+	
+	@media (min-width desktop)
+		&--we-do
+			padding 60px 330px 60px 80px
+		
+		&--how-works
+			padding-bottom 60px
+		
+		&--earn
+			padding 100px 230px 230px
+			background-size cover
+			background-position 13% 40%

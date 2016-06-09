@@ -1,0 +1,9 @@
+mixin perk(title, paragraph)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'perk--' + mod
+
+	.perk(class=mods)
+		p.perk__title!=title
+		p.perk__text!=paragraph

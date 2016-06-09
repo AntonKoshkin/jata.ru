@@ -1,0 +1,22 @@
+.foot-nav
+	&__list
+		list-style-type none
+		flex-wrap wrap
+		display flex
+	
+	&__half
+		&:not(:last-child)
+			padding-right 50px
+	
+	&__item
+		@extend $one-row
+		
+		margin-bottom 10px
+
+	&__half:last-child &__item:last-child
+		margin-bottom 0
+	
+	&__link
+		@extend $main-text, $fw300
+		
+		color white

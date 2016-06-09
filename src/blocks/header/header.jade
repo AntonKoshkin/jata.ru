@@ -2,9 +2,18 @@ mixin header
 	if attributes.mods
 		-var mods = []
 		each mod, i in attributes.mods
-			-mods[i] = 'header--' + mod
+			-mods[i] = 'header__content--' + mod
 
-	header.header
-		.header__content
-			if block
-				block
+	.header__content(class=mods)
+		if block
+			block
+
+mixin hBtn(link, title)
+	if attributes.mods
+		-var mods = []
+		each mod, i in attributes.mods
+			-mods[i] = 'header__btn--' + mod
+
+	a.header__btn(
+		href=link
+		class=mods)=title

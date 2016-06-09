@@ -1,10 +1,57 @@
 .header
-	background-color blue-dark
-	padding 16px 20px
-	box-shadow inset 0 -2px 18px rgba(#090c12, .5)
-	position relative
+	padding 16px 20px 0 20px
+	min-width mobile - 20px
+	box-shadow none
+	position absolute
+	top 0
+	left 0
+	width 100%
 	
 	&__content
 		display flex
-		align-items center
 		justify-content space-between
+		align-items flex-end
+	
+	&__btn
+		@extend $btn-reset, $fw500, $very-small-text
+		
+		color white
+		text-transform uppercase
+		padding 15px 24px
+		margin-right 10px
+		
+		&--enter
+			btn-color blue
+		
+			position relative
+			padding-left 40px
+			text-transform none
+			border-radius 3px
+			display inline-block
+			
+			&:before
+				@extend $pseudo-left
+				bicon lock 12px
+				
+				left 20px
+		
+		&--for-advers
+			slow background-color
+		
+			background-color rgba(white, .3)
+			border-radius 3px
+			display inline-block
+			
+			&:hover
+				background-color rgba(white, .5)
+			
+			&:active
+				background-color rgba(white, .7)
+	
+	@media (min-width tablet)
+		&__btn
+			margin-bottom 5px
+			margin-right 0
+			
+			&--enter
+				margin-right 20px

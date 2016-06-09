@@ -1,0 +1,44 @@
+.block
+	&--we-do-left
+		margin-bottom 20px
+	
+	&--cars
+		background-color rgba(blue-dark, .1)
+		padding 40px 15px 55px
+		position relative
+	
+	&--way-tablet
+		padding-left 25px
+		margin-bottom 40px
+		max-width 325px
+		width 100%
+	
+	@media (min-width tablet)
+		&--we-do-left
+			max-width 370px
+		
+		&--we-do-right
+			padding-top 10px
+		
+		&--promo
+			padding-top 30px
+		
+		&--cars
+			padding-top 50px
+		
+		&--way-tablet
+			width 336px
+	
+	@media (min-width desktop)
+		&--we-do-left
+			max-width 580px
+		
+		&--promo
+			width 395px
+		
+		&--cars
+			padding-top 90px
+			padding-bottom 80px
+		
+		&--way-tablet
+			flex-shrink 0

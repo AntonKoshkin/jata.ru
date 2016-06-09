@@ -1,0 +1,58 @@
+.way
+	padding-left 28px
+	padding-right 28px
+	
+	&--tablet
+		padding-top 35px
+		
+	&--lb &__content
+		border-left 2px dashed gray
+		position relative
+		display flex
+		flex-wrap wrap
+		
+		&:before
+			@extend $pseudo, $abs, $blue-round-dot
+			
+			left -11px
+			top 10px
+
+	&__strips
+		height 200px
+		display flex
+	
+	&__strip
+		flex-basis 50%
+		height 101px
+		flex-grow 1
+		flex-shrink 1
+		
+		&--tr
+			border-left 2px dashed gray
+			border-bottom 2px dashed gray
+			border-radius 0 0 0 90px
+			align-self flex-start
+			
+		&--lb
+			border-top 2px dashed gray
+			border-right 2px dashed gray
+			border-radius 0 90px 0 0
+			align-self flex-end
+	
+	@media (min-width tablet)
+		padding-left 40px
+		padding-right 40px
+		
+		&--tablet
+			overflow hidden
+			
+		&--tablet &__content
+			display flex
+			flex-wrap nowrap
+	
+	@media (min-width desktop)
+		padding-left 120px
+		padding-right 120px
+	
+		&--tablet &__content
+			justify-content space-between

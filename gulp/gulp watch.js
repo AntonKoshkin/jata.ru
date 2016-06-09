@@ -13,6 +13,9 @@ module.exports = function() {
 		watch(config.pathTo.watch.jade, function() {
 			gulp.start('jade');
 		});
+		// watch(config.pathTo.watch.angJade, function() {
+		// 	gulp.start('angJade');
+		// });
 		watch(config.pathTo.watch.img, function() {
 			gulp.start('img');
 		});

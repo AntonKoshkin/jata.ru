@@ -4,7 +4,16 @@ mixin footer
 		each mod, i in attributes.mods
 			-mods[i] = 'footer--' + mod
 
-	footer.footer
-		.footer__content
-			if block
-				block
+	.footer__content
+		if block
+			block
+
+mixin fInfo
+	.footer__info
+		if block
+			block
+
+mixin fBtns
+	.footer__btns(ng-show=attributes["ng-show"])
+		if block
+			block

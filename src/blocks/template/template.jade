@@ -1,5 +1,15 @@
-//- инклюды
-include ../../compile/blocks
+include ../../blocks/address/address
+include ../../blocks/burger/burger
+include ../../blocks/copy/copy
+include ../../blocks/footer/footer
+include ../../blocks/foot-nav/foot-nav
+include ../../blocks/header/header
+include ../../blocks/logo/logo
+include ../../blocks/navigation/navigation
+include ../../blocks/phone-number/phone-number
+include ../../blocks/store-btn/store-btn
+
+block includes
 
 block page_id
 
@@ -9,24 +19,51 @@ html(lang='ru')
 		block title
 		include head
 	body
-		+header
-			+logo
-			+burger
-			+navigation
-				+navItem('#', 'О Jata.ru')(title='О Jata.ru')
-				+navItem('#', 'Как это работает?')(title='Как это работает?')
-				+navItem('#', 'Контакты')(title='Контакты')
-				+navItem('#', 'Рекламные места')(title='Рекламные места')
-				+navItem('#', 'Блог/новости')(title='Блог/новости')
-				+navItem('#', 'Рекламодателям')(title='Рекламодателям')
-				+navItem('#', 'Владельцам ТС')(title='Владельцам ТС')
-				+navItem('#', 'Войти')(
-					mods=['enter']
-					title='Войти')
+		header.header
+			+header
+				+logo(mods=['index'])
+				+navigation(mods=['index'])
+					+navItem('#', 'О Jata.ru')(title='О Jata.ru')
+					+navItem('#', 'Как это работает?')(title='Как это работает?')
+					+navItem('#', 'Контакты')(title='Контакты')
+					+navItem('#', 'Рекламные места')(title='Рекламные места')
+					+navItem('#', 'Блог/новости')(title='Блог/новости')
+				+hBtn('/enter.html', 'Войти')(mods=['enter'])
+				if pageId === 'foradv'
+					+hBtn('index.html', 'Водителям')(mods=['for-advers'])
+				else
+					+hBtn('foradv.html', 'Рекламодателям')(mods=['for-advers'])
+				+burger(mods=['mb14'])
+		
+		main.main
+			block content
 
-		block content
+		footer.footer
+			+footer
+				+footNav
+					+fnHalf
+						+fnItem('#', 'О компании')
+						+fnItem('#', 'Правила пользования')
+						+fnItem('#', 'Защита данных')
+						+fnItem('#', 'Вопросы и ответы')
+					+fnHalf
+						+fnItem('#', 'Контакты')
+						+fnItem('#', 'О нас')
+						+fnItem('#', 'Команда')
+						+fnItem('#', 'Пресса о нас')
 
-		+footer
+				+fInfo
+					+address('г. Санкт-Петербург, Московский&nbsp;проспект, 97а', 'https://goo.gl/XVmE2b', '(10:00-22:00)')
+					
+					+phoneNumber('+78003757575', '8 (800)', '375-75-75')
+
+					if process.env.USER == 'Igor'
+						+fBtns(ng-show="device != 'desktop'")
+							-var storeBtnMods = ['tar', 'mb10']
+							+storeBtn('apple')(mods=storeBtnMods)
+							+storeBtn('google')(mods=storeBtnMods)
+
+					+copy(2016, 'Jata All Rights Reservet')
 
 		//- загружаем жЫквери с цдн
 		script(

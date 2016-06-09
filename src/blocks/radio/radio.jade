@@ -11,5 +11,6 @@ mixin radio(name, id, text)
 				value=id
 				name=name
 				type='radio'
-				checked=attributes.checked)
+				checked=attributes.checked
+				ng-click=attributes["ng-click"])
 			span.radio__text!=text

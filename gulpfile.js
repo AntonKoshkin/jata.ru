@@ -20,6 +20,9 @@ lazyRequireTask('clean', './gulp/gulp clean.js');
 // task Jade
 lazyRequireTask('jade', './gulp/gulp jade.js');
 
+// task Jade for Angular
+// lazyRequireTask('angJade', './gulp/gulp angJade.js');
+
 // task Server
 lazyRequireTask('server', './gulp/gulp server.js');
 

@@ -9,5 +9,6 @@ mixin checkbox(id, text)
 			for!=id)
 			input.checkbox__input(
 				id!=id
-				type='checkbox')
+				type='checkbox'
+				ng-model=attributes["ng-model"])
 			span.checkbox__text!=text
