@@ -15,3 +15,12 @@ mixin way(side)
 			.way__strips
 				.way__strip.way__strip--tr
 				.way__strip.way__strip--lb
+
+	if side === 'rtl'
+		.way.way--rb(class=mods)
+			.way__content
+				if block
+					block
+			.way__strips
+				.way__strip.way__strip--rb
+				.way__strip.way__strip--tl

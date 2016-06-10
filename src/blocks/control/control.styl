@@ -1,0 +1,56 @@
+.control
+	position relative
+	margin-top 50px
+	margin-left 10px
+	text-align center
+	
+	&__shadow
+		position absolute
+		width 1px
+		height @width
+		top 0
+		right 0
+		bottom 0
+		left 0
+		margin auto
+		border-radius 50%
+		box-shadow 40px 40px 70px rgba(black, .05)
+		box-shadow 40px 40px 70px 200px rgba(black, .05)
+			
+	&__img
+		max-width 100%
+		position relative
+		max-height 100%
+	
+	&__frase
+		position absolute
+		max-width 160px
+		
+		&--top
+			top -50px
+		
+		&--right
+			right 0
+			text-align right
+		
+		&--bottom
+			bottom -50px
+		
+		&--left
+			left 0
+			text-align left
+	
+	&__text
+		@extend $text-14
+		
+		&--fat
+			@extend $fw500
+	
+	@media (min-width tablet)
+		max-width 540px
+	
+	@media (min-width desktop)
+		margin-right 100px
+		
+		&__text
+			font-size 1rem

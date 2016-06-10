@@ -4,22 +4,37 @@
 	
 	&--tablet
 		padding-top 35px
+	
+	&__content
+		display flex
+		flex-wrap wrap
+		justify-content space-between
 		
 	&--lb &__content
 		border-left 2px dashed gray
 		position relative
-		display flex
-		flex-wrap wrap
 		
 		&:before
 			@extend $pseudo, $abs, $blue-round-dot
 			
 			left -11px
 			top 10px
+	
+	&--rb &__content
+		border-right 2px dashed gray
+		position relative
+		justify-content flex-end
+		
+		&:before
+			@extend $pseudo, $abs, $blue-round-dot
+			
+			right -11px
+			top 10px
 
 	&__strips
 		height 200px
 		display flex
+		position relative
 	
 	&__strip
 		flex-basis 50%
@@ -38,6 +53,18 @@
 			border-right 2px dashed gray
 			border-radius 0 90px 0 0
 			align-self flex-end
+		
+		&--tl
+			border-right 2px dashed gray
+			border-bottom 2px dashed gray
+			border-radius 0 0 90px 0
+			align-self flex-start
+		
+		&--rb
+			border-top 2px dashed gray
+			border-left 2px dashed gray
+			border-radius 90px 0 0 0
+			align-self flex-end
 	
 	@media (min-width tablet)
 		padding-left 40px
@@ -45,14 +72,14 @@
 		
 		&--tablet
 			overflow hidden
-			
-		&--tablet &__content
-			display flex
+
+		&--lb &__content
+		&--rb &__content
 			flex-wrap nowrap
 	
 	@media (min-width desktop)
 		padding-left 120px
 		padding-right 120px
 	
-		&--tablet &__content
+		&__content
 			justify-content space-between

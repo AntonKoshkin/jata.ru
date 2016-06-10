@@ -116,6 +116,10 @@ jQuery(document).ready(function($) {
 		threshold	: 200,
 		effect		: 'fadeIn',
 	});
+	
+	// $.get("http://jata.ru/api/v1/accounts/view", function(data) {
+	// 	console.log(data);
+	// });
 });
 // ../../bower_components/jquery/dist/jquery.js
 // Device.js

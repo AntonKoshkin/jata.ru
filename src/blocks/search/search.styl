@@ -1,0 +1,46 @@
+.search
+	flex-basis 100%
+	text-align center
+	margin-bottom 20px
+	position relative
+	
+	&__content
+		display inline-block
+		position relative
+		margin-left -35px
+	
+	&__map
+		size 380px
+		
+		border-radius 50%
+		overflow hidden
+		box-shadow inset 0 0 15px rgba(black, .5)
+		background-image url('/img/search__map.png')
+		background-repeat no-repeat
+		background-size contain
+		background-position center
+		position relative
+		
+	&__car
+		bicon(car, 36)
+		
+		position absolute
+		top 136px
+		left 27px
+		transform rotate(-165deg)
+		transform translate(207px, 199px) rotate(22deg)
+	
+	&--animate &__car
+		animation car 10s linear
+		animation-fill-mode both
+
+	@media (min-width tablet)
+		text-align left
+		order 1
+		
+		&__content
+			margin-left 70px
+	
+	@media (min-width desktop)
+		&__content
+			margin-left 230px

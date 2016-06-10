@@ -7,11 +7,21 @@
 		padding 40px 15px 55px
 		position relative
 	
-	&--way-tablet
-		padding-left 25px
+	&--way-left
+	&--way-right
 		margin-bottom 40px
 		max-width 325px
-		width 100%
+		
+	&--way-left
+		padding-left 25px
+		flex-shrink 0
+	
+	&--way-right
+		padding-right 25px
+		flex-shrink 0
+	
+	&--search
+		margin-bottom 65px
 	
 	@media (min-width tablet)
 		&--we-do-left
@@ -26,19 +36,25 @@
 		&--cars
 			padding-top 50px
 		
-		&--way-tablet
-			width 336px
+		&--way-left
+		&--way-right
+			max-width 336px
+		
+		&--way-right
+			order 2
 	
 	@media (min-width desktop)
 		&--we-do-left
 			max-width 580px
 		
 		&--promo
-			width 395px
+			max-width 395px
 		
 		&--cars
 			padding-top 90px
 			padding-bottom 80px
 		
-		&--way-tablet
+		&--way-left
+		&--way-right
 			flex-shrink 0
+			max-width 660px

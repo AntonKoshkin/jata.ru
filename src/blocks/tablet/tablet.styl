@@ -6,6 +6,8 @@
 	flex-basis 100%
 	
 	&__face
+		@extend $font-reset
+		
 		display inline-block
 		position relative
 	
@@ -24,7 +26,8 @@
 			max-width 860px
 	
 	@media (min-width desktop)
-		margin-right 210px
+		margin-right 70px
 		flex-grow 0
 		max-width none
 		margin-bottom -80px
+		text-align right

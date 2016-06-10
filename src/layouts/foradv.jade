@@ -5,13 +5,16 @@ block includes
 
 	include ../blocks/block/block
 	include ../blocks/cars/cars
+	include ../blocks/control/control
 	//- include ../blocks/driver-form/driver-form
 	//- include ../blocks/index-input/index-input
 	//- include ../blocks/index-select/index-select
 	include ../blocks/paragraph/paragraph
-	include ../blocks/pin/pin
 	//- include ../blocks/perk/perk
+	include ../blocks/pin/pin
+	include ../blocks/point/point
 	include ../blocks/promo-logo/promo-logo
+	include ../blocks/search/search
 	include ../blocks/section/section
 	include ../blocks/tablet/tablet
 	include ../blocks/title/title
@@ -39,12 +42,68 @@ block content
 					mods='jataru')
 
 		+section(mods='way')
-			+way('ltr')(mods='tablet')
-				+block(mods='way-tablet')
+			+way('ltr')(mods=['tablet'])
+				+block(mods='way-left')
 					+title(2, 'Как это работает')(mods=['way'])
 					+paragraph('JATA.RU - уникальный проект, площадка, позволяющая напрямую взаимодействовать между владельцами рекламного места и рекламодателем. Таким образом Вы можете заработать на своем рекламном месте либо, если Вы рекламодатель, найти по минимальным ценам необходимое рекламное место, минуя рекламные агентства.')(mods=['way'])
 
 				+tablet
-					+pin('Алексей, 33', 'Менеджер', 'Shkoda Octavia', '2007 г., 300 км/день', '/img/pin.png')(mods=['first', 'show'])
-					+pin('Алексей, 33', 'Менеджер', 'Shkoda Octavia', '2007 г., 300 км/день', '/img/pin.png')(mods='second')
-					+pin('Алексей, 33', 'Менеджер', 'Shkoda Octavia', '2007 г., 300 км/день', '/img/pin.png')(mods='third')
+					+pin(
+						'Алексей, 33',
+						'Менеджер',
+						'Renault Clio',
+						'2012 г. 35км/день',
+						'/img/pin__img--3.png')(mods=['first', 'show'])
+					+pin(
+						'Игорь, 45',
+						'Грузчик',
+						'Газель',
+						'2015 г., 150 км/день',
+						'/img/pin__img--2.png')(mods='second')
+					+pin(
+						'Кирилл, 44',
+						'Водитель',
+						'Hyundai County',
+						'2011 г., 255 км/день',
+						'/img/pin__img--1.png')(mods='third')
+
+			+way('rtl')
+				+block(mods=['way-right', 'search'])
+					+title(2, 'Мощный поиск по геопараметрам')(mods=['way'])
+					+paragraph('Вашу рекламу увидят те, кому она действительно нужна. Вы сами выбираете маршрут движения транспортного средства и можете отслеживать место его нахождения в реальном времени.')(mods=['way'])
+				+search(mods='animate')
+					+point(1, 'ТРЦ Галерея', 'Лиговский просп., 30а')(
+						mods='first')
+					+point(2, 'Московский возал', 'Невский проспект, 85')(
+						mods='second')
+					+point(3, 'Александринский театр', 'Островского пл., 6')(
+						mods='third')
+
+			+way('ltr')
+				+block(mods='way-left')
+					+title(2, 'Контроль качества')(mods=['way'])
+					+paragraph('Все автомобили проходят верификацию в нашем офисе. Их водители взрослые адекватные люди. Репутация вашего бренда в надёжных руках!')(mods=['way'])
+				+control('way__img.png')
+					+cFrase('Только проверенные водители', 'Все без исключения водители заключают с нашей компанией договор.')(
+						mods=['left', 'top'])
+					+cFrase('Автомобили не старше 2005 г.', 'Все автомобили последних моделий в отличном состоянии.')(
+						mods=['right', 'top'])
+					+cFrase('100% полюбившийся брэнд', 'Мы работаем только с теми водителями, кому нравится ваш брэнд.')(
+						mods=['left', 'bottom'])
+					+cFrase('600 км/день', 'Каждый водитель нашей компании преодолевает 5000&#8209;8000км в месяц.')(
+						mods=['right', 'bottom'])
+
+			+way('rtl')
+				+block(mods='way-right')
+					+title(2, 'Свобода выбора')(mods=['way'])
+					+paragraph('Вы можете выбирать любые части ТС для своей рекламной компании. При необходимости опытный дизайнер разработает макеты банеров для ваше рекламной кампании.')(mods=['way'])
+
+			+way('ltr')(mods='start')
+				+block(mods=['way-left', 'start'])
+					+title(2, 'Начало рекламной кампании')(mods=['way', 'cw'])
+					+paragraph('Выбирайте подходящие транспортные средства из нашей огромной базы или самостоятельно создавайте тендеры. Теперь не нужно переплачивать рекламным агентствам! Сотрудничайте с водителями и компаниями напрямую!')(mods=['way', 'cw'])
+
+			+way('rtl')
+				+block(mods='way-right')
+					+title(2, 'Подробная отчетность')(mods=['way'])
+					+paragraph('Следите за перемещениями всех оплаченных рекламных площадок в реальном времени. Оплачивайте только&nbsp;фактические передвижения.')(mods=['way'])

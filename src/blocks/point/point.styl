@@ -1,0 +1,178 @@
+.point
+	position absolute
+	
+	&--first
+		top 244px
+		left 276px
+		
+	&--second
+		top 154px
+		left 306px
+	
+	&--third
+		left 35px
+		top 142px
+
+	&__point
+		@extend $blue-round-dot
+		
+		box-shadow 0 0 0 0 rgba(blue, .4)
+		transform scale(.01)
+		&:before
+			@extend $pseudo, $abs
+			
+			left 10px
+			top 10px
+			height 1px
+			background-color blue
+			transform-origin left center
+		
+		.search--animate &
+			animation-fill-mode both
+			animation dot-grow 1s ease-out
+
+	&--first &__point
+		animation-delay 2.3s
+		
+		&:before
+			transform rotate(63deg)
+			width 100px
+	
+	&--second &__point
+		animation-delay 4s
+		
+		&:before
+			transform rotate(-84deg)
+			width 140px
+	
+	&--third &__point
+		animation-delay 10s
+		
+		&:before
+			transform rotate(-84deg)
+			width 170px
+	
+	&__desc
+		display inline-block
+		position absolute
+		width 160px
+	
+	&--first &__desc
+		top 40px
+		left -25px
+	
+	&--second &__desc
+		bottom 50px
+		left -55px
+	
+	&--third &__desc
+		right -90px
+		bottom 80px
+	
+	&__face
+		@extend $font-reset
+		size 106px
+		
+		margin auto
+		margin-bottom 10px
+		position relative
+		
+	&__img
+		width 100%
+		border-radius 50%
+		box-shadow 0 0 0 5px gray-lighter
+		border-radius 50%
+		transform scale(.01)
+		box-shadow 0 0 0 0 gray-lighter
+		
+		.search--animate &
+			animation face-grow 1s ease-out
+			animation-fill-mode both
+
+	&--first &__img
+		animation-delay 2.8s
+
+	&--second &__img
+		animation-delay 4.5s
+
+	&--third &__img
+		animation-delay 10.5s
+
+	
+	&__texts
+		position relative
+		transform translateY(-50%)
+		opacity 0
+		
+		.search--animate &
+			animation name-show .5s linear
+			animation-fill-mode both
+
+	&--first &__texts
+		animation-delay 3.3s
+
+	&--second &__texts
+		animation-delay 5s
+
+	&--third &__texts
+		animation-delay 11s
+	
+	&__text
+		@extend $text-14
+		
+		text-align center
+	
+	@media (min-width tablet)
+		&--first &__desc
+			top -25px
+			left 50px
+		
+		&--first &__point
+			&:before
+				transform rotate(10deg)
+				width 120px
+				
+		&--second &__desc
+			bottom 100px
+			left 0
+		
+		&--second &__point
+			&:before
+				transform rotate(-70deg)
+				width 200px
+
+		&--third &__desc
+			right -15px
+			bottom 60px
+			
+		&--third &__point
+			&:before
+				transform rotate(-110deg)
+				width 155px
+	
+	@media (min-width desktop)
+		&--first &__desc
+			top 20px
+			left 70px
+		
+		&--first &__point
+			&:before
+				transform rotate(25deg)
+				width 155px
+				
+		&--second &__desc
+			left 45px
+		
+		&--second &__point
+			&:before
+				transform rotate(-58deg)
+				width 220px
+
+		&--third &__desc
+			right 40px
+			bottom 35px
+			
+		&--third &__point
+			&:before
+				transform rotate(-132deg)
+				width 165px
