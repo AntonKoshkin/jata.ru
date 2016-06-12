@@ -5,6 +5,14 @@
 	&--tablet
 		padding-top 35px
 	
+	&--start
+		background-image url('/img/way__bg--start.jpg')
+		background-repeat no-repeat
+		background-position 50% 50%
+		background-size cover
+		margin-bottom 200px
+		position relative
+	
 	&__content
 		display flex
 		flex-wrap wrap
@@ -23,7 +31,6 @@
 	&--rb &__content
 		border-right 2px dashed gray
 		position relative
-		justify-content flex-end
 		
 		&:before
 			@extend $pseudo, $abs, $blue-round-dot
@@ -35,6 +42,16 @@
 		height 200px
 		display flex
 		position relative
+	
+	&--start &__strips
+		background-color white
+		padding-left 28px
+		padding-right 28px
+		margin-left -28px
+		margin-right -28px
+		position absolute
+		top 100%
+		width 100%
 	
 	&__strip
 		flex-basis 50%

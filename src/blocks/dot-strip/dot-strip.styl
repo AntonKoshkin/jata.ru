@@ -1,0 +1,73 @@
+.dot-strip
+	@extend $font-reset
+	
+	display flex
+	justify-content space-between
+	position relative
+	margin-left 45px
+	margin-right 35px
+	margin-bottom 30px
+	
+	&__line
+		position absolute
+		height 6px
+		width 100%
+		top 50%
+		left 0
+		transform translateY(-50%)
+		background-color gray-light
+		border-radius 6px
+
+	&__label
+		display inline-block
+		position relative
+		cursor pointer
+		
+	&__input
+		@extend $hidden-input
+		
+	&__dot
+		size 18px
+		
+		border 2px solid blue
+		background-color white
+		border-radius 50%
+		display inline-block
+	
+	&__text
+		@extend $one-row, $fw500, $main-text
+		slow color
+		
+		position absolute
+		top 25px
+		left 50%
+		transform translateX(-50%)
+		color gray
+	
+	&__input:checked ~ &__text
+		color blue-dark
+	
+	&__runner
+		size 18px
+		slow all
+		
+		background-color blue
+		border-radius 50%
+		position absolute
+		cursor pointer
+		
+		&[data-pos='one']
+			left 0
+			margin-left 0
+		
+		&[data-pos='two']
+			left 50%
+			margin-left -9px
+		
+		&[data-pos='three']
+			left 100%
+			margin-left -18px
+	
+	@media (min-width tablet)
+		margin-left 60px
+		margin-right 65px

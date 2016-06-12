@@ -16,4 +16,13 @@ jQuery(document).ready(function($) {
 
 	// tablet
 	//= ../blocks/tablet/tablet.js
+
+	// dot-strip
+	//= ../blocks/dot-strip/dot-strip.js
+
+	// slide-pack
+	//= ../blocks/slide-pack/slide-pack.js
+
+	// slider
+	//= ../blocks/slider/slider.js
 });

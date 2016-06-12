@@ -120,6 +120,44 @@ jQuery(document).ready(function($) {
 	// $.get("http://jata.ru/api/v1/accounts/view", function(data) {
 	// 	console.log(data);
 	// });
+
+	// dot-strip
+	$('body').on('click', '.dot-strip__input', function(event) {
+		switch ($(this).attr('id')) {
+			case 'dotCar':
+				$('.dot-strip__runner').attr('data-pos', 'one');
+				break;
+			case 'dotLorry':
+				$('.dot-strip__runner').attr('data-pos', 'two');
+				break;
+			case 'dotBus':
+				$('.dot-strip__runner').attr('data-pos', 'three');
+				break;
+		}
+	
+		$(this)
+			.closest('.slider')
+			.find('.slide-pack')
+			.attr('data-slider-pos', $(this).attr('data-dot-pos'));
+	});
+
+	// slide-pack
+	$('body').on('click', '[data-pag-pos]', function(event) {
+		event.preventDefault();
+	
+		console.log('qwe')
+	
+		$(this)
+			.addClass('slide-pack__pag--active')
+			.siblings()
+			.removeClass('slide-pack__pag--active')
+			.closest('.slide-pack__pags')
+			.siblings('[data-slider-pos]')
+			.attr('data-slider-pos', $(this).attr('data-pag-pos'));
+	});
+
+	// slider
+	
 });
 // ../../bower_components/jquery/dist/jquery.js
 // Device.js

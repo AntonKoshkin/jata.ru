@@ -1,0 +1,29 @@
+mixin slidePack
+	.slide-pack(data-slider-pos=attributes['data-slider-pos'])
+		if block
+			block
+
+mixin spSlide(slide, ext, numOfSlides, price, view)
+	.slide-pack__slide
+		.slide-pack__faces(data-slider-pos=attributes['data-slider-pos'])
+			-var i = 1
+			while i <= numOfSlides
+				.slide-pack__face
+					img.slide-pack__img(
+						src='/img/slide-pack__' + slide + '--' + i + '.' + ext
+						alt='')
+				-i++
+		p.slide-pack__text
+			| Средняя цена: от 
+			=price
+			|  руб/мес.
+		.slide-pack__pags
+			-var i = 1
+			while i <= numOfSlides
+				if i === 1
+					button.slide-pack__pag.slide-pack__pag--active(
+						data-pag-pos=i + '-' + numOfSlides)='Вид ' + view[i-1]
+				else
+					button.slide-pack__pag(
+						data-pag-pos=i + '-' + numOfSlides)='Вид ' + view[i-1]
+				-i++
