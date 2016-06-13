@@ -1,7 +1,8 @@
 mixin slider
 	.slider
-		if block
-			block
+		.slider__wrapper
+			if block
+				block
 				
 mixin sStrip
 	.slider__strip
@@ -9,6 +10,7 @@ mixin sStrip
 			block
 
 mixin sSlides
-	.slider__slides
-		if block
-			block
+	.slider__slider
+		.slider__slides
+			if block
+				block

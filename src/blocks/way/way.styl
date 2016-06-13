@@ -13,6 +13,10 @@
 		margin-bottom 200px
 		position relative
 	
+	&--report
+		position relative
+		overflow hidden
+	
 	&__content
 		display flex
 		flex-wrap wrap
@@ -31,12 +35,29 @@
 	&--rb &__content
 		border-right 2px dashed gray
 		position relative
+		justify-content flex-end
 		
 		&:before
 			@extend $pseudo, $abs, $blue-round-dot
 			
 			right -11px
 			top 10px
+	
+	&--tablet &__content
+		padding-top 15px
+		
+		&:before
+			top 23px
+	
+	&--start &__content
+		padding-top 25px
+		padding-bottom 130px
+		
+		&:before
+			top 32px
+	
+	&--report &__content
+		justify-content flex-end
 
 	&__strips
 		height 200px
@@ -45,13 +66,12 @@
 	
 	&--start &__strips
 		background-color white
-		padding-left 28px
-		padding-right 28px
-		margin-left -28px
-		margin-right -28px
+		// padding-left 28px
+		// padding-right 28px
+		// margin-left -28px
 		position absolute
 		top 100%
-		width 100%
+		width calc(100% - 56px)
 	
 	&__strip
 		flex-basis 50%
@@ -82,6 +102,10 @@
 			border-left 2px dashed gray
 			border-radius 90px 0 0 0
 			align-self flex-end
+		
+		&--half
+			width 50%
+			flex-shrink 0
 	
 	@media (min-width tablet)
 		padding-left 40px
@@ -93,6 +117,23 @@
 		&--lb &__content
 		&--rb &__content
 			flex-wrap nowrap
+			
+		&--rb &__content
+			justify-content space-between
+		
+		&--start &__strips
+			width calc(100% - 80px)
+		
+		&--control &__content
+			&:before
+				top 50px
+		
+		&--freedom &__content
+			&:before
+				top 32px
+		
+		&--start &__content
+			padding-bottom 320px
 	
 	@media (min-width desktop)
 		padding-left 120px
@@ -100,3 +141,6 @@
 	
 		&__content
 			justify-content space-between
+		
+		&--start &__strips
+			width calc(100% - 240px)

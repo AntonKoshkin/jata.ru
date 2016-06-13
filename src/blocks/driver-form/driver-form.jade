@@ -9,17 +9,13 @@ mixin dfHeader(title)
 		h3.driver-form__title=title
 
 mixin dfPagination
-	.driver-form__pagination
+	.driver-form__pagination(
+		data-step=attributes['data-step'])
 		if block
 			block
 
 mixin dfPagItem(step)
-	if attributes.mods
-		-var mods = []
-		each mod, i in attributes.mods
-			-mods[i] = 'driver-form__pag-item--' + mod
-
-	.driver-form__pag-item(class='active')
+	.driver-form__pag-item
 		.driver-form__ball=step
 		span.driver-form__text
 			| Шаг 

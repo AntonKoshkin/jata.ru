@@ -28,7 +28,7 @@ block content
 				+paragraph('В крупных городах количество маршрутов исчисляется сотнями и даже тысячами. Это открывает безграничные возможности для того, чтобы донести до огромной аудитории информацию о товаре, услуге, компании, магазине.')(mods=['promo'])
 			+driverForm
 				+dfHeader('Стать водителем')
-				+dfPagination
+				+dfPagination(data-step='one')
 					+dfPagItem(1)
 					+dfDots
 					+dfPagItem(2)
@@ -111,7 +111,7 @@ block content
 						id='pageThree'
 						data-show='false'
 						mods=['three'])
-						+input('number', 'Ср. пробег за день')(
+						+input('number', 'Ср. пробег за день (км)')(
 							pattern='^[0-9]+$'
 							data-filled='false'
 							mods=['fxb46p', 'small']

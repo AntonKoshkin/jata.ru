@@ -1,6 +1,6 @@
 .section
 	&--promo-adv
-		// background-color #17253a
+		background-color #17253a
 		background-image url('/img/section__bg--promo-rek.jpg')
 		background-size cover
 		background-repeat no-repeat
@@ -66,6 +66,17 @@
 	&--jataru &__content
 		text-align center
 		overflow hidden
+	
+	&--way &__content
+		position relative
+		
+		&:after
+			@extend $pseudo, $abs
+			triangle down 28px 32px white
+			
+			top 100%
+			left 50%
+			transform translateX(-50%)
 	
 	@media (min-width tablet)
 		&--promo

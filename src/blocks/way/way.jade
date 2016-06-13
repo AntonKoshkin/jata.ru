@@ -24,3 +24,13 @@ mixin way(side)
 			.way__strips
 				.way__strip.way__strip--rb
 				.way__strip.way__strip--tl
+
+	if side === 'rtb'
+		.way.way--rb(class=mods)
+			.way__content
+				if block
+					block
+			.way__strips
+				.way__strip.way__strip--half
+				.way__strip.way__strip--rb
+				.way__strip.way__strip--tl

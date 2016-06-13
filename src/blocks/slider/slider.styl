@@ -1,9 +1,33 @@
 .slider
 	width 100%
+	margin auto
+	text-align center
+	
+	&__slider
+		max-width slider-small-width
+		margin auto
 	
 	&__slides
 		overflow hidden
 	
 	@media (min-width tablet)
-		max-width 560px
-		margin-left -18px
+		max-width slider-mid-width
+		margin auto
+		
+		&__wrapper
+			margin-left -28px
+		
+		&__slider
+			max-width slider-mid-width
+	
+	@media (min-width 1200px)
+		margin-left 110px
+		
+		&__wrapper
+			margin 0
+	
+	@media (min-width desktop)
+		max-width slider-big-width
+		
+		&__slider
+			max-width slider-big-width

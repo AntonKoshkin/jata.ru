@@ -7,11 +7,8 @@ block includes
 	include ../blocks/cars/cars
 	include ../blocks/control/control
 	include ../blocks/dot-strip/dot-strip
-	//- include ../blocks/driver-form/driver-form
-	//- include ../blocks/index-input/index-input
-	//- include ../blocks/index-select/index-select
+	include ../blocks/map/map
 	include ../blocks/paragraph/paragraph
-	//- include ../blocks/perk/perk
 	include ../blocks/pin/pin
 	include ../blocks/point/point
 	include ../blocks/promo-logo/promo-logo
@@ -22,7 +19,6 @@ block includes
 	include ../blocks/tablet/tablet
 	include ../blocks/title/title
 	include ../blocks/way/way
-	//- include ../blocks/wd-slider/wd-slider
 
 block page_id
 	-var pageId = 'foradv'
@@ -53,22 +49,16 @@ block content
 				+tablet
 					+pin(
 						'Алексей, 33',
-						'Менеджер',
-						'Renault Clio',
-						'2012 г. 35км/день',
-						'/img/pin__img--3.png')(mods=['first', 'show'])
+						['Менеджер', 'Renault Clio', '2012 г. 35км/день'],
+						'3')(mods=['first', 'show'])
 					+pin(
 						'Игорь, 45',
-						'Грузчик',
-						'Газель',
-						'2015 г., 150 км/день',
-						'/img/pin__img--2.png')(mods='second')
+						['Грузчик', 'Газель', '2015 г., 150 км/день'],
+						'2')(mods='second')
 					+pin(
 						'Кирилл, 44',
-						'Водитель',
-						'Hyundai County',
-						'2011 г., 255 км/день',
-						'/img/pin__img--1.png')(mods='third')
+						['Водитель', 'Hyundai County', '2011 г., 255 км/день'],
+						'1')(mods='third')
 
 			+way('rtl')
 				+block(mods=['way-right', 'search'])
@@ -82,8 +72,8 @@ block content
 					+point(3, 'Александринский театр', 'Островского пл., 6')(
 						mods='third')
 
-			+way('ltr')
-				+block(mods='way-left')
+			+way('ltr')(mods='control')
+				+block(mods=['way-left', 'control'])
 					+title(2, 'Контроль качества')(mods=['way'])
 					+paragraph('Все автомобили проходят верификацию в нашем офисе. Их водители взрослые адекватные люди. Репутация вашего бренда в надёжных руках!')(mods=['way'])
 				+control('way__img.png')
@@ -96,8 +86,8 @@ block content
 					+cFrase('600 км/день', 'Каждый водитель нашей компании преодолевает 5000&#8209;8000км в месяц.')(
 						mods=['right', 'bottom'])
 
-			+way('rtl')
-				+block(mods='way-right')
+			+way('rtl')(mods='freedom')
+				+block(mods=['way-right', 'freedom'])
 					+title(2, 'Свобода выбора')(mods=['way'])
 					+paragraph('Вы можете выбирать любые части ТС для своей рекламной компании. При необходимости опытный дизайнер разработает макеты банеров для ваше рекламной кампании.')(mods=['way'])
 
@@ -131,7 +121,25 @@ block content
 					+title(2, 'Начало рекламной кампании')(mods=['way', 'cw'])
 					+paragraph('Выбирайте подходящие транспортные средства из нашей огромной базы или самостоятельно создавайте тендеры. Теперь не нужно переплачивать рекламным агентствам! Сотрудничайте с водителями и компаниями напрямую!')(mods=['way', 'cw'])
 
-			+way('rtl')
-				+block(mods='way-right')
+			+way('rtb')(mods='report')
+				+block(mods=['way-right', 'report'])
 					+title(2, 'Подробная отчетность')(mods=['way'])
 					+paragraph('Следите за перемещениями всех оплаченных рекламных площадок в реальном времени. Оплачивайте только&nbsp;фактические передвижения.')(mods=['way'])
+				+map
+					+pon(
+						'Алексей Иванов',
+						['Reno clio 2007 г.',
+						'Соответствие',
+						'маршруту',
+						'18:56'],
+						'90%',
+						'1')(mods='pon-one')
+
+					+pon(
+						'Алексей Иванов',
+						['Reno clio 2007 г.',
+						'Соответствие',
+						'маршруту',
+						'18:56'],
+						'90%',
+						'2')(mods='pon-two')

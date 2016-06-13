@@ -12,6 +12,24 @@
 	&--third
 		top 80px
 		left 250px
+	
+	&--pon-one
+		top 197px
+		left 143px
+		animation pon-one-move 150s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite
+		
+		&:hover
+			animation-play-state paused
+	
+	&--pon-two
+		top 127px
+		left 240px
+		transform translate(0, 0)
+		animation pon-two-move 252s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite
+		
+		&:hover
+			animation-play-state paused
+		
 
 	&__pointer
 		slow all
@@ -23,10 +41,16 @@
 		&:after
 			@extend $pseudo-center
 			bicon(round-pointer-blue, 24)
+			
+			.map &
+				bicon(round-pon-blue, 20)
 	
 	&--show &__pointer
 	&__pointer:hover
 		transform translateY(-5px)
+		
+		.map &
+			transform translateY(0)
 		
 	&__ring
 		@extend $abs
@@ -40,6 +64,9 @@
 		border-radius 50%
 		animation pulsate 3s ease-out infinite
 		opacity 0
+		
+		.map &
+			display none
 
 	&__card
 		slow all
@@ -51,8 +78,8 @@
 		text-align left
 		border 1px solid blue
 		border-radius 2px
-		left -100px
-		right -100px
+		left -85px
+		right -85px
 		margin auto
 		transform translateY(20%)
 		opacity 0
@@ -94,6 +121,8 @@
 		color gray
 	
 	&__face
+		@extend $font-reset
+		
 		position absolute
 		width 60px
 		border-radius 50%
@@ -117,5 +146,23 @@
 			left 340px
 
 		&--third
-			top 175px
-			left 490px
+			top 140px
+			left 410px
+		
+		&--pon-one
+			top 326px
+			left 236px
+			transform translate(0, 0)
+			animation pon-one-move-tablet 150s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite
+			
+			&:hover
+				animation-play-state paused
+		
+		&--pon-two
+			top 214px
+			left 393px
+			transform translate(0, 0)
+			animation pon-two-move-tablet 252s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite
+			
+			&:hover
+				animation-play-state paused

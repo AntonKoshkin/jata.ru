@@ -1,4 +1,4 @@
-mixin pin(title, p1, p2, p3, img)
+mixin pin(title, ps, img)
 	if attributes.mods
 		if typeof attributes.mods === 'string'
 			-var mods = 'pin--' + attributes.mods
@@ -14,10 +14,40 @@ mixin pin(title, p1, p2, p3, img)
 			.pin__desc
 				p.pin__title=title
 				.pin__texts
-					p.pin__text=p1
-					p.pin__text=p2
-					p.pin__text=p3
+					for p in ps
+						p.pin__text=p
 			.pin__face
 				img.pin__img(
-					src=img
+					src='/img/pin__img--'+img+'.png'
+					alt='')
+
+mixin pon(title, ps, perc, img)
+	if attributes.mods
+		if typeof attributes.mods === 'string'
+			-var mods = 'pin--' + attributes.mods
+		else
+			-var mods = []
+			each mod, i in attributes.mods
+				-mods[i] = 'pin--' + mod
+
+	.pin(class=mods)
+		.pin__ring
+		.pin__pointer
+		.pin__card
+			.pin__desc
+				p.pin__title=title
+				.pin__texts
+					-var i = 1
+					for p in ps
+						if i === 3
+							p.pin__text
+								=p
+								| : 
+								span.pin__text--blue=perc
+						else
+							p.pin__text=p
+						-i++
+			.pin__face
+				img.pin__img(
+					src='/img/pon__img--'+img+'.png'
 					alt='')

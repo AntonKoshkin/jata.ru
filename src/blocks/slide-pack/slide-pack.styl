@@ -7,7 +7,7 @@
 	width 2200px
 
 	&__slide
-		width 400px
+		width slider-small-width
 		overflow hidden
 	
 	&__faces
@@ -17,12 +17,20 @@
 		align-items center
 	
 	&__face
-		width 400px
+		width slider-small-width
+		text-align center
 	
 	&__img
-		width 100%
+		max-width 100%
+	
+	&__text
+		@extend $text-14, $fw500
+		
+		margin-bottom 20px
 	
 	&__pags
+		@extend $font-reset
+		
 		display flex
 		border-radius 4px
 		height 20px
@@ -33,35 +41,110 @@
 		@extend $btn-reset, $text-14
 		
 		flex-grow 1
+		flex-basis 33.33%
 		text-transform lowercase
 
-		&:first-children
+		&:first-child
 			border-radius 4px 0 0 4px
 		
-		&:last-children
+		&:last-child
 			border-radius 0 4px 4px 0
+		
+		&:nth-child(2):not(:last-child)
+			border-left 1px solid gray
+			border-right 1px solid gray
+		
+		&:last-child:not(:nth-child(3))
+			border-left 1px solid gray
 
 		&--active
 			background-color blue
 			color white
+	
+	@media (min-width tablet)
+		&__slide
+		&__face
+			width slider-mid-width
+		
+		&__face
+			max-height 400px
+		
+		&__text
+			font-size 1rem
+	
+	@media (min-width desktop)
+		&__slide
+		&__face
+			width slider-big-width
+		
+		&__text
+			font-size 1.125rem
+		
+		&__pags
+			max-width 500px
+			margin auto
 
 [data-slider-pos*='-3']
-	width 2200px
+	width slider-small-3
 
 [data-slider-pos*='-2']
-	width 1300px
+	width slider-small-2
 
 [data-slider-pos='1-3']
 	transform translateX(0)
 
 [data-slider-pos='2-3']
-	transform translateX(-900px)
+	transform translateX(-(slider-small-width + slider-space))
 
 [data-slider-pos='3-3']
-	transform translateX(-1800px)
+	transform translateX(-(slider-small-width*2 + slider-space*2))
 
 [data-slider-pos='1-2']
 	transform translateX(0)
 
 [data-slider-pos='2-2']
-	transform translateX(-900px)
+	transform translateX(-(slider-small-width + slider-space))
+
+@media (min-width tablet)
+	[data-slider-pos*='-3']
+		width slider-mid-3
+
+	[data-slider-pos*='-2']
+		width slider-mid-2
+
+	[data-slider-pos='1-3']
+		transform translateX(0)
+
+	[data-slider-pos='2-3']
+		transform translateX(-(slider-mid-width + slider-space))
+
+	[data-slider-pos='3-3']
+		transform translateX(-(slider-mid-width*2 + slider-space*2))
+
+	[data-slider-pos='1-2']
+		transform translateX(0)
+
+	[data-slider-pos='2-2']
+		transform translateX(-(slider-mid-width + slider-space))
+
+@media (min-width tablet)
+	[data-slider-pos*='-3']
+		width slider-big-3
+
+	[data-slider-pos*='-2']
+		width slider-big-2
+
+	[data-slider-pos='1-3']
+		transform translateX(0)
+
+	[data-slider-pos='2-3']
+		transform translateX(-(slider-big-width + slider-space))
+
+	[data-slider-pos='3-3']
+		transform translateX(-(slider-big-width*2 + slider-space*2))
+
+	[data-slider-pos='1-2']
+		transform translateX(0)
+
+	[data-slider-pos='2-2']
+		transform translateX(-(slider-big-width + slider-space))

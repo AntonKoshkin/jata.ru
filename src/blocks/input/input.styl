@@ -26,12 +26,11 @@
 		left 0
 	
 	&__input:focus + &__label
-	&__input[data-filled='true'] + &__label
+	&__input:not([data-filled='false']) + &__label
 		transform translateY(-16px) scale(.75)
-	
 
-	&__input[data-filled='true']:valid + &__label
+	&__input[data-filled='correct'] + &__label
 		color blue
 	
-	&__input[data-filled='true']:invalid + &__label
+	&__input[data-filled='incorrect'] + &__label
 		color red

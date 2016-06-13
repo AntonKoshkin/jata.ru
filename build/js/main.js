@@ -56,9 +56,11 @@ jQuery(document).ready(function($) {
 		if ($('#pageOne').attr('data-show') === 'true') {
 			$('#pageOne').attr('data-show', 'false');
 			$('#pageTwo').attr('data-show', 'true');
+			$('[data-step]').attr('data-step', 'two');
 		} else if ($('#pageTwo').attr('data-show') === 'true') {
 			$('#pageTwo').attr('data-show', 'false');
 			$('#pageThree').attr('data-show', 'true');
+			$('[data-step]').attr('data-step', 'three');
 		}
 	});
 	
@@ -68,9 +70,11 @@ jQuery(document).ready(function($) {
 		if ($('#pageThree').attr('data-show') === 'true') {
 			$('#pageThree').attr('data-show', 'false');
 			$('#pageTwo').attr('data-show', 'true');
+			$('[data-step]').attr('data-step', 'two');
 		} else if ($('#pageTwo').attr('data-show') === 'true') {
 			$('#pageTwo').attr('data-show', 'false');
 			$('#pageOne').attr('data-show', 'true');
+			$('[data-step]').attr('data-step', 'one');
 		}
 	});
 
@@ -158,6 +162,12 @@ jQuery(document).ready(function($) {
 
 	// slider
 	
+
+	// map
+	$('#map').lazyload({
+		threshold	: 200,
+		effect		: 'fadeIn',
+	});
 });
 // ../../bower_components/jquery/dist/jquery.js
 // Device.js

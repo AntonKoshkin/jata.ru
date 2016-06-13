@@ -25,4 +25,7 @@ jQuery(document).ready(function($) {
 
 	// slider
 	//= ../blocks/slider/slider.js
+
+	// map
+	//= ../blocks/map/map.js
 });
