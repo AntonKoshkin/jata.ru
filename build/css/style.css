@@ -1462,6 +1462,9 @@ html {
   .block--freedom {
     padding-top: 20px;
   }
+  .block--report {
+    padding-left: 30px;
+  }
 }
 @media (min-width: 1900px) {
   .block--we-do-left {
@@ -1480,6 +1483,9 @@ html {
 
     -ms-flex-negative: 0;
         flex-shrink: 0;
+  }
+  .block--report {
+    padding-left: 0;
   }
 }
 .burger {
@@ -2563,8 +2569,8 @@ html {
 .pin--pon-one {
   top: 197px;
   left: 143px;
-  -webkit-animation: pon-one-move 150s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite;
-          animation: pon-one-move 150s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite;
+  -webkit-animation: pon-one-move 75s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite;
+          animation: pon-one-move 75s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite;
 }
 .pin--pon-one:hover {
   -webkit-animation-play-state: paused;
@@ -2573,10 +2579,11 @@ html {
 .pin--pon-two {
   top: 127px;
   left: 240px;
+  opacity: 0.999;
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
-  -webkit-animation: pon-two-move 252s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite;
-          animation: pon-two-move 252s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite;
+  -webkit-animation: pon-two-move 126s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite;
+          animation: pon-two-move 126s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite;
 }
 .pin--pon-two:hover {
   -webkit-animation-play-state: paused;
@@ -2677,6 +2684,9 @@ html {
 .pin__text {
   color: #a5a5a5;
 }
+.pin__text--blue {
+  color: #00a3af;
+}
 .pin__face {
   position: absolute;
   top: 50%;
@@ -2684,12 +2694,13 @@ html {
   overflow: hidden;
   width: 60px;
   border: 1px solid #00a3af;
-  border-radius: 50%;
+  border-radius: 30px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 .pin__img {
   width: 100%;
+  height: 100%;
   border-radius: 50%;
 }
 @media (min-width: 920px) {
@@ -2710,8 +2721,8 @@ html {
     left: 236px;
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
-    -webkit-animation: pon-one-move-tablet 150s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite;
-            animation: pon-one-move-tablet 150s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite;
+    -webkit-animation: pon-one-move-tablet 75s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite;
+            animation: pon-one-move-tablet 75s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite;
   }
   .pin--pon-one:hover {
     -webkit-animation-play-state: paused;
@@ -2722,8 +2733,8 @@ html {
     left: 393px;
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
-    -webkit-animation: pon-two-move-tablet 252s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite;
-            animation: pon-two-move-tablet 252s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite;
+    -webkit-animation: pon-two-move-tablet 126s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite;
+            animation: pon-two-move-tablet 126s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite;
   }
   .pin--pon-two:hover {
     -webkit-animation-play-state: paused;
@@ -2874,22 +2885,22 @@ html {
 }
 @media (min-width: 920px) {
   .point--first .point__desc {
-    top: -25px;
-    left: 50px;
+    top: 0px;
+    left: 35px;
   }
   .point--first .point__point:before {
     width: 120px;
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
+    -webkit-transform: rotate(23deg);
+            transform: rotate(23deg);
   }
   .point--second .point__desc {
     bottom: 100px;
-    left: 0;
+    left: -45px;
   }
   .point--second .point__point:before {
     width: 200px;
-    -webkit-transform: rotate(-70deg);
-            transform: rotate(-70deg);
+    -webkit-transform: rotate(-83deg);
+            transform: rotate(-83deg);
   }
   .point--third .point__desc {
     right: -15px;

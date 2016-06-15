@@ -149,8 +149,6 @@ jQuery(document).ready(function($) {
 	$('body').on('click', '[data-pag-pos]', function(event) {
 		event.preventDefault();
 	
-		console.log('qwe')
-	
 		$(this)
 			.addClass('slide-pack__pag--active')
 			.siblings()
@@ -160,13 +158,20 @@ jQuery(document).ready(function($) {
 			.attr('data-slider-pos', $(this).attr('data-pag-pos'));
 	});
 
-	// slider
-	
-
 	// map
 	$('#map').lazyload({
 		threshold	: 200,
 		effect		: 'fadeIn',
+	});
+
+	// search animation start
+	var searchAnimationStarted = 0;
+	
+	$(window).scroll(function(event) {
+		if (($('.search').length) && ($(window).scrollTop() >= $('.search').offset().top - $(window).height() / 2) && (searchAnimationStarted !== 1)) {
+			$('.search').addClass('search--animate');
+			searchAnimationStarted = 1;
+		}
 	});
 });
 // ../../bower_components/jquery/dist/jquery.js

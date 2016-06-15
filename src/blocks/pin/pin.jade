@@ -21,7 +21,7 @@ mixin pin(title, ps, img)
 					src='/img/pin__img--'+img+'.png'
 					alt='')
 
-mixin pon(title, ps, perc, img)
+mixin pon(title, ps, perc, img, ext)
 	if attributes.mods
 		if typeof attributes.mods === 'string'
 			-var mods = 'pin--' + attributes.mods
@@ -49,5 +49,5 @@ mixin pon(title, ps, perc, img)
 						-i++
 			.pin__face
 				img.pin__img(
-					src='/img/pon__img--'+img+'.png'
+					src='/img/pon__img--'+img+'.'+ext
 					alt='')

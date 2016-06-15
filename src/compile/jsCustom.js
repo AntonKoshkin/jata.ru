@@ -23,9 +23,9 @@ jQuery(document).ready(function($) {
 	// slide-pack
 	//= ../blocks/slide-pack/slide-pack.js
 
-	// slider
-	//= ../blocks/slider/slider.js
-
 	// map
 	//= ../blocks/map/map.js
+
+	// search animation start
+	//= ../blocks/search/search.js
 });

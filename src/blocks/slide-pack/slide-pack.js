@@ -1,8 +1,6 @@
 $('body').on('click', '[data-pag-pos]', function(event) {
 	event.preventDefault();
 
-	console.log('qwe')
-
 	$(this)
 		.addClass('slide-pack__pag--active')
 		.siblings()
