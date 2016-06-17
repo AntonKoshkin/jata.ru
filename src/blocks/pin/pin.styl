@@ -16,21 +16,20 @@
 	&--pon-one
 		top 197px
 		left 143px
-		animation pon-one-move 75s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite
+		animation pon-one-move 100s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite
 		
-		&:hover
-			animation-play-state paused
+		// &:hover
+		// 	animation-play-state paused
 	
 	&--pon-two
 		top 127px
 		left 240px
 		transform translate(0, 0)
-		animation pon-two-move 126s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite
+		// animation pon-two-move 126s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite
 		opacity .999
 
-		&:hover
-			animation-play-state paused
-		
+		// &:hover
+		// 	animation-play-state paused
 
 	&__pointer
 		slow all
@@ -67,7 +66,15 @@
 		opacity 0
 		
 		.map &
-			display none
+			width 40px
+			height @width
+			top -10px
+			right -10px
+			bottom -10px
+			left -10px
+			margin auto
+			border-width 10px
+			animation pulsate-in-map 3s ease-out infinite
 
 	&__card
 		slow all
@@ -126,11 +133,12 @@
 	
 	&__face
 		@extend $font-reset
+		size 60px
 		
 		position absolute
-		width 60px
 		border-radius 30px
 		border 1px solid blue
+		background-color blue
 		overflow hidden
 		top 50%
 		right 5px
@@ -158,16 +166,16 @@
 			top 326px
 			left 236px
 			transform translate(0, 0)
-			animation pon-one-move-tablet 75s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite
+			animation pon-one-move-tablet 100s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite
 			
-			&:hover
-				animation-play-state paused
+			// &:hover
+			// 	animation-play-state paused
 		
 		&--pon-two
 			top 214px
 			left 393px
 			transform translate(0, 0)
-			animation pon-two-move-tablet 126s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite
+			// animation pon-two-move-tablet 126s cubic-bezier(0.26, 0.05, 0.73, 0.96) infinite
 			
-			&:hover
-				animation-play-state paused
+			// &:hover
+			// 	animation-play-state paused

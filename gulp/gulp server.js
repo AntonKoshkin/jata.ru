@@ -9,7 +9,7 @@ module.exports = function() {
 	return function() {
 		bs.init({
 			server			: 'build',
-			port				: 7777,
+			port				: 7778,
 			injectChanges	: true,
 			logPrefix		: 'Server says, that',
 			// tunnel			: true,

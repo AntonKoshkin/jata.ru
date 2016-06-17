@@ -43,22 +43,18 @@ block content
 							data-filled='false'
 							mods=['fxb46p']
 							id='name'
-							name='firstname'
-							pattern='[A-Za-zА-Яа-яЁё]{1,}')
+							name='firstname')
 						+input('text', 'Фамилия')(
 							data-filled='false'
 							mods=['fxb46p']
 							id='lastName'
-							name='lastname'
-							pattern='[A-Za-zА-Яа-яЁё]{1,}')
-						+input('email', 'E-mail')(
-							pattern='[A-Za-z0-9]{1,}@[A-Za-z0-9]{1,}\\.[A-Za-z0-9]{1,}'
+							name='lastname')
+						+input('text', 'E-mail')(
 							data-filled='false'
 							mods=['fxb46p']
 							id='email'
 							name='email')
-						+input('number', 'Телефон')(
-							pattern='^[0-9]+$'
+						+input('text', 'Телефон')(
 							data-filled='false'
 							mods=['fxb46p']
 							id='phone'
@@ -111,13 +107,11 @@ block content
 						id='pageThree'
 						data-show='false'
 						mods=['three'])
-						+input('number', 'Ср. пробег за день (км)')(
-							pattern='^[0-9]+$'
+						+input('text', 'Ср. пробег за день (км)')(
 							data-filled='false'
 							mods=['fxb46p', 'small']
 							id='avDay')
-						+input('number', 'Ср. пробег за выходные')(
-							pattern='^[0-9]+$'
+						+input('text', 'Ср. пробег за выходные')(
 							data-filled='false'
 							mods=['fxb46p', 'small']
 							id='avWeekend')

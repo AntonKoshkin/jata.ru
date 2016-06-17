@@ -1,179 +1,3 @@
-jQuery(document).ready(function($) {
-	// бургер
-	$('body').on('click', '.burger', function(event) {
-		event.preventDefault();
-		$('.navigation').toggleClass('navigation--open');
-	});
-	
-	// убогие селекты
-	$('body').on('click', '.select__input', function(event) {
-		if (!$(this).closest('.select--open').length) {
-			$('.select--open')
-				.removeClass('select--open');
-	
-			$(this)
-				.closest('.select')
-				.addClass('select--open');
-		} else {
-			$(this)
-				.closest('.select')
-				.removeClass('select--open');
-		}
-	});
-	
-	$('body').on('click', '.select__variant', function(event) {
-		event.preventDefault();
-		$(this)
-			.closest('.select__variants')
-			.siblings('.select__input')
-			.val($(this).text())
-			.closest('.select')
-			.removeClass('select--open');
-	});
-
-	// слайдер ви-ду
-	$('body').on('click', '.wd-slider__pag', function(event) {
-		event.preventDefault();
-		$(this)
-			.addClass('wd-slider__pag--active')
-			.siblings()
-			.removeClass('wd-slider__pag--active');
-		if ($(this).index() === 1) {
-			$(this)
-				.closest('.wd-slider')
-				.addClass('wd-slider--two');
-		} else {
-			$(this)
-				.closest('.wd-slider')
-				.removeClass('wd-slider--two');
-		}
-	});
-
-	// driver-form
-	$('body').on('click', '#nextPage', function(event) {
-		event.preventDefault();
-		
-		if ($('#pageOne').attr('data-show') === 'true') {
-			$('#pageOne').attr('data-show', 'false');
-			$('#pageTwo').attr('data-show', 'true');
-			$('[data-step]').attr('data-step', 'two');
-		} else if ($('#pageTwo').attr('data-show') === 'true') {
-			$('#pageTwo').attr('data-show', 'false');
-			$('#pageThree').attr('data-show', 'true');
-			$('[data-step]').attr('data-step', 'three');
-		}
-	});
-	
-	$('body').on('click', '#prevPage', function(event) {
-		event.preventDefault();
-		
-		if ($('#pageThree').attr('data-show') === 'true') {
-			$('#pageThree').attr('data-show', 'false');
-			$('#pageTwo').attr('data-show', 'true');
-			$('[data-step]').attr('data-step', 'two');
-		} else if ($('#pageTwo').attr('data-show') === 'true') {
-			$('#pageTwo').attr('data-show', 'false');
-			$('#pageOne').attr('data-show', 'true');
-			$('[data-step]').attr('data-step', 'one');
-		}
-	});
-
-	// input
-	$('body').on('input', '.input__input', function(event) {
-		if ($(this).val() !== '') {
-			$(this).attr('data-filled', 'true');
-		} else {
-			$(this).attr('data-filled', 'false');
-		}
-	});
-
-	// tablet
-	var
-		mobileOne	= $('#tablet').attr('data-mob-x1'),
-		mobileTwo	= $('#tablet').attr('data-mob-x2'),
-		mobileThree	= $('#tablet').attr('data-mob-x3'),
-		tabletOne	= $('#tablet').attr('data-tab-x1'),
-		tabletTwo	= $('#tablet').attr('data-tab-x2'),
-		tabletThree	= $('#tablet').attr('data-tab-x3');
-	
-	if (window.devicePixelRatio >= 3) {
-		if ($('html').hasClass('mobile')) {
-			$('#tablet').attr('data-original', mobileThree);
-		} else {
-			$('#tablet').attr('data-original', tabletThree);
-		}
-	} else if (window.devicePixelRatio >= 2) {
-		if ($('html').hasClass('mobile')) {
-			$('#tablet').attr('data-original', mobileTwo);
-		} else {
-			$('#tablet').attr('data-original', tabletTwo);
-		}
-	} else  {
-		if ($('html').hasClass('mobile')) {
-			$('#tablet').attr('data-original', mobileOne);
-		} else {
-			$('#tablet').attr('data-original', tabletOne);
-		}
-	}
-	
-	$('#tablet').lazyload({
-		threshold	: 200,
-		effect		: 'fadeIn',
-	});
-	
-	// $.get("http://jata.ru/api/v1/accounts/view", function(data) {
-	// 	console.log(data);
-	// });
-
-	// dot-strip
-	$('body').on('click', '.dot-strip__input', function(event) {
-		switch ($(this).attr('id')) {
-			case 'dotCar':
-				$('.dot-strip__runner').attr('data-pos', 'one');
-				break;
-			case 'dotLorry':
-				$('.dot-strip__runner').attr('data-pos', 'two');
-				break;
-			case 'dotBus':
-				$('.dot-strip__runner').attr('data-pos', 'three');
-				break;
-		}
-	
-		$(this)
-			.closest('.slider')
-			.find('.slide-pack')
-			.attr('data-slider-pos', $(this).attr('data-dot-pos'));
-	});
-
-	// slide-pack
-	$('body').on('click', '[data-pag-pos]', function(event) {
-		event.preventDefault();
-	
-		$(this)
-			.addClass('slide-pack__pag--active')
-			.siblings()
-			.removeClass('slide-pack__pag--active')
-			.closest('.slide-pack__pags')
-			.siblings('[data-slider-pos]')
-			.attr('data-slider-pos', $(this).attr('data-pag-pos'));
-	});
-
-	// map
-	$('#map').lazyload({
-		threshold	: 200,
-		effect		: 'fadeIn',
-	});
-
-	// search animation start
-	var searchAnimationStarted = 0;
-	
-	$(window).scroll(function(event) {
-		if (($('.search').length) && ($(window).scrollTop() >= $('.search').offset().top - $(window).height() / 2) && (searchAnimationStarted !== 1)) {
-			$('.search').addClass('search--animate');
-			searchAnimationStarted = 1;
-		}
-	});
-});
 // ../../bower_components/jquery/dist/jquery.js
 // Device.js
 // (c) 2014 Matthew Hudson
@@ -722,3 +546,220 @@ jQuery(document).ready(function($) {
     });
 
 })(jQuery, window, document);
+jQuery(document).ready(function($) {
+	// бургер
+	$('body').on('click', '.burger', function(event) {
+		event.preventDefault();
+		$('.navigation').toggleClass('navigation--open');
+	});
+	
+	// убогие селекты
+	$('body').on('click', '.select__input', function(event) {
+		if (!$(this).closest('.select--open').length) {
+			$('.select--open')
+				.removeClass('select--open');
+	
+			$(this)
+				.closest('.select')
+				.addClass('select--open');
+		} else {
+			$(this)
+				.closest('.select')
+				.removeClass('select--open');
+		}
+	});
+	
+	$('body').on('click', '.select__variant', function(event) {
+		event.preventDefault();
+		$(this)
+			.closest('.select__variants')
+			.siblings('.select__input')
+			.val($(this).text())
+			.closest('.select')
+			.removeClass('select--open');
+	});
+
+	// слайдер ви-ду
+	$('body').on('click', '.wd-slider__pag', function(event) {
+		event.preventDefault();
+		$(this)
+			.addClass('wd-slider__pag--active')
+			.siblings()
+			.removeClass('wd-slider__pag--active');
+		if ($(this).index() === 1) {
+			$(this)
+				.closest('.wd-slider')
+				.addClass('wd-slider--two');
+		} else {
+			$(this)
+				.closest('.wd-slider')
+				.removeClass('wd-slider--two');
+		}
+	});
+
+	// driver-form
+	$('body').on('click', '#nextPage', function(event) {
+		event.preventDefault();
+		
+		if ($('#pageOne').attr('data-show') === 'true') {
+			$('#pageOne').attr('data-show', 'false');
+			$('#pageTwo').attr('data-show', 'true');
+			$('[data-step]').attr('data-step', 'two');
+		} else if ($('#pageTwo').attr('data-show') === 'true') {
+			$('#pageTwo').attr('data-show', 'false');
+			$('#pageThree').attr('data-show', 'true');
+			$('[data-step]').attr('data-step', 'three');
+		}
+	});
+	
+	$('body').on('click', '#prevPage', function(event) {
+		event.preventDefault();
+		
+		if ($('#pageThree').attr('data-show') === 'true') {
+			$('#pageThree').attr('data-show', 'false');
+			$('#pageTwo').attr('data-show', 'true');
+			$('[data-step]').attr('data-step', 'two');
+		} else if ($('#pageTwo').attr('data-show') === 'true') {
+			$('#pageTwo').attr('data-show', 'false');
+			$('#pageOne').attr('data-show', 'true');
+			$('[data-step]').attr('data-step', 'one');
+		}
+	});
+
+	// input
+	$('body').on('input', '.input__input', function(event) {
+		if ($(this).val() !== '') {
+			$(this).attr('data-filled', 'true');
+		} else {
+			$(this).attr('data-filled', 'false');
+		}
+	});
+
+	// tablet
+	var
+		mobileOne	= $('#tablet').attr('data-mob-x1'),
+		mobileTwo	= $('#tablet').attr('data-mob-x2'),
+		mobileThree	= $('#tablet').attr('data-mob-x3'),
+		tabletOne	= $('#tablet').attr('data-tab-x1'),
+		tabletTwo	= $('#tablet').attr('data-tab-x2'),
+		tabletThree	= $('#tablet').attr('data-tab-x3');
+	
+	if (window.devicePixelRatio >= 3) {
+		if ($('html').hasClass('mobile')) {
+			$('#tablet').attr('data-original', mobileThree);
+		} else {
+			$('#tablet').attr('data-original', tabletThree);
+		}
+	} else if (window.devicePixelRatio >= 2) {
+		if ($('html').hasClass('mobile')) {
+			$('#tablet').attr('data-original', mobileTwo);
+		} else {
+			$('#tablet').attr('data-original', tabletTwo);
+		}
+	} else  {
+		if ($('html').hasClass('mobile')) {
+			$('#tablet').attr('data-original', mobileOne);
+		} else {
+			$('#tablet').attr('data-original', tabletOne);
+		}
+	}
+	
+	$('#tablet').lazyload({
+		threshold	: 200,
+		effect		: 'fadeIn',
+	});
+	
+	// $.get("http://jata.ru/api/v1/accounts/view", function(data) {
+	// 	console.log(data);
+	// });
+
+	// dot-strip
+	$('body').on('click', '.dot-strip__input', function(event) {
+		switch ($(this).attr('id')) {
+			case 'dotCar':
+				$('.dot-strip__runner').attr('data-pos', 'one');
+				break;
+			case 'dotLorry':
+				$('.dot-strip__runner').attr('data-pos', 'two');
+				break;
+			case 'dotBus':
+				$('.dot-strip__runner').attr('data-pos', 'three');
+				break;
+		}
+	
+		$(this)
+			.closest('.slider')
+			.find('.slide-pack')
+			.attr('data-slider-pos', $(this).attr('data-dot-pos'));
+	});
+
+	// slide-pack
+	$('body').on('click', '[data-pag-pos]', function(event) {
+		event.preventDefault();
+	
+		$(this)
+			.addClass('slide-pack__pag--active')
+			.siblings()
+			.removeClass('slide-pack__pag--active')
+			.closest('.slide-pack__pags')
+			.siblings('[data-slider-pos]')
+			.attr('data-slider-pos', $(this).attr('data-pag-pos'));
+	});
+
+	// map
+	$('#map').lazyload({
+		threshold	: 200,
+		effect		: 'fadeIn',
+	});
+
+	// search animation start
+	var searchAnimationStarted = 0;
+	
+	$(window).scroll(function(event) {
+		if (($('.search').length) && ($(window).scrollTop() >= $('.search').offset().top - $(window).height() / 2) && (searchAnimationStarted !== 1)) {
+			$('.search').addClass('search--animate');
+			searchAnimationStarted = 1;
+		}
+	});
+
+	// cards in pons and clock
+	$('body').on('mouseenter', '.map .pin', function(event) {
+		event.preventDefault();
+		
+		$(this)
+			.removeClass('pin--show')
+			.css('z-index', '2')
+			.siblings()
+			.removeClass('pin--show')
+			.css('z-index', '1');
+	});
+	
+	// создаем новый объект для хранения даты
+	var newDate = new Date();
+	
+	// извлекаем текущую дату в новый объект
+	newDate.setDate(newDate.getDate());
+	
+	var	hours = new Date().getHours(),
+			minutes = new Date().getMinutes(),
+			seconds = new Date().getSeconds();
+	
+	$('[data-clock=\'h\'').text(( hours < 10 ? '0' : '' ) + hours);
+	$('[data-clock=\'m\'').text(( minutes < 10 ? '0' : '' ) + minutes);
+	$('[data-clock=\'s\'').text(( seconds < 10 ? '0' : '' ) + seconds);
+	
+	setInterval(function() {
+		hours = new Date().getHours();
+		$('[data-clock=\'h\'').text(( hours < 10 ? '0' : '' ) + hours);
+	}, 1000);
+	
+	setInterval(function() {
+		minutes = new Date().getMinutes();
+		$('[data-clock=\'m\'').text(( minutes < 10 ? '0' : '' ) + minutes);
+	}, 1000);
+	
+	setInterval(function() {
+		seconds = new Date().getSeconds();
+		$('[data-clock=\'s\'').text(( seconds < 10 ? '0' : '' ) + seconds);
+	}, 1000);
+});

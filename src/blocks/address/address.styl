@@ -1,6 +1,10 @@
 .address
 	text-align right
 	
+	.ie10 &
+	.ie11 &
+		max-width 210px
+	
 	&--mb10
 		margin-bottom 10px
 	
@@ -9,3 +13,9 @@
 		@extend $main-text, $fw300
 		
 		color white
+	
+	@media (min-width tablet)
+		.ie10 &
+		.ie11 &
+			max-width 400px
+			margin-bottom 10px

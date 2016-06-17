@@ -1,13 +1,15 @@
 .dot-strip
 	@extend $font-reset
 	
-	display flex
-	justify-content space-between
 	position relative
 	margin-left 45px
 	margin-right 35px
 	margin-bottom 30px
 	
+	&__dots
+		display flex
+		justify-content space-between
+
 	&__line
 		position absolute
 		height 6px
@@ -55,6 +57,7 @@
 		border-radius 50%
 		position absolute
 		cursor pointer
+		top 0
 		
 		&[data-pos='one']
 			left 0

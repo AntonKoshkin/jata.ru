@@ -6,7 +6,6 @@
 		<meta name="viewport" content="width=device-width"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 		<meta name="HandheldFriendly" content="true"/>
-		<meta property="og:image" content="http://placekitten.com/100/100"/>
 		<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png"/>
 		<meta name="theme-color" content="#4b5a6e"/>
 		<meta name="application-name" content="Application name"/>
@@ -17,7 +16,6 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 		<meta name="format-detection" content="telephone=no"/><!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--><script>if(/*@cc_on!@*/false){document.documentElement.className+=' ie10';};if(top.VBArray){document.documentElement.className+=' ie11';}</script>
-		<link href="https://fonts.googleapis.com/css?family=Exo+2:400,300,500,600&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css"/>
 		<link rel="stylesheet" href="css/style.maped.css"/>
 	</head>
 	<body>
@@ -27,7 +25,7 @@
 				<nav class="navigation navigation--index">
 					<div class="navigation__bg"></div>
 					<ul class="navigation__list">
-						<li class="navigation__item"><a href="#" title="О Jata.ru" class="navigation__link">О Jata.ru</a></li>
+						<li class="navigation__item"><a href="about.html" title="О Jata.ru" class="navigation__link">О Jata.ru</a></li>
 						<li class="navigation__item"><a href="#" title="Как это работает?" class="navigation__link">Как это работает?</a></li>
 						<li class="navigation__item"><a href="#" title="Контакты" class="navigation__link">Контакты</a></li>
 						<li class="navigation__item"><a href="#" title="Рекламные места" class="navigation__link">Рекламные места</a></li>
@@ -68,19 +66,19 @@
 								<div class="driver-form__main">
 									<div data-show="true" id="pageOne" class="driver-form__page driver-form__page--one">
 										<div class="input input--fxb46p">
-											<input data-filled="false" pattern="[A-Za-zА-Яа-яЁё]{1,}" type="text" id="name" name="firstname" class="input__input"/>
+											<input data-filled="false" type="text" id="name" name="firstname" class="input__input"/>
 											<label for="name" class="input__label">Имя</label>
 										</div>
 										<div class="input input--fxb46p">
-											<input data-filled="false" pattern="[A-Za-zА-Яа-яЁё]{1,}" type="text" id="lastName" name="lastname" class="input__input"/>
+											<input data-filled="false" type="text" id="lastName" name="lastname" class="input__input"/>
 											<label for="lastName" class="input__label">Фамилия</label>
 										</div>
 										<div class="input input--fxb46p">
-											<input data-filled="false" pattern="[A-Za-z0-9]{1,}@[A-Za-z0-9]{1,}\.[A-Za-z0-9]{1,}" type="email" id="email" name="email" class="input__input"/>
+											<input data-filled="false" type="text" id="email" name="email" class="input__input"/>
 											<label for="email" class="input__label">E-mail</label>
 										</div>
 										<div class="input input--fxb46p">
-											<input data-filled="false" pattern="^[0-9]+$" type="number" id="phone" name="phone" class="input__input"/>
+											<input data-filled="false" type="text" id="phone" name="phone" class="input__input"/>
 											<label for="phone" class="input__label">Телефон</label>
 										</div>
 										<div class="input input--fxb100p">
@@ -185,11 +183,11 @@
 									</div>
 									<div data-show="false" id="pageThree" class="driver-form__page driver-form__page--three">
 										<div class="input input--fxb46p input--small">
-											<input data-filled="false" pattern="^[0-9]+$" type="number" id="avDay" class="input__input"/>
+											<input data-filled="false" type="text" id="avDay" class="input__input"/>
 											<label for="avDay" class="input__label">Ср. пробег за день (км)</label>
 										</div>
 										<div class="input input--fxb46p input--small">
-											<input data-filled="false" pattern="^[0-9]+$" type="number" id="avWeekend" class="input__input"/>
+											<input data-filled="false" type="text" id="avWeekend" class="input__input"/>
 											<label for="avWeekend" class="input__label">Ср. пробег за выходные</label>
 										</div>
 										<p class="driver-form__com-title">Комментарий</p>
@@ -297,7 +295,7 @@
 		</main>
 		<footer class="footer">
 			<div class="footer__content">
-				<nav class="foot-nav mods">
+				<nav class="foot-nav">
 					<ul class="foot-nav__list">
 						<div class="foot-nav__half">
 							<li class="foot-nav__item"><a href="#" class="foot-nav__link">О компании</a></li>

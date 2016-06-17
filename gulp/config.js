@@ -7,15 +7,17 @@ module.exports = {
 			angJade		: 'src/forAng/**/*.jade',
 			assets		: [
 				'bower_components/jquery/dist/jquery.min.js',
-				'src/assets/fonts/**/*.*',
-				'src/assets/js/*.*',
+				'src/assets/**/*.*',
 			],
 			img			: [
 				'src/blocks/**/*.{jpg,png,svg}',
 				'!src/blocks/**/svg-*.svg',
 			],
 			jade			: 'src/layouts/*.jade',
-			js				: 'src/compile/*.js',
+			js				: [
+				'src/compile/jsVendor.js',
+				'src/compile/jsCustom.js'
+			],
 			pngSprite	: 'src/blocks/**/png-*.png',
 			stylus		: 'src/compile/style.styl',
 			svgSprite	: 'src/blocks/**/svg-*.svg',
@@ -23,7 +25,7 @@ module.exports = {
 		build	: {
 			angJade		: '../dev/jade/',
 			assets		: {
-				fonts	: 'build/fonts/',
+				else	: 'build/',
 				js		: 'build/js/',
 			},
 			img			: 'build/img/',

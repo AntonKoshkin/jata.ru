@@ -1,5 +1,15 @@
 .footer
 	background-image url('/img/footer__bg.png')
+	position relative
+	
+	html > body	.main--foradv + &
+		&:after
+			@extend $pseudo, $abs
+			triangle down 28px 32px white
+			
+			bottom 100%
+			left 50%
+			transform translate(-50%, 28px)
 	
 	&__content
 		padding 30px 20px
@@ -11,6 +21,28 @@
 		display flex
 		flex-direction column
 		justify-content space-between
+		
+		.ie10 &
+		.ie11 &
+			float right
+			text-align right
 	
 	&__btns
 		text-align right
+	
+	@media (min-width tablet)
+		&__content
+			.ie10 &
+			.ie11 &
+				display block
+				width 100%
+				
+				&:before
+				&:after
+					content ''
+					display table
+					height 0
+					width 100%
+				
+				&:after
+					clear both

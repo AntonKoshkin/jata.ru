@@ -28,4 +28,7 @@ jQuery(document).ready(function($) {
 
 	// search animation start
 	//= ../blocks/search/search.js
+
+	// cards in pons and clock
+	//= ../blocks/pin/pin.js
 });

@@ -23,7 +23,7 @@ html(lang='ru')
 			+header
 				+logo(mods=['index'])
 				+navigation(mods=['index'])
-					+navItem('#', 'О Jata.ru')(title='О Jata.ru')
+					+navItem('about.html', 'О Jata.ru')(title='О Jata.ru')
 					+navItem('#', 'Как это работает?')(title='Как это работает?')
 					+navItem('#', 'Контакты')(title='Контакты')
 					+navItem('#', 'Рекламные места')(title='Рекламные места')
@@ -35,8 +35,12 @@ html(lang='ru')
 					+hBtn('foradv.html', 'Рекламодателям')(mods=['for-advers'])
 				+burger(mods=['mb14'])
 		
-		main.main
-			block content
+		if pageId === 'foradv'
+			main.main.main--foradv
+				block content
+		else
+			main.main
+				block content
 
 		footer.footer
 			+footer
@@ -70,5 +74,4 @@ html(lang='ru')
 			src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
 		//- если не загружается, то подтягиваем свой
 		script window.jQuery || document.write('<script src=\'js/jquery.min.js\'><\/script>')
-		script(
-			src='js/main.js')
+		script(src='js/main.js')

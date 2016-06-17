@@ -1,0 +1,31 @@
+extends ../blocks/template/template
+
+block includes
+	include ../blocks/page/page
+
+	//- include ../blocks/block/block
+	//- include ../blocks/cars/cars
+	//- include ../blocks/control/control
+	//- include ../blocks/dot-strip/dot-strip
+	//- include ../blocks/map/map
+	//- include ../blocks/paragraph/paragraph
+	//- include ../blocks/pin/pin
+	//- include ../blocks/point/point
+	//- include ../blocks/promo-logo/promo-logo
+	//- include ../blocks/search/search
+	include ../blocks/section/section
+	//- include ../blocks/slider/slider
+	//- include ../blocks/slide-pack/slide-pack
+	//- include ../blocks/tablet/tablet
+	//- include ../blocks/title/title
+	//- include ../blocks/way/way
+
+block page_id
+	-var pageId = 'about'
+
+block title
+	title Jata
+
+block content
+	+page(mods='about')
+		+section(mods='about')

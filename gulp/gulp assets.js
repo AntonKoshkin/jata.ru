@@ -8,11 +8,8 @@ const
 
 module.exports = function() {
 	return function() {
-		var ifFileIsJs = function(file) {
-			const a = file.path.split('.'),
-					b = a.length - 1;
-
-			if (file.path.split('.')[b] === 'js') {
+		var ifFileIsBc = function(file) {
+			if (file.path.split('\\')[2] === 'bower_components') {
 				return true;
 			} else {
 				return false;
@@ -22,9 +19,9 @@ module.exports = function() {
 		return gulp
 			.src(config.pathTo.src.assets)
 			.pipe(gulpIf(
-				ifFileIsJs,
+				ifFileIsBc,
 				gulp.dest(config.pathTo.build.assets.js),
-				gulp.dest(config.pathTo.build.assets.fonts)
+				gulp.dest(config.pathTo.build.assets.else)
 			));
 	}
 }

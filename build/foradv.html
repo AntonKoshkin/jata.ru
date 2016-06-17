@@ -6,7 +6,6 @@
 		<meta name="viewport" content="width=device-width"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 		<meta name="HandheldFriendly" content="true"/>
-		<meta property="og:image" content="http://placekitten.com/100/100"/>
 		<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png"/>
 		<meta name="theme-color" content="#4b5a6e"/>
 		<meta name="application-name" content="Application name"/>
@@ -17,7 +16,6 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 		<meta name="format-detection" content="telephone=no"/><!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--><script>if(/*@cc_on!@*/false){document.documentElement.className+=' ie10';};if(top.VBArray){document.documentElement.className+=' ie11';}</script>
-		<link href="https://fonts.googleapis.com/css?family=Exo+2:400,300,500,600&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css"/>
 		<link rel="stylesheet" href="css/style.maped.css"/>
 	</head>
 	<body>
@@ -27,7 +25,7 @@
 				<nav class="navigation navigation--index">
 					<div class="navigation__bg"></div>
 					<ul class="navigation__list">
-						<li class="navigation__item"><a href="#" title="О Jata.ru" class="navigation__link">О Jata.ru</a></li>
+						<li class="navigation__item"><a href="about.html" title="О Jata.ru" class="navigation__link">О Jata.ru</a></li>
 						<li class="navigation__item"><a href="#" title="Как это работает?" class="navigation__link">Как это работает?</a></li>
 						<li class="navigation__item"><a href="#" title="Контакты" class="navigation__link">Контакты</a></li>
 						<li class="navigation__item"><a href="#" title="Рекламные места" class="navigation__link">Рекламные места</a></li>
@@ -37,7 +35,7 @@
 				<button type="button" class="burger burger--mb14"><span class="burger__strip"></span><span class="burger__strip"></span><span class="burger__strip"></span></button>
 			</div>
 		</header>
-		<main class="main">
+		<main class="main main--foradv">
 			<div class="page page--index-adv">
 				<div class="section section--promo-adv">
 					<div class="section__content"><img src="/img/promo-logo--full.svg" alt="jata.ru" class="promo-logo promo-logo--promo-adv"/>
@@ -121,7 +119,7 @@
 								<div class="way__strip way__strip--lb"></div>
 							</div>
 						</div>
-						<div class="way way--rb">
+						<div class="way way--rb way--search">
 							<div class="way__content">
 								<div class="block block--way-right block--search">
 									<h2 class="title title--way">Мощный поиск по геопараметрам</h2>
@@ -180,23 +178,25 @@
 										<p class="paragraph__text">Все автомобили проходят верификацию в нашем офисе. Их водители взрослые адекватные люди. Репутация вашего бренда в надёжных руках!</p>
 									</div>
 								</div>
-								<div class="control">
-									<div class="control__shadow"></div><img src="/img/way__img.png" alt="Контроль качества" class="control__img"/>
-									<div class="control__frase control__frase--left control__frase--top">
-										<h4 class="control__text control__text--fat">Только проверенные водители</h4>
-										<p class="control__text">Все без исключения водители заключают с нашей компанией договор.</p>
-									</div>
-									<div class="control__frase control__frase--right control__frase--top">
-										<h4 class="control__text control__text--fat">Автомобили не старше 2005 г.</h4>
-										<p class="control__text">Все автомобили последних моделий в отличном состоянии.</p>
-									</div>
-									<div class="control__frase control__frase--left control__frase--bottom">
-										<h4 class="control__text control__text--fat">100% полюбившийся брэнд</h4>
-										<p class="control__text">Мы работаем только с теми водителями, кому нравится ваш брэнд.</p>
-									</div>
-									<div class="control__frase control__frase--right control__frase--bottom">
-										<h4 class="control__text control__text--fat">600 км/день</h4>
-										<p class="control__text">Каждый водитель нашей компании преодолевает 5000&#8209;8000км в месяц.</p>
+								<div class="way__control">
+									<div class="control">
+										<div class="control__shadow"></div><img src="/img/way__img.png" alt="Контроль качества" class="control__img"/>
+										<div class="control__frase control__frase--left control__frase--top">
+											<h4 class="control__text control__text--fat">Только проверенные водители</h4>
+											<p class="control__text">Все без исключения водители заключают с нашей компанией договор.</p>
+										</div>
+										<div class="control__frase control__frase--right control__frase--top">
+											<h4 class="control__text control__text--fat">Автомобили не старше 2005 г.</h4>
+											<p class="control__text">Все автомобили последних моделий в отличном состоянии.</p>
+										</div>
+										<div class="control__frase control__frase--left control__frase--bottom">
+											<h4 class="control__text control__text--fat">100% полюбившийся брэнд</h4>
+											<p class="control__text">Мы работаем только с теми водителями, кому нравится ваш брэнд.</p>
+										</div>
+										<div class="control__frase control__frase--right control__frase--bottom">
+											<h4 class="control__text control__text--fat">600 км/день</h4>
+											<p class="control__text">Каждый водитель нашей компании преодолевает 5000&#8209;8000км в месяц.</p>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -218,18 +218,20 @@
 										<div class="slider__strip">
 											<div class="dot-strip">
 												<div class="dot-strip__line"></div>
-												<label class="dot-strip__label">
-													<input data-dot-pos="1-3" type="radio" name="dotStrip" id="dotCar" checked="" class="dot-strip__input"/><span class="dot-strip__dot"></span>
-													<div class="dot-strip__text">Легковое авто</div>
-												</label>
-												<label class="dot-strip__label">
-													<input data-dot-pos="2-3" type="radio" name="dotStrip" id="dotLorry" class="dot-strip__input"/><span class="dot-strip__dot"></span>
-													<div class="dot-strip__text">Грузовое авто</div>
-												</label>
-												<label class="dot-strip__label">
-													<input data-dot-pos="3-3" type="radio" name="dotStrip" id="dotBus" class="dot-strip__input"/><span class="dot-strip__dot"></span>
-													<div class="dot-strip__text">Автобус</div>
-												</label>
+												<div class="dot-strip__dots">
+													<label class="dot-strip__label">
+														<input data-dot-pos="1-3" type="radio" name="dotStrip" id="dotCar" checked="" class="dot-strip__input"/><span class="dot-strip__dot"></span>
+														<div class="dot-strip__text">Легковое авто</div>
+													</label>
+													<label class="dot-strip__label">
+														<input data-dot-pos="2-3" type="radio" name="dotStrip" id="dotLorry" class="dot-strip__input"/><span class="dot-strip__dot"></span>
+														<div class="dot-strip__text">Грузовое авто</div>
+													</label>
+													<label class="dot-strip__label">
+														<input data-dot-pos="3-3" type="radio" name="dotStrip" id="dotBus" class="dot-strip__input"/><span class="dot-strip__dot"></span>
+														<div class="dot-strip__text">Автобус</div>
+													</label>
+												</div>
 												<div data-pos="one" class="dot-strip__runner"></div>
 											</div>
 										</div>
@@ -323,7 +325,7 @@
 														<p class="pin__text">Соответствие</p>
 														<p class="pin__text">маршруту: <span class="pin__text--blue">98%</span>
 														</p>
-														<p class="pin__text">18:56</p>
+														<div class="pin__text"><span data-clock="h">00</span>:<span data-clock="m">00</span>:<span data-clock="s">00</span></div>
 													</div>
 												</div>
 												<div class="pin__face"><img src="/img/pon__img--2.png" alt="" class="pin__img"/></div>
@@ -336,11 +338,11 @@
 												<div class="pin__desc">
 													<p class="pin__title">Кирилл Баранов</p>
 													<div class="pin__texts">
-														<p class="pin__text">Volkswagen juke 2012 г.</p>
+														<p class="pin__text">Volkswagen 2012 г.</p>
 														<p class="pin__text">Соответствие</p>
 														<p class="pin__text">маршруту: <span class="pin__text--blue">95%</span>
 														</p>
-														<p class="pin__text">18:56</p>
+														<div class="pin__text"><span data-clock="h">00</span>:<span data-clock="m">00</span>:<span data-clock="s">00</span></div>
 													</div>
 												</div>
 												<div class="pin__face"><img src="/img/pon__img--1.jpg" alt="" class="pin__img"/></div>
@@ -360,8 +362,8 @@
 			</div>
 		</main>
 		<footer class="footer">
-			<div class="footer__content">
-				<nav class="foot-nav mods">
+			<div class="footer__content footer__content--foradv">
+				<nav class="foot-nav">
 					<ul class="foot-nav__list">
 						<div class="foot-nav__half">
 							<li class="foot-nav__item"><a href="#" class="foot-nav__link">О компании</a></li>

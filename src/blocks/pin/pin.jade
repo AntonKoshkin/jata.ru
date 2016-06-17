@@ -47,6 +47,12 @@ mixin pon(title, ps, perc, img, ext)
 						else
 							p.pin__text=p
 						-i++
+					.pin__text
+						span(data-clock='h') 00
+						| :
+						span(data-clock='m') 00
+						| :
+						span(data-clock='s') 00
 			.pin__face
 				img.pin__img(
 					src='/img/pon__img--'+img+'.'+ext

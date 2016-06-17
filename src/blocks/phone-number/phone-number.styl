@@ -4,6 +4,10 @@
 	&--mb15
 		margin-bottom 15px
 	
+	.ie10 &
+	.ie11 &
+		max-width 210px
+	
 	&__number
 		@extend $text-22, $fw300
 
@@ -18,3 +22,9 @@
 	
 		&--fat
 			font-weight extrabold
+	
+	@media (min-width tablet)
+		.ie10 &
+		.ie11 &
+			margin-bottom 10px
+			max-width 100%
