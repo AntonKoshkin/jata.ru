@@ -24,7 +24,7 @@ block content
 	+page(mods=['index'])
 		+section(true)(mods=['promo'])
 			+block(mods=['promo'])
-				+promoLogo('/img/promo-logo.svg')(mods=['index'])
+				+promoLogo('/img/promo-logo.svg', 'jata', '.ru')(mods=['index'])
 				+paragraph('В крупных городах количество маршрутов исчисляется сотнями и даже тысячами. Это открывает безграничные возможности для того, чтобы донести до огромной аудитории информацию о товаре, услуге, компании, магазине.')(mods=['promo'])
 			+driverForm
 				+dfHeader('Стать водителем')
@@ -68,40 +68,45 @@ block content
 						data-show='false'
 						mods=['two'])
 						+dfRow(mods=['select'])
-							+dfTitle('Год:')
-							+select
+							+select(
+								mods=['w200']
+								value='Год выпуска')
 								-var year = 2004
 								while year <= 2016
-									+isVariant('variant ' + year)
+									+sVariant(year)
 									-year++
 						+dfRow(mods=['select'])
-							+dfTitle('Марка:')
-							+select
+							+select(
+								mods=['w200']
+								value='Марка авто')
 								-var year = 1
 								while year <= 10
-									+isVariant('variant ' + year)
+									+sVariant('variant ' + year)
 									-year++
 						+dfRow(mods=['select'])
-							+dfTitle('Модель:')
-							+select
+							+select(
+								mods=['w200']
+								value='Модель авто')
 								-var year = 1
 								while year <= 10
-									+isVariant('variant ' + year)
+									+sVariant('variant ' + year)
 									-year++
 						+dfRow(mods=['select'])
-							+dfTitle('Цвет:')
-							+select
+							+select(
+								mods=['w200']
+								value='Цвет авто')
 								-var year = 1
 								while year <= 10
-									+isVariant('variant ' + year)
+									+sVariant('variant ' + year)
 									-year++
 
 						+dfRow(mods=['select'])
-							+dfTitle('Состояние:')
-							+select
+							+select(
+								mods=['w200']
+								value='Состояние авто')
 								-var year = 1
 								while year <= 10
-									+isVariant('variant ' + year)
+									+sVariant('variant ' + year)
 									-year++
 					+dfPage(
 						id='pageThree'

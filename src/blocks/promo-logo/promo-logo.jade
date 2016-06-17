@@ -1,10 +1,13 @@
-mixin promoLogo(img)
+mixin promoLogo(img, text1, text2)
 	if attributes.mods
 		-var mods = []
 		each mod, i in attributes.mods
 			-mods[i] = 'promo-logo--' + mod
 
-	img.promo-logo(
-		class=mods
-		src=img
-		alt='jata.ru')
+	.promo-logo(class=mods)
+		img.promo-logo__img(
+			src=img
+			alt='jata.ru')
+		p.promo-logo__text
+			span=text1
+			span.promo-logo__text--red=text2

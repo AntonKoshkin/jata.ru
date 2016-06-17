@@ -1,23 +1,48 @@
 .promo-logo
+	display flex
+	align-items center
+	
 	&--index
 		margin-left 20px
 		width 280px
-		padding-bottom 260px
+		padding-bottom 230px
+		margin-top -30px
 	
-	&--promo-adv
-		width 320px
+	&__img
+		size 100px
+		margin-right 40px
+	
+	&--index &__img
+		display none
+	
+	&__text
+		@extend $fw500
+		
+		font-size 6.25rem
+		
+		&--red
+			color red
+		
+	&--adv &__text
+		font-size 5rem
+		margin-bottom 12px
 		
 	@media (min-width tablet)
 		&--index
 			width 330px
 			padding-bottom 0
-			
-			.ie10 &
-			.ie11 &
-				height 150px
 		
-		&--promo-adv
+		&--adv
 			width 390px
+		
+		&--adv &__img
+			size 125px
+		
+		&__text
+			font-size 7.5rem
+		
+		&--adv &__text
+			font-size 6.5rem
 	
 	@media (min-width desktop)
 		&--index
@@ -25,5 +50,15 @@
 			margin-left 0
 			margin-bottom 15px
 		
-		&--promo-adv
+		&--adv
 			width 580px
+		
+		&--adv &__img
+			size 185px
+		
+		&__text
+			font-size 8.75rem
+			padding-left 5px
+		
+		&--adv &__text
+			font-size 7rem

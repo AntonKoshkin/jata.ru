@@ -4,28 +4,18 @@ mixin select(isColor)
 		each mod, i in attributes.mods
 			-mods[i] = 'select--' + mod
 
-	if isColor === true
-		.select(class=mods)
-			input.select__input(
-				type='text'
-				readonly
-				ng-click=attributes['ng-click'])
-			ul.select__variants(
-				ng-show=attributes['ng-show'])
-				if block
-					block
-	else
-		.select(class=mods)
-			input.select__input(
-				type='text'
-				readonly
-				ng-click=attributes['ng-click'])
-			ul.select__variants(
-				ng-show=attributes['ng-show'])
-				if block
-					block
+	.select(class=mods)
+		input.select__input(
+			type='text'
+			readonly
+			ng-click=attributes['ng-click']
+			value=attributes.value)
+		ul.select__variants(
+			ng-show=attributes['ng-show'])
+			if block
+				block
 
-mixin isVariant(text)
+mixin sVariant(text)
 	if attributes.mods
 		-var mods = []
 		each mod, i in attributes.mods
