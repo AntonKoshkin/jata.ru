@@ -47,5 +47,8 @@ lazyRequireTask('build', './gulp/gulp build.js');
 // task Assets
 lazyRequireTask('assets', './gulp/gulp assets.js');
 
+// task Video
+lazyRequireTask('video', './gulp/gulp video.js');
+
 // task Default
 lazyRequireTask('default', './gulp/gulp.js');

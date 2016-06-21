@@ -1,0 +1,51 @@
+.rectangle
+	padding 5px
+	display flex
+	align-items stretch
+	
+	&--blue
+		background-color blue
+		width 450px
+		position absolute
+		top 0
+		right 15px
+	
+	&--bus
+		background-image url('/img/rectangle__bg.jpg')
+		background-size cover
+		background-position 100% 100%
+		width 100%
+		max-width 480px
+		height 350px
+		margin auto
+
+	&__content
+		border 1px solid white
+		padding 24px
+		width 100%
+	
+	@media (min-width 530px)
+		&--bus
+			margin-left 15px
+	
+	@media (min-width tablet)
+		&--blue
+			top 50%
+			right 20px
+			transform translateY(-50%)
+			width 510px
+			
+		&--bus
+			width 600px
+			height 375px
+			margin-left 20px
+			max-width none
+	
+	@media (min-width desktop)
+		&--blue
+			width 610px
+			height 300px
+
+		&--bus
+			width 642px
+			height 396px

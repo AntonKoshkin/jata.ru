@@ -7,6 +7,9 @@
 	
 	&--mb20
 		margin-bottom 20px
+		
+	&--hdiw
+		position relative
 	
 	&__btn
 		@extend $btn-reset, $main-text
@@ -24,3 +27,18 @@
 	&--fat &__btn
 		padding-left 45px
 		padding-right 45px
+	
+	&--hdiw &__btn
+		border-radius 0
+		background-color rgba(white, .2)
+		box-shadow none
+		border 2px solid blue
+		margin-left 1px
+		margin-right 1px
+		padding 0
+		height 55px
+		width 210px
+		font-size 1.125rem
+	
+	&--hdiw&--active &__btn
+		background-color blue

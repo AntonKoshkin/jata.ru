@@ -1,8 +1,11 @@
 mixin input(type, title)
 	if attributes.mods
-		-var mods = []
-		each mod, i in attributes.mods
-			-mods[i] = 'input--' + mod
+		if typeof attributes.mods === 'string'
+			-var mods = 'input--' + attributes.mods
+		else
+			-var mods = []
+			each mod, i in attributes.mods
+				-mods[i] = 'input--' + mod
 
 	.input(class=mods)
 		input.input__input(

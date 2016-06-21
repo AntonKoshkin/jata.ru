@@ -30,7 +30,6 @@ module.exports = function() {
 				})],
 			}))
 			.on('data', function(file) {
-				
 				const a = file.path.split('\\'),
 						b = a.length - 2;
 

@@ -23,16 +23,16 @@ html(lang='ru')
 			+header
 				+logo(mods=['index'])
 				+navigation(mods=['index'])
-					+navItem('about.html', 'О Jata.ru')(title='О Jata.ru')
-					+navItem('#', 'Как это работает?')(title='Как это работает?')
+					+navItem('/about.html', 'О Jata.ru')(title='О Jata.ru')
+					+navItem('/how.html', 'Как это работает?')(title='Как это работает?')
 					+navItem('#', 'Контакты')(title='Контакты')
 					+navItem('#', 'Рекламные места')(title='Рекламные места')
 					+navItem('#', 'Блог/новости')(title='Блог/новости')
 				+hBtn('/enter.html', 'Войти')(mods=['enter'])
 				if pageId === 'foradv'
-					+hBtn('index.html', 'Водителям')(mods=['for-advers'])
+					+hBtn('/index.html', 'Водителям')(mods=['for-advers'])
 				else
-					+hBtn('foradv.html', 'Рекламодателям')(mods=['for-advers'])
+					+hBtn('/foradv.html', 'Рекламодателям')(mods=['for-advers'])
 				+burger(mods=['mb14'])
 		
 		if pageId === 'foradv'

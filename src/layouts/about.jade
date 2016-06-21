@@ -3,21 +3,23 @@ extends ../blocks/template/template
 block includes
 	include ../blocks/page/page
 
-	//- include ../blocks/block/block
+	include ../blocks/block/block
 	//- include ../blocks/cars/cars
 	//- include ../blocks/control/control
 	//- include ../blocks/dot-strip/dot-strip
 	//- include ../blocks/map/map
-	//- include ../blocks/paragraph/paragraph
+	include ../blocks/paragraph/paragraph
 	//- include ../blocks/pin/pin
 	//- include ../blocks/point/point
 	//- include ../blocks/promo-logo/promo-logo
+	include ../blocks/rectangle/rectangle
 	//- include ../blocks/search/search
 	include ../blocks/section/section
 	//- include ../blocks/slider/slider
 	//- include ../blocks/slide-pack/slide-pack
 	//- include ../blocks/tablet/tablet
-	//- include ../blocks/title/title
+	include ../blocks/title/title
+	include ../blocks/video-bg/video-bg
 	//- include ../blocks/way/way
 
 block page_id
@@ -28,4 +30,22 @@ block title
 
 block content
 	+page(mods='about')
+		+section(mods='promo-about')
+			+videoBg([
+				['video-bg--1', 'mp4']
+			], 'section__bg--promo.jpg')(mods='about')
+			+title(1, 'О jata.ru')(mods='about')
 		+section(mods='about')
+			+paragraph(mods='about')
+				+pSpan(mods='about-title')
+					| Jata.ru - уникальный проект, площадка
+				|  - позволяющая напрямую взаимодействовать между владельцами рекламного места, будь то личный автомобиль, автобус, рекламный щит и многое другое, и рекламодателем. Таким образом Вы можете заработать на своем рекламном месте, либо, если Вы рекламодатель, найти по минимальным ценам необходимое рекламное место, минуя рекламные агентства.
+			+block(mods='rectangles')
+				+rectangle(mods='blue')
+					+paragraph('На данный момент в системе jata.ru зарегистрировано уже более 1000 автомобилей и автобусов в Санкт-Петербурге. Каждый владелец транспортного средства описывает подробный маршрут своего перемещения, к которому привязываются различные объекты (торговые центры, школы, детские сады, бизнес центры). Таким образом рекламодатель получает огромный простор для осуществления своей таргетированной рекламной компании.')(mods='rectangle')
+				+rectangle(mods='bus')
+			+block(mods='gray')
+				+paragraph('Мы хотим, чтобы наш уровень сервиса оставался на высшем уровне, поэтому все пользователи сайта jata.ru проходят обязательную верификацию у нашего специалиста и подписывают договор с компанией Jata.')(mods='gray')
+				+paragraph(mods='gray')
+					a(href='http://reg.jata.ru') Зарегистрируйся
+					|  и начни пользоваться jata.ru прямо сейчас!

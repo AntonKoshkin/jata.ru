@@ -3,8 +3,7 @@
 const
 	config	= require('./config'),
 	gulp		= require('gulp'),
-	gulpIf	= require('gulp-if'),
-	newer		= require('gulp-newer');
+	gulpIf	= require('gulp-if');
 
 module.exports = function() {
 	return function() {

@@ -41,6 +41,27 @@
 	&--cw
 		color white
 	
+	&--about
+		@extend $text-50, $fw300
+		
+		color white
+		position relative
+	
+	&--hdiw
+		@extend $text-50, $fw300
+		
+		color white
+		position relative
+		width 100%
+		text-align center
+		margin-bottom 10px
+	
+	&--questions
+		@extend $text-24, $fw100
+		
+		margin-bottom 20px
+		text-align center
+	
 	@media (min-width tablet)
 		&--jataru
 			font-size 4.375rem
@@ -51,6 +72,17 @@
 		
 		&--way
 			font-size 2rem
+		
+		&--about
+			font-size 3.75rem
+		
+		&--hdiw
+			font-size 3.75em
+			margin-bottom 20px
+	
+		&--questions
+			font-size 1.875rem
+			margin-bottom 40px
 	
 	@media (min-width desktop)
 		&--jataru
@@ -63,3 +95,10 @@
 		
 		&--way
 			font-size 2.25rem
+		
+		&--hdiw
+			font-size 3.875rem
+			margin-bottom 60px
+	
+		&--questions
+			margin-bottom 45px

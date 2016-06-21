@@ -23,6 +23,18 @@
 			content ''
 			margin-left 10px
 	
+	&--about
+		padding-left 10px
+		padding-right 10px
+		margin-bottom 20px
+		max-width 926px
+		margin-left auto
+		margin-right auto
+	
+	&__text
+		&--about-title
+			@extend $text-24
+	
 	&--cr &__text
 		color red
 	
@@ -67,6 +79,20 @@
 	
 	&--tar &__text
 		text-align right
+	
+	&--about &__text
+		text-align center
+	
+	&--rectangle &__text
+		color white
+		line-height 1.5em
+	
+	&--gray &__text
+		text-align center
+	
+	&--gray a
+		color blue
+		text-decoration underline
 
 	@media (min-width tablet)
 		&--with-checker
@@ -75,6 +101,13 @@
 		&--jataru
 			width 820px
 			margin auto
+		
+		&--about
+			margin-bottom 50px
+		
+		&__text
+			&--about-title
+				font-size 2rem
 		
 		&--cr-fz30-ttu-mb10 &__text
 			text-align right
@@ -86,6 +119,15 @@
 		
 		&--way &__text
 			line-height 1.5em
+		
+		&--about &__text
+		&--gray &__text
+			font-size 1.125rem
+		
+		&--gray &__text
+			max-width 924px
+			margin auto
+			line-height 2em
 	
 	@media (min-width desktop)
 		&--promo
@@ -93,3 +135,20 @@
 		
 		&--jataru
 			width 980px
+		
+		&--about
+			margin-bottom 70px
+			max-width 1100px
+
+		&__text
+			&--about-title
+				font-size 2.5rem
+		
+		&--about &__text
+			font-size 1.375rem
+		
+		&--rectangle &__text
+			font-size 1.125rem
+		
+		&--gray &__text
+			max-width 1020px

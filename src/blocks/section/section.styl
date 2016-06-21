@@ -36,7 +36,22 @@
 		
 		html > body &
 			overflow hidden
+	
+	&--promo-about
+		background-color #251a1d
+		background-image url('/img/section__bg--promo-about.jpg')
+		background-size cover
+		background-position center
+	
+	&--promo-hdiw
+		background-color #625a55
+		background-size cover
+		background-position center
+		background-image url('')
 		
+		.mobile &
+			background-image url('/img/section__bg--promo-hdiw.jpg')
+
 	&__bg
 		position absolute
 		right 0
@@ -86,33 +101,39 @@
 			left 50%
 			transform translateX(-50%)
 	
+	&--promo-about &__content
+		height 250px
+		display flex
+		align-items center
+		background-color rgba(black, .3)
+		justify-content center
+		box-shadow inset 0 -80px 45px -50px rgba(black, .9)
+		position relative
+		overflow hidden
+	
+	&--promo-hdiw &__content
+		height 250px
+		position relative
+		overflow hidden
+		display flex
+		align-content center
+		justify-content center
+		flex-wrap wrap
+		padding-top 50px
+		align-items center
+	
+	&--about &__content
+		padding 35px 0 0
+	
+	&--questions &__content
+		padding 30px 15px 40px
+	
 	@media (min-width tablet)
 		&--promo
 			min-height 100vh
 			
 		&--we-do
 			padding 55px 40px
-		
-		&__bg
-			height 100%
-			background-position 37% center
-		
-		&--promo &__content
-			display flex
-			justify-content space-between
-			padding 100px 50px 40px
-		
-		&--promo-adv &__content
-			height 100vh
-			
-			.ie10 &
-			.ie11 &
-				height 100vh
-	
-		&--we-do &__content
-			display flex
-			justify-content space-between
-			align-items flex-start
 		
 		&--how-works
 			padding-bottom 30px
@@ -125,6 +146,37 @@
 		&--jataru
 			padding-top 70px
 	
+		&--we-do &__content
+			display flex
+			justify-content space-between
+			align-items flex-start
+		
+		&--promo &__content
+			display flex
+			justify-content space-between
+			padding 100px 50px 40px
+		
+		&--promo-adv &__content
+			height 100vh
+			
+			.ie10 &
+			.ie11 &
+				height 100vh
+		
+		&--promo-about &__content
+			height 340px
+	
+		&--promo-hdiw &__content
+			height 340px
+			padding-top 20px
+	
+		&--questions &__content
+			padding 35px 20px 60px
+	
+		&__bg
+			height 100%
+			background-position 37% center
+		
 	@media (min-width desktop)
 		&--we-do
 			padding 60px 330px 60px 80px
@@ -136,3 +188,16 @@
 			padding 100px 230px 230px
 			background-size cover
 			background-position 13% 40%
+		
+		&--about &__content
+			padding-top 85px
+
+		&--promo-about &__content
+			height 500px
+		
+		&--promo-hdiw &__content
+			height 500px
+			padding-top 100px
+	
+	&--questions &__content
+		padding 50px 20px 80px

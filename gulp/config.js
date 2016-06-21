@@ -21,6 +21,7 @@ module.exports = {
 			pngSprite	: 'src/blocks/**/png-*.png',
 			stylus		: 'src/compile/style.styl',
 			svgSprite	: 'src/blocks/**/svg-*.svg',
+			video			: 'src/blocks/**/*.mp4',
 		},
 		build	: {
 			angJade		: '../dev/jade/',
@@ -34,6 +35,7 @@ module.exports = {
 			pngSprite	: 'build/img/',
 			stylus		: 'build/css/',
 			svgSprite	: 'build/img/',
+			video			: 'build/video/',
 		},
 		watch	: {
 			angJade		: 'src/forAng/*.jade',
@@ -48,6 +50,7 @@ module.exports = {
 			pngSprite	: 'src/blocks/**/png-*.png',
 			stylus		: 'src/**/*.styl',
 			svgSprite	: 'src/blocks/**/svg-*.svg',
+			video			: 'src/blocks/**/*.mp4',
 		},
 		clean	: 'build/*',
 	},

@@ -1,0 +1,21 @@
+mixin videoBg(sources, poster)
+	if attributes.mods
+		if typeof attributes.mods === 'string'
+			-var mods = 'video-bg--' + attributes.mods
+		else
+			-var mods = []
+			each mod, i in attributes.mods
+				-mods[i] = 'video-bg--' + mod
+
+	video.video-bg(
+		class=mods
+		autoplay=''
+		loop=''
+		muted='')
+		if sources
+			each source in sources
+				source(
+					preload='auto'
+					src='/video/'+source[0]+'.'+source[1]
+					type='video/'+source[1]
+					poster='/img/'+poster)

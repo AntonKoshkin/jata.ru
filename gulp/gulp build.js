@@ -15,7 +15,8 @@ module.exports = function() {
 				// 'angJade',
 				'js',
 				'stylus',
-				'svgSprite'
+				'svgSprite',
+				'video'
 			],
 			cb
 		);
