@@ -618,37 +618,51 @@ jQuery(document).ready(function($) {
 			.css('z-index', '1');
 	});
 	
-	// создаем новый объект для хранения даты
-	var newDate = new Date();
+	var sec	= 55555;
 	
-	// извлекаем текущую дату в новый объект
-	newDate.setDate(newDate.getDate());
+	function countdown() {
+		$('[data-clock=\'h\']').text(Math.floor(sec/3600));
+		$('[data-clock=\'m\']').text(Math.floor(sec%3600/60));
+		$('[data-clock=\'s\']').text(Math.floor(sec%3600%60));
 	
-	var	hours = new Date().getHours(),
-			minutes = new Date().getMinutes(),
+		sec += 1;
+	}
+	
+	if ($('html').hasClass('desktop')) {
+		var newDate = new Date();
+	
+		newDate.setDate(newDate.getDate());
+	
+		var	hours = new Date().getHours(),
+				minutes = new Date().getMinutes(),
+				seconds = new Date().getSeconds();
+	
+		$('[data-clock=\'h\'').text(hours);
+		$('[data-clock=\'m\'').text(minutes);
+		$('[data-clock=\'s\'').text(seconds);
+	
+		setInterval(function() {
+			hours = new Date().getHours();
+			$('[data-clock=\'h\'').text(hours);
+	
+			minutes = new Date().getMinutes();
+			$('[data-clock=\'m\'').text(minutes);
+	
 			seconds = new Date().getSeconds();
+			$('[data-clock=\'s\'').text(seconds);
+		}, 1000);
+	} else {
+		$('[data-clock=\'h\']').text(Math.floor(sec/3600));
+		$('[data-clock=\'m\']').text(Math.floor(sec%3600/60));
+		$('[data-clock=\'s\']').text(Math.floor(sec%3600%60));
 	
-	$('[data-clock=\'h\'').text(( hours < 10 ? '0' : '' ) + hours);
-	$('[data-clock=\'m\'').text(( minutes < 10 ? '0' : '' ) + minutes);
-	$('[data-clock=\'s\'').text(( seconds < 10 ? '0' : '' ) + seconds);
+		sec += 1;
 	
-	setInterval(function() {
-		hours = new Date().getHours();
-		$('[data-clock=\'h\'').text(( hours < 10 ? '0' : '' ) + hours);
-	}, 1000);
-	
-	setInterval(function() {
-		minutes = new Date().getMinutes();
-		$('[data-clock=\'m\'').text(( minutes < 10 ? '0' : '' ) + minutes);
-	}, 1000);
-	
-	setInterval(function() {
-		seconds = new Date().getSeconds();
-		$('[data-clock=\'s\'').text(( seconds < 10 ? '0' : '' ) + seconds);
-	}, 1000);
+		setInterval(countdown, 1000);
+	}
 	$('.questions__item').eq(1).hide();
 	
-	$('body').on('click', '.main-btn--hdiw', function(event) {
+	$('body').on('click touchmove', '.main-btn--hdiw', function(event) {
 		event.preventDefault();
 		
 		if (!$(this).hasClass('main-btn--active')) {
@@ -669,11 +683,12 @@ jQuery(document).ready(function($) {
 		}
 	});
 	
-	$('body').on('click', '.question', function(event) {
+	$('body').on('click touchmove', '.question__title', function(event) {
 		event.preventDefault();
 		
 		$(this)
-			.find('.question__body')
+			.closest('.question__header')
+			.siblings('.question__body')
 			.slideToggle(300)
 			.closest('.question')
 			.siblings('.question')
@@ -683,7 +698,7 @@ jQuery(document).ready(function($) {
 	var searchAnimationStarted = 0;
 	
 	$(window).scroll(function(event) {
-		if (($('.search').length) && ($(window).scrollTop() >= $('.search').offset().top - $(window).height() / 2) && (searchAnimationStarted !== 1)) {
+		if (($('.search').length) && ($(window).scrollTop() >= $('.search').offset().top - $(window).height() + $('.search').height() / 2) && (searchAnimationStarted !== 1)) {
 			$('.search').addClass('search--animate');
 			searchAnimationStarted = 1;
 		}
@@ -789,3 +804,84 @@ jQuery(document).ready(function($) {
 		}
 	});
 });
+
+if ($('#yaMap').length) {
+	ymaps.ready(init);
+	var
+		map,
+		point;
+}
+
+function init(){     
+	map = new ymaps.Map('yaMap', {
+		center	: [
+			59.91596187,
+			30.30575744
+		],
+		zoom		: 14,
+		controls	: [
+			'zoomControl',
+		],
+	});
+
+	var
+		redIcon	=	ymaps
+							.templateLayoutFactory
+							.createClass('<div class=\'ya-map__icon ya-map__icon--red\'></div>'),
+		blueIcon	=	ymaps
+							.templateLayoutFactory
+							.createClass('<div class=\'ya-map__icon ya-map__icon--blue\'></div>');
+
+	pointOne = new ymaps.Placemark(
+		[
+			59.92191840,
+			30.31779727
+		], {
+			hintContent			: 'Точка для обклейки',
+			balloonContent		: 'Спб, Московский проспект, 97а<br>10:00-18:00',
+		}, {
+			iconLayout			: blueIcon,
+			iconShape			: {
+				type			: 'Rectangle',
+				coordinates	: [
+					[
+						-7,
+						-40
+					], [
+						33,
+						0
+					]
+				]
+			}
+		}
+	);
+
+	pointTwo = new ymaps.Placemark(
+		[
+			59.90988461,
+			30.29648772
+		], {
+			hintContent			: 'Главный офис',
+			balloonContent		: 'Какой-то другой адрес<br>10:00-18:00',
+		}, {
+			iconLayout			: redIcon,
+			iconShape			: {
+				type			: 'Rectangle',
+				coordinates	: [
+					[
+						-7,
+						-40
+					], [
+						33,
+						0
+					]
+				]
+			}
+		}
+	);
+
+	map.behaviors.disable('scrollZoom');
+
+	map.geoObjects.add(pointOne);
+	map.geoObjects.add(pointTwo);
+}

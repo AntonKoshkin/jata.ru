@@ -36,6 +36,20 @@
 		padding 25px 30px 20px
 		background-color gray-lighter
 	
+	&--offis
+		display flex
+		
+		&:not(:last-child)
+			margin-bottom 20px
+	
+	&--mb10
+		&:not(:last-child)
+			margin-bottom 10px
+	
+	&--mansoor
+		max-width 450px
+		margin auto
+	
 	@media (min-width tablet)
 		&--we-do-left
 			max-width 370px
@@ -73,6 +87,24 @@
 		
 		&--gray
 			padding 35px 0 30px
+		
+		&--mansoor
+			display flex
+			max-width 1100px
+			flex-direction column
+			flex-wrap wrap
+			height 270px
+			justify-content space-between
+			align-content space-between
+			
+			&:not(:last-child)
+				margin-bottom 45px
+			
+			&:last-child
+				height 515px
+		
+		&--offis
+			display block
 	
 	@media (min-width desktop)
 		&--we-do-left

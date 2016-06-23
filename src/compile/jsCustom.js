@@ -13,3 +13,5 @@ jQuery(document).ready(function($) {
 	//= ../blocks/video-bg/video-bg.js
 	//= ../blocks/wd-slider/wd-slider.js
 });
+
+//= ../blocks/ya-map/ya-map.js

@@ -1,6 +1,6 @@
 $('.questions__item').eq(1).hide();
 
-$('body').on('click', '.main-btn--hdiw', function(event) {
+$('body').on('click touchmove', '.main-btn--hdiw', function(event) {
 	event.preventDefault();
 	
 	if (!$(this).hasClass('main-btn--active')) {
@@ -21,11 +21,12 @@ $('body').on('click', '.main-btn--hdiw', function(event) {
 	}
 });
 
-$('body').on('click', '.question', function(event) {
+$('body').on('click touchmove', '.question__title', function(event) {
 	event.preventDefault();
 	
 	$(this)
-		.find('.question__body')
+		.closest('.question__header')
+		.siblings('.question__body')
 		.slideToggle(300)
 		.closest('.question')
 		.siblings('.question')

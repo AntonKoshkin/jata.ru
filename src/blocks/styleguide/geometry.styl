@@ -1,27 +1,51 @@
-triangle(way, trh, trw, trc)
+triangle(way, h, w, c)
 	width 0
 	height 0
 	
 	if way == up
 		border-top none
-		border-bottom trh solid trc
-		border-left trw solid transparent
-		border-right trw solid transparent
+		border-bottom h solid c
+		border-left w solid transparent
+		border-right w solid transparent
 	
 	if way == down
 		border-bottom none
-		border-top trh solid trc
-		border-left trw solid transparent
-		border-right trw solid transparent
+		border-top h solid c
+		border-left w solid transparent
+		border-right w solid transparent
 	
 	if way == left
 		border-left none
-		border-right trh solid trc
-		border-top trw solid transparent
-		border-bottom trw solid transparent
+		border-right h solid c
+		border-top w solid transparent
+		border-bottom w solid transparent
 	
 	if way == right
 		border-right none
-		border-left trh solid trc
-		border-top trw solid transparent
-		border-bottom trw solid transparent
+		border-left h solid c
+		border-top w solid transparent
+		border-bottom w solid transparent
+		
+	if way == top-rigth
+		border-top (h/2) solid c
+		border-right (w/2) solid c
+		border-bottom (h/2) solid transparent
+		border-left (w/2) solid transparent
+
+	if way == right-bottom
+		border-top (h/2) solid transparent
+		border-right (w/2) solid c
+		border-bottom (h/2) solid c
+		border-left (w/2) solid transparent
+
+	if way == bottom-left
+		border-top (h/2) solid transparent
+		border-right (w/2) solid transparent
+		border-bottom (h/2) solid c
+		border-left (w/2) solid c
+
+	if way == left-top
+		border-top (h/2) solid c
+		border-right (w/2) solid transparent
+		border-bottom (h/2) solid transparent
+		border-left (w/2) solid c

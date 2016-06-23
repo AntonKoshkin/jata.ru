@@ -1,0 +1,98 @@
+extends ../blocks/template/template
+
+block includes
+	include ../blocks/page/page
+
+	include ../blocks/block/block
+	//- include ../blocks/cars/cars
+	//- include ../blocks/control/control
+	//- include ../blocks/dot-strip/dot-strip
+	include ../blocks/main-btn/main-btn
+	include ../blocks/mansoor/mansoor
+	//- include ../blocks/map/map
+	include ../blocks/paragraph/paragraph
+	//- include ../blocks/pin/pin
+	//- include ../blocks/point/point
+	//- include ../blocks/promo-logo/promo-logo
+	//- include ../blocks/rectangle/rectangle
+	include ../blocks/question/question
+	//- include ../blocks/search/search
+	include ../blocks/section/section
+	//- include ../blocks/slider/slider
+	//- include ../blocks/slide-pack/slide-pack
+	include ../blocks/soc-icon/soc-icon
+	//- include ../blocks/tablet/tablet
+	include ../blocks/title/title
+	include ../blocks/video-bg/video-bg
+	//- include ../blocks/way/way
+	include ../blocks/ya-map/ya-map
+
+block page_id
+	-var pageId = 'contacts'
+
+block title
+	title Jata
+
+block content
+	+page(mods='contacts')
+		+section(mods='promo-contacts')
+			+title(1, 'Контакты')(mods='contacts')
+		+section(mods='mansoor')
+			+block(mods='mansoor')
+				+mansoor(
+					icon='smartphone'
+					mods='smartphone')
+					+mPhone('+78003757575', '8 800 375 75 75')
+					+mTime('10:00', '18:00')
+				+mansoor(mods='social')
+					+paragraph('Мы в социальных сетях')(mods='mansoor-soc')
+					+socIcon('vk.com', 'Вконтакте')(data-icon='vk')
+					+socIcon('facebook.com', 'Фейсбук')(data-icon='fb')
+					+socIcon('plus.google.com', 'Гугл+')(data-icon='gp')
+					+socIcon('instagram.com', 'Инстаграм')(data-icon='ig')
+				+mansoor(
+					icon='mail'
+					mods='mail')
+					+paragraph('Общая')(mods='mansoor')
+					+mMail('info@jata.ru')
+					+paragraph('Для прессы')(mods='mansoor')
+					+mMail('info@jata.ru')
+					+paragraph('Для прессы')(mods='mansoor')
+					+mMail('info@jata.ru')
+				+mansoor(
+					icon='pointer'
+					mods='address')
+					+paragraph('Адреса офисов')(mods='mansoor-blue')
+					+paragraph('Спб, Московский проспект, 97а')(mods='mansoor-address')
+					+mTime('10:00', '18:00')(mods='mb10')
+					+paragraph('Спб, Московский проспект, 97а')(mods='mansoor-address')
+					+mTime('10:00', '18:00')
+
+			+block(mods='mansoor')
+				+mansoor(mods='offis')
+					+paragraph('Главный офис')(mods='address-red')
+					+paragraph('Спб, Московский проспект, 97а')(
+						data-icon='red-pointer')
+					+block(mods='offis')
+						+mNumber('+78003757575', '8 800 375 75 75')
+						+mTime('10:00', '18:00')
+					+paragraph('Точки для обклейки')(mods='address-blue')
+
+					+paragraph('Спб, Московский проспект, 97а')(
+						data-icon='blue-pointer')
+					+block(mods=['offis', 'mb10'])
+						+mNumber('+78003757575', '8 800 375 75 75')
+						+mTime('10:00', '18:00')
+					+paragraph('Спб, Московский проспект, 97а')(
+						data-icon='blue-pointer')
+					+block(mods=['offis', 'mb10'])
+						+mNumber('+78003757575', '8 800 375 75 75')
+						+mTime('10:00', '18:00')
+					+paragraph('Спб, Московский проспект, 97а')(
+						data-icon='blue-pointer')
+					+block(mods=['offis', 'mb10'])
+						+mNumber('+78003757575', '8 800 375 75 75')
+						+mTime('10:00', '18:00')
+
+				+mansoor(mods='map')
+					+yaMap

@@ -15,8 +15,11 @@
 		<meta name="apple-mobile-web-app-capable" content="yes"/>
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 		<meta name="format-detection" content="telephone=no"/><!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--><script>if(/*@cc_on!@*/false){document.documentElement.className+=' ie10';};if(top.VBArray){document.documentElement.className+=' ie11';}</script>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<script src="js/flexbox-polifill.js"></script><script>if(/*@cc_on!@*/false){document.documentElement.className+=' ie10';};if(top.VBArray){document.documentElement.className+=' ie11';}</script>
 		<link rel="stylesheet" href="css/style.maped.css"/>
+		<!-- yandex maps-->
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 	</head>
 	<body>
 		<header class="header">
@@ -27,7 +30,7 @@
 					<ul class="navigation__list">
 						<li class="navigation__item"><a href="/about.html" title="О Jata.ru" class="navigation__link">О Jata.ru</a></li>
 						<li class="navigation__item"><a href="/how.html" title="Как это работает?" class="navigation__link">Как это работает?</a></li>
-						<li class="navigation__item"><a href="#" title="Контакты" class="navigation__link">Контакты</a></li>
+						<li class="navigation__item"><a href="/contacts.html" title="Контакты" class="navigation__link">Контакты</a></li>
 						<li class="navigation__item"><a href="#" title="Рекламные места" class="navigation__link">Рекламные места</a></li>
 						<li class="navigation__item"><a href="#" title="Блог/новости" class="navigation__link">Блог/новости</a></li>
 					</ul>
@@ -285,7 +288,7 @@
 							<p class="paragraph__text">от 800 км/месяц</p>
 						</div>
 						<div class="paragraph paragraph--with-checker">
-							<p class="paragraph__text">Наличие телефона с системой андроид</p>
+							<p class="paragraph__text">Наличие смартфона</p>
 						</div>
 					</div>
 				</div>

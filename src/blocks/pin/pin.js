@@ -9,31 +9,45 @@ $('body').on('mouseenter', '.map .pin', function(event) {
 		.css('z-index', '1');
 });
 
-// создаем новый объект для хранения даты
-var newDate = new Date();
+var sec	= 55555;
 
-// извлекаем текущую дату в новый объект
-newDate.setDate(newDate.getDate());
+function countdown() {
+	$('[data-clock=\'h\']').text(Math.floor(sec/3600));
+	$('[data-clock=\'m\']').text(Math.floor(sec%3600/60));
+	$('[data-clock=\'s\']').text(Math.floor(sec%3600%60));
 
-var	hours = new Date().getHours(),
-		minutes = new Date().getMinutes(),
+	sec += 1;
+}
+
+if ($('html').hasClass('desktop')) {
+	var newDate = new Date();
+
+	newDate.setDate(newDate.getDate());
+
+	var	hours = new Date().getHours(),
+			minutes = new Date().getMinutes(),
+			seconds = new Date().getSeconds();
+
+	$('[data-clock=\'h\'').text(hours);
+	$('[data-clock=\'m\'').text(minutes);
+	$('[data-clock=\'s\'').text(seconds);
+
+	setInterval(function() {
+		hours = new Date().getHours();
+		$('[data-clock=\'h\'').text(hours);
+
+		minutes = new Date().getMinutes();
+		$('[data-clock=\'m\'').text(minutes);
+
 		seconds = new Date().getSeconds();
+		$('[data-clock=\'s\'').text(seconds);
+	}, 1000);
+} else {
+	$('[data-clock=\'h\']').text(Math.floor(sec/3600));
+	$('[data-clock=\'m\']').text(Math.floor(sec%3600/60));
+	$('[data-clock=\'s\']').text(Math.floor(sec%3600%60));
 
-$('[data-clock=\'h\'').text(( hours < 10 ? '0' : '' ) + hours);
-$('[data-clock=\'m\'').text(( minutes < 10 ? '0' : '' ) + minutes);
-$('[data-clock=\'s\'').text(( seconds < 10 ? '0' : '' ) + seconds);
+	sec += 1;
 
-setInterval(function() {
-	hours = new Date().getHours();
-	$('[data-clock=\'h\'').text(( hours < 10 ? '0' : '' ) + hours);
-}, 1000);
-
-setInterval(function() {
-	minutes = new Date().getMinutes();
-	$('[data-clock=\'m\'').text(( minutes < 10 ? '0' : '' ) + minutes);
-}, 1000);
-
-setInterval(function() {
-	seconds = new Date().getSeconds();
-	$('[data-clock=\'s\'').text(( seconds < 10 ? '0' : '' ) + seconds);
-}, 1000);
+	setInterval(countdown, 1000);
+}

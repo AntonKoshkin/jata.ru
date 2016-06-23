@@ -1,0 +1,6 @@
+mixin socIcon(link, text)
+	a.soc-icon(
+		target='_blank'
+		data-icon=attributes['data-icon']
+		href='http://'+link
+		title=text)=text
