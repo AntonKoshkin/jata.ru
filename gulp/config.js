@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	isDev		: true,
+	isDev		: false,
 	pathTo	: {
 		src	: {
 			angJade		: 'src/forAng/**/*.jade',

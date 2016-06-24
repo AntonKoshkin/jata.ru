@@ -53,7 +53,6 @@ module.exports = function() {
 			.pipe(gulpIf(
 				config.isDev,
 				combine(
-					rename({suffix: '.maped'}),
 					maps.write('.')
 				),
 				postCss([
