@@ -5,7 +5,7 @@ if ($('#yaMap').length) {
 		point;
 }
 
-function init(){     
+function init(){ 
 	map = new ymaps.Map('yaMap', {
 		center	: [
 			59.91596187,
