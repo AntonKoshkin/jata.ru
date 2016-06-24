@@ -4,6 +4,7 @@ jQuery(document).ready(function($) {
 	//= ../blocks/driver-form/driver-form.js
 	//= ../blocks/input/input.js
 	//= ../blocks/map/map.js
+	//= ../blocks/message/message.js
 	//= ../blocks/pin/pin.js
 	//= ../blocks/question/question.js
 	//= ../blocks/search/search.js

@@ -607,6 +607,13 @@ jQuery(document).ready(function($) {
 		threshold	: 200,
 		effect		: 'fadeIn',
 	});
+	$('body').on('click', '.message__bg, .message__close', function(event) {
+		event.preventDefault();
+		
+		$(this)
+			.closest('.message')
+			.removeClass('message--show');
+	});
 	$('body').on('mouseenter', '.map .pin', function(event) {
 		event.preventDefault();
 		

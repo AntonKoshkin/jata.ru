@@ -5,6 +5,7 @@ include ../../blocks/footer/footer
 include ../../blocks/foot-nav/foot-nav
 include ../../blocks/header/header
 include ../../blocks/logo/logo
+include ../../blocks/message/message
 include ../../blocks/navigation/navigation
 include ../../blocks/phone-number/phone-number
 include ../../blocks/store-btn/store-btn
@@ -61,13 +62,15 @@ html(lang='ru')
 					
 					+phoneNumber('+78003757575', '8 (800)', '375-75-75')
 
-					if process.env.USER == 'Igor'
-						+fBtns(ng-show="device != 'desktop'")
-							-var storeBtnMods = ['tar', 'mb10']
-							+storeBtn('apple')(mods=storeBtnMods)
-							+storeBtn('google')(mods=storeBtnMods)
+					//- +fBtns(ng-show="device != 'desktop'")
+					//- 	-var storeBtnMods = ['tar', 'mb10']
+					//- 	+storeBtn('apple')(mods=storeBtnMods)
+					//- 	+storeBtn('google')(mods=storeBtnMods)
 
 					+copy(2016, 'Jata All Rights Reservet')
+
+		.modals
+			+message('Спасибо за предоставленную информацию. Мы отправили Вам инструкцию на ваш E-mail.')(mods='show')
 
 		//- загружаем жЫквери с цдн
 		script(
