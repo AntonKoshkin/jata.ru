@@ -1,6 +1,6 @@
 $('.questions__item').eq(1).hide();
 
-$('body').on('click touchmove', '.main-btn--hdiw', function(event) {
+$('body').on('click', '.main-btn--hdiw', function(event) {
 	event.preventDefault();
 	
 	if (!$(this).hasClass('main-btn--active')) {
@@ -21,7 +21,7 @@ $('body').on('click touchmove', '.main-btn--hdiw', function(event) {
 	}
 });
 
-$('body').on('click touchmove', '.question__title', function(event) {
+$('body').on('click', '.question__title', function(event) {
 	event.preventDefault();
 	
 	$(this)
