@@ -14,6 +14,12 @@
 		border-bottom 2px solid gray-border
 		position relative
 		background-color transparent
+		
+		&[data-filled='true'][data-correct='true']
+			border-color blue
+		
+		&[data-correct='false']
+			border-color red
 	
 	&__label
 		@extend $text-14, $fw500
@@ -24,13 +30,15 @@
 		position absolute
 		top 0
 		left 0
+		
+		[data-filled='true'] + &
+			transform translateY(-16px) scale(.75)
+		
+		[data-filled='true'][data-correct='true'] + &
+			color blue
+		
+		[data-correct='false'] + &
+			color red
 	
 	&__input:focus + &__label
-	&__input:not([data-filled='false']) + &__label
 		transform translateY(-16px) scale(.75)
-
-	&__input[data-filled='correct'] + &__label
-		color blue
-	
-	&__input[data-filled='incorrect'] + &__label
-		color red

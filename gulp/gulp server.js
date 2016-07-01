@@ -8,10 +8,11 @@ const
 module.exports = function() {
 	return function() {
 		bs.init({
-			server			: 'build',
-			port				: 7778,
 			injectChanges	: true,
 			logPrefix		: 'Server says, that',
+			port				: 7778,
+			// proxy				: 'admin.jata.ru',
+			server			: 'build',
 			// tunnel			: true,
 		});
 	}

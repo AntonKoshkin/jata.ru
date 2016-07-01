@@ -6,12 +6,16 @@ mixin select(isColor)
 
 	.select(class=mods)
 		input.select__input(
-			type='text'
+			data-field-type=attributes.fieldType
+			data-correct=attributes.correct
+			data-id=attributes['data-id']
+			data-val=attributes.val
+			id=attributes.id
 			readonly
-			ng-click=attributes['ng-click']
-			value=attributes.value)
-		ul.select__variants(
-			ng-show=attributes['ng-show'])
+			type='text'
+			value=attributes.value
+			data-placeholder=attributes.value)
+		ul.select__variants(data-content=attributes.content)
 			if block
 				block
 
@@ -23,6 +27,6 @@ mixin sVariant(text)
 
 	li.select__variant(
 		class=mods
-		style=attributes.style
-		ng-repeat=attributes['ng-repeat']
-		ng-click=attributes['ng-click'])=text
+		data-id=attributes['data-id']
+		data-val=attributes.val
+		style=attributes.style)=text

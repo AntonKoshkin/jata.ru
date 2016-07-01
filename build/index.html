@@ -51,153 +51,111 @@
 								<p class="paragraph__text">В крупных городах количество маршрутов исчисляется сотнями и даже тысячами. Это открывает безграничные возможности для того, чтобы донести до огромной аудитории информацию о товаре, услуге, компании, магазине.</p>
 							</div>
 						</div>
-						<div class="driver-form">
+						<div data-page="1" class="driver-form">
 							<div class="driver-form__form">
 								<div class="driver-form__header">
 									<h3 class="driver-form__title">Стать водителем</h3>
 								</div>
 								<div data-step="one" class="driver-form__pagination">
-									<div class="driver-form__pag-item">
+									<div data-step='1' class="driver-form__pag-item">
 										<div class="driver-form__ball">1</div><span class="driver-form__text">Шаг 1</span>
 									</div>
 									<div class="driver-form__dots"></div>
-									<div class="driver-form__pag-item">
+									<div data-step='2' class="driver-form__pag-item">
 										<div class="driver-form__ball">2</div><span class="driver-form__text">Шаг 2</span>
 									</div>
 									<div class="driver-form__dots"></div>
-									<div class="driver-form__pag-item">
+									<div data-step='3' class="driver-form__pag-item">
 										<div class="driver-form__ball">3</div><span class="driver-form__text">Шаг 3</span>
 									</div>
 								</div>
 								<div class="driver-form__main">
-									<div data-show="true" id="pageOne" class="driver-form__page driver-form__page--one">
+									<div data-show="true" data-page="1" class="driver-form__page driver-form__page--one">
 										<div class="input input--fxb46p">
-											<input data-filled="false" type="text" id="name" name="firstname" class="input__input"/>
-											<label for="name" class="input__label">Имя</label>
+											<input data-correct="null" data-field-type="form_input" data-filled="false" data-mask="name" type="text" id="first_name" autocomplete="off" name="firstname" class="input__input"/>
+											<label for="first_name" class="input__label">Имя</label>
 										</div>
 										<div class="input input--fxb46p">
-											<input data-filled="false" type="text" id="lastName" name="lastname" class="input__input"/>
-											<label for="lastName" class="input__label">Фамилия</label>
+											<input data-correct="null" data-field-type="form_input" data-filled="false" data-mask="name" type="text" id="last_name" autocomplete="off" name="lastname" class="input__input"/>
+											<label for="last_name" class="input__label">Фамилия</label>
 										</div>
 										<div class="input input--fxb46p">
-											<input data-filled="false" type="text" id="email" name="email" class="input__input"/>
+											<input data-correct="null" data-field-type="form_input" data-filled="false" data-mask="email" type="email" id="email" autocomplete="off" name="email" class="input__input"/>
 											<label for="email" class="input__label">E-mail</label>
 										</div>
 										<div class="input input--fxb46p">
-											<input data-filled="false" type="text" id="phone" name="phone" class="input__input"/>
+											<input data-correct="null" data-field-type="form_input" data-filled="false" data-mask="tel" type="tel" id="phone" autocomplete="off" name="phone" class="input__input"/>
 											<label for="phone" class="input__label">Телефон</label>
 										</div>
 										<div class="input input--fxb100p">
-											<input data-filled="false" type="text" id="how" class="input__input"/>
-											<label for="how" class="input__label">Как Вы узнали о нас</label>
+											<input data-correct="empty" data-field-type="form_input" data-filled="false" type="text" id="how_did_you_know" autocomplete="off" class="input__input"/>
+											<label for="how_did_you_know" class="input__label">Как Вы узнали о нас</label>
 										</div>
 									</div>
-									<div data-show="false" id="pageTwo" class="driver-form__page driver-form__page--two">
+									<div data-show="false" data-page="2" class="driver-form__page driver-form__page--two">
 										<div class="driver-form__row driver-form__row--select">
 											<div class="select select--w200">
-												<input type="text" readonly="readonly" value="Год выпуска" class="select__input"/>
-												<ul class="select__variants">
-													<li class="select__variant">2004</li>
-													<li class="select__variant">2005</li>
-													<li class="select__variant">2006</li>
-													<li class="select__variant">2007</li>
-													<li class="select__variant">2008</li>
-													<li class="select__variant">2009</li>
-													<li class="select__variant">2010</li>
-													<li class="select__variant">2011</li>
-													<li class="select__variant">2012</li>
-													<li class="select__variant">2013</li>
-													<li class="select__variant">2014</li>
-													<li class="select__variant">2015</li>
-													<li class="select__variant">2016</li>
+												<input data-field-type="form_select" data-correct="null" data-val="none" id="car_year" readonly="readonly" type="text" value="Год выпуска" data-placeholder="Год выпуска" class="select__input"/>
+												<ul data-content="years" class="select__variants">
 												</ul>
 											</div>
 										</div>
 										<div class="driver-form__row driver-form__row--select">
 											<div class="select select--w200">
-												<input type="text" readonly="readonly" value="Марка авто" class="select__input"/>
-												<ul class="select__variants">
-													<li class="select__variant">variant 1</li>
-													<li class="select__variant">variant 2</li>
-													<li class="select__variant">variant 3</li>
-													<li class="select__variant">variant 4</li>
-													<li class="select__variant">variant 5</li>
-													<li class="select__variant">variant 6</li>
-													<li class="select__variant">variant 7</li>
-													<li class="select__variant">variant 8</li>
-													<li class="select__variant">variant 9</li>
-													<li class="select__variant">variant 10</li>
+												<input data-field-type="form_select" data-correct="null" data-id="null" data-val="none" id="car_brand" readonly="readonly" type="text" value="Марка авто" data-placeholder="Марка авто" class="select__input"/>
+												<ul data-content="brands" class="select__variants">
 												</ul>
 											</div>
 										</div>
 										<div class="driver-form__row driver-form__row--select">
 											<div class="select select--w200">
-												<input type="text" readonly="readonly" value="Модель авто" class="select__input"/>
-												<ul class="select__variants">
-													<li class="select__variant">variant 1</li>
-													<li class="select__variant">variant 2</li>
-													<li class="select__variant">variant 3</li>
-													<li class="select__variant">variant 4</li>
-													<li class="select__variant">variant 5</li>
-													<li class="select__variant">variant 6</li>
-													<li class="select__variant">variant 7</li>
-													<li class="select__variant">variant 8</li>
-													<li class="select__variant">variant 9</li>
-													<li class="select__variant">variant 10</li>
+												<input data-field-type="form_select" data-correct="null" data-val="none" id="car_model" readonly="readonly" type="text" value="Модель авто" data-placeholder="Модель авто" class="select__input"/>
+												<ul data-content="models" class="select__variants">
+													<li class="select__variant">Выберите марку авто</li>
 												</ul>
 											</div>
 										</div>
 										<div class="driver-form__row driver-form__row--select">
 											<div class="select select--w200">
-												<input type="text" readonly="readonly" value="Цвет авто" class="select__input"/>
+												<input data-field-type="form_select" data-correct="null" data-val="none" id="car_color" readonly="readonly" type="text" value="Цвет авто" data-placeholder="Цвет авто" class="select__input"/>
 												<ul class="select__variants">
-													<li class="select__variant">variant 1</li>
-													<li class="select__variant">variant 2</li>
-													<li class="select__variant">variant 3</li>
-													<li class="select__variant">variant 4</li>
-													<li class="select__variant">variant 5</li>
-													<li class="select__variant">variant 6</li>
-													<li class="select__variant">variant 7</li>
-													<li class="select__variant">variant 8</li>
-													<li class="select__variant">variant 9</li>
-													<li class="select__variant">variant 10</li>
+													<li data-val="808080" class="select__variant">Серый</li>
+													<li data-val="864600" class="select__variant">Коричневый</li>
+													<li data-val="ffffff" class="select__variant">Белый</li>
+													<li data-val="3d3533" class="select__variant">Черный</li>
+													<li data-val="ff0002" class="select__variant">Красный</li>
+													<li data-val="F79023" class="select__variant">Оранжевый</li>
+													<li data-val="fbd75b" class="select__variant">Желтый</li>
+													<li data-val="009933" class="select__variant">Зеленый</li>
+													<li data-val="00A4FF" class="select__variant">Голубой</li>
+													<li data-val="188c99" class="select__variant">Синий</li>
+													<li data-val="914a86" class="select__variant">Фиолетовый</li>
 												</ul>
 											</div>
 										</div>
 										<div class="driver-form__row driver-form__row--select">
 											<div class="select select--w200">
-												<input type="text" readonly="readonly" value="Состояние авто" class="select__input"/>
+												<input data-field-type="form_select" data-correct="null" data-val="none" id="car_state" readonly="readonly" type="text" value="Состояние авто" data-placeholder="Состояние авто" class="select__input"/>
 												<ul class="select__variants">
-													<li class="select__variant">variant 1</li>
-													<li class="select__variant">variant 2</li>
-													<li class="select__variant">variant 3</li>
-													<li class="select__variant">variant 4</li>
-													<li class="select__variant">variant 5</li>
-													<li class="select__variant">variant 6</li>
-													<li class="select__variant">variant 7</li>
-													<li class="select__variant">variant 8</li>
-													<li class="select__variant">variant 9</li>
-													<li class="select__variant">variant 10</li>
+													<li data-val="perfect" class="select__variant">Отличное</li>
+													<li data-val="normal" class="select__variant">Хорошее</li>
+													<li data-val="bad" class="select__variant">Удовлетворительное</li>
 												</ul>
 											</div>
 										</div>
 									</div>
-									<div data-show="false" id="pageThree" class="driver-form__page driver-form__page--three">
-										<div class="input input--fxb46p input--small">
-											<input data-filled="false" type="text" id="avDay" class="input__input"/>
-											<label for="avDay" class="input__label">Ср. пробег за день (км)</label>
-										</div>
-										<div class="input input--fxb46p input--small">
-											<input data-filled="false" type="text" id="avWeekend" class="input__input"/>
-											<label for="avWeekend" class="input__label">Ср. пробег за выходные</label>
+									<div data-show="false" data-page="3" class="driver-form__page driver-form__page--three">
+										<div class="input input--fxb100p input--small">
+											<input data-field-type="form_input" data-filled="false" data-mask="number" type="text" id="avg_mileage_day" class="input__input"/>
+											<label for="avg_mileage_day" class="input__label">Средний пробег за день (км)</label>
 										</div>
 										<p class="driver-form__com-title">Комментарий</p>
-										<textarea class="driver-form__comment"></textarea>
+										<textarea data-field-type="form_input" data-filled="false" id="comment" class="driver-form__comment"></textarea>
 									</div>
 								</div>
 								<div class="driver-form__footer">
-									<button id="prevPage" class="driver-form__btn driver-form__btn--prev">Назад</button>
-									<button id="nextPage" class="driver-form__btn driver-form__btn--next">Вперед</button>
+									<button data-page="null" data-way="prev" id="prevPage" class="driver-form__btn driver-form__btn--prev">Назад</button>
+									<button data-page="2" data-way="next" id="nextPage" class="driver-form__btn driver-form__btn--next">Вперед</button>
 								</div>
 							</div>
 						</div>
@@ -335,6 +293,6 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src=\'js/jquery.min.js\'><\/script>')</script>
-		<script src="js/main.js"></script>
+		<script src="js/main.js"></script><script id="__bs_script__">//<![CDATA[document.write("<script async src='http://HOST:7778/browser-sync/browser-sync-client.2.12.7.js'><\/script>".replace("HOST", location.hostname));//]]></script>
 	</body>
 </html>

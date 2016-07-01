@@ -1,5 +1,11 @@
 'use strict';
 
+
+// const buildRoot = '../../OpenServer/domains/admin.jata.ru';
+const buildRoot = 'build';
+
+
+
 module.exports = {
 	isDev		: false,
 	pathTo	: {
@@ -26,16 +32,16 @@ module.exports = {
 		build	: {
 			angJade		: '../dev/jade/',
 			assets		: {
-				else	: 'build/',
-				js		: 'build/js/',
+				else	: buildRoot,
+				js		: buildRoot + '/js/',
 			},
-			img			: 'build/img/',
-			jade			: 'build/',
-			js				: 'build/js/',
-			pngSprite	: 'build/img/',
-			stylus		: 'build/css/',
-			svgSprite	: 'build/img/',
-			video			: 'build/video/',
+			img			: buildRoot + '/img/',
+			jade			: buildRoot + '/',
+			js				: buildRoot + '/js/',
+			pngSprite	: buildRoot + '/img/',
+			stylus		: buildRoot + '/css/',
+			svgSprite	: buildRoot + '/img/',
+			video			: buildRoot + '/video/',
 		},
 		watch	: {
 			angJade		: 'src/forAng/*.jade',
@@ -52,6 +58,6 @@ module.exports = {
 			svgSprite	: 'src/blocks/**/svg-*.svg',
 			video			: 'src/blocks/**/*.mp4',
 		},
-		clean	: 'build/*',
+		clean	: buildRoot + '/*',
 	},
 };

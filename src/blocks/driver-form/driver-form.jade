@@ -1,5 +1,5 @@
 mixin driverForm
-	.driver-form
+	.driver-form(data-page=attributes['data-page'])
 		.driver-form__form
 			if block
 				block
@@ -15,7 +15,8 @@ mixin dfPagination
 			block
 
 mixin dfPagItem(step)
-	.driver-form__pag-item
+	.driver-form__pag-item(
+		data-step=step)
 		.driver-form__ball=step
 		span.driver-form__text
 			| Шаг 
@@ -34,9 +35,9 @@ mixin dfPage
 
 	.driver-form__page(
 		data-show=attributes['data-show']
+		data-page=attributes['data-page']
 		id=attributes.id
-		class=mods
-		ng-show=attributes['ng-show'])
+		class=mods)
 		if block
 			block
 
@@ -52,9 +53,10 @@ mixin dfBtn(name)
 			-mods[i] = 'driver-form__btn--' + mod
 
 	button.driver-form__btn(
-		id=attributes.id
 		class=mods
-		ng-click=attributes['ng-click'])=name
+		data-page=attributes['data-page']
+		data-way=attributes['data-way']
+		id=attributes.id)=name
 
 mixin dfDots
 	.driver-form__dots

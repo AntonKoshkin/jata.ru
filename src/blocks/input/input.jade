@@ -9,8 +9,11 @@ mixin input(type, title)
 
 	.input(class=mods)
 		input.input__input(
-			data-mask=attributes['data-mask']
+			data-correct=attributes['data-correct']
+			data-field-type=attributes.fieldType
 			data-filled=attributes['data-filled']
+			data-mask=attributes['data-mask']
+			data-reg=attributes['data-reg']
 			pattern=attributes.pattern
 			min=attributes.min
 			max=attributes.max

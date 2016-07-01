@@ -108,7 +108,13 @@
 		&--three
 			padding 25px 35px
 		
-		&[data-show='true']
+	&[data-page='1'] &__page[data-page='1']
+			display flex
+		
+	&[data-page='2'] &__page[data-page='2']
+			display flex
+		
+	&[data-page='3'] &__page[data-page='3']
 			display flex
 	
 	&__row
@@ -151,7 +157,7 @@
 			border none
 			background-color rgba(white, .25)
 
-[data-step='one']
+[data-page='1']
 	.driver-form
 		&__pag-item
 			&:nth-child(3)
@@ -160,7 +166,7 @@
 					&__ball
 						background-color gray-light
 
-[data-step='two']
+[data-page='2']
 	.driver-form
 		&__pag-item
 			&:nth-child(5)

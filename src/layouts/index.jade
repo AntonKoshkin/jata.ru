@@ -26,7 +26,7 @@ block content
 			+block(mods=['promo'])
 				+promoLogo('/img/promo-logo.svg', 'jata', '.ru')(mods=['index'])
 				+paragraph('В крупных городах количество маршрутов исчисляется сотнями и даже тысячами. Это открывает безграничные возможности для того, чтобы донести до огромной аудитории информацию о товаре, услуге, компании, магазине.')(mods=['promo'])
-			+driverForm
+			+driverForm(data-page='1')
 				+dfHeader('Стать водителем')
 				+dfPagination(data-step='one')
 					+dfPagItem(1)
@@ -36,97 +36,143 @@ block content
 					+dfPagItem(3)
 				+dfMain
 					+dfPage(
-						id='pageOne'
+						data-page='1'
 						data-show='true'
 						mods=['one'])
 						+input('text', 'Имя')(
+							fieldType='form_input'
+							autocomplete='off'
+							data-correct='null'
 							data-filled='false'
+							data-mask='name'
 							mods=['fxb46p']
-							id='name'
+							id='first_name'
 							name='firstname')
 						+input('text', 'Фамилия')(
+							fieldType='form_input'
+							autocomplete='off'
+							data-correct='null'
 							data-filled='false'
+							data-mask='name'
 							mods=['fxb46p']
-							id='lastName'
+							id='last_name'
 							name='lastname')
-						+input('text', 'E-mail')(
+						+input('email', 'E-mail')(
+							fieldType='form_input'
+							autocomplete='off'
+							data-correct='null'
 							data-filled='false'
+							data-mask='email'
 							mods=['fxb46p']
 							id='email'
 							name='email')
-						+input('text', 'Телефон')(
+						+input('tel', 'Телефон')(
+							fieldType='form_input'
+							autocomplete='off'
+							data-correct='null'
 							data-filled='false'
+							data-mask='tel'
 							mods=['fxb46p']
 							id='phone'
 							name='phone')
 						+input('text', 'Как Вы узнали о нас')(
+							fieldType='form_input'
+							autocomplete='off'
+							data-correct='empty'
 							data-filled='false'
 							mods=['fxb100p']
-							id='how')
+							id='how_did_you_know')
 					+dfPage(
-						id='pageTwo'
+						data-page='2'
 						data-show='false'
 						mods=['two'])
 						+dfRow(mods=['select'])
 							+select(
+								fieldType='form_select'
+								correct='null'
+								content='years'
+								id='car_year'
 								mods=['w200']
-								value='Год выпуска')
-								-var year = 2004
-								while year <= 2016
-									+sVariant(year)
-									-year++
+								value='Год выпуска'
+								val='none')
+								
 						+dfRow(mods=['select'])
 							+select(
+								fieldType='form_select'
+								correct='null'
+								data-id='null'
+								content='brands'
+								id='car_brand'
 								mods=['w200']
-								value='Марка авто')
-								-var year = 1
-								while year <= 10
-									+sVariant('variant ' + year)
-									-year++
+								value='Марка авто'
+								val='none')
+								
 						+dfRow(mods=['select'])
 							+select(
+								fieldType='form_select'
+								correct='null'
+								content='models'
+								id='car_model'
 								mods=['w200']
-								value='Модель авто')
-								-var year = 1
-								while year <= 10
-									+sVariant('variant ' + year)
-									-year++
-						+dfRow(mods=['select'])
-							+select(
-								mods=['w200']
-								value='Цвет авто')
-								-var year = 1
-								while year <= 10
-									+sVariant('variant ' + year)
-									-year++
+								value='Модель авто'
+								val='none')
+									+sVariant('Выберите марку авто')
+
 
 						+dfRow(mods=['select'])
 							+select(
+								fieldType='form_select'
+								correct='null'
+								id='car_color'
 								mods=['w200']
-								value='Состояние авто')
-								-var year = 1
-								while year <= 10
-									+sVariant('variant ' + year)
-									-year++
+								value='Цвет авто'
+								val='none')
+								
+								-var colorMatch = {'ffffff':'Белый', '808080':'Серый', '864600':'Коричневый', '3d3533':'Черный', 'ff0002':'Красный', 'F79023':'Оранжевый', 'fbd75b':'Желтый', '009933':'Зеленый', '00A4FF':'Голубой', '188c99':'Синий', '914a86':'Фиолетовый'}
+								
+								each color, num in colorMatch
+									+sVariant(color)(
+										val=num)
+
+						+dfRow(mods=['select'])
+							+select(
+								fieldType='form_select'
+								correct='null'
+								id='car_state'
+								mods=['w200']
+								value='Состояние авто'
+								val='none')
+									+sVariant('Отличное')(val='perfect')
+									+sVariant('Хорошее')(val='normal')
+									+sVariant('Удовлетворительное')(val='bad')
 					+dfPage(
-						id='pageThree'
+						data-page='3'
 						data-show='false'
 						mods=['three'])
-						+input('text', 'Ср. пробег за день (км)')(
+						+input('text', 'Средний пробег за день (км)')(
+							fieldType='form_input'
+							data-mask='number'
 							data-filled='false'
-							mods=['fxb46p', 'small']
-							id='avDay')
-						+input('text', 'Ср. пробег за выходные')(
-							data-filled='false'
-							mods=['fxb46p', 'small']
-							id='avWeekend')
+							mods=['fxb100p', 'small']
+							id='avg_mileage_day')
+						//- +input('text', 'Ср. пробег за выходные')(
+						//- 	data-filled='false'
+						//- 	mods=['fxb46p', 'small']
+						//- 	id='avWeekend')
 						p.driver-form__com-title Комментарий
-						textarea.driver-form__comment
+						textarea.driver-form__comment(
+							data-field-type='form_input'
+							data-filled='false'
+							id='comment')
 				+dfFooter
 					+dfBtn('Назад')(
+						data-page='null'
+						data-way='prev'
 						id='prevPage'
 						mods=['prev'])
 					+dfBtn('Вперед')(
+						data-page='2'
+						data-way='next'
 						id='nextPage'
 						mods=['next'])
 

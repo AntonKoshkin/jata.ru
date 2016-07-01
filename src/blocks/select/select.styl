@@ -25,6 +25,9 @@
 		position relative
 		cursor pointer
 		
+		&[data-correct='false']
+			border-color red
+		
 	&--open &__input
 		border-color gray
 	
@@ -38,7 +41,7 @@
 		width 100%
 		border 1px solid blue
 		border-top none
-		max-height 105px
+		max-height 132px
 		overflow auto
 	
 	&--open &__variants
