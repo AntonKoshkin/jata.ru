@@ -24,7 +24,7 @@ function sendForm(page) {
 		$('.message--success').addClass('message--show');
 
 		// переключить страницу
-		page.attr('data-page', '1');
+		$('.driver-form').attr('data-page', '1');
 
 		// очистка полей формы
 		$('[data-field-type]')
