@@ -28,8 +28,8 @@ html(lang='ru')
 					+navItem('/how.html', 'Как это работает?')(title='Как это работает?')
 					+navItem('/contacts.html', 'Контакты')(title='Контакты')
 					+navItem('#', 'Рекламные места')(title='Рекламные места')
-					+navItem('#', 'Блог/новости')(title='Блог/новости')
-				+hBtn('/enter.html', 'Войти')(mods=['enter'])
+					+navItem('#', 'Галерея')(title='Галерея')
+				+hBtn('http://dev_main.jata.ru/', 'Войти')(mods=['enter'])
 				if pageId === 'foradv'
 					+hBtn('/index.html', 'Водителям')(mods=['for-advers'])
 				else
@@ -71,7 +71,7 @@ html(lang='ru')
 
 		.modals
 			+message('Спасибо за предоставленную информацию. Мы отправили Вам инструкцию на ваш E-mail.')(mods='success')
-			+message('Во время отправки данных произошла ошибка. Пожалуйста, попробуйте позднее.')(mods=['fail', 'show'])
+			+message('Во время отправки данных произошла ошибка. Пожалуйста, попробуйте позднее.')(mods='fail')
 
 		//- загружаем жЫквери с цдн
 		script(
