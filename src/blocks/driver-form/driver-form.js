@@ -21,6 +21,8 @@ function sendForm(page) {
 		data: BecomeDriverSerializer,
 	})
 	.done(function() {
+		$('.message--success').addClass('message--show');
+
 		// переключить страницу
 		page.attr('data-page', '1');
 
@@ -52,8 +54,13 @@ function sendForm(page) {
 		console.log('form has beed sent');
 	})
 	.fail(function(data) {
+		$('.message--fail').addClass('message--show');
 		// console.log(BecomeDriverSerializer);
-		console.log('servers answer:\n',data.responseText);
+		if (data.responseText) {
+			console.log('servers answer:\n',data.responseText);
+		} else {
+			console.log('UFO have interrupted our server\'s work\nwe\'l try to fix it');
+		}
 	});
 	
 

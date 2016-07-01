@@ -34,14 +34,22 @@
 			@extend $pseudo, $abs
 			
 			width 190px
-			height 154px
-			background-image url('/img/message__img.png')
 			background-size cover
 			background-position center
 			left 0
 			right 0
 			bottom 20px
 			margin auto
+		
+	&--succes &__window
+		&:before
+			height 154px
+			background-image url('/img/message__img.png')
+	
+	&--fail &__window
+		&:before
+			height 151px
+			background-image url('/img/message__img--fail.png')
 	
 	&__close
 		@extend $btn-reset
