@@ -14,7 +14,6 @@ $('body').on('click', '.select__input', function(event) {
 });
 
 $('body').on('click', '.select__variant', function(event) {
-	
 	if ($(this).closest('.select').find('input').attr('id') !== 'car_brand') {
 		$(this)
 			.closest('.select__variants')
@@ -47,6 +46,10 @@ $('body').on('click', '.select__variant', function(event) {
 				$('[data-content=\'models\']')
 					.append('<li class=\'select__variant\' data-val=\'none\'>Марок не найдено</li>');
 			}
+
+			carModels = data.models;
+
+			return carModels;
 		})
 		.fail(function() {
 			console.log('error on getting models');
@@ -65,5 +68,55 @@ $('body').on('click', '.select__variant', function(event) {
 		$('#car_model')
 			.val($('#car_model').attr('data-placeholder'))
 			.attr('data-val', 'none');
+	}
+});
+
+$('body').on('keyup', '.select__input', function(event) {
+	if ($(this).siblings('.select__variants').attr('data-content') === 'brands') {
+
+		$('[data-content=\'brands\']').html('');
+
+		var thisVal = $(this).val();
+
+		carBrands.forEach(function(element, index) {
+			if (element.name.toLowerCase().indexOf($('[data-content=\'brands\']').prev('input').val()) !== -1) {
+				$('[data-content=\'brands\']')
+					.append('<li class=\'select__variant\' data-id=\''+
+						element.id+
+						'\' data-val=\''+
+						element.name+
+						'\'>'+
+						element.name+
+						'</li>');
+			}
+		});
+
+		if (!$('[data-content=\'brands\']').html().length) {
+			$('[data-content=\'brands\']')
+					.append('<li class=\'select__variant\' data-id=\'null\' data-val=\'none\'>Нет совпадений</li>');
+		}
+	} else if ($(this).siblings('.select__variants').attr('data-content') === 'models') {
+
+		$('[data-content=\'models\']').html('');
+
+		var thisVal = $(this).val();
+
+		carModels.forEach(function(element, index) {
+			if (element.name.toLowerCase().indexOf($('[data-content=\'models\']').prev('input').val()) !== -1) {
+				$('[data-content=\'models\']')
+					.append('<li class=\'select__variant\' data-id=\''+
+						element.id+
+						'\' data-val=\''+
+						element.name+
+						'\'>'+
+						element.name+
+						'</li>');
+			}
+		});
+
+		if (!$('[data-content=\'models\']').html().length) {
+			$('[data-content=\'models\']')
+					.append('<li class=\'select__variant\' data-id=\'null\' data-val=\'none\'>Нет совпадений</li>');
+		}
 	}
 });

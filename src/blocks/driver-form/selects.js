@@ -1,7 +1,9 @@
 var
+	carBrands	= {},
+	carModels	= {},
 	today	= new Date(),
-	year	= today.getFullYear(),
-	thisYear;
+	thisYear,
+	year	= today.getFullYear();
 
 // генерация списка годов
 for (var i = 0; i <= 21; i++) {
@@ -20,8 +22,18 @@ $.ajax({
 
 	data.forEach(function(element, index) {
 		$('[data-content=\'brands\']')
-			.append('<li class=\'select__variant\' data-id=\''+element.id+'\' data-val=\''+element.name+'\'>'+element.name+'</li>');
+			.append('<li class=\'select__variant\' data-id=\''+
+				element.id+
+				'\' data-val=\''+
+				element.name+
+				'\'>'+
+				element.name+
+				'</li>');
 	});
+
+	carBrands = data;
+
+	return carBrands;
 })
 .fail(function() {
 	console.log('error on getting car brands');
