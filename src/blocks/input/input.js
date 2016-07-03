@@ -98,7 +98,7 @@ $('body').on('blur', '[data-mask]', function(event) {
 			break;
 
 		case 'name':
-			if (/^[A-Za-zА-Яа-яЁё/-]+$/.test($(this).val())) {
+			if (/^[a-zA-Zа-яёА-ЯЁ][a-zA-Zа-яёА-ЯЁ0-9-_\.]{1,20}$/.test($(this).val())) {
 				$(this).attr('data-correct', 'true');
 			} else {
 				$(this).attr('data-correct', 'false');
