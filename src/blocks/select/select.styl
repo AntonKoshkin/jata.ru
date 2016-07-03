@@ -3,15 +3,15 @@
 	
 	position relative
 	
-	&--w200
-		width 200px
-	
 	&:before
 		@extend $pseudo-right
 		triangle down 6px 5px black
 		
 		right 10px
 		border-radius 2px
+	
+	&--w200
+		width 200px
 	
 	&__input
 		@extend $text-14, $fw500
@@ -23,7 +23,9 @@
 		padding-left 10px
 		background-color transparent
 		position relative
-		cursor pointer
+		
+		&[data-select='true']
+			cursor pointer
 		
 		&[data-correct='false']
 			border-color red

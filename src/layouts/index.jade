@@ -26,6 +26,7 @@ block content
 			+block(mods=['promo'])
 				+promoLogo('/img/promo-logo.svg', 'jata', '.ru')(mods=['index'])
 				+paragraph('В крупных городах количество маршрутов исчисляется сотнями и даже тысячами. Это открывает безграничные возможности для того, чтобы донести до огромной аудитории информацию о товаре, услуге, компании, магазине.')(mods=['promo'])
+			//- страницы формы
 			+driverForm(data-page='1')
 				+dfHeader('Стать водителем')
 				+dfPagination(data-step='one')
@@ -86,45 +87,57 @@ block content
 						data-page='2'
 						data-show='false'
 						mods=['two'])
-						+dfRow(mods=['select'])
+						+dfRow(
+							mods=['select']
+							select='true')
 							+select(
-								fieldType='form_select'
 								correct='null'
 								content='years'
+								fieldType='form_select'
 								id='car_year'
 								mods=['w200']
+								readonly=''
+								select='true'
 								value='Год выпуска'
 								val='none')
 								
 						+dfRow(mods=['select'])
 							+select(
-								fieldType='form_select'
 								correct='null'
-								data-id='null'
 								content='brands'
+								data-id='null'
+								fieldType='form_select'
 								id='car_brand'
 								mods=['w200']
-								value='Марка авто'
+								select='false'
+								value=''
+								placeholder='Марка авто'
 								val='none')
 								
 						+dfRow(mods=['select'])
 							+select(
-								fieldType='form_select'
 								correct='null'
 								content='models'
+								fieldType='form_select'
 								id='car_model'
 								mods=['w200']
-								value='Модель авто'
+								select='false'
+								value=''
+								placeholder='Модель авто'
 								val='none')
 									+sVariant('Выберите марку авто')
 
 
-						+dfRow(mods=['select'])
+						+dfRow(
+							mods=['select']
+							select='true')
 							+select(
-								fieldType='form_select'
 								correct='null'
+								fieldType='form_select'
 								id='car_color'
 								mods=['w200']
+								readonly=''
+								select='true'
 								value='Цвет авто'
 								val='none')
 								
@@ -136,10 +149,12 @@ block content
 
 						+dfRow(mods=['select'])
 							+select(
-								fieldType='form_select'
 								correct='null'
+								fieldType='form_select'
 								id='car_state'
 								mods=['w200']
+								readonly=''
+								select='true'
 								value='Состояние авто'
 								val='none')
 									+sVariant('Отличное')(val='perfect')

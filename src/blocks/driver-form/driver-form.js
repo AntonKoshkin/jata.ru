@@ -50,7 +50,7 @@ function sendForm(page) {
 			.html('<li class=\'select__variant\' data-val=\'none\'>Выберите марку авто</li>');
 
 		// вывод количества полученных марок
-		console.log(BecomeDriverSerializer);
+		// console.log(BecomeDriverSerializer);
 		console.log('form has beed sent');
 	})
 	.fail(function(data) {
@@ -62,10 +62,6 @@ function sendForm(page) {
 			console.log('UFO have interrupted our server\'s work\nwe\'l try to fix it');
 		}
 	});
-	
-
-
-
 }
 
 $('body').on('click', '[data-way]', function(event) {
