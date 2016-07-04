@@ -12,11 +12,10 @@ module.exports = function() {
 				'assets',
 				'img',
 				'jade',
-				// 'angJade',
 				'js',
 				'stylus',
 				'svgSprite',
-				'video'
+				'video',
 			],
 			cb
 		);
