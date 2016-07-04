@@ -27,8 +27,8 @@ html(lang='ru')
 					+navItem('/about.html', 'О Jata.ru')(title='О Jata.ru')
 					+navItem('/how.html', 'Как это работает?')(title='Как это работает?')
 					+navItem('/contacts.html', 'Контакты')(title='Контакты')
-					+navItem('#', 'Рекламные места')(title='Рекламные места')
-					+navItem('#', 'Галерея')(title='Галерея')
+					+navItem('/cap.html', 'Рекламные места')(title='Рекламные места')
+					+navItem('/cap.html', 'Галерея')(title='Галерея')
 				+hBtn('http://dev_main.jata.ru/', 'Войти')(mods=['enter'])
 				if pageId === 'foradv'
 					+hBtn('/index.html', 'Водителям')(mods=['for-advers'])
@@ -47,15 +47,15 @@ html(lang='ru')
 			+footer
 				+footNav
 					+fnHalf
-						+fnItem('#', 'О компании')
-						+fnItem('#', 'Правила пользования')
-						+fnItem('#', 'Защита данных')
-						+fnItem('#', 'Вопросы и ответы')
+						+fnItem('/about.html', 'О компании')
+						+fnItem('/cap.html', 'Правила пользования')
+						+fnItem('/cap.html', 'Защита данных')
+						+fnItem('/how.html', 'Вопросы и ответы')
 					+fnHalf
-						+fnItem('#', 'Контакты')
-						+fnItem('#', 'О нас')
-						+fnItem('#', 'Команда')
-						+fnItem('#', 'Пресса о нас')
+						+fnItem('/contacts.html', 'Контакты')
+						+fnItem('/cap.html', 'О нас')
+						+fnItem('/cap.html', 'Команда')
+						+fnItem('/cap.html', 'Пресса о нас')
 
 				+fInfo
 					+address('г. Санкт-Петербург, Московский&nbsp;проспект, 97а', 'https://goo.gl/XVmE2b', '(10:00-22:00)')

@@ -1,0 +1,18 @@
+extends ../blocks/template/template
+
+block includes
+	include ../blocks/page/page
+
+	include ../blocks/section/section
+	include ../blocks/title/title
+
+block page_id
+	-var pageId = 'cap'
+
+block title
+	title Jata
+
+block content
+	+page(mods='contacts')
+		+section(mods='cap')
+			+title(1, 'Страница находится в разработке')(mods='cap')
