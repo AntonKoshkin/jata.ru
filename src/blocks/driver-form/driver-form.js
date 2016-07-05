@@ -47,7 +47,7 @@ function sendForm(page) {
 
 		// удаление марок
 		$('[data-content=\'models\']')
-			.html('<li class=\'select__variant\' data-val=\'none\'>Выберите марку авто</li>');
+			.html('<li class=\'select__variant\' data-val=\'no-items\'>Выберите марку авто</li>');
 
 		// вывод количества полученных марок
 		// console.log(BecomeDriverSerializer);

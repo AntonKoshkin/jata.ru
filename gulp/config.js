@@ -1,8 +1,8 @@
 'use strict';
 
 
-// const buildRoot = '../../OpenServer/domains/admin.jata.ru';
-const buildRoot = 'build';
+const buildRoot = '../../OpenServer/domains/admin.jata.ru';
+// const buildRoot = 'build';
 
 
 

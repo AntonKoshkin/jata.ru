@@ -27,7 +27,7 @@ block content
 				+promoLogo('/img/promo-logo.svg', 'jata', '.ru')(mods=['index'])
 				+paragraph('В крупных городах количество маршрутов исчисляется сотнями и даже тысячами. Это открывает безграничные возможности для того, чтобы донести до огромной аудитории информацию о товаре, услуге, компании, магазине.')(mods=['promo'])
 			//- страницы формы
-			+driverForm(data-page='1')
+			+driverForm(data-page='2')
 				+dfHeader('Стать водителем')
 				+dfPagination(data-step='one')
 					+dfPagItem(1)
@@ -125,7 +125,8 @@ block content
 								value=''
 								placeholder='Модель авто'
 								val='none')
-									+sVariant('Выберите марку авто')
+									+sVariant('Выберите марку авто')(
+										val='no-items')
 
 
 						+dfRow(
