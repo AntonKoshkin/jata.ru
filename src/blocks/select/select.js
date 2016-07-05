@@ -14,7 +14,11 @@ $('body').on('click', '.select__input', function(event) {
 });
 
 $('body').on('click', '.select__variant', function(event) {
-	if ($(this).closest('.select').find('input').attr('id') !== 'car_brand') {
+	if ($(this).attr('data-val') === 'no-items') {
+		$(this)
+			.closest('.select')
+			.removeClass('select--open');
+	} else if ($(this).closest('.select').find('input').attr('id') !== 'car_brand') {
 		$(this)
 			.closest('.select__variants')
 			.siblings('.select__input')
@@ -44,7 +48,7 @@ $('body').on('click', '.select__variant', function(event) {
 				});
 			} else {
 				$('[data-content=\'models\']')
-					.append('<li class=\'select__variant\' data-val=\'none\'>Марок не найдено</li>');
+					.append('<li class=\'select__variant\' data-val=\'no-items\'>Марок не найдено</li>');
 			}
 
 			carModels = data.models;
@@ -79,7 +83,7 @@ $('body').on('keyup', '.select__input', function(event) {
 		var thisVal = $(this).val();
 
 		carBrands.forEach(function(element, index) {
-			if (element.name.toLowerCase().indexOf($('[data-content=\'brands\']').prev('input').val()) !== -1) {
+			if (element.name.toLowerCase().indexOf($('[data-content=\'brands\']').prev('input').val().toLowerCase()) !== -1) {
 				$('[data-content=\'brands\']')
 					.append('<li class=\'select__variant\' data-id=\''+
 						element.id+
@@ -93,7 +97,7 @@ $('body').on('keyup', '.select__input', function(event) {
 
 		if (!$('[data-content=\'brands\']').html().length) {
 			$('[data-content=\'brands\']')
-					.append('<li class=\'select__variant\' data-id=\'null\' data-val=\'none\'>Нет совпадений</li>');
+					.append('<li class=\'select__variant\' data-id=\'null\' data-val=\'no-items\'>Нет совпадений</li>');
 		}
 	} else if ($(this).siblings('.select__variants').attr('data-content') === 'models') {
 
@@ -116,7 +120,7 @@ $('body').on('keyup', '.select__input', function(event) {
 
 		if (!$('[data-content=\'models\']').html().length) {
 			$('[data-content=\'models\']')
-					.append('<li class=\'select__variant\' data-id=\'null\' data-val=\'none\'>Нет совпадений</li>');
+					.append('<li class=\'select__variant\' data-id=\'null\' data-val=\'no-items\'>Нет совпадений</li>');
 		}
 	}
 });

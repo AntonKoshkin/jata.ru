@@ -10,9 +10,9 @@ module.exports = function() {
 		bs.init({
 			injectChanges	: true,
 			logPrefix		: 'Server says, that',
-			port				: 7777,
-			// proxy				: 'admin.jata.ru',
-			server			: 'build',
+			// port				: 7777,
+			proxy				: 'admin.jata.ru',
+			// server			: 'build',
 			// tunnel			: true,
 		});
 	}
