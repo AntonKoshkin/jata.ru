@@ -62,10 +62,9 @@ html(lang='ru')
 					
 					+phoneNumber('+78003757575', '8 (800)', '375-75-75')
 
-					//- +fBtns(ng-show="device != 'desktop'")
-					//- 	-var storeBtnMods = ['tar', 'mb10']
-					//- 	+storeBtn('apple')(mods=storeBtnMods)
-					//- 	+storeBtn('google')(mods=storeBtnMods)
+					+fBtns
+						+storeBtn('apple')(mods=['tar', 'mb10'])
+						+storeBtn('google')(mods=['tar', 'mb10'])
 
 					+copy(2016, 'Jata All Rights Reservet')
 
@@ -79,4 +78,3 @@ html(lang='ru')
 		//- если не загружается, то подтягиваем свой
 		script window.jQuery || document.write('<script src=\'js/jquery.min.js\'><\/script>')
 		script(src='js/main.js')
-		<script id="__bs_script__">//<![CDATA[document.write("<script async src='http://HOST:7778/browser-sync/browser-sync-client.2.12.7.js'><\/script>".replace("HOST", location.hostname));//]]></script>

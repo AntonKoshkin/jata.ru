@@ -8,6 +8,7 @@ jQuery(document).ready(function($) {
 	//= ../blocks/message/message.js
 	//= ../blocks/pin/pin.js
 	//= ../blocks/question/question.js
+	//= ../blocks/scroll-btn/scroll-btn.js
 	//= ../blocks/search/search.js
 	//= ../blocks/select/select.js
 	//= ../blocks/slide-pack/slide-pack.js
