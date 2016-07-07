@@ -12,6 +12,7 @@ block includes
 	include ../blocks/pin/pin
 	include ../blocks/point/point
 	include ../blocks/promo-logo/promo-logo
+	include ../blocks/scroll-btn/scroll-btn
 	include ../blocks/search/search
 	include ../blocks/section/section
 	include ../blocks/slider/slider
@@ -30,6 +31,7 @@ block content
 	+page(mods='index-adv')
 		+section(mods='promo-adv')
 			+promoLogo('/img/logo.svg', 'jata', '.ru')(mods=['adv'])
+			+scrollBtn
 		
 		+section(mods='jataru')
 			+title(1, 'jata')(mods=['jataru'])

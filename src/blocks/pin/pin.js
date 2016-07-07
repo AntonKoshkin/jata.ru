@@ -1,4 +1,4 @@
-$('body').on('mouseenter', '.map .pin', function(event) {
+$('body').on('mouseenter', '.pin', function(event) {
 	event.preventDefault();
 	
 	$(this)

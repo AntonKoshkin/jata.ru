@@ -1,0 +1,27 @@
+.scroll-btn
+	display none
+	position absolute
+	left 0
+	bottom 20px
+	width 100%
+	text-align center
+	
+	.section--promo &
+		bottom -119px
+	
+	&__btn
+		@extend $btn-reset
+		bicon(mouse, 40, 60)
+		
+		position relative
+		
+		&:before
+			@extend $pseudo-center-old
+			size 60px
+			
+			animation mouse-pulsate 6s ease-out infinite
+			background-color rgba(white, .5)
+			border-radius 50%
+	
+	@media (min-width tablet)
+		display block

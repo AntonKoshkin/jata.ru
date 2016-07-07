@@ -6,11 +6,12 @@ block includes
 	include ../blocks/block/block
 	include ../blocks/driver-form/driver-form
 	include ../blocks/input/input
-	include ../blocks/select/select
 	include ../blocks/paragraph/paragraph
 	include ../blocks/perk/perk
 	include ../blocks/promo-logo/promo-logo
+	include ../blocks/scroll-btn/scroll-btn
 	include ../blocks/section/section
+	include ../blocks/select/select
 	include ../blocks/title/title
 	include ../blocks/wd-slider/wd-slider
 
@@ -27,7 +28,7 @@ block content
 				+promoLogo('/img/promo-logo.svg', 'jata', '.ru')(mods=['index'])
 				+paragraph('В крупных городах количество маршрутов исчисляется сотнями и даже тысячами. Это открывает безграничные возможности для того, чтобы донести до огромной аудитории информацию о товаре, услуге, компании, магазине.')(mods=['promo'])
 			//- страницы формы
-			+driverForm(data-page='2')
+			+driverForm(data-page='1')
 				+dfHeader('Стать водителем')
 				+dfPagination(data-step='one')
 					+dfPagItem(1)
@@ -191,7 +192,7 @@ block content
 						data-way='next'
 						id='nextPage'
 						mods=['next'])
-
+			+scrollBtn
 		+section(mods=['we-do'])
 			+block(mods=['we-do-left'])
 				+title(2, 'Что мы делаем')(mods=['we-do'])
