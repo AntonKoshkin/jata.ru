@@ -1,0 +1,23 @@
+mixin gallery
+	.gallery
+		if block
+			block
+
+mixin gItem(img)
+	.gallery__item(data-url=img)
+		img(
+			src=img
+			alt='')
+		.gallery__darkness
+
+mixin gModal(img)
+	.gallery__bg
+	.gallery__modal
+		//- img(
+		//- 	src=img
+		//- 	alt='')
+
+mixin gMore(text)
+	.gallery__more
+		button.gallery__btn(
+			type='button')=text

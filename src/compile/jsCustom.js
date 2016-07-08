@@ -1,5 +1,6 @@
 jQuery(document).ready(function($) {
 	//= ../blocks/burger/burger.js
+	//= ../blocks/gallery/gallery.js
 	//= ../blocks/dot-strip/dot-strip.js
 	//= ../blocks/driver-form/selects.js
 	//= ../blocks/driver-form/driver-form.js

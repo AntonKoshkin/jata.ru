@@ -1,18 +1,17 @@
 'use strict';
 
-
 // const buildRoot = '../../OpenServer/domains/admin.jata.ru';
 const buildRoot = 'build';
 
-
-
 module.exports = {
-	isDev		: false,
+	isDev		: true,
 	pathTo	: {
 		src	: {
 			angJade		: 'src/forAng/**/*.jade',
 			assets		: [
 				'bower_components/jquery/dist/jquery.min.js',
+				'bower_components/masonry/dist/masonry.pkgd.min.js',
+				'bower_components/imagesloaded/imagesloaded.pkgd.min.js',
 				'src/assets/**/*.*',
 			],
 			img			: [

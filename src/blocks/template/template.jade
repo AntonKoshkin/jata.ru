@@ -28,7 +28,7 @@ html(lang='ru')
 					+navItem('/how.html', 'Как это работает?')(title='Как это работает?')
 					+navItem('/contacts.html', 'Контакты')(title='Контакты')
 					+navItem('/cap.html', 'Рекламные места')(title='Рекламные места')
-					+navItem('/cap.html', 'Галерея')(title='Галерея')
+					+navItem('/gallery.html', 'Галерея')(title='Галерея')
 				+hBtn('/cap.html', 'Войти')(mods=['enter'])
 				if pageId === 'foradv'
 					+hBtn('/index.html', 'Водителям')(mods=['for-advers'])
@@ -56,6 +56,12 @@ html(lang='ru')
 						+fnItem('/cap.html', 'О нас')
 						+fnItem('/cap.html', 'Команда')
 						+fnItem('/cap.html', 'Пресса о нас')
+					.footer__soc
+						+socIcon('https://new.vk.com/jata_ru', 'Вконтакте')(data-icon='vk')
+						+socIcon('https://www.facebook.com/groups/157503494655426/', 'Фейсбук')(data-icon='fb')
+						//- +socIcon('twitter.com', 'Твиттер')(data-icon='tw')
+						+socIcon('instagram.com', 'Инстаграм')(data-icon='ig')
+						//- +socIcon('youtube.com', 'Ютуб')(data-icon='yt')
 
 				+fInfo
 					+address('г. Санкт-Петербург, Московский&nbsp;проспект, 97а', 'https://goo.gl/XVmE2b', '(10:00-22:00)')
@@ -77,4 +83,15 @@ html(lang='ru')
 			src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
 		//- если не загружается, то подтягиваем свой
 		script window.jQuery || document.write('<script src=\'js/jquery.min.js\'><\/script>')
+
+		//- загружаем масонри с цдн
+		script(src='https://npmcdn.com/masonry-layout@4.1/dist/masonry.pkgd.min.js')
+		//- если не загружается, то подтягиваем свой
+		script window.Masonry || document.write('<script src=\'js/masonry.pkgd.min.js\'><\/script>')
+
+		//- script(src='https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js')
+
+
+		//- свои скрипты
 		script(src='js/main.js')
+		script window.imagesloaded || document.write('<script src=\'js/masonry.pkgd.min.js\'><\/script>')

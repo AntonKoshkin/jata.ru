@@ -53,8 +53,14 @@
 		background-position center
 		background-image url('/img/section__bg--promo-hdiw.jpg')
 		
-		.mobile &
-			background-image url('/img/section__bg--promo-hdiw.jpg')
+		// .mobile &
+		// 	background-image url('/img/section__bg--promo-hdiw.jpg')
+	
+	&--promo-gallery
+		background-color #663701
+		background-size cover
+		background-position center
+		background-image url('/img/video-bg__poster--3.jpg')
 	
 	&--promo-contacts
 		background-image url('/img/section__bg--contacts.jpg')
@@ -144,6 +150,15 @@
 		flex-wrap wrap
 		padding-top 50px
 		align-items center
+		
+	&--promo-gallery &__content
+		height 250px
+		position relative
+		overflow hidden
+		display flex
+		align-items center
+		justify-content center
+		padding-top 50px
 	
 	&--about &__content
 		padding 35px 0 0
