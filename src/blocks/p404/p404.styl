@@ -1,0 +1,24 @@
+.p404
+	display flex
+	flex-direction column
+	align-items stretch
+	text-align center
+	
+	&__title
+		@extend $text-26, $fw900
+		
+		color blue
+		
+		&--big
+			font-size 8.75rem
+			margin-left -18px
+			text-shadow 1px 1px 5px rgba(#24b685, .3)
+			
+			&:before
+				@extend $pseudo
+				bicon(wrong-page, 150)
+	
+	&__text
+		@extend $fw500
+		
+		margin-bottom 30px

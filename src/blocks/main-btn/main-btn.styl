@@ -1,5 +1,6 @@
 .main-btn
 	&--center
+	&--tac
 		text-align center
 	
 	&--mb10
@@ -12,7 +13,7 @@
 		position relative
 	
 	&__btn
-		@extend $btn-reset, $main-text
+		@extend $main-text
 		btn-color blue
 		
 		padding 13px
@@ -20,6 +21,12 @@
 		border-radius 5px
 		color white
 		box-shadow 1px 1px 6px -1px blue
+		
+		button&
+			@extend $btn-reset
+
+		a&
+			display inline-block
 	
 	&--fullwidth &__btn
 		width 100%

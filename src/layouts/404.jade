@@ -1,0 +1,21 @@
+extends ../blocks/template/template
+
+block includes
+	include ../blocks/page/page
+
+	include ../blocks/main-btn/main-btn
+	include ../blocks/p404/p404
+	include ../blocks/section/section
+
+block page_id
+	-var pageId = '404'
+
+block title
+	title Jata | Страница не найдена
+
+block content
+	+page(mods=['404'])
+		+section(mods=['404'])
+			+p404
+			+mainBtn('Вернуться на главную', '/')(
+				mods=['tac', 'fat'])

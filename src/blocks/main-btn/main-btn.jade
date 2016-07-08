@@ -1,11 +1,15 @@
-mixin mainBtn(text)
+mixin mainBtn(text, link)
 	if attributes.mods
 		-var mods = []
 		each mod, i in attributes.mods
 			-mods[i] = 'main-btn--' + mod
 	
-	.main-btn(class=mods)
-		button.main-btn__btn(
-			data-next-block=attributes['data-next-block']
-			data-vared=attributes['data-vars']
-			type='button')!=text
+	if link
+		.main-btn(class=mods)
+			a.main-btn__btn(href=link)!=text
+	else
+		.main-btn(class=mods)
+			button.main-btn__btn(
+				data-next-block=attributes['data-next-block']
+				data-vared=attributes['data-vars']
+				type='button')!=text
