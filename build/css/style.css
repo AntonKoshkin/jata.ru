@@ -228,6 +228,7 @@ button.main-btn__btn,
 .message__close,
 .question__title,
 .scroll-btn__btn,
+.up-btn,
 .slide-pack__pag,
 .wd-slider__pag {
   padding: 0;
@@ -276,7 +277,8 @@ button.main-btn__btn,
 }
 .message,
 .gallery__bg,
-.darkness {
+.darkness,
+.up-btn {
   z-index: 4;
 }
 .gallery__modal {
@@ -398,6 +400,7 @@ html > body .main--foradv + .footer:after,
 .radio__text:before,
 .scroll-btn__btn:before,
 .select:before,
+.up-btn:before,
 .section--way .section__content:after,
 .way--lb .way__content:after,
 .way--rb .way__content:after {
@@ -431,6 +434,7 @@ html > body .main--foradv + .footer:after,
 .radio__text:before,
 .scroll-btn__btn:before,
 .select:before,
+.up-btn:before,
 .section--way .section__content:after,
 .way--lb .way__content:after,
 .way--rb .way__content:after {
@@ -481,7 +485,8 @@ html > body .main--foradv + .footer:after,
 .driver-form__btn:before,
 .message__close:before,
 .message__close:after,
-.scroll-btn__btn:before {
+.scroll-btn__btn:before,
+.up-btn:before {
   top: 0;
   right: 0;
   bottom: 0;
@@ -533,6 +538,7 @@ html > body .main--foradv + .footer:after,
 .soc-icon[data-icon='ig'],
 .soc-icon[data-icon='yt'],
 .soc-icon[data-icon='tw'],
+.up-btn:before,
 .ya-map__icon--red,
 .ya-map__icon--blue {
   background-position: center;
@@ -1693,7 +1699,8 @@ html {
 .question__title:before {
   background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTAwIDEwMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIHN0eWxlPSJmaWxsOiMwMEEzQUY7IiBkPSJNOTcuOSw4Ny42Yy0xLjctMi0zLTMuNi00LTYuNWMtMi4xLTcuOCwwLjQtMTYuNywwLjQtMTYuN2wwLDBjMS42LTQuOCwyLjUtMTAsMi41LTE1LjNjMC0yNi43LTIxLjctNDguNC00OC40LTQ4LjRDMjEuNywwLjcsMCwyMi4yLDAsNDguOUMwLDY5LjYsMTMsODcsMzEuMiw5NGgwYzAsMCwwLjEsMC4yLDAuMywwLjNjMi40LDAuOSw0LjksMS43LDcuNCwyLjJjOS45LDIuMiwyOC45LDQuOCw1NS41LDAuNEMxMDEsOTUuNywxMDEuMSw5MS40LDk3LjksODcuNnogTTUwLDcwLjJjLTIuMywwLTQuMS0xLjgtNC4xLTQuMVM0Ny43LDYyLDUwLDYyYzIuMywwLDQuMSwxLjgsNC4xLDQuMUM1NC4xLDY4LjMsNTIuMyw3MC4yLDUwLDcwLjJ6IE01Ni42LDUxLjhjLTEuMSwwLjctMi42LDEuMy0zLjYsMS42djIuN2MwLDEuOC0xLjIsMy4yLTMsMy4yYy0xLjgsMC0zLTEuNC0zLTMuMnYtNS40YzAtMS44LDEuMy0zLjIsMy4xLTMuMmMxLjEsMCwyLjItMC4zLDMuMS0xYzEuNS0xLDIuNC0yLjgsMi40LTQuNmMwLTMuMS0yLjUtNS42LTUuNi01LjZzLTUuNiwyLjUtNS42LDUuNmMwLDEuOC0xLjQsMy4yLTMuMiwzLjJjLTEuOCwwLTMuMi0xLjQtMy4yLTMuMmMwLTYuNiw1LjQtMTIsMTItMTJjNi42LDAsMTEuOSw1LjQsMTEuOSwxMkM2MS45LDQ1LjgsNTkuOSw0OS42LDU2LjYsNTEuOHoiLz48L3N2Zz4=");
 }
-.driver-form__btn:before {
+.driver-form__btn:before,
+.up-btn:before {
   background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTAwIDEwMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIHN0eWxlPSJmaWxsOiNGRkZGRkY7IiBkPSJNNTAsNzcuOWMtMS42LDAtMy4xLTAuNi00LjItMS43TDEuNywzMi4xYy0yLjMtMi4zLTIuMy02LDAtOC4zczYtMi4zLDguMywwbDQwLDQwbDQwLTQwYzIuMy0yLjMsNi0yLjMsOC4zLDBjMi4zLDIuMywyLjMsNiwwLDguM0w1NC4yLDc2LjJDNTMuMSw3Ny4zLDUxLjYsNzcuOSw1MCw3Ny45eiIvPjwvc3ZnPg==");
 }
 .paragraph__text[data-icon='red-pointer']:before {
@@ -4495,6 +4502,41 @@ a.main-btn__btn {
 }
 .store-btn__img {
   width: 100%;
+}
+.up-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 240px;
+  visibility: hidden;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00a3af;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.3), inset -2px -2px 5px rgba(0,0,0,0.25);
+  opacity: 0;
+  -webkit-transition: background-color 0.3s, opacity 0.3s, visibility 0.3s;
+  transition: background-color 0.3s, opacity 0.3s, visibility 0.3s;
+}
+.up-btn:before {
+  width: 24px;
+  height: 24px;
+  background-size: 24px 24px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.up-btn:hover {
+  background-color: #00bbc9;
+}
+.up-btn:active {
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.3), inset 2px 2px 5px rgba(0,0,0,0.25);
+}
+.up-btn:active:before {
+  top: 1px;
+  left: 1px;
+}
+.up-btn--show {
+  visibility: visible;
+  opacity: 1;
 }
 .tablett {
   margin-right: -10px;

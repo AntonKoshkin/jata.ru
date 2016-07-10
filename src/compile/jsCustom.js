@@ -18,4 +18,5 @@ jQuery(document).ready(function($) {
 	//= ../blocks/wd-slider/wd-slider.js
 });
 
+//= ../blocks/up-btn/up-btn.js
 //= ../blocks/ya-map/ya-map.js

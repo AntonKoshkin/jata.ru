@@ -9,6 +9,7 @@ include ../../blocks/message/message
 include ../../blocks/navigation/navigation
 include ../../blocks/phone-number/phone-number
 include ../../blocks/store-btn/store-btn
+include ../../blocks/up-btn/up-btn
 
 block includes
 
@@ -77,6 +78,8 @@ html(lang='ru')
 		.modals
 			+message('Спасибо за предоставленную информацию. Мы отправили Вам инструкцию на ваш E-mail.')(mods='success')
 			+message('Во время отправки данных произошла ошибка. Пожалуйста, попробуйте позднее.')(mods='fail')
+
+		+upBtn
 
 		//- загружаем жЫквери с цдн
 		script(
