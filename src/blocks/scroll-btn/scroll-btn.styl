@@ -12,8 +12,13 @@
 	&__btn
 		@extend $btn-reset
 		bicon(mouse, 40, 60)
+		slow all
 		
+		transform translateY(0)
 		position relative
+		
+		&:hover
+			transform translateY(-5px)
 		
 		&:before
 			@extend $pseudo-center-old

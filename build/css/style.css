@@ -4294,6 +4294,14 @@ a.main-btn__btn {
   width: 60px;
   height: 60px;
   background-size: 40px 40px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.scroll-btn__btn:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 .scroll-btn__btn:before {
   width: 42px;
@@ -4767,7 +4775,7 @@ html > body .section--way {
       -ms-flex-pack: center;
       -ms-flex-align: center;
   min-height: 500px;
-  height: calc(100vh - 266px);
+  height: calc(100vh - 225px);
   border-top: 87px solid #36374c;
 
   -webkit-box-pack: center;
