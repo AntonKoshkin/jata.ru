@@ -1,0 +1,40 @@
+extends ../blocks/template/template
+
+block includes
+	include ../blocks/page/page
+
+	include ../blocks/block/block
+	include ../blocks/gallery/gallery
+	//- include ../blocks/paragraph/paragraph
+	//- include ../blocks/rectangle/rectangle
+	include ../blocks/section/section
+	include ../blocks/title/title
+	include ../blocks/video-bg/video-bg
+
+block page_id
+	-var pageId = 'gallery'
+
+block title
+	title Jata
+
+block content
+	+page(mods='gallery')
+		+section(mods='promo-gallery')
+			+videoBg([
+				['video-bg--3', 'mp4']
+			], 'video-bg__poster--3.jpg')(mods='gallery')
+			+title(1, 'Галерея')(mods='gallery')
+		+section(mods='gallery')
+			+gallery
+				+gItem('http://placehold.it/400x200')
+				+gItem('http://placehold.it/400x300')
+				+gItem('http://placehold.it/400x200')
+				+gItem('http://placehold.it/400x300')
+				+gItem('http://placehold.it/400x200')
+				+gItem('http://placehold.it/400x300')
+				+gItem('http://placehold.it/400x200')
+				+gItem('http://placehold.it/400x300')
+				+gItem('http://placehold.it/400x200')
+				+gItem('http://placehold.it/400x300')
+				//- +gMore('Загрузить еще')
+			+gModal

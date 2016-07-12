@@ -1,17 +1,14 @@
+include ../soc-icon/soc-icon
+
 mixin footer
 	if attributes.mods
 		-var mods = []
 		each mod, i in attributes.mods
 			-mods[i] = 'footer--' + mod
 
-	if pageId === 'foradv'
-		.footer__content.footer__content--foradv
-			if block
-				block
-	else
-		.footer__content
-			if block
-				block
+	.footer__content
+		if block
+			block
 
 mixin fInfo
 	.footer__info

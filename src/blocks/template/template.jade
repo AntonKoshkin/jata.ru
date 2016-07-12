@@ -9,6 +9,7 @@ include ../../blocks/message/message
 include ../../blocks/navigation/navigation
 include ../../blocks/phone-number/phone-number
 include ../../blocks/store-btn/store-btn
+include ../../blocks/up-btn/up-btn
 
 block includes
 
@@ -56,6 +57,12 @@ html(lang='ru')
 						+fnItem('/cap.html', 'О нас')
 						+fnItem('/cap.html', 'Команда')
 						+fnItem('/cap.html', 'Пресса о нас')
+					.footer__soc
+						+socIcon('https://new.vk.com/jata_ru', 'Вконтакте')(data-icon='vk')
+						+socIcon('https://www.facebook.com/groups/157503494655426/', 'Фейсбук')(data-icon='fb')
+						//- +socIcon('twitter.com', 'Твиттер')(data-icon='tw')
+						+socIcon('instagram.com', 'Инстаграм')(data-icon='ig')
+						//- +socIcon('youtube.com', 'Ютуб')(data-icon='yt')
 
 				+fInfo
 					+address('г. Санкт-Петербург, Московский&nbsp;проспект, 97а', 'https://goo.gl/XVmE2b', '(10:00-22:00)')
@@ -66,15 +73,28 @@ html(lang='ru')
 						+storeBtn('apple')(mods=['tar', 'mb10'])
 						+storeBtn('google')(mods=['tar', 'mb10'])
 
-					+copy(2016, 'Jata All Rights Reservet')
+					+copy(2016, 'Jata All Rights Reserved')
 
 		.modals
 			+message('Спасибо за предоставленную информацию. Мы отправили Вам инструкцию на ваш E-mail.')(mods='success')
 			+message('Во время отправки данных произошла ошибка. Пожалуйста, попробуйте позднее.')(mods='fail')
+
+		+upBtn
 
 		//- загружаем жЫквери с цдн
 		script(
 			src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
 		//- если не загружается, то подтягиваем свой
 		script window.jQuery || document.write('<script src=\'js/jquery.min.js\'><\/script>')
+
+		//- загружаем масонри с цдн
+		script(src='https://npmcdn.com/masonry-layout@4.1/dist/masonry.pkgd.min.js')
+		//- если не загружается, то подтягиваем свой
+		script window.Masonry || document.write('<script src=\'js/masonry.pkgd.min.js\'><\/script>')
+
+		//- script(src='https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js')
+
+
+		//- свои скрипты
 		script(src='js/main.js')
+		script window.imagesloaded || document.write('<script src=\'js/masonry.pkgd.min.js\'><\/script>')
