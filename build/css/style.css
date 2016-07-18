@@ -4286,9 +4286,6 @@ a.main-btn__btn {
   width: 100%;
   text-align: center;
 }
-.section--promo .scroll-btn {
-  bottom: -119px;
-}
 .scroll-btn__btn {
   position: relative;
   width: 60px;
@@ -4702,6 +4699,13 @@ body {
 }
 .section--promo {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+      -ms-flex-align: stretch;
+
+  -webkit-box-align: stretch;
+          align-items: stretch;
 }
 .section--promo-adv {
   position: relative;
@@ -4813,6 +4817,8 @@ html > body .section--way {
 .section--promo .section__content {
   position: relative;
   padding-top: 105px;
+  min-height: 735px;
+  width: 100%;
 }
 .section--promo-adv .section__content {
   display: -webkit-box;
