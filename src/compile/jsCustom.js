@@ -1,6 +1,5 @@
 jQuery(document).ready(function($) {
 	//= ../blocks/burger/burger.js
-	//= ../blocks/gallery/gallery.js
 	//= ../blocks/dot-strip/dot-strip.js
 	//= ../blocks/driver-form/selects.js
 	//= ../blocks/driver-form/driver-form.js
@@ -17,6 +16,10 @@ jQuery(document).ready(function($) {
 	//= ../blocks/video-bg/video-bg.js
 	//= ../blocks/wd-slider/wd-slider.js
 });
+
+// ../blocks/gallery/gallery.js
+//= ../blocks/gallery/g2.js
+
 
 //= ../blocks/up-btn/up-btn.js
 //= ../blocks/ya-map/ya-map.js

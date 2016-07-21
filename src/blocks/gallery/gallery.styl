@@ -1,23 +1,20 @@
 .gallery
-	@extend $clearfix
-	
-	overflowX hidden
-	padding-top 5px
-	padding-bottom 5px
+	&:after
+		content ''
+		display block
+		clear both
 	
 	&__item
 		cursor pointer
 		float Left
-		width calc(50% - 2.5px)
+		width 50%
 		overflow hidden
 		position relative
-		margin-bottom 2px
 			
 		img
 			display block
 			transition all 3s ease
 			transform scale(1)
-			// position relative
 			width 100%
 	
 	&__item:hover img
@@ -44,32 +41,75 @@
 		left 0
 		background-color rgba(black, .8)
 		display none
+		cursor pointer
 	
 	&__modal
 		position fixed
 		width 100%
-		top 10%
+		height 100%
+		// top 10%
+		top 50%
+		transform translateY(-50%)
 		z-index 6
-		text-align center
-		display none
+		// text-align center
+		left 0
+		cursor pointer
+		display flex
+		align-items center
+		justify-content center
 		
 		img
-			width 100%
+			max-width 100%
 			background-color rgba(black, .5)
 			box-shadow 0 10px 20px rgba(black, .19),
 				0 6px 6px rgba(black, .23)
-			// padding 10px
 			border 1px solid #fff
+			cursor pointer
+	
+	&__loading
+		display flex
+		align-items center
+		justify-content center
+		color blue
+		height 50px
+		position absolute
+		left 0
+		bottom 0
+		width 100%
+		
+		&--first
+			top 50%
+			left 50%
+			bottom auto
+			transform translate(-50%, -50%)
+		
+		&:before
+			@extend $pseudo
+			bicon(spining-dots-blue, 30)
+			
+			margin-right 20px
+			animation preloading 1s steps(12, start) infinite
 	
 	&__more
 		text-align center
-		padding 10px
-		color #004059
+		position absolute
+		bottom 0
+		width 100%
+		left 0
+		padding-bottom 10px
+	
+	&__btn
+		@extend $btn-reset
+		
+		color blue
+		
+		&:hover
+			text-decoration underline
 	
 	@media (min-width 800px)
 		&__item
-			width calc(25% - 3.75px)
+			width 25%
 	
 	@media (min-width 1200px)
 		&__item
-			width calc(20% - 4px)
+			width 20%
