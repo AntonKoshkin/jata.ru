@@ -50,6 +50,19 @@
 		max-width 450px
 		margin auto
 	
+	&--creator
+	&--dev
+	&--manager
+		width 100%
+		
+		&:not(:last-child)
+			margin-bottom 60px
+	
+	@media (min-width 900px)
+		&--dev
+		&--manager
+			width 50%
+	
 	@media (min-width tablet)
 		&--we-do-left
 			max-width 370px
@@ -105,6 +118,17 @@
 		
 		&--offis
 			display block
+		
+		&--creator
+		&--dev
+		&--manager
+			width 48%
+			
+			&:nth-of-type(2n+1):not(:last-of-type)
+				margin-right 1%
+			
+			&:nth-of-type(2n)
+				margin-left 1%
 	
 	@media (min-width desktop)
 		&--we-do-left
@@ -130,3 +154,18 @@
 		
 		&--gray
 			padding 65px 0 60px
+		
+		&--creator
+			width 800px
+			padding 0 20px
+		
+		&--dev
+		&--manager
+			width 320px
+			padding 0 40px
+			margin-left 0 !important
+			margin-right 0 !important
+		
+		&--creator
+			margin-right 0 !important
+			margin-left 0 !important

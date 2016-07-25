@@ -87,6 +87,28 @@
 		display flex
 		justify-content center
 		align-items center
+	
+	&--promo-team
+	&--promo-rules
+	&--promo-data
+		background-size cover
+		background-repeat no-repeat
+		box-shadow inset 0 -80px 45px -50px rgba(black, .9)
+	
+	&--promo-team
+		background-image url('/img/section__bg--team.jpg')
+		background-position 50% 100%
+	
+	&--promo-rules
+		background-image url('/img/section__bg--rules.jpg')
+		background-position center
+	
+	&--promo-data
+		background-image url('/img/section__data.jpg')
+		background-position center
+	
+	&--developers
+		background-color gray-e6
 
 	&__bg
 		position absolute
@@ -172,6 +194,14 @@
 		justify-content center
 		padding-top 50px
 	
+	&--promo-team &__content
+	&--promo-rules &__content
+	&--promo-data &__content
+		display flex
+		height 460px
+		justify-content center
+		align-items center
+	
 	&--about &__content
 		padding 35px 0 0
 	
@@ -185,6 +215,16 @@
 		min-height 500px
 		position relative
 		padding-bottom 50px
+		
+	&--creators &__content
+	&--developers &__content
+		padding-top 50px
+		padding-left 20px
+		padding-right 20px
+		padding-bottom 50px
+		display flex
+		justify-content center
+		flex-wrap wrap
 	
 	@media (min-width tablet)
 		&--promo
@@ -234,7 +274,11 @@
 		
 		&--mansoor &__content
 			padding 55px 20px 60px
-	
+		
+		&--creators
+		&--developers
+			justify-content center
+			
 		&__bg
 			height 100%
 			background-position 37% center
@@ -252,8 +296,13 @@
 			background-size cover
 			background-position 13% 40%
 		
+		&--promo-team
+			background-position 50% 82%
+		
 		&--promo-contacts &__content
 		&--promo-about &__content
+		&--promo-rules &__content
+		&--promo-data &__content
 			height 500px
 		
 		&--about &__content
@@ -265,6 +314,19 @@
 		&--promo-hdiw &__content
 			height 500px
 			padding-top 100px
+		
+		&--promo-team &__content
+			height 500px
 	
-	&--questions &__content
-		padding 50px 20px 80px
+		&--questions &__content
+			padding 50px 20px 80px
+		
+		&--creators &__content
+		&--developers &__content
+			justify-content center
+			padding-left 150px
+			padding-right 150px
+			padding-top 80px
+		
+		&--creators &__content
+			padding-bottom 0
