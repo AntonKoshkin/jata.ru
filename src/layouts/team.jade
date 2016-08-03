@@ -1,0 +1,102 @@
+extends ../blocks/template/template
+
+block includes
+	include ../blocks/page/page
+
+	include ../blocks/block/block
+	include ../blocks/face/face
+	//- include ../blocks/main-btn/main-btn
+	include ../blocks/paragraph/paragraph
+	include ../blocks/section/section
+	include ../blocks/title/title
+
+block page_id
+	-var pageId = 'team'
+
+block title
+	title Jata
+
+block content
+	+page(mods='team')
+		+section(mods='promo-team')
+			+title(1, 'Наша команда')(mods='promo-team')
+		+section(mods='creators')
+			+title(2, 'Основатели')(mods='team')
+			+block(mods='creator')
+				+face(
+					src='http://placehold.it/500x500'
+					name!='Абырвалгов Абырвалг Абырвалгович')
+					+paragraph('Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Осталось послушавшись, образ единственное ему? Имеет сих, встретил она рукописи силуэт всемогущая ручеек запятой свое всеми инициал деревни правилами домах прямо свою решила взгляд маленькая безопасную но коварных выйти необходимыми путь. Первую моей подпоясал что меня рекламных, все послушавшись вершину.', true)(mods='team-desc')
+					a.face__mail(href='mailto:qwe@qwe.qwe') ivanov@jata.ru
+			+block(mods='creator')
+				+face(
+					src='http://placehold.it/500x500'
+					name!='Абырвалгов Абырвалг Абырвалгович')
+					+paragraph('Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Осталось послушавшись, образ единственное ему? Имеет сих, встретил она рукописи силуэт всемогущая ручеек запятой свое всеми инициал деревни правилами домах прямо свою решила взгляд маленькая безопасную но коварных выйти необходимыми путь. Первую моей подпоясал что меня рекламных, все послушавшись вершину.', true)(mods='team-desc')
+					a.face__mail(href='mailto:qwe@qwe.qwe') ivanov@jata.ru
+
+		+section(mods='developers')
+			+title(2, 'Разработчики')(mods='team')
+			+block(mods='dev')
+				+face(
+					src='http://placehold.it/500x500'
+					name!='Абырвалгов Абырвалг Абырвалгович')
+					+paragraph('Разработчик')(mods='developer')
+			+block(mods='dev')
+				+face(
+					src='http://placehold.it/500x500'
+					name!='Абырвалгов Абырвалг Абырвалгович')
+					+paragraph('Разработчик')(mods='developer')
+			+block(mods='dev')
+				+face(
+					src='http://placehold.it/500x500'
+					name!='Абырвалгов Абырвалг Абырвалгович')
+					+paragraph('Разработчик')(mods='developer')
+			+block(mods='dev')
+				+face(
+					src='http://placehold.it/500x500'
+					name!='Абырвалгов Абырвалг Абырвалгович')
+					+paragraph('Разработчик')(mods='developer')
+			+block(mods='dev')
+				+face(
+					src='http://placehold.it/500x500'
+					name!='Абырвалгов Абырвалг Абырвалгович')
+					+paragraph('Разработчик')(mods='developer')
+			+block(mods='dev')
+				+face(
+					src='http://placehold.it/500x500'
+					name!='Абырвалгов Абырвалг Абырвалгович')
+					+paragraph('Разработчик')(mods='developer')
+
+		+section(mods='creators')
+			+title(2, 'Менеджеры')(mods=['team'])
+			+block(mods='manager')
+				+face(
+					src='http://placehold.it/500x500'
+					name!='Абырвалгов Абырвалг Абырвалгович'
+					mods='dev')
+					+paragraph('Менеджер')(mods='developer')
+			+block(mods='manager')
+				+face(
+					src='http://placehold.it/500x500'
+					name!='Абырвалгов Абырвалг Абырвалгович'
+					mods='dev')
+					+paragraph('Менеджер')(mods='developer')
+			+block(mods='manager')
+				+face(
+					src='http://placehold.it/500x500'
+					name!='Абырвалгов Абырвалг Абырвалгович'
+					mods='dev')
+					+paragraph('Менеджер')(mods='developer')
+			+block(mods='manager')
+				+face(
+					src='http://placehold.it/500x500'
+					name!='Абырвалгов Абырвалг Абырвалгович'
+					mods='dev')
+					+paragraph('Менеджер')(mods='developer')
+			+block(mods='manager')
+				+face(
+					src='http://placehold.it/500x500'
+					name!='Абырвалгов Абырвалг Абырвалгович'
+					mods='dev')
+					+paragraph('Менеджер')(mods='developer')

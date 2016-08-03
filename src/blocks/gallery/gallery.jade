@@ -12,7 +12,7 @@ mixin gItem(img)
 
 mixin gModal(img)
 	.gallery__bg
-	.gallery__modal
+		.gallery__modal
 		//- img(
 		//- 	src=img
 		//- 	alt='')
@@ -21,3 +21,7 @@ mixin gMore(text)
 	.gallery__more
 		button.gallery__btn(
 			type='button')=text
+
+mixin gLoading(text)
+	.gallery__loading.gallery__loading--first
+		span=text

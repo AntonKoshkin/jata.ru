@@ -45,6 +45,9 @@
 		width 100%
 		margin-bottom 10px
 	
+	&--team-desc
+		text-align center
+	
 	&__text
 		&--about-title
 			@extend $text-24
@@ -158,6 +161,13 @@
 	&--gray a
 		color blue
 		text-decoration underline
+	
+	&--team-desc &__text
+		line-height 2em
+		margin-bottom 40px
+		
+	&--developer
+		@extend $text-24, $fw300
 
 	@media (min-width tablet)
 		&--with-checker

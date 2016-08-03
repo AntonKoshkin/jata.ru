@@ -1,0 +1,49 @@
+.face
+	text-align center
+	
+	&__face
+		size 230px
+		margin-left auto
+		margin-right auto
+		margin-bottom 35px
+		border-radius 10px
+		overflow hidden
+		position relative
+	
+	&__img
+		width 100%
+		position relative
+	
+	&__frame
+		slow opacity
+		
+		opacity 0
+		position absolute
+		width 100%
+		height 100%
+		left 0
+		top 0
+		background-image url('/img/face__frame.svg')
+		border-radius 10px
+	
+	&__face:hover &__frame
+		opacity 1
+	
+	&__name
+		@extend $text-30, $fw500
+		
+		margin-bottom 40px
+	
+		.block--dev &
+			margin-bottom 10px
+	
+	&__mail
+		@extend $text-24, $fw500
+		
+		text-decoration underline
+		position relative
+		padding-left 40px
+		
+		&:before
+			@extend $pseudo-left
+			bicon(closed-letter-red, 24)
