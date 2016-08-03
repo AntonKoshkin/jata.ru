@@ -194,34 +194,36 @@ var gallery = {
 };
 
 jQuery(document).ready(function($) {
-	gallery.getItems(function() {
-		gallery.firstPushing(function() {
-			gallery.loadingEnd(gallery.scrollLoad);
+	if ($('.gallery').length) {
+		gallery.getItems(function() {
+			gallery.firstPushing(function() {
+				gallery.loadingEnd(gallery.scrollLoad);
+			});
 		});
-	});
 
-	$('body').on('click', '.gallery__btn', function(event) {
-		event.preventDefault();
-		
-		gallery.otherPushing(function() {
-			gallery.loadingEnd(gallery.scrollLoad);
+		$('body').on('click', '.gallery__btn', function(event) {
+			event.preventDefault();
+			
+			gallery.otherPushing(function() {
+				gallery.loadingEnd(gallery.scrollLoad);
+			});
 		});
-	});
 
-	$(window).scroll(function(event) {
-		gallery.scrollLoad();
-	});
+		$(window).scroll(function(event) {
+			gallery.scrollLoad();
+		});
 
-	$('body').on('click', '.gallery__item', function(event) {
-		$('.gallery__modal')
-			.html('<img src=\'' +
-				$(this).attr('data-url') +
-				'\' alt=\'\'>')
-			.closest('.gallery__bg')
-			.show();
-	});
+		$('body').on('click', '.gallery__item', function(event) {
+			$('.gallery__modal')
+				.html('<img src=\'' +
+					$(this).attr('data-url') +
+					'\' alt=\'\'>')
+				.closest('.gallery__bg')
+				.show();
+		});
 
-	$('body').on('click', '.gallery__bg', function(event) {
-		$(this).hide();
-	});
+		$('body').on('click', '.gallery__bg', function(event) {
+			$(this).hide();
+		});
+	}
 });
