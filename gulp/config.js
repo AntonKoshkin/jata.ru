@@ -4,7 +4,7 @@
 const buildRoot = 'build';
 
 module.exports = {
-	isDev		: true,
+	isDev		: false,
 	pathTo	: {
 		src	: {
 			angJade		: 'src/forAng/**/*.jade',
