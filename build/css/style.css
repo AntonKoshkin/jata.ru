@@ -2837,6 +2837,8 @@ html > body .main--foradv + .footer:after {
   width: 100%;
   height: 50px;
   color: #00a3af;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 
   -webkit-box-align: center;
           align-items: center;

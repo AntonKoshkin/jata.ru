@@ -17,8 +17,9 @@ jQuery(document).ready(function($) {
 	//= ../blocks/wd-slider/wd-slider.js
 });
 
-// ../blocks/gallery/gallery.js
-//= ../blocks/gallery/g2.js
+//= ../blocks/gallery/gallery.js
+// ../blocks/gallery/g2.js
+// ../blocks/gallery/g3.js
 
 
 //= ../blocks/up-btn/up-btn.js
