@@ -67,14 +67,13 @@ var gallery = {
 				data: {tags: 'main'},
 			})
 			.done(function(data) {
-				// console.log('список картинок получен. длина - '+data.length+' штук');
-
 				gallery.allItems = data.reverse();
 
 				callback();
 			})
 			.fail(function(data) {
 				console.log('список картинок не получен :(');
+				gallery.loader.text('Сервер жадничает :(');
 			});
 		});
 	},
