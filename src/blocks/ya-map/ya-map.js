@@ -8,30 +8,28 @@ if ($('#yaMap').length) {
 function init(){ 
 	map = new ymaps.Map('yaMap', {
 		center	: [
-			59.91596187,
-			30.30575744
+			59.93159322233984,
+			30.375144682556122
 		],
-		zoom		: 14,
+		zoom		: 13,
 		controls	: [
 			'zoomControl',
 		],
 	});
 
 	var
-		redIcon	=	ymaps
-							.templateLayoutFactory
+		redIcon	=	ymaps.templateLayoutFactory
 							.createClass('<div class=\'ya-map__icon ya-map__icon--red\'></div>'),
-		blueIcon	=	ymaps
-							.templateLayoutFactory
+		blueIcon	=	ymaps.templateLayoutFactory
 							.createClass('<div class=\'ya-map__icon ya-map__icon--blue\'></div>');
 
 	pointOne = new ymaps.Placemark(
 		[
-			59.92191840,
-			30.31779727
+			59.92022975962769,
+			30.372955999999977
 		], {
-			hintContent			: 'Точка для обклейки',
-			balloonContent		: 'Спб, Московский проспект, 97а<br>10:00-18:00',
+			hintContent			: 'Точка для оклейки',
+			balloonContent		: 'СПб, Кременчугская ул., д.8',
 		}, {
 			iconLayout			: blueIcon,
 			iconShape			: {
@@ -51,11 +49,11 @@ function init(){
 
 	pointTwo = new ymaps.Placemark(
 		[
-			59.90988461,
-			30.29648772
+			59.94484093771931,
+			30.38859016684016
 		], {
 			hintContent			: 'Главный офис',
-			balloonContent		: 'Какой-то другой адрес<br>10:00-18:00',
+			balloonContent		: 'СПб, Суворовский проспект, 65б, офис 16',
 		}, {
 			iconLayout			: redIcon,
 			iconShape			: {

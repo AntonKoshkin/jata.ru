@@ -21,11 +21,11 @@ $('body').on('click', '.main-btn--hdiw', function(event) {
 	}
 });
 
-$('body').on('click', '.question__title', function(event) {
+$('body').on('click', '.question__header', function(event) {
 	event.preventDefault();
 	
 	$(this)
-		.closest('.question__header')
+		// .closest('.question__header')
 		.siblings('.question__body')
 		.slideToggle(300)
 		.closest('.question')

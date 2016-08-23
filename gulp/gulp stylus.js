@@ -1,8 +1,7 @@
 'use strict';
 
 const
-	combine	= require('stream-combiner2')
-					.obj,
+	combine	= require('stream-combiner2').obj,
 	config	= require('./config'),
 	gulp		= require('gulp'),
 	gulpIf	= require('gulp-if'),
@@ -42,9 +41,9 @@ module.exports = function() {
 				prefixes({browsers: [
 					'> 1%',
 					'ie > 9',
-					'last 2 versions']
+					'last 3 versions']
 				}),
-				cssComb({'sort-order': 'zen'}),
+				// cssComb({'sort-order': 'zen'}),
 				// cssLint({'extends':'src/'}),
 			]))
 			.on('error', notify.onError())

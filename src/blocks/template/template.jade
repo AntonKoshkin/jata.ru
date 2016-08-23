@@ -10,6 +10,7 @@ include ../../blocks/navigation/navigation
 include ../../blocks/phone-number/phone-number
 include ../../blocks/store-btn/store-btn
 include ../../blocks/up-btn/up-btn
+include links
 
 block includes
 
@@ -58,16 +59,16 @@ html(lang='ru')
 						+fnItem('/team.html', 'Команда')
 						+fnItem('/cap.html', 'Пресса о нас')
 					.footer__soc
-						+socIcon('https://new.vk.com/jata_ru', 'Вконтакте')(data-icon='vk')
-						+socIcon('https://www.facebook.com/groups/157503494655426/', 'Фейсбук')(data-icon='fb')
+						+socIcon(linkTo.vk, 'Вконтакте')(data-icon='vk')
+						+socIcon(linkTo.fb, 'Фейсбук')(data-icon='fb')
 						//- +socIcon('twitter.com', 'Твиттер')(data-icon='tw')
-						+socIcon('instagram.com', 'Инстаграм')(data-icon='ig')
+						+socIcon(linkTo.ig, 'Инстаграм')(data-icon='ig')
 						//- +socIcon('youtube.com', 'Ютуб')(data-icon='yt')
 
 				+fInfo
 					+address('г. Санкт-Петербург, Московский&nbsp;проспект, 97а', 'https://goo.gl/XVmE2b', '(10:00-22:00)')
 					
-					+phoneNumber('+78003757575', '8 (800)', '375-75-75')
+					+phoneNumber(phoneNumber.main.call, '8 (812)', '274 13 38')
 
 					+fBtns
 						+storeBtn('apple')(mods=['tar', 'mb10'])
