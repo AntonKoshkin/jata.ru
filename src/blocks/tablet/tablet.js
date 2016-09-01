@@ -30,7 +30,3 @@ $('#tablet').lazyload({
 	threshold	: 200,
 	effect		: 'fadeIn',
 });
-
-// $.get("http://jata.ru/api/v1/accounts/view", function(data) {
-// 	console.log(data);
-// });

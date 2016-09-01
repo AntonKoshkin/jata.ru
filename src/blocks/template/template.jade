@@ -26,12 +26,12 @@ html(lang='ru')
 			+header
 				+logo(mods=['index'])
 				+navigation(mods=['index'])
-					+navItem('/about.html', 'О Jata.ru')(title='О Jata.ru')
-					+navItem('/how.html', 'Как это работает?')(title='Как это работает?')
-					+navItem('/contacts.html', 'Контакты')(title='Контакты')
+					+navItem('/about.html', 'О jata.ru')(title='О jata.ru')
+					+navItem('/how.html', 'Вопросы и ответы')(title='Как это работает?')
 					//- +navItem('/cap.html', 'Рекламные места')(title='Рекламные места')
-					+navItem('/gallery.html', 'Галерея')(title='Галерея')
-				+hBtn('/cap.html', 'Войти')(mods=['enter'])
+					+navItem('/cap.html', 'Галерея')(title='Галерея')
+					+navItem('/contacts.html', 'Контакты')(title='Контакты')
+				+hBtn(linkTo.reg, 'Войти')(mods=['enter'])
 				if pageId === 'foradv'
 					+hBtn('/index.html', 'Водителям')(mods=['for-advers'])
 				else
@@ -52,11 +52,11 @@ html(lang='ru')
 						+fnItem('/about.html', 'О компании')
 						+fnItem('/rules.html', 'Правила пользования')
 						+fnItem('/data.html', 'Защита данных')
-						+fnItem('/how.html', 'Вопросы и ответы')
 					+fnHalf
+						+fnItem('/how.html', 'Вопросы и ответы')
 						+fnItem('/contacts.html', 'Контакты')
-						+fnItem('/cap.html', 'О нас')
-						+fnItem('/team.html', 'Команда')
+						//- +fnItem('/cap.html', 'О нас')
+						//- +fnItem('/team.html', 'Команда')
 						+fnItem('/cap.html', 'Пресса о нас')
 					.footer__soc
 						+socIcon(linkTo.vk, 'Вконтакте')(data-icon='vk')
@@ -66,7 +66,7 @@ html(lang='ru')
 						//- +socIcon('youtube.com', 'Ютуб')(data-icon='yt')
 
 				+fInfo
-					+address('г. Санкт-Петербург, Московский&nbsp;проспект, 97а', 'https://goo.gl/XVmE2b', '(10:00-22:00)')
+					+address(address.office, 'https://goo.gl/XVmE2b', '(10:00-22:00)')
 					
 					+phoneNumber(phoneNumber.main.call, '8 (812)', '274 13 38')
 

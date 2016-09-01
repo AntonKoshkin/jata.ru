@@ -15,7 +15,7 @@
 		height 440px
 	
 	&--index&--open
-		height 269px
+		height 49px * 4 + 20
 	
 	&__list
 		background-color blue-dark
@@ -39,11 +39,12 @@
 			padding 15px 0 5px
 
 	&__link
-		@extend $fw500, $very-small-text
+		// @extend $fw500, $very-small-text
+		@extend $fw500
 		
 		color white
 		display block
-		text-transform uppercase
+		// text-transform uppercase
 		padding 15px
 		
 	&__item--enter &__link
@@ -115,3 +116,4 @@
 
 		&__link
 			padding 5px
+			text-shadow 1px 1px 5px #000

@@ -47,27 +47,29 @@ block content
 					+mMail(emailFor.main)
 					+paragraph('Для прессы')(mods='mansoor')
 					+mMail(emailFor.press)
-					+paragraph('Для прессы')(mods='mansoor')
-					+mMail(emailFor.press)
+					//- +paragraph('Для прессы')(mods='mansoor')
+					//- +mMail(emailFor.press)
 				+mansoor(
 					icon='pointer'
 					mods='address')
-					+paragraph('Адреса офисов')(mods='mansoor-blue')
+					+paragraph('Адрес офиса')(mods='mansoor-blue')
 					+paragraph(address.office)(mods='mansoor-address')
-					+mTime('10:00', '18:00')(mods='mb10')
+					+block(mods='offis')
+						+mNumber(phoneNumber.main.call, phoneNumber.main.read)
+						+mTime('10:00', '18:00')
 					//- +paragraph(address.office)(mods='mansoor-address')
 					//- +mTime('10:00', '18:00')
 
 			+block(mods='mansoor')
 				+mansoor(mods='offis')
-					+paragraph('Главный офис')(mods='address-red')
-					+paragraph(address.office)(
+					//- +paragraph('Главный офис')(mods='address-red')
+					//- +paragraph(address.office)(
 						data-icon='red-pointer')
-					+block(mods='offis')
+					//- +block(mods='offis')
 						+mNumber(phoneNumber.main.call, phoneNumber.main.read)
 						+mTime('10:00', '18:00')
-					+paragraph('Точки для оклейки')(mods='address-blue')
 
+					+paragraph('Бокс для оклейки')(mods='address-blue')
 					+paragraph(address.stick1)(
 						data-icon='blue-pointer')
 					+block(mods=['offis', 'mb10'])

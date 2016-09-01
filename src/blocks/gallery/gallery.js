@@ -62,7 +62,7 @@ var gallery = {
 
 		jQuery(document).ready(function($) {
 			$.ajax({
-				url: 'http://jata.ru:80/api/v1/gallery',
+				url: 'https://jata.ru:80/api/v1/gallery',
 				type: 'POST',
 				data: {tags: 'main'},
 			})

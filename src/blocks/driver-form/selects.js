@@ -14,7 +14,7 @@ for (var i = 0; i <= 21; i++) {
 
 if ($('.driver-form').length) {
 	$.ajax({
-		url: 'http://jata.ru:80/api/v1/vehicles/brands/',
+		url: 'https://jata.ru:80/api/v1/vehicles/brands/',
 		type: 'GET',
 		dataType: 'json',
 	})
