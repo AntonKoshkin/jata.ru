@@ -7,7 +7,7 @@ mixin storeBtn(type)
 	.store-btn(class=mods)
 		if type === 'apple'
 			a.store-btn__link(
-				href='http://appstore.com'
+				href=linkTo.aplle
 				target='_blank')
 				img.store-btn__img(
 					src='/img/app-store.svg'
@@ -15,7 +15,7 @@ mixin storeBtn(type)
 						
 		else if type === 'google'
 			a.store-btn__link(
-				href='http://play.google.com'
+				href=linkTo.android
 				target='_blank')
 				img.store-btn__img(
 					src='/img/google-play.svg'

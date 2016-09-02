@@ -16,7 +16,7 @@ var BecomeDriverSerializer 	=	{
 
 function sendForm(page) {
 	$.ajax({
-		url: 'https://jata.ru:80/api/v1/accounts/becomedriver',
+		url: 'http://jata.ru:80/api/v1/accounts/becomedriver',
 		type: 'POST',
 		data: BecomeDriverSerializer,
 	})

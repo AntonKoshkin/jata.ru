@@ -12,7 +12,7 @@ block page_id
 	-var pageId = 'hdiw'
 
 block title
-	title Jata
+	title Вопросы и ответы
 
 block content
 	+page(mods='hdiw')
@@ -21,8 +21,8 @@ block content
 				['video-bg--2', 'mp4']
 			], 'video-bg__poster--2.jpg')(mods='hdiw')
 			+title(1, 'Как это работает?')(mods='hdiw')
-			+mainBtn('Владельцам ТС')(mods=['hdiw', 'active'])
-			+mainBtn('Рекламодателям')(mods=['hdiw'])
+			+mainBtn('Рекламодателям')(mods=['hdiw', 'active'])
+			+mainBtn('Владельцам ТС')(mods=['hdiw'])
 		+section(mods='questions')
 			+questions
 				+qItem
