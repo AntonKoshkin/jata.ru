@@ -33,7 +33,7 @@ $('body').on('click', '.select__variant', function(event) {
 			.removeClass('select--open');
 	} else {
 		$.ajax({
-			url: linkTo.root + ':80/api/v1/vehicles/brands/'+$(this).attr('data-id')+'/',
+			url: linkTo.root + '/api/v1/vehicles/brands/'+$(this).attr('data-id')+'/',
 			type: 'GET',
 			dataType: 'json',
 			// data: {pk: $('#car_brand').attr('data-val')},

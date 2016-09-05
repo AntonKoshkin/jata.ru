@@ -18,7 +18,7 @@ for (var i = 0; i <= 21; i++) {
 
 if ($('.driver-form').length) {
 	$.ajax({
-		url: linkTo.root + ':80/api/v1/vehicles/brands/',
+		url: linkTo.root + '/api/v1/vehicles/brands/',
 		type: 'GET',
 		dataType: 'json',
 	})

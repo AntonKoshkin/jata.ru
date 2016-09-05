@@ -65,7 +65,7 @@ var gallery = {
 
 		jQuery(document).ready(function($) {
 			$.ajax({
-				url: linkTo.root + ':80/api/v1/gallery',
+				url: linkTo.root + '/api/v1/gallery',
 				type: 'POST',
 				data: {tags: 'main'},
 			})

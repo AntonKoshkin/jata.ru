@@ -20,7 +20,7 @@ function sendForm(page) {
 		root: 'https://jata.ru'
 	};
 	$.ajax({
-		url: linkTo.root + ':80/api/v1/accounts/becomedriver',
+		url: linkTo.root + '/api/v1/accounts/becomedriver',
 		type: 'POST',
 		data: BecomeDriverSerializer,
 	})
