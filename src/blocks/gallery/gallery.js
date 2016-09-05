@@ -58,6 +58,9 @@ var gallery = {
 
 	// получение списка картинок
 	getItems			: function(callback) {
+		var linkTo = {
+			root: 'https://jata.ru'
+		};
 		gallery.loadingStart();
 
 		jQuery(document).ready(function($) {
