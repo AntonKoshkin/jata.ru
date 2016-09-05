@@ -62,7 +62,7 @@ var gallery = {
 
 		jQuery(document).ready(function($) {
 			$.ajax({
-				url: 'https://jata.ru:80/api/v1/gallery',
+				url: linkTo.root + ':80/api/v1/gallery',
 				type: 'POST',
 				data: {tags: 'main'},
 			})
@@ -87,8 +87,8 @@ var gallery = {
 		}
 
 		for(var i = 0, length1 = gallery.itemsToPush.length; i < length1; i++){
-			gallery.itemsToPush[i] = '<div data-url=\'http://jata.ru'+
-				(gallery.itemsToPush[i]) + '\' class=\'gallery__item\'><img src=\'http://jata.ru'+
+			gallery.itemsToPush[i] = '<div data-url=\''+ linkTo.root +
+				(gallery.itemsToPush[i]) + '\' class=\'gallery__item\'><img src=\'' + linkTo.root +
 				(gallery.itemsToPush[i]) + '\' alt><div class=\'gallery__darkness\'></div></div>';
 		}
 
@@ -137,8 +137,8 @@ var gallery = {
 		}
 
 		for(var i = 0, length1 = gallery.itemsToPush.length; i < length1; i++){
-			gallery.itemsToPush[i] = '<div data-url=\'http://jata.ru'+
-				(gallery.itemsToPush[i]) + '\' class=\'gallery__item\'><img src=\'http://jata.ru'+
+			gallery.itemsToPush[i] = '<div data-url=\'' + linkTo.root +
+				(gallery.itemsToPush[i]) + '\' class=\'gallery__item\'><img src=\'' + linkTo.root +
 				(gallery.itemsToPush[i]) + '\' alt><div class=\'gallery__darkness\'></div></div>';
 		}
 

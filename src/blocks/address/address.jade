@@ -8,6 +8,7 @@ mixin address(text, link, time)
 		address.address__address
 			a.address__link(
 				href=link
+				target='_black'
 				title='Наш адрес')!=text
 		span.address__work-hours(
 			title='Часы работы')!=time
