@@ -14,7 +14,11 @@ var BecomeDriverSerializer 	=	{
 	comment					: 'unnecessary',
 };
 
+
 function sendForm(page) {
+	var linkTo = {
+		root: 'https://jata.ru'
+	};
 	$.ajax({
 		url: linkTo.root + ':80/api/v1/accounts/becomedriver',
 		type: 'POST',

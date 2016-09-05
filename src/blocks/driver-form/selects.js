@@ -5,6 +5,10 @@ var
 	thisYear,
 	year	= today.getFullYear();
 
+var linkTo = {
+	root: 'https://jata.ru'
+};
+
 // генерация списка годов
 for (var i = 0; i <= 21; i++) {
 	thisYear = +year - i;

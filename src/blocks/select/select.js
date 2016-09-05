@@ -14,6 +14,9 @@ $('body').on('click', '.select__input', function(event) {
 });
 
 $('body').on('click', '.select__variant', function(event) {
+	var linkTo = {
+		root: 'https://jata.ru'
+	};
 	if ($(this).attr('data-val') === 'no-items') {
 		$(this)
 			.closest('.select')

@@ -80,6 +80,9 @@ var gallery = {
 
 	// первая загрузка фоток
 	firstPushing	: function(callback) {
+		var linkTo = {
+			root: 'https://jata.ru'
+		};
 		if (gallery.allItems.length >= 30) {
 			gallery.itemsToPush	=	gallery.allItems.splice(gallery.allItems.length - 31, 30);
 		} else {
@@ -129,6 +132,9 @@ var gallery = {
 
 	// любая последующая загрузка фоток
 	otherPushing		: function(callback) {
+		var linkTo = {
+			root: 'https://jata.ru'
+		};
 		if (gallery.allItems.length >= 10) {
 			gallery.itemsToPush	=	gallery.allItems.splice(gallery.allItems.length - 11, 10);
 		} else {
