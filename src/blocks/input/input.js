@@ -74,6 +74,10 @@ $('body').on('keyup', '[data-mask=\'tel\']', function() {
 	$(this).val(telFormat($(this).val()));
 });
 
+$('body').on('click', '[data-mask=\'tel\']', function() {
+	$(this).val(telFormat($(this).val()));
+});
+
 $('body').on('keyup', '[data-mask=\'number\']', function() {
 	$(this).val(numberFormat($(this).val()));
 });

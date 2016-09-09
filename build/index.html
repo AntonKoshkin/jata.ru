@@ -116,14 +116,14 @@
 										</div>
 										<div class="driver-form__row driver-form__row--select">
 											<div class="select select--w200">
-												<input data-field-type="form_select" data-correct="null" data-id="null" data-select="false" data-val="none" id="car_brand" placeholder="Марка авто" type="text" value="" data-placeholder="" class="select__input"/>
+												<input autocomplete="off" data-field-type="form_select" data-correct="null" data-id="null" data-select="false" data-val="none" id="car_brand" placeholder="Марка авто" type="text" value="" data-placeholder="" class="select__input"/>
 												<ul data-content="brands" class="select__variants">
 												</ul>
 											</div>
 										</div>
 										<div class="driver-form__row driver-form__row--select">
 											<div class="select select--w200">
-												<input data-field-type="form_select" data-correct="null" data-select="false" data-val="none" id="car_model" placeholder="Модель авто" type="text" value="" data-placeholder="" class="select__input"/>
+												<input autocomplete="off" data-field-type="form_select" data-correct="null" data-select="false" data-val="none" id="car_model" placeholder="Модель авто" type="text" value="" data-placeholder="" class="select__input"/>
 												<ul data-content="models" class="select__variants">
 													<li data-val="no-items" class="select__variant">Выберите марку авто</li>
 												</ul>
@@ -131,7 +131,7 @@
 										</div>
 										<div class="driver-form__row driver-form__row--select">
 											<div class="select select--w200">
-												<input data-field-type="form_select" data-correct="null" data-select="true" data-val="none" id="car_color" readonly="" type="text" value="Цвет авто" data-placeholder="Цвет авто" class="select__input"/>
+												<input autocomplete="off" data-field-type="form_select" data-correct="null" data-select="true" data-val="none" id="car_color" readonly="" type="text" value="Цвет авто" data-placeholder="Цвет авто" class="select__input"/>
 												<ul class="select__variants">
 													<li data-val="808080" class="select__variant">Серый</li>
 													<li data-val="864600" class="select__variant">Коричневый</li>
@@ -149,7 +149,7 @@
 										</div>
 										<div class="driver-form__row driver-form__row--select">
 											<div class="select select--w200">
-												<input data-field-type="form_select" data-correct="null" data-select="true" data-val="none" id="car_state" readonly="" type="text" value="Состояние авто" data-placeholder="Состояние авто" class="select__input"/>
+												<input autocomplete="off" data-field-type="form_select" data-correct="null" data-select="true" data-val="none" id="car_state" readonly="" type="text" value="Состояние авто" data-placeholder="Состояние авто" class="select__input"/>
 												<ul class="select__variants">
 													<li data-val="perfect" class="select__variant">Отличное</li>
 													<li data-val="normal" class="select__variant">Хорошее</li>
@@ -189,24 +189,24 @@
 						<div class="block block--we-do-right">
 							<div class="wd-slider">
 								<div class="wd-slider__slides">
-									<div class="wd-slider__slide wd-slider__slide--one"><img src="/img/wd-slider__slide--1.png" alt="" class="wd-slider__car"/></div>
 									<div class="wd-slider__slide wd-slider__slide--two"><img src="/img/wd-slider__slide--2.png" alt="" class="wd-slider__car"/></div>
+									<div class="wd-slider__slide wd-slider__slide--one"><img src="/img/wd-slider__slide--1.png" alt="" class="wd-slider__car"/></div>
 								</div>
 								<div class="wd-slider__cards">
 									<div class="wd-slider__card-wrapper">
 										<div class="wd-slider__card">
-											<div class="wd-slider__face"><img src="/img/wd-slider__face--1.jpg" alt="" class="wd-slider__img"/></div>
+											<div class="wd-slider__face"><img src="/img/wd-slider__face--2.jpg" alt="" class="wd-slider__img"/></div>
 											<div class="wd-slider__title">
-												<p class="wd-slider__text">Алексей Иванов<br/>25 лет, Менеджер<br/>Toyota Corolla 2010 г.<br/>300 км/день<br/>
+												<p class="wd-slider__text">ИП, Олег Гончаров<br/>37 лет, Водитель автобуса<br/>Маршрут №373<br/>Автобус ЛИАЗ, 3000 км/месяц<br/>
 												</p>
 											</div>
 										</div>
 									</div>
 									<div class="wd-slider__card-wrapper">
 										<div class="wd-slider__card">
-											<div class="wd-slider__face"><img src="/img/wd-slider__face--2.jpg" alt="" class="wd-slider__img"/></div>
+											<div class="wd-slider__face"><img src="/img/wd-slider__face--1.jpg" alt="" class="wd-slider__img"/></div>
 											<div class="wd-slider__title">
-												<p class="wd-slider__text">ИП, Олег Гончаров<br/>37 лет, Водитель автобуса<br/>Маршрут №373<br/>Автобус ЛИАЗ, 1000 км/месяц<br/>
+												<p class="wd-slider__text">Алексей Иванов<br/>25 лет, Менеджер<br/>Toyota Corolla 2010 г.<br/>65 км/день<br/>
 												</p>
 											</div>
 										</div>
@@ -254,10 +254,7 @@
 							<p class="paragraph__text">Требования:</p>
 						</div>
 						<div class="paragraph paragraph--with-checker">
-							<p class="paragraph__text">Возраст от 21 года</p>
-						</div>
-						<div class="paragraph paragraph--with-checker">
-							<p class="paragraph__text">Модель машины от 2005г.</p>
+							<p class="paragraph__text">Возраст от 18 года</p>
 						</div>
 						<div class="paragraph paragraph--with-checker">
 							<p class="paragraph__text">от 800 км/месяц</p>
@@ -289,7 +286,7 @@
 				</nav>
 				<div class="footer__info">
 					<div class="address">
-						<address class="address__address"><a href="http://goo.gl/xGdsde" target="_black" title="Наш адрес" class="address__link">СПб, Суворовский пр., д.65б, офис 16</a></address><span title="Часы работы" class="address__work-hours">(10:00-22:00)</span>
+						<address class="address__address"><a href="http://goo.gl/xGdsde" target="_black" title="Наш адрес" class="address__link">СПб, Суворовский пр., д. 65б, офис 16</a></address><span title="Часы работы" class="address__work-hours">(10:00-19:00)</span>
 					</div>
 					<div class="phone-number"><a href="tel:+78122741338" class="phone-number__number">8 (812) <span class="phone-number__number--fat">274 13 38</span></a></div>
 					<div class="footer__btns">
@@ -310,7 +307,7 @@
 				<div class="message__bg"></div>
 				<div class="message__window">
 					<button class="message__close"></button>
-					<p class="message__text">Спасибо за предоставленную информацию. Мы отправили Вам инструкцию на ваш E-mail.</p>
+					<p class="message__text">Спасибо за предоставленную информацию. Наш представитель свяжется с Вами.</p>
 				</div>
 			</div>
 			<div class="message message--fail">

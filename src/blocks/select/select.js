@@ -109,7 +109,7 @@ $('body').on('keyup', '.select__input', function(event) {
 		var thisVal = $(this).val();
 
 		carModels.forEach(function(element, index) {
-			if (element.name.toLowerCase().indexOf($('[data-content=\'models\']').prev('input').val()) !== -1) {
+			if (element.name.toLowerCase().indexOf($('[data-content=\'models\']').prev('input').val().toLowerCase()) !== -1) {
 				$('[data-content=\'models\']')
 					.append('<li class=\'select__variant\' data-id=\''+
 						element.id+
