@@ -17,7 +17,7 @@ var BecomeDriverSerializer 	=	{
 
 function sendForm(page) {
 	var linkTo = {
-		root: 'https://jata.ru'
+		root: 'http://dev.jata.ru'
 	};
 	$.ajax({
 		url: linkTo.root + '/api/v1/accounts/becomedriver',
@@ -33,28 +33,12 @@ function sendForm(page) {
 		// очистка полей формы
 		$('[data-field-type]')
 			.each(function(index, el) {
-				if ($(this).attr('data-field-type') === 'form_input') {
-					$(this)
-						.val('')
-						.attr('data-filled', 'false')
-						.attr('data-correct', 'null');
-				} else if ($(this).attr('data-field-type') === 'form_select') {
-					$(this)
-						.val($(this).attr('data-placeholder'))
-						.attr('data-correct', 'null')
-						.attr('data-val', 'none');
-					if ($(this).attr('data-id')) {
-						$(this).attr('data-id', 'null');
-					}
-				}
+				$(this)
+					.val('')
+					.attr('data-filled', 'false')
+					.attr('data-correct', 'null');
 			});
 
-		// удаление марок
-		$('[data-content=\'models\']')
-			.html('<li class=\'select__variant\' data-val=\'no-items\'>Выберите марку авто</li>');
-
-		// вывод количества полученных марок
-		// console.log(BecomeDriverSerializer);
 		console.log('form has beed sent');
 	})
 	.fail(function(data) {
@@ -97,6 +81,10 @@ $('body').on('click', '[data-way]', function(event) {
 		switch (dataPage) {
 			// проверка полей на первой странице
 			case '1':
+					// так как поле "как вы о нас узнали" не участвует в обходе, запишем его вручную
+					BecomeDriverSerializer.how_did_you_know = $('#how_did_you_know').val();
+				
+			case '2':
 				// на этой странице найти все поля и перебрать
 				currentPage
 					.find('[data-mask]')
@@ -118,7 +106,7 @@ $('body').on('click', '[data-way]', function(event) {
 							allCorrect = false;
 							// прервать перебор
 							return false;
-						// есди все норм
+						// если все норм
 						} else {
 							// записать данные в объект
 							BecomeDriverSerializer[$(this).attr('id')] = $(this).val();
@@ -128,51 +116,47 @@ $('body').on('click', '[data-way]', function(event) {
 						}
 					});
 
-					// почистим номер телефона
-					BecomeDriverSerializer.phone = BecomeDriverSerializer.phone.replace(/\D/g, '');
+				// почистим номер телефона
+				BecomeDriverSerializer.phone = BecomeDriverSerializer.phone.replace(/\D/g, '');
 
 					// console.log(BecomeDriverSerializer.phone);
-					
-					// так как поле "как вы о нас узнали" не участвует в обходе, запишем его вручную
-					BecomeDriverSerializer.how_did_you_know = $('#how_did_you_know').val();
 				break;
 
-			// проверка селектов на второй странице
-			case '2':
-				// на этой странице найти все инпуты и перебрать
-				currentPage
-					.find('.select__input')
-					.each(function(index, el) {
-						// если ничего не выбрано в поле
-						if ($(this).attr('data-val') === 'none') {
-							// найти снова все инпуты и перебрать
-							currentPage
-								.find('.select__input')
-								.each(function(index, el) {
-									if ($(this).attr('data-val') === 'none') {
-										$(this).attr('data-correct', 'false');
-									}
-								});
 
-							// все плохо
-							allCorrect = false;
-							// пошли все нафиг
-							return false;
-						// если все норм
-						} else {
-							// записать данные в объект
-							if (($(this).attr('id') === 'car_brand') || ($(this).attr('id') === 'car_model')) {
-								// тут выбор слать айди или строку
-								BecomeDriverSerializer[$(this).attr('id')] = $(this).attr('data-id');
-							} else {
-								BecomeDriverSerializer[$(this).attr('id')] = $(this).attr('data-val');
-							}
+				// // на этой странице найти все инпуты и перебрать
+				// currentPage
+				// 	.find('.select__input')
+				// 	.each(function(index, el) {
+				// 		// если ничего не выбрано в поле
+				// 		if ($(this).attr('data-val') === 'none') {
+				// 			// найти снова все инпуты и перебрать
+				// 			currentPage
+				// 				.find('.select__input')
+				// 				.each(function(index, el) {
+				// 					if ($(this).attr('data-val') === 'none') {
+				// 						$(this).attr('data-correct', 'false');
+				// 					}
+				// 				});
+
+				// 			// все плохо
+				// 			allCorrect = false;
+				// 			// пошли все нафиг
+				// 			return false;
+				// 		// если все норм
+				// 		} else {
+				// 			// записать данные в объект
+				// 			if (($(this).attr('id') === 'car_brand') || ($(this).attr('id') === 'car_model')) {
+				// 				// тут выбор слать айди или строку
+				// 				BecomeDriverSerializer[$(this).attr('id')] = $(this).attr('data-id');
+				// 			} else {
+				// 				BecomeDriverSerializer[$(this).attr('id')] = $(this).attr('data-val');
+				// 			}
 								
-							// пока все норм
-							allCorrect = true;
-						}
-					});
-				break;
+				// 			// пока все норм
+				// 			allCorrect = true;
+				// 		}
+				// 	});
+				// break;
 
 			// проверка полей на третьей странице
 			case '3':
@@ -197,7 +181,7 @@ $('body').on('click', '[data-way]', function(event) {
 							allCorrect = false;
 							// прервать перебор
 							return false;
-						// есди все норм
+						// если все норм
 						} else {
 							// найти все поля опять, обойти
 							currentPage

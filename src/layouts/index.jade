@@ -88,7 +88,54 @@ block content
 						data-page='2'
 						data-show='false'
 						mods=['two'])
-						+dfRow(
+
+						+input('text', 'Марка авто')(
+							fieldType='form_input'
+							autocomplete='off'
+							data-correct='null'
+							data-filled='false'
+							data-mask='text'
+							mods=['fxb46p']
+							id='car_model'
+							name='car_model')
+						+input('text', 'Модель авто')(
+							fieldType='form_input'
+							autocomplete='off'
+							data-correct='null'
+							data-filled='false'
+							data-mask='text'
+							mods=['fxb46p']
+							id='car_brand'
+							name='car_brand')
+						+input('tel', 'Год выпуска авто')(
+							fieldType='form_input'
+							autocomplete='off'
+							data-correct='null'
+							data-filled='false'
+							data-mask='year'
+							mods=['fxb46p']
+							id='car_year'
+							name='car_year')
+						+input('text', 'Цвет авто')(
+							fieldType='form_input'
+							autocomplete='off'
+							data-correct='null'
+							data-filled='false'
+							data-mask='text'
+							mods=['fxb46p']
+							id='car_color'
+							name='car_color')
+						+input('text', 'Состояние авто')(
+							fieldType='form_input'
+							autocomplete='off'
+							data-correct='empty'
+							data-filled='false'
+							data-mask='text'
+							mods=['fxb100p']
+							id='car_state'
+							name='car_state')
+
+						//- +dfRow(
 							mods=['select']
 							select='true')
 							+select(
@@ -102,7 +149,7 @@ block content
 								value='Год выпуска'
 								val='none')
 								
-						+dfRow(mods=['select'])
+						//- +dfRow(mods=['select'])
 							+select(
 								correct='null'
 								content='brands'
@@ -116,7 +163,7 @@ block content
 								val='none'
 								autocomplete='off')
 								
-						+dfRow(mods=['select'])
+						//- +dfRow(mods=['select'])
 							+select(
 								correct='null'
 								content='models'
@@ -131,8 +178,7 @@ block content
 									+sVariant('Выберите марку авто')(
 										val='no-items')
 
-
-						+dfRow(
+						//- +dfRow(
 							mods=['select']
 							select='true')
 							+select(
@@ -152,7 +198,7 @@ block content
 									+sVariant(color)(
 										val=num)
 
-						+dfRow(mods=['select'])
+						//- +dfRow(mods=['select'])
 							+select(
 								correct='null'
 								fieldType='form_select'
@@ -166,6 +212,7 @@ block content
 									+sVariant('Отличное')(val='perfect')
 									+sVariant('Хорошее')(val='normal')
 									+sVariant('Удовлетворительное')(val='bad')
+					
 					+dfPage(
 						data-page='3'
 						data-show='false'
@@ -227,5 +274,5 @@ block content
 			+paragraph('Требования:')(mods=['cr-fz30-ttu-mb10'])
 			+paragraph('Возраст от 18 года')(mods=['with-checker'])
 			//- +paragraph('Модель машины от 2005г.')(mods=['with-checker'])
-			+paragraph('от 800 км/месяц')(mods=['with-checker'])
+			+paragraph('от 600 км/месяц')(mods=['with-checker'])
 			+paragraph('Наличие смартфона')(mods=['with-checker'])

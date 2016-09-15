@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
 	//= ../blocks/burger/burger.js
 	//= ../blocks/dot-strip/dot-strip.js
-	//= ../blocks/driver-form/selects.js
+	// ../blocks/driver-form/selects.js
 	//= ../blocks/driver-form/driver-form.js
 	//= ../blocks/input/input.js
 	//= ../blocks/map/map.js

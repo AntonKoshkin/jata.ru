@@ -3,6 +3,15 @@ function numberFormat(num) {
 	return num; 
 }
 
+function yearFormat(num) {
+	num = num.replace(/\D/g, '');
+
+	if (num.length >= 4) {
+		num = num.slice(0, 4);
+	}
+	return num;
+}
+
 function telFormat(num) {
 	num = num.replace(/\D/g, '');
 
@@ -74,6 +83,10 @@ $('body').on('keyup', '[data-mask=\'tel\']', function() {
 	$(this).val(telFormat($(this).val()));
 });
 
+$('body').on('keyup', '[data-mask=\'year\']', function() {
+	$(this).val(yearFormat($(this).val()));
+});
+
 $('body').on('click', '[data-mask=\'tel\']', function() {
 	$(this).val(telFormat($(this).val()));
 });
@@ -117,13 +130,32 @@ $('body').on('blur', '[data-mask]', function(event) {
 			}
 			break;
 
+		case 'text':
+			if ($(this).val() !== '') {
+				$(this).attr('data-correct', 'true');
+			} else {
+				$(this).attr('data-correct', 'false');
+			}
+			break;
+
 		case 'number':
 			if ($(this).val() !== '') {
 				$(this).attr('data-correct', 'true');
 			} else {
-				$(this).attr('data-correct', 'empty');
+				$(this).attr('data-correct', 'false');
 			}
 			break;
+
+		case 'year':
+			if ($(this).val() !== '' &&
+				parseInt($(this).val()) >= 1900 &&
+				parseInt($(this).val()) <= new Date().getFullYear()) {
+				$(this).attr('data-correct', 'true');
+			} else {
+				$(this).attr('data-correct', 'false');
+			}
+			break;
+
 	}
 });
 
