@@ -31,7 +31,7 @@ html(lang='ru')
 					//- +navItem('/cap.html', 'Рекламные места')(title='Рекламные места')
 					+navItem('/cap.html', 'Галерея')(title='Галерея')
 					+navItem('/contacts.html', 'Контакты')(title='Контакты')
-				+hBtn(linkTo.reg, 'Войти')(mods=['enter'])
+				+hBtn(linkTo.reg, 'Вход/<br>Регистрация')(mods=['enter', 'enter-reg-fix'])
 				if pageId === 'foradv'
 					+hBtn('/index.html', 'Водителям')(mods=['for-advers'])
 				else

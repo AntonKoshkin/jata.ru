@@ -15,5 +15,5 @@ mixin hBtn(link, title)
 			-mods[i] = 'header__btn--' + mod
 
 	a.header__btn(
-		href=link
-		class=mods)=title
+		href!=link
+		class!=mods)!=title
