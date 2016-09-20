@@ -12,7 +12,7 @@ module.exports = function() {
 			logPrefix		: 'Server says, that',
 			// port				: 7777,
 			// server			: 'build',
-			proxy				: 'admin.jata.ru',
+			proxy				: 'index.jata.ru',
 			// tunnel			: true,
 		});
 	}
