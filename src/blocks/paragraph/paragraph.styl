@@ -7,8 +7,6 @@
 		position relative
 		left 53px
 		top -24px
-		color white
-		font-size 20px
 		display inline-block
 	
 	&--mb65
@@ -80,6 +78,10 @@
 				@extend $pseudo-left
 				
 				bicon(fat-pointer-blue, 16)
+	
+	&--promo2 &__text
+		color white
+		font-size 20px
 	
 	&--cr &__text
 		color red
@@ -212,6 +214,11 @@
 			max-width 924px
 			margin auto
 			line-height 2em
+		
+		&--promo2 &__text
+			font-size 24px
+			top -46px
+			left 35px
 	
 		// &--promo
 		// 	display block
