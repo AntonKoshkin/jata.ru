@@ -9,6 +9,7 @@ const
 	notify	= require('gulp-notify'),
 	plumber	= require('gulp-plumber'),
 	rename	= require('gulp-rename'),
+	rev		= require('gulp-rev'),
 	server	= require('browser-sync'),
 	stylus	= require('gulp-stylus'),
 
@@ -59,7 +60,17 @@ module.exports = function() {
 					doiuse({browsers: 'last 2 versions'})
 				])
 			))
+			.pipe(gulpIf(!config.isDev, rev()))
 			.pipe(gulp.dest(config.pathTo.build.stylus))
+			.pipe(gulpIf(
+				!config.isDev,
+				combine(
+					rev.manifest('manifests/manifest.json', {
+						merge: true,
+					}),
+					gulp.dest('')
+				)
+			))
 			.pipe(server.reload({stream:true}));
 	};
 }
