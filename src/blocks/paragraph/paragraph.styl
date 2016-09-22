@@ -4,10 +4,11 @@
 		
 	&--promo2
 		padding-bottom 230px
-		position relative
-		left 53px
-		top -24px
-		display inline-block
+		// position relative
+		// left 53px
+		// top -24px
+		// display inline-block
+		padding-left 40px
 	
 	&--mb65
 		margin-bottom 65px
@@ -80,8 +81,10 @@
 				bicon(fat-pointer-blue, 16)
 	
 	&--promo2 &__text
-		color white
-		font-size 20px
+		// color white
+		// font-size 20px
+		
+		@extend $fw500, $main-text
 	
 	&--cr &__text
 		color red
@@ -191,6 +194,9 @@
 		&--about
 			margin-bottom 50px
 		
+		&--promo2
+			padding-left 30px
+		
 		&__text
 			&--about-title
 				font-size 2rem
@@ -216,9 +222,7 @@
 			line-height 2em
 		
 		&--promo2 &__text
-			font-size 24px
-			top -46px
-			left 35px
+			font-size 1.25rem
 	
 		// &--promo
 		// 	display block
@@ -234,6 +238,9 @@
 		&--about
 			margin-bottom 70px
 			max-width 1100px
+		
+		&--promo2
+			padding-left 15px
 
 		&__text
 			&--about-title
@@ -250,3 +257,6 @@
 		
 		&--gray &__text
 			max-width 1020px
+		
+		&--promo2 &__text
+			font-size 1.5rem
