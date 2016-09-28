@@ -2996,6 +2996,7 @@ html > body .main--foradv + .footer:after {
   background-color: rgba(255,255,255,0.3);
   border-radius: 3px;
   display: inline-block;
+  padding: 15px;
 }
 .header__btn--for-advers:hover {
   background-color: rgba(255,255,255,0.5);
@@ -3691,6 +3692,10 @@ a.main-btn__btn {
 }
 .paragraph--promo2 {
   padding-bottom: 230px;
+  position: relative;
+  left: 13px;
+  top: -20px;
+  display: inline-block;
   padding-left: 40px;
 }
 .paragraph--mb65 {
@@ -3769,6 +3774,9 @@ a.main-btn__btn {
   width: 16px;
   height: 16px;
 }
+.paragraph--promo2 .paragraph__text {
+  color: #fff;
+}
 .paragraph--cr .paragraph__text {
   color: #9e1c20;
 }
@@ -3842,6 +3850,8 @@ a.main-btn__btn {
   }
   .paragraph--promo2 {
     padding-left: 30px;
+    top: -27px;
+    left: 17px;
   }
   .paragraph__text--about-title {
     font-size: 2rem;
@@ -3878,6 +3888,8 @@ a.main-btn__btn {
   }
   .paragraph--promo2 {
     padding-left: 15px;
+    top: -31px;
+    left: 27px;
   }
   .paragraph__text--about-title {
     font-size: 2.5rem;
@@ -3895,7 +3907,7 @@ a.main-btn__btn {
     max-width: 1020px;
   }
   .paragraph--promo2 .paragraph__text {
-    font-size: 1.5rem;
+    font-size: 1.4375rem;
   }
 }
 .perk {
@@ -5230,7 +5242,7 @@ html > body .section--way {
   left: 0;
   width: 100%;
   height: 460px;
-  background-image: url("/img/section__bg--promo.jpg");
+  background-image: url("/img/section__bg--promo2.jpg");
   background-size: cover;
   background-position: 20% center;
   background-repeat: no-repeat;
