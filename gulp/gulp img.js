@@ -2,6 +2,7 @@
 
 const
 	config	= require('./config'),
+	debug		= require('gulp-debug'),
 	gulp		= require('gulp'),
 	imageMin	= require('gulp-imagemin'),
 	newer		= require('gulp-newer'),
@@ -23,18 +24,20 @@ module.exports = function() {
 				svgoPlugins			: [{
 					removeViewBox	: true,
 				}],
-				use					: [pngQuant({
-					quality			: '65-80',
-					speed				: 6,
-					verbose			: true,
-				})],
+				use					: [
+					pngQuant({
+						quality	: '65-80',
+						speed		: 6,
+						verbose	: true,
+					})
+				],
 			}))
+			// .pipe(debug())
 			.on('data', function(file) {
-				const a = file.path.split('\\'),
-						b = a.length - 2;
+				const a = file.path.split(/\/|\\/);
 
-				a.splice(b, 1);
-				const c = a.join('\\');
+				a.splice(-2, 1);
+				const c = a.join('/');
 				file.path = c;
 
 				return file;

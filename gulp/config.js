@@ -8,7 +8,6 @@ module.exports = {
 	isDev		: false,
 	pathTo	: {
 		src	: {
-			angJade		: 'src/forAng/**/*.jade',
 			assets		: [
 				'bower_components/jquery/dist/jquery.min.js',
 				'bower_components/masonry/dist/masonry.pkgd.min.js',
@@ -30,7 +29,6 @@ module.exports = {
 			video			: 'src/blocks/**/*.mp4',
 		},
 		build	: {
-			angJade		: '../dev/jade/',
 			assets		: {
 				else	: buildRoot,
 				js		: buildRoot + '/js/',
@@ -44,7 +42,6 @@ module.exports = {
 			video			: buildRoot + '/video/',
 		},
 		watch	: {
-			angJade		: 'src/forAng/*.jade',
 			assets		: 'src/assets/**/*.*',
 			all			: 'src/**/*.*',
 			img			: [

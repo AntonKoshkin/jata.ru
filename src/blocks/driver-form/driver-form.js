@@ -17,7 +17,7 @@ var BecomeDriverSerializer 	=	{
 
 function sendForm(page) {
 	var linkTo = {
-		root: 'http://dev.jata.ru'
+		root: 'https://jata.ru'
 	};
 	$.ajax({
 		url: linkTo.root + '/api/v1/accounts/becomedriver',
@@ -56,11 +56,11 @@ $('body').on('click', '[data-way]', function(event) {
 	event.preventDefault();
 	
 	var
-		page							=	$(this).closest('.driver-form'),
-		thisPage						=	page.attr('data-page'),
-		currentPage					=	$('.driver-form__page[data-page=\''+ thisPage +'\']'),
-		nextPage						=	+thisPage + 1,
-		prevPage						=	+thisPage - 1;
+		page			=	$(this).closest('.driver-form'),
+		thisPage		=	page.attr('data-page'),
+		currentPage	=	$('.driver-form__page[data-page=\''+ thisPage +'\']'),
+		nextPage		=	+thisPage + 1,
+		prevPage		=	+thisPage - 1;
 
 	if ($(this).attr('data-way') === 'prev') {
 		switch (prevPage) {
@@ -69,8 +69,6 @@ $('body').on('click', '[data-way]', function(event) {
 				break;
 			case 2:
 				page.attr('data-page', '2');
-				break;
-			default:
 				break;
 		}
 	} else {
@@ -121,42 +119,6 @@ $('body').on('click', '[data-way]', function(event) {
 
 					// console.log(BecomeDriverSerializer.phone);
 				break;
-
-
-				// // на этой странице найти все инпуты и перебрать
-				// currentPage
-				// 	.find('.select__input')
-				// 	.each(function(index, el) {
-				// 		// если ничего не выбрано в поле
-				// 		if ($(this).attr('data-val') === 'none') {
-				// 			// найти снова все инпуты и перебрать
-				// 			currentPage
-				// 				.find('.select__input')
-				// 				.each(function(index, el) {
-				// 					if ($(this).attr('data-val') === 'none') {
-				// 						$(this).attr('data-correct', 'false');
-				// 					}
-				// 				});
-
-				// 			// все плохо
-				// 			allCorrect = false;
-				// 			// пошли все нафиг
-				// 			return false;
-				// 		// если все норм
-				// 		} else {
-				// 			// записать данные в объект
-				// 			if (($(this).attr('id') === 'car_brand') || ($(this).attr('id') === 'car_model')) {
-				// 				// тут выбор слать айди или строку
-				// 				BecomeDriverSerializer[$(this).attr('id')] = $(this).attr('data-id');
-				// 			} else {
-				// 				BecomeDriverSerializer[$(this).attr('id')] = $(this).attr('data-val');
-				// 			}
-								
-				// 			// пока все норм
-				// 			allCorrect = true;
-				// 		}
-				// 	});
-				// break;
 
 			// проверка полей на третьей странице
 			case '3':
