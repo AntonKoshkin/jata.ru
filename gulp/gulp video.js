@@ -9,11 +9,11 @@ module.exports = function() {
 		return gulp
 			.src(config.pathTo.src.video)
 			.on('data', function(file) {
-				const a = file.path.split('\\'),
+				const a = file.path.split(/\/|\\/),
 						b = a.length - 2;
 
 				a.splice(b, 1);
-				const c = a.join('\\');
+				const c = a.join('/');
 				file.path = c;
 
 				return file;
