@@ -5,7 +5,6 @@ const
 	buildRoot	= 'build';
 
 module.exports = {
-	isDev		: true,
 	pathTo	: {
 		src	: {
 			assets		: [

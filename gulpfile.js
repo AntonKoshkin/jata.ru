@@ -3,7 +3,8 @@
 const
 	bs			= require('browser-sync')
 					.create(),
-	gulp		= require('gulp');
+	gulp		= require('gulp'),
+	NODE_ENV	= process.env.NODE_ENV || 'development';
 
 // Lazy Task Run function
 function lazyRequireTask(taskName, path) {

@@ -18,12 +18,9 @@ module.exports = function() {
 			.pipe(jade({
 				pretty: '\t',
 			}))
-			.pipe(gulpIf(
-				!config.isDev,
-				replace({
-					manifest: gulp.src('./manifests/manifest.json'),
-				})
-			))
+			.pipe(replace({
+				manifest: gulp.src('./manifests/manifest.json'),
+			}))
 			.pipe(gulp.dest(config.pathTo.build.jade))
 			.pipe(server.reload({stream:true}));
 	}

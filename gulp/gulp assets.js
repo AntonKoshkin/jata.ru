@@ -8,7 +8,8 @@ const
 module.exports = function() {
 	return function() {
 		var ifFileIsBc = function(file) {
-			if (file.path.split('\\')[2] === 'bower_components') {
+			// if (file.path.split('\\')[2] === 'bower_components') {
+			if (file.path.includes('bower_components')) {
 				return true;
 			} else {
 				return false;

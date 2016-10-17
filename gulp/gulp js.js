@@ -14,7 +14,8 @@ const
 	rigger	= require('gulp-rigger'),
 	server	= require('browser-sync'),
 	stylish	= require('jshint-stylish'),
-	uglify	= require('gulp-uglify');
+	uglify	= require('gulp-uglify'),
+	NODE_ENV	= process.env.NODE_ENV || 'development';
 
 module.exports = function() {
 	return function() {
@@ -31,20 +32,17 @@ module.exports = function() {
 			.pipe(f.restore)
 			.pipe(concat('main.js'))
 			.pipe(gulpIf(
-				!config.isDev,
-				combine(
-					uglify(),
-					rev()
-				)
+				NODE_ENV === 'production',
+				uglify(),
+				rev()
 			))
 			.pipe(gulp.dest(config.pathTo.build.js))
 			.pipe(gulpIf(
-				!config.isDev,
+				NODE_ENV === 'production',
 				combine(
 					rev.manifest('manifests/manifest.json', {
 						merge: true,
 					}),
-					debug(),
 					gulp.dest('')
 				)
 			))
