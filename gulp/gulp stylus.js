@@ -56,11 +56,13 @@ module.exports = function() {
 				combine(
 					maps.write('.')
 				),
-				postCss([
-					cssNano()
-					// doiuse({browsers: 'last 2 versions'}),
-				]),
-				rev()
+				combine(
+					postCss([
+						cssNano()
+						// doiuse({browsers: 'last 2 versions'}),
+					]),
+					rev()
+				)
 			))
 			.pipe(gulp.dest(config.pathTo.build.stylus))
 			.pipe(gulpIf(

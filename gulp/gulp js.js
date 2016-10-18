@@ -33,8 +33,10 @@ module.exports = function() {
 			.pipe(concat('main.js'))
 			.pipe(gulpIf(
 				NODE_ENV === 'production',
-				uglify(),
-				rev()
+				combine(
+					uglify(),
+					rev()
+				)
 			))
 			.pipe(gulp.dest(config.pathTo.build.js))
 			.pipe(gulpIf(
