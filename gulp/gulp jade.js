@@ -8,7 +8,8 @@ const
 	plumber	= require('gulp-plumber'),
 	rev		= require('gulp-rev'),
 	replace	= require('gulp-rev-replace'),
-	server	= require('browser-sync');
+	server	= require('browser-sync'),
+	NODE_ENV	= process.env.NODE_ENV || 'development';
 
 module.exports = function() {
 	return function() {
@@ -18,9 +19,12 @@ module.exports = function() {
 			.pipe(jade({
 				pretty: '\t',
 			}))
-			.pipe(replace({
-				manifest: gulp.src('./manifests/manifest.json'),
-			}))
+			.pipe(gulpIf(
+				NODE_ENV === 'production',
+				replace({
+					manifest: gulp.src('./manifests/manifest.json')
+				})
+			))
 			.pipe(gulp.dest(config.pathTo.build.jade))
 			.pipe(server.reload({stream:true}));
 	}

@@ -49,8 +49,7 @@ module.exports = function() {
 				// cssLint({'extends':'src/'}),
 			]))
 			.on('error', notify.onError())
-			.pipe(gulp
-				.dest(config.pathTo.build.stylus))
+			.pipe(gulp.dest(config.pathTo.build.stylus))
 			.pipe(gulpIf(
 				NODE_ENV === 'development',
 				combine(

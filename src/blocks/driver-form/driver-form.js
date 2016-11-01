@@ -14,42 +14,49 @@ var BecomeDriverSerializer 	=	{
 	comment					: 'unnecessary',
 };
 
+var isSending = false;
 
 function sendForm(page) {
 	var linkTo = {
 		root: 'https://jata.ru'
 	};
-	$.ajax({
-		url: linkTo.root + '/api/v1/accounts/becomedriver',
-		type: 'POST',
-		data: BecomeDriverSerializer,
-	})
-	.done(function() {
-		$('.message--success').addClass('message--show');
+	if (!isSending) {
+		isSending = true;
+		console.log('start sending');
+		$.ajax({
+			url: linkTo.root + '/api/v1/accounts/becomedriver',
+			type: 'POST',
+			data: BecomeDriverSerializer,
+		})
+		.done(function() {
+			$('.message--success').addClass('message--show');
 
-		// переключить страницу
-		$('.driver-form').attr('data-page', '1');
+			// переключить страницу
+			$('.driver-form').attr('data-page', '1');
 
-		// очистка полей формы
-		$('[data-field-type]')
-			.each(function(index, el) {
-				$(this)
-					.val('')
-					.attr('data-filled', 'false')
-					.attr('data-correct', 'null');
-			});
+			// очистка полей формы
+			$('[data-field-type]')
+				.each(function(index, el) {
+					$(this)
+						.val('')
+						.attr('data-filled', 'false')
+						.attr('data-correct', 'null');
+				});
 
-		console.log('form has beed sent');
-	})
-	.fail(function(data) {
-		$('.message--fail').addClass('message--show');
-		// console.log(BecomeDriverSerializer);
-		if (data.responseText) {
-			console.log('servers answer:\n',data.responseText);
-		} else {
-			console.log('UFO have interrupted our server\'s work\nwe\'l try to fix it');
-		}
-	});
+			console.log('form has beed sent');
+			isSending = false;
+		})
+		.fail(function(data) {
+			$('.message--fail').addClass('message--show');
+			// console.log(BecomeDriverSerializer);
+			if (data.responseText) {
+				console.log('servers answer:\n',data.responseText);
+			} else {
+				console.log('UFO have interrupted our server\'s work\nwe\'l try to fix it');
+			}
+			isSending = false;
+		});
+	}
 }
 
 $('body').on('click', '[data-way]', function(event) {
