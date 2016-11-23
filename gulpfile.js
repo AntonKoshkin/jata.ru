@@ -1,10 +1,8 @@
 'use strict';
 
 const
-	bs			= require('browser-sync')
-					.create(),
-	gulp		= require('gulp'),
-	NODE_ENV	= process.env.NODE_ENV || 'development';
+	bs		= require('browser-sync').create(),
+	gulp	= require('gulp');
 
 // Lazy Task Run function
 function lazyRequireTask(taskName, path) {
@@ -32,6 +30,9 @@ lazyRequireTask('stylus', './gulp/gulp stylus.js');
 
 // task JavaScript
 lazyRequireTask('js', './gulp/gulp js.js');
+
+// task JavaScript linting
+// lazyRequireTask('jslint', './gulp/gulp jslint.js');
 
 // task Images
 lazyRequireTask('img', './gulp/gulp img.js');

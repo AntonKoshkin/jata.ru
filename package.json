@@ -20,16 +20,21 @@
   "homepage": "https://github.com/AntonKoshkin/oneMoreBuilder#readme",
   "devDependencies": {
     "autoprefixer": "^6.3.3",
+    "babel": "^6.5.2",
+    "babel-core": "^6.18.2",
+    "babel-preset-es2015": "^6.18.0",
+    "babelify": "^7.3.0",
     "browser-sync": "^2.11.1",
+    "browserify": "^13.1.1",
     "cssnano": "^3.5.2",
     "del": "^2.2.0",
     "doiuse": "^2.3.0",
+    "events": "^1.1.1",
     "gulp": "^3.9.1",
+    "gulp-buffer": "0.0.2",
     "gulp-cached": "^1.1.0",
     "gulp-cheerio": "^0.6.2",
-    "gulp-concat": "^2.6.0",
     "gulp-debug": "^2.1.2",
-    "gulp-filter": "^4.0.0",
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.4.0",
     "gulp-jade": "^1.1.0",
@@ -43,7 +48,7 @@
     "gulp-rev": "^7.1.2",
     "gulp-rev-replace": "^0.4.3",
     "gulp-rigger": "^0.5.8",
-    "gulp-sourcemaps": "^1.6.0",
+    "gulp-sourcemaps": "^1.9.1",
     "gulp-stylus": "^2.3.0",
     "gulp-svgstore": "^6.0.0",
     "gulp-uglify": "^1.5.3",
@@ -51,6 +56,7 @@
     "imagemin-pngquant": "^4.2.2",
     "jshint": "^2.9.1",
     "jshint-stylish": "^2.1.0",
+    "map-stream": "0.0.6",
     "path": "^0.12.7",
     "postcss-flexbugs-fixes": "^2.0.0",
     "postcss-font-magician": "^1.4.0",
@@ -60,6 +66,10 @@
     "stream-combiner2": "^1.1.1",
     "stylelint": "^4.5.0",
     "through2": "^2.0.1",
+    "vinyl-source-stream": "^1.1.0",
     "yargs": "^5.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
   }
 }

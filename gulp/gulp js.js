@@ -1,38 +1,35 @@
 'use strict';
 
 const
-	combine	= require('stream-combiner2').obj,
-	concat	= require('gulp-concat'),
-	config	= require('./config'),
-	debug		= require('gulp-debug'),
-	filter	= require('gulp-filter'),
-	gulp		= require('gulp'),
-	gulpIf	= require('gulp-if'),
-	jsHint	= require('gulp-jshint'),
-	plumber	= require('gulp-plumber'),
-	rev		= require('gulp-rev'),
-	rigger	= require('gulp-rigger'),
-	server	= require('browser-sync'),
-	stylish	= require('jshint-stylish'),
-	uglify	= require('gulp-uglify'),
-	NODE_ENV	= process.env.NODE_ENV || 'development';
+	babelify		= require('babelify'),
+	browserify	= require('browserify'),
+	buffer		= require('gulp-buffer'),
+	combine		= require('stream-combiner2').obj,
+	config		= require('./config'),
+	// debug			= require('gulp-debug'),
+	gulp			= require('gulp'),
+	gulpIf		= require('gulp-if'),
+	rev			= require('gulp-rev'),
+	server		= require('browser-sync'),
+	source		= require('vinyl-source-stream'),
+	uglify		= require('gulp-uglify'),
+
+	production	= process.env.NODE_ENV === 'production';
 
 module.exports = function() {
 	return function() {
-		const f = filter(['**\\jsCustom.js'], {
-			restore: true
-		});
 
-		return gulp.src(config.pathTo.src.js)
-			.pipe(plumber())
-			.pipe(rigger())
-			.pipe(f)
-			.pipe(jsHint())
-			.pipe(jsHint.reporter(stylish))
-			.pipe(f.restore)
-			.pipe(concat('main.js'))
+		return browserify({
+			entries		: config.pathTo.src.js,
+			extensions	: ['.js'],
+			debug			: !production,
+		})
+			.transform(babelify)
+			.bundle()
+			.pipe(source('main.js'))
+			.pipe(buffer())
 			.pipe(gulpIf(
-				NODE_ENV === 'production',
+				production,
 				combine(
 					uglify(),
 					rev()
@@ -40,11 +37,9 @@ module.exports = function() {
 			))
 			.pipe(gulp.dest(config.pathTo.build.js))
 			.pipe(gulpIf(
-				NODE_ENV === 'production',
+				production,
 				combine(
-					rev.manifest('manifests/manifest.json', {
-						merge: true,
-					}),
+					rev.manifest('manifests/manifest.json', {merge: true}),
 					gulp.dest('')
 				)
 			))

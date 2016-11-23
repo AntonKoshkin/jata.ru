@@ -2,29 +2,29 @@ var gallery = {
 
 	// ПЕРЕМЕННЫЕ
 	// контейнер
-	container		: $('.gallery'),
+	container	: $('.gallery'),
 
 	// список всех имеющихся картинок
-	allItems			: [],
+	allItems		: [],
 
 	// картинки для добавления в ДОМ
-	itemsToPush		: [],
+	itemsToPush	: [],
 
 	// загружаются ли сейчас фотки
-	isLoading		: false,
+	isLoading	: false,
 
 	// лоадер
-	loader			: $('.gallery__loading'),
+	loader		: $('.gallery__loading'),
 
 	// кнопка подгрузки
-	moreBtn			: $('.gallery__btn'),
+	moreBtn		: $('.gallery__btn'),
 
 	// должна ли галерея продолжать подгружать фотки
-	isWorking		: true,
+	isWorking	: true,
 
 	// ФУНКЦИИ
 	// начало загрузки фоток
-	loadingStart	: function() {
+	loadingStart: function() {
 		if (gallery.isWorking) {
 			gallery.isLoading = true;
 
@@ -37,7 +37,7 @@ var gallery = {
 	},
 	
 	// конец загрузки фоток
-	loadingEnd		: function(callback) {
+	loadingEnd: function(callback) {
 		if (gallery.isWorking) {
 			gallery.isLoading = false;
 
@@ -49,7 +49,7 @@ var gallery = {
 	},
 
 	// картинок больше нет, прекращение загрузок
-	fullStop			: function() {
+	fullStop: function() {
 		gallery.isWorking = false;
 
 		gallery.loader.hide();
@@ -57,7 +57,7 @@ var gallery = {
 	},
 
 	// получение списка картинок
-	getItems			: function(callback) {
+	getItems: function(callback) {
 		var linkTo = {
 			root: 'https://jata.ru'
 		};
@@ -82,7 +82,7 @@ var gallery = {
 	},
 
 	// первая загрузка фоток
-	firstPushing	: function(callback) {
+	firstPushing: function(callback) {
 		var linkTo = {
 			root: 'https://jata.ru'
 		};
@@ -134,7 +134,7 @@ var gallery = {
 	},
 
 	// любая последующая загрузка фоток
-	otherPushing		: function(callback) {
+	otherPushing: function(callback) {
 		var linkTo = {
 			root: 'https://jata.ru'
 		};
@@ -145,7 +145,7 @@ var gallery = {
 			gallery.allItems = [];
 		}
 
-		for(var i = 0, length1 = gallery.itemsToPush.length; i < length1; i++){
+		for (var i = 0, length1 = gallery.itemsToPush.length; i < length1; i++){
 			gallery.itemsToPush[i] = '<div data-url=\'' + linkTo.root +
 				(gallery.itemsToPush[i]) + '\' class=\'gallery__item\'><img src=\'' + linkTo.root +
 				(gallery.itemsToPush[i]) + '\' alt><div class=\'gallery__darkness\'></div></div>';
@@ -180,7 +180,7 @@ var gallery = {
 	},
 
 	// запуск подгрузки по скроллу
-	scrollLoad		: function() {
+	scrollLoad: function() {
 		if (gallery.isWorking) {
 			var
 				pageHeight		=	$(document).height(),

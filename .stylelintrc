@@ -1,8 +1,8 @@
 {
   "rules": {
     "at-rule-empty-line-before": [ "always", {
-      except: [ "blockless-group", "first-nested" ],
-      ignore: ["after-comment"],
+      "except": [ "blockless-group", "first-nested" ],
+      "ignore": ["after-comment"]
     } ],
     "block-closing-brace-newline-after": "always",
     "block-closing-brace-newline-before": "always-multi-line",
@@ -15,8 +15,8 @@
     "color-hex-length": "short",
     "color-no-invalid-hex": true,
     "comment-empty-line-before": [ "always", {
-      except: ["first-nested"],
-      ignore: ["stylelint-commands"],
+      "except": ["first-nested"],
+      "ignore": ["stylelint-commands"]
     } ],
     "comment-whitespace-inside": "always",
     "declaration-bang-space-after": "never",
@@ -62,6 +62,6 @@
     "string-no-newline": true,
     "value-list-comma-newline-after": "always-multi-line",
     "value-list-comma-space-after": "always-single-line",
-    "value-list-comma-space-before": "never",
-  },
+    "value-list-comma-space-before": "never"
+  }
 }
