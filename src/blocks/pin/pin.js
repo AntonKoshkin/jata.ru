@@ -1,64 +1,94 @@
-$('body').on('mouseenter', '.pin', function(event) {
-	event.preventDefault();
-	
-	$(this)
-		.removeClass('pin--show')
-		.css('z-index', '2')
-		.siblings()
-		.removeClass('pin--show')
-		.css('z-index', '1');
-});
+const pin = {
+	sec		: 55555,
+	hours		: new Date().getHours(),
+	minutes	: new Date().getMinutes(),
+	seconds	: new Date().getSeconds(),
+	/**
+	 * счетчик, увеличивает время
+	 */
+	countdown() {
+		$('[data-clock=\'h\']').text(Math.floor(pin.sec/3600));
+		$('[data-clock=\'m\']').text(Math.floor(pin.sec%3600/60));
+		$('[data-clock=\'s\']').text(Math.floor(pin.sec%3600%60));
 
-var sec	= 55555;
+		pin.sec += 1;
+	},
+	/**
+	 * добавляет к цифре ноль, чтоб получить двузначное число
+	 * @param  {number} number цифра или число
+	 * @return {number}        двузначное число
+	 */
+	twoNumbers(number) {
+		if (number < 10) {
+			number = '0' + number.toString();
+		}
+		return number;
+	},
 
-function countdown() {
-	$('[data-clock=\'h\']').text(Math.floor(sec/3600));
-	$('[data-clock=\'m\']').text(Math.floor(sec%3600/60));
-	$('[data-clock=\'s\']').text(Math.floor(sec%3600%60));
+	setTime() {
+		pin.hours = new Date().getHours();
+				
+		$('[data-clock=\'h\'').text(pin.twoNumbers(pin.hours));
 
-	sec += 1;
-}
-
-function twoNumbers(number) {
-	if (number < 10) {
-		number = '0' + number.toString();
-	}
-	return number;
-}
-
-if ($('html').hasClass('desktop')) {
-	var newDate = new Date();
-
-	newDate.setDate(newDate.getDate());
-
-	var	hours = new Date().getHours(),
-			minutes = new Date().getMinutes(),
-			seconds = new Date().getSeconds();
-
-	$('[data-clock=\'h\'').text(hours);
-	$('[data-clock=\'m\'').text(minutes);
-	$('[data-clock=\'s\'').text(seconds);
-
-	setInterval(function() {
-
-		hours = new Date().getHours();
+		pin.minutes = new Date().getMinutes();
 		
-		$('[data-clock=\'h\'').text(twoNumbers(hours));
+		$('[data-clock=\'m\'').text(pin.twoNumbers(pin.minutes));
 
-		minutes = new Date().getMinutes();
+		pin.seconds = new Date().getSeconds();
 		
-		$('[data-clock=\'m\'').text(twoNumbers(minutes));
+		$('[data-clock=\'s\'').text(pin.twoNumbers(pin.seconds));
+	},
 
-		seconds = new Date().getSeconds();
-		
-		$('[data-clock=\'s\'').text(twoNumbers(seconds));
-	}, 1000);
-} else {
-	$('[data-clock=\'h\']').text(Math.floor(sec/3600) < 10 ? '0' + Math.floor(sec/3600) : Math.floor(sec/3600));
-	$('[data-clock=\'m\']').text(Math.floor(sec%3600/60) < 10 ? '0' + Math.floor(sec%3600/60) : Math.floor(sec%3600/60));
-	$('[data-clock=\'s\']').text(Math.floor(sec%3600%60) < 10 ? '0' + Math.floor(sec%3600%60) : Math.floor(sec%3600%60));
+	init() {
+		$('body').on('mouseenter', '.pin', event => {
+			event.preventDefault();
 
-	sec += 1;
+			let elem = event.target;
 
-	setInterval(countdown, 1000);
-}
+			if (!$(elem).hasClass('pin')) {
+				elem = $(elem).closest('.pin');
+			}
+			
+			$(elem)
+				.removeClass('pin--show')
+				.css('z-index', '2')
+				.siblings()
+				.removeClass('pin--show')
+				.css('z-index', '1');
+		});
+
+		if ($('html').hasClass('desktop')) {
+			let newDate = new Date();
+
+			newDate.setDate(newDate.getDate());
+
+			$('[data-clock=\'h\'').text(pin.hours);
+			$('[data-clock=\'m\'').text(pin.minutes);
+			$('[data-clock=\'s\'').text(pin.seconds);
+
+			setInterval(pin.setTime, 1000);
+
+		} else {
+			$('[data-clock=\'h\']')
+				.text(Math.floor(pin.sec/3600) < 10 ?
+							'0' + Math.floor(pin.sec/3600) :
+							Math.floor(pin.sec/3600));
+
+			$('[data-clock=\'m\']')
+				.text(Math.floor(pin.sec%3600/60) < 10 ?
+							'0' + Math.floor(pin.sec%3600/60) :
+							Math.floor(pin.sec%3600/60));
+
+			$('[data-clock=\'s\']')
+				.text(Math.floor(pin.sec%3600%60) < 10 ?
+							'0' + Math.floor(pin.sec%3600%60) :
+							Math.floor(pin.sec%3600%60));
+
+			pin.sec += 1;
+
+			setInterval(pin.countdown, 1000);
+		}
+	},
+};
+
+module.exports = pin;

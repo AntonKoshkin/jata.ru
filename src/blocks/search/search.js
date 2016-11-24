@@ -1,8 +1,17 @@
-var searchAnimationStarted = 0;
+const search = {
+	neededScroll: null,
+	started		: false,
 
-$(window).scroll(function(event) {
-	if (($('.search').length) && ($(window).scrollTop() >= $('.search').offset().top - $(window).height() + $('.search').height() / 2) && (searchAnimationStarted !== 1)) {
-		$('.search').addClass('search--animate');
-		searchAnimationStarted = 1;
-	}
-});
+	init() {
+		search.neededScroll = $('.search').offset().top - $(window).height() + $('.search').height() / 2;
+		
+		$(window).scroll(() => {
+			if ($(window).scrollTop() >= search.neededScroll && !search.started) {
+				$('.search').addClass('search--animate');
+				search.started = true;
+			}
+		});
+	},
+};
+
+module.exports = search;

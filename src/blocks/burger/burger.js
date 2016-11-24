@@ -1,4 +1,9 @@
-$('body').on('click', '.burger', function(event) {
-	event.preventDefault();
-	$('.navigation').toggleClass('navigation--open');
-});
+const burger = {
+	init() {
+		$('body').on('click', '.burger', () => {			
+			$('.navigation').toggleClass('navigation--open');
+		});
+	},
+};
+
+module.exports = burger;

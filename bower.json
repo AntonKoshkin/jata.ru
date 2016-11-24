@@ -19,7 +19,6 @@
     "jquery": "^2.2.1",
     "normalize-styl": "*",
     "flex-grid-framework": "^1.2.1",
-    "device.js": "devicejs#^0.2.7",
     "jquery_lazyload": "jquery.lazyload#^1.9.7",
     "masonry-layout": "^1.0.4",
     "imagesloaded": "^4.1.0"
