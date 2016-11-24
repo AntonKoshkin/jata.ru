@@ -9,6 +9,7 @@ const
 	// debug			= require('gulp-debug'),
 	gulp			= require('gulp'),
 	gulpIf		= require('gulp-if'),
+	notifier		= require('node-notifier'),
 	rev			= require('gulp-rev'),
 	server		= require('browser-sync'),
 	source		= require('vinyl-source-stream'),
@@ -26,6 +27,16 @@ module.exports = function() {
 		})
 			.transform(babelify)
 			.bundle()
+			.on('error', function(err){
+				console.log(err.stack);
+
+				notifier.notify({
+					title		: 'Compile Error',
+					message	: err.message,
+				});
+
+				this.emit('end');
+			})
 			.pipe(source('main.js'))
 			.pipe(buffer())
 			.pipe(gulpIf(

@@ -1,25 +1,26 @@
-function scrollBtn() {
-	if ($(window).scrollTop() >= 800) {
-		$('.up-btn').addClass('up-btn--show');
-	} else {
-		$('.up-btn').removeClass('up-btn--show');
-	}
-}
+const upBtn = {
+	setVisibility() {
+		if ($(window).scrollTop() >= 800) {
+			$('.up-btn').addClass('up-btn--show');
+		} else {
+			$('.up-btn').removeClass('up-btn--show');
+		}
+	},
+	init() {
+		upBtn.setVisibility();
 
-if ($('.up-btn').length) {
-	$(document).ready(function() {
-		scrollBtn();
-	});
+		$(window).scroll(() => {
+			upBtn.setVisibility();
+		});
 
-	$(window).scroll(function() {
-		scrollBtn();
-	});
+		$('body').on('click', '.up-btn', () => {
+			$('html, body')
+				.stop()
+				.animate(
+					{scrollTop: 0},
+					$(window).scrollTop()/4);
+		});
+	},
+};
 
-	$('body').on('click', '.up-btn', function(event) {
-		$('html, body')
-			.stop()
-			.animate({
-				scrollTop: 0
-			}, $(window).scrollTop()/4);
-	});
-}
+module.exports = upBtn;
