@@ -1,5 +1,5 @@
 const vars = {
-	production	: true,
+	production	: false,
 	server		: '',
 	
 	api: {
