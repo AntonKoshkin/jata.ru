@@ -1,14 +1,16 @@
 const search = {
 	neededScroll: null,
 	started		: false,
-
+	/**
+	 * инит функция
+	 */
 	init() {
-		search.neededScroll = $('.search').offset().top - $(window).height() + $('.search').height() / 2;
+		this.neededScroll = $('.search').offset().top - $(window).height() + $('.search').height() / 2;
 		
 		$(window).scroll(() => {
-			if ($(window).scrollTop() >= search.neededScroll && !search.started) {
+			if ($(window).scrollTop() >= this.neededScroll && !this.started) {
 				$('.search').addClass('search--animate');
-				search.started = true;
+				this.started = true;
 			}
 		});
 	},

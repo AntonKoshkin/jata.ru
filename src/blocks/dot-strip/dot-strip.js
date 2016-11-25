@@ -1,7 +1,10 @@
 const dotStrip = {
+	/**
+	 * инит функция
+	 */
 	init() {
-		$('body').on('click', '.dot-strip__input', event => {
-			switch ($(event.target).attr('id')) {
+		$('body').on('click', '.dot-strip__input', function(event) {
+			switch ($(this).closest('.dot-strip__input').attr('id')) {
 				case 'dotCar':
 					$('.dot-strip__runner').attr('data-pos', 'one');
 					break;
@@ -13,10 +16,10 @@ const dotStrip = {
 					break;
 			}
 
-			$(event.target)
+			$(this)
 				.closest('.slider')
 				.find('.slide-pack')
-				.attr('data-slider-pos', $(event.target).attr('data-dot-pos'));
+				.attr('data-slider-pos', $(this).attr('data-dot-pos'));
 		});
 	},
 };

@@ -1,4 +1,7 @@
 const upBtn = {
+	/**
+	 * включает/выключает видимость кнопки
+	 */
 	setVisibility() {
 		if ($(window).scrollTop() >= 800) {
 			$('.up-btn').addClass('up-btn--show');
@@ -6,6 +9,9 @@ const upBtn = {
 			$('.up-btn').removeClass('up-btn--show');
 		}
 	},
+	/**
+	 * запускаемая при загрузке функция
+	 */
 	init() {
 		upBtn.setVisibility();
 

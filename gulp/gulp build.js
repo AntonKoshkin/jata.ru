@@ -12,6 +12,7 @@ module.exports = function() {
 				'assets',
 				'img',
 				'jade',
+				// 'jslint',
 				'js',
 				'stylus',
 				'svgSprite',

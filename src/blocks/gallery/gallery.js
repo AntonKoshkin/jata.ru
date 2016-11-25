@@ -1,238 +1,173 @@
-var gallery = {
+import vars from '../../compile/vars';
 
-	// ПЕРЕМЕННЫЕ
-	// контейнер
-	container	: $('.gallery'),
-
-	// список всех имеющихся картинок
-	allItems		: [],
-
-	// картинки для добавления в ДОМ
-	itemsToPush	: [],
-
-	// загружаются ли сейчас фотки
-	isLoading	: false,
-
-	// лоадер
-	loader		: $('.gallery__loading'),
-
-	// кнопка подгрузки
-	moreBtn		: $('.gallery__btn'),
-
-	// должна ли галерея продолжать подгружать фотки
-	isWorking	: true,
-
-	// ФУНКЦИИ
-	// начало загрузки фоток
-	loadingStart: function() {
-		if (gallery.isWorking) {
-			gallery.isLoading = true;
-
-			gallery.loader
-				.removeClass('gallery__loading--first')
-				.show();
-		}
-
-		gallery.moreBtn.hide();
-	},
+const gallery = {
+	numToLoad: 20,
+	container: $('.gallery'),
+	loader	: $('.gallery__loading'),
+	moreBtn	: $('.gallery__btn'),
+	busy		: true,
+	watched	: false,
 	
-	// конец загрузки фоток
-	loadingEnd: function(callback) {
-		if (gallery.isWorking) {
-			gallery.isLoading = false;
-
-			gallery.loader.hide();
-			// gallery.moreBtn.show();
-
-			callback();
-		}
+	urls: {
+		all	: [],
+		toPush: [],
 	},
 
-	// картинок больше нет, прекращение загрузок
-	fullStop: function() {
-		gallery.isWorking = false;
-
-		gallery.loader.hide();
-		// gallery.moreBtn.hide();
+	items: {
+		toPush: null,
 	},
+	/**
+	 * получение списка изображений
+	 */
+	getUrls() {
+		return new Promise((result, error) => {
+			let request = new XMLHttpRequest();
+			request.open('POST', vars.server + vars.api.gallery);
+			request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+			request.onload = () => {
+				if (request.status === 200) {
+					result(JSON.parse(request.response));
+				} else {
+					error(Error('Image didn\'t load successfully; error code:' + request.statusText));
+				}
+			};
+			request.onerror = () => {
+				error(Error('There was a network error.'));
+			};
 
-	// получение списка картинок
-	getItems: function(callback) {
-		var linkTo = {
-			root: 'https://jata.ru'
-		};
-		gallery.loadingStart();
-
-		jQuery(document).ready(function($) {
-			$.ajax({
-				url: linkTo.root + '/api/v1/gallery',
-				type: 'POST',
-				data: {tags: 'main'},
-			})
-			.done(function(data) {
-				gallery.allItems = data.reverse();
-
-				callback();
-			})
-			.fail(function(data) {
-				console.log('список картинок не получен :(');
-				gallery.loader.text('Сервер жадничает :(');
-			});
+			request.send(JSON.stringify({tags: ['main']}));
 		});
 	},
+	loadStart() {
+		this.busy = true;
+		this.loader.show();
 
-	// первая загрузка фоток
-	firstPushing: function(callback) {
-		var linkTo = {
-			root: 'https://jata.ru'
-		};
-		if (gallery.allItems.length >= 30) {
-			gallery.itemsToPush	=	gallery.allItems.splice(gallery.allItems.length - 31, 30);
+		$('.section--gallery .section__content').css('padding-bottom', '50px');
+	},
+	loadEnd() {
+		this.busy = false;
+		this.loader.hide();
+
+		$('.section--gallery .section__content').removeAttr('style');
+	},
+	/**
+	 * создание картинок в ДОМе
+	 * @param  {Boolean} isFirst первый ли вызов функции
+	 */
+	makeImgs(isFirst) {
+		if (!this.urls.all.length) {
+			return;
+		}
+
+		if (!isFirst) {
+			this.loadStart();
+		}
+
+		if (this.urls.all.length >= this.numToLoad) {
+			this.urls.toPush = this.urls.all.splice(-this.numToLoad, this.numToLoad);
 		} else {
-			gallery.itemsToPush = gallery.allItems;
+			this.urls.toPush = this.urls.all;
 		}
 
-		for(var i = 0, length1 = gallery.itemsToPush.length; i < length1; i++){
-			gallery.itemsToPush[i] = '<div data-url=\''+ linkTo.root +
-				(gallery.itemsToPush[i]) + '\' class=\'gallery__item\'><img src=\'' + linkTo.root +
-				(gallery.itemsToPush[i]) + '\' alt><div class=\'gallery__darkness\'></div></div>';
-		}
+		this.items.toPush = $(this.urls.toPush.join(''));
+		this.urls.toPush.length = 0;
 
-		if (gallery.isWorking) {
-			gallery.itemsToPush = $(gallery.itemsToPush.join(''));
-
-			gallery.container
+		if (isFirst) {
+			this.container
 				.masonry({
-					columnWidth			: '.gallery__item',
-					isAnimated			: true,
-					isInitLayout		: true,
-					isResizable			: true,
-					itemSelector		: '.gallery__item',
-					percentPosition	: true,
-					singleMode			: true,
+					columnWidth		: '.gallery__item',
+					isAnimated		: true,
+					isInitLayout	: true,
+					isResizable		: true,
+					itemSelector	: '.gallery__item',
+					percentPosition: true,
+					singleMode		: true,
 				})
-				.append(gallery.itemsToPush);
-
-			gallery.itemsToPush
-				.hide()
-				.imagesLoaded()
-				.progress(function(imgLoad, image) {
-					var $item = $(image.img).parents('.gallery__item');
-
-					$item.show();
-
-					gallery.container
-						.masonry('appended', $item)
-						.masonry();
-				})
-				.done(function() { 
-					callback();
-				});
-
-			gallery.itemsToPush = [];
-		}
-	},
-
-	// любая последующая загрузка фоток
-	otherPushing: function(callback) {
-		var linkTo = {
-			root: 'https://jata.ru'
-		};
-		if (gallery.allItems.length >= 10) {
-			gallery.itemsToPush	=	gallery.allItems.splice(gallery.allItems.length - 11, 10);
+				.append(this.items.toPush);
 		} else {
-			gallery.itemsToPush = gallery.allItems;
-			gallery.allItems = [];
+			this.container.append(this.items.toPush);
 		}
 
-		for (var i = 0, length1 = gallery.itemsToPush.length; i < length1; i++){
-			gallery.itemsToPush[i] = '<div data-url=\'' + linkTo.root +
-				(gallery.itemsToPush[i]) + '\' class=\'gallery__item\'><img src=\'' + linkTo.root +
-				(gallery.itemsToPush[i]) + '\' alt><div class=\'gallery__darkness\'></div></div>';
-		}
+		this.items.toPush
+			.hide()
+			.imagesLoaded()
+			.progress((imgLoad, image) => {
+				const $item = $(image.img).parents('.gallery__item');
 
-		if (gallery.isWorking) {
-			gallery.loadingStart();
+				if (this.loader.hasClass('gallery__loading--first')) {
+					this.loader.removeClass('gallery__loading--first');
+				}
 
-			gallery.itemsToPush = $(gallery.itemsToPush.join(''));
+				$item.show();
 
-			gallery.container
-				.append(gallery.itemsToPush);
+				this.container
+					.masonry('appended', $item)
+					.masonry();
+			})
+			.done(() => {
+				this.loadEnd();
+				this.onScroll();
 
-			gallery.itemsToPush
-				.hide()
-				.imagesLoaded()
-				.progress(function(imgLoad, image) {
-					var $item = $(image.img).parents('.gallery__item');
+				if (!this.watched) {
+					$(window).scroll(() => {this.onScroll()});
+				}
+			});
 
-					$item.show();
+		this.items.toPush.length = 0;
+	},
+	/**
+	 * навешиваемая на скролл функция
+	 * запускает подгрузку фоток есди надо
+	 */
+	onScroll() {
+		const pageHeight		= $(document).height();
+		const windowHeight	= $(window).height();
+		const windowScroll	= $(window).scrollTop();
+		const leftToBottom	=	pageHeight - windowHeight - windowScroll;
 
-					gallery.container
-						.masonry('appended', $item)
-						.masonry();
-				})
-				.done(function() { 
-					callback();
-				});
-
-			gallery.itemsToPush = [];
+		if (!this.busy && this.urls.all.length && leftToBottom <= 300) {
+			console.log('scroll load');
+			this.makeImgs();
 		}
 	},
+	/**
+	 * инит функция
+	 */
+	init() {
+		$('.gallery__bg').hide();
 
-	// запуск подгрузки по скроллу
-	scrollLoad: function() {
-		if (gallery.isWorking) {
-			var
-				pageHeight		=	$(document).height(),
-				windowHeight	=	$(window).height(),
-				windowScroll	=	$(window).scrollTop();
+		this.getUrls()
+			.then(
+				result => {
+					console.log('got images');
+					this.urls.all = result.reverse();
 
-			var leftToBottom =	pageHeight - windowHeight - windowScroll;
+					this.urls.all.forEach((elem, i) => {
+						this.urls.all[i] = '<div data-url="' + vars.server + elem +
+							'" class="gallery__item"><img src="' + vars.server + elem +
+							'" alt><div class="gallery__darkness"></div></div>';
+					});
 
-			if (!gallery.isLoading && leftToBottom <= 150) {
-				console.log('scrollLoad')
-				gallery.otherPushing(function() {
-					gallery.loadingEnd(gallery.scrollLoad);
-					if (gallery.allItems.length === 0) {
-						gallery.fullStop();
-					}
-				});
-			}
-		}
-	}
-};
-
-jQuery(document).ready(function($) {
-	if ($('.gallery').length) {
-		gallery.getItems(function() {
-			gallery.firstPushing(function() {
-				gallery.loadingEnd(gallery.scrollLoad);
-			});
-		});
-
-		$('body').on('click', '.gallery__btn', function(event) {
-			event.preventDefault();
-			
-			gallery.otherPushing(function() {
-				gallery.loadingEnd(gallery.scrollLoad);
-			});
-		});
-
-		$(window).scroll(function(event) {
-			gallery.scrollLoad();
-		});
+					this.makeImgs(true);
+				},
+				error => {
+					console.log(error, 'error');
+				}
+			);
 
 		$('body').on('click', '.gallery__item', function(event) {
-			$('.gallery__modal')
-				.html('<img src=\'' +
-					$(this).attr('data-url') +
-					'\' alt=\'\'>')
+			let imgUrl = $(this).attr('data-url');
+
+			$('[data-gal-modal]')
+				.attr('src', imgUrl)
 				.closest('.gallery__bg')
-				.show();
-		});
+				.fadeIn(300);
+			});
 
 		$('body').on('click', '.gallery__bg', function(event) {
-			$(this).hide();
+			$(this).fadeOut(300);
 		});
-	}
-});
+	},
+};
+
+module.exports = gallery;

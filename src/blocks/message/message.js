@@ -1,9 +1,12 @@
 const message = {
+	/**
+	 * инит функция
+	 */
 	init() {
 		$('body').on('click', '.message__bg, .message__close', event => {
 			event.preventDefault();
 			
-			$(elem)
+			$(event.target)
 				.closest('.message')
 				.removeClass('message--show');
 		});

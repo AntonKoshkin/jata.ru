@@ -1,7 +1,7 @@
 'use strict';
 
-import driverForm	from '../blocks/driver-form/driver-form2';
-import input		from '../blocks/input/input2';
+import driverForm	from '../blocks/driver-form/driver-form';
+import input		from '../blocks/input/input';
 import message		from '../blocks/message/message';
 import burger		from '../blocks/burger/burger';
 import scrollBtn	from '../blocks/scroll-btn/scroll-btn';
@@ -16,20 +16,25 @@ import question	from '../blocks/question/question';
 import upBtn		from '../blocks/up-btn/up-btn';
 import yaMap		from '../blocks/ya-map/ya-map';
 import vars			from './vars';
-import gallery		from '../blocks/gallery/gallery2';
+import gallery		from '../blocks/gallery/gallery';
 
 require('../../bower_components/jquery_lazyload/jquery.lazyload');
 require('device.js');
 
 const jata = {
+	/**
+	 * запускаемая при загрузке функция
+	 */
 	ready() {
 		if (document.readyState !== 'loading'){
-			jata.init();
+			this.init();
 		} else {
-			document.addEventListener('DOMContentLoaded', jata.init);
+			document.addEventListener('DOMContentLoaded', this.init);
 		}
 	},
-
+	/**
+	 * инит функция
+	 */
 	init() {
 		burger.init();
 		upBtn.init();
@@ -65,9 +70,9 @@ const jata = {
 				gallery.init();
 				break;
 
-			// default:
-			// 	location.href = vars.server + '/404.html';
-			// 	break;
+			default:
+				location.href = vars.server;
+				break;
 		}
 	},
 };

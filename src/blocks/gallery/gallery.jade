@@ -10,17 +10,17 @@ mixin gItem(img)
 			alt='')
 		.gallery__darkness
 
-mixin gModal(img)
+mixin gModal
 	.gallery__bg
 		.gallery__modal
-		//- img(
-		//- 	src=img
-		//- 	alt='')
+			img(
+				src=''
+				alt=''
+				data-gal-modal='')
 
 mixin gMore(text)
 	.gallery__more
-		button.gallery__btn(
-			type='button')=text
+		button.gallery__btn(type='button')=text
 
 mixin gLoading(text)
 	.gallery__loading.gallery__loading--first

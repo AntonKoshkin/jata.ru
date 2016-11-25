@@ -1,23 +1,22 @@
 const question = {
+	/**
+	 * инит функция
+	 */
 	init() {
 		$('.questions__item').eq(1).hide();
 
 		$('body').on('click', '.main-btn--hdiw', event => {
-			let elem = event.target;
+			let elem = $(event.target).closest('.main-btn--hdiw');
 			event.preventDefault();
-
-			if (!$(elem).hasClass('main-btn--hdiw')) {
-				elem = $(elem).closest('.main-btn--hdiw');
-			}
 			
-			if (!$(elem).hasClass('main-btn--active')) {
-				$(elem)
+			if (!elem.hasClass('main-btn--active')) {
+				elem
 					.addClass('main-btn--active')
 					.siblings()
 					.removeClass('main-btn--active');
 			
 				$('.questions__item')
-					.eq($(elem).index() - 2)
+					.eq(elem.index() - 2)
 					.fadeIn(300)
 					.siblings()
 					.fadeOut(300);
@@ -29,14 +28,10 @@ const question = {
 		});
 
 		$('body').on('click', '.question__header', event => {
-			let elem = event.target;
+			let elem = $(event.target).closest('.question__header');
 			event.preventDefault();
-
-			if (!$(elem).hasClass('question__header')) {
-				elem = elem.closest('.question__header');
-			}
 			
-			$(elem)
+			elem
 				.siblings('.question__body')
 				.slideToggle(300)
 				.closest('.question')

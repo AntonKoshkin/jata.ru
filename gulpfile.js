@@ -32,7 +32,7 @@ lazyRequireTask('stylus', './gulp/gulp stylus.js');
 lazyRequireTask('js', './gulp/gulp js.js');
 
 // task JavaScript linting
-// lazyRequireTask('jslint', './gulp/gulp jslint.js');
+lazyRequireTask('jslint', './gulp/gulp jslint.js');
 
 // task Images
 lazyRequireTask('img', './gulp/gulp img.js');

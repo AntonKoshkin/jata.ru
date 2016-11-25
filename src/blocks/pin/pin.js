@@ -7,11 +7,11 @@ const pin = {
 	 * счетчик, увеличивает время
 	 */
 	countdown() {
-		$('[data-clock=\'h\']').text(Math.floor(pin.sec/3600));
-		$('[data-clock=\'m\']').text(Math.floor(pin.sec%3600/60));
-		$('[data-clock=\'s\']').text(Math.floor(pin.sec%3600%60));
+		$('[data-clock=\'h\']').text(Math.floor(this.sec/3600));
+		$('[data-clock=\'m\']').text(Math.floor(this.sec%3600/60));
+		$('[data-clock=\'s\']').text(Math.floor(this.sec%3600%60));
 
-		pin.sec += 1;
+		this.sec += 1;
 	},
 	/**
 	 * добавляет к цифре ноль, чтоб получить двузначное число
@@ -24,32 +24,35 @@ const pin = {
 		}
 		return number;
 	},
-
+	/**
+	 * обновляет время
+	 * вызывается каджую секунду
+	 */
 	setTime() {
-		pin.hours = new Date().getHours();
-				
-		$('[data-clock=\'h\'').text(pin.twoNumbers(pin.hours));
+		return () => {
+			this.hours = new Date().getHours();
+					
+			$('[data-clock=\'h\'').text(this.twoNumbers(this.hours));
 
-		pin.minutes = new Date().getMinutes();
-		
-		$('[data-clock=\'m\'').text(pin.twoNumbers(pin.minutes));
+			this.minutes = new Date().getMinutes();
+			
+			$('[data-clock=\'m\'').text(this.twoNumbers(this.minutes));
 
-		pin.seconds = new Date().getSeconds();
-		
-		$('[data-clock=\'s\'').text(pin.twoNumbers(pin.seconds));
+			this.seconds = new Date().getSeconds();
+			
+			$('[data-clock=\'s\'').text(this.twoNumbers(this.seconds));
+		}
 	},
-
+	/**
+	 * инит функция
+	 */
 	init() {
 		$('body').on('mouseenter', '.pin', event => {
 			event.preventDefault();
 
-			let elem = event.target;
-
-			if (!$(elem).hasClass('pin')) {
-				elem = $(elem).closest('.pin');
-			}
+			let elem = $(event.target).closest('.pin');
 			
-			$(elem)
+			elem
 				.removeClass('pin--show')
 				.css('z-index', '2')
 				.siblings()
@@ -62,31 +65,31 @@ const pin = {
 
 			newDate.setDate(newDate.getDate());
 
-			$('[data-clock=\'h\'').text(pin.hours);
-			$('[data-clock=\'m\'').text(pin.minutes);
-			$('[data-clock=\'s\'').text(pin.seconds);
+			$('[data-clock=\'h\'').text(this.hours);
+			$('[data-clock=\'m\'').text(this.minutes);
+			$('[data-clock=\'s\'').text(this.seconds);
 
-			setInterval(pin.setTime, 1000);
+			setInterval(this.setTime, 1000);
 
 		} else {
 			$('[data-clock=\'h\']')
-				.text(Math.floor(pin.sec/3600) < 10 ?
-							'0' + Math.floor(pin.sec/3600) :
-							Math.floor(pin.sec/3600));
+				.text(Math.floor(this.sec/3600) < 10 ?
+							'0' + Math.floor(this.sec/3600) :
+							Math.floor(this.sec/3600));
 
 			$('[data-clock=\'m\']')
-				.text(Math.floor(pin.sec%3600/60) < 10 ?
-							'0' + Math.floor(pin.sec%3600/60) :
-							Math.floor(pin.sec%3600/60));
+				.text(Math.floor(this.sec%3600/60) < 10 ?
+							'0' + Math.floor(this.sec%3600/60) :
+							Math.floor(this.sec%3600/60));
 
 			$('[data-clock=\'s\']')
-				.text(Math.floor(pin.sec%3600%60) < 10 ?
-							'0' + Math.floor(pin.sec%3600%60) :
-							Math.floor(pin.sec%3600%60));
+				.text(Math.floor(this.sec%3600%60) < 10 ?
+							'0' + Math.floor(this.sec%3600%60) :
+							Math.floor(this.sec%3600%60));
 
-			pin.sec += 1;
+			this.sec += 1;
 
-			setInterval(pin.countdown, 1000);
+			setInterval(this.countdown, 1000);
 		}
 	},
 };

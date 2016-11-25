@@ -5,16 +5,16 @@ const yaMap = {
 	 * объявляет точки (надо выполнять после создания карты)
 	 */
 	setPoints() {
-		yaMap.points = [
+		this.points = [
 			{
 				coords: [59.92022975962769, 30.372955999999977],
 				titles: {
-					hintContent		: 'Главный офис',
-					balloonContent	: 'СПб, Суворовский проспект, 65б, офис 16',
+					hintContent		: 'Бокс для оклейки',
+					balloonContent	: 'СПб, Кременчугская ул., д.8',
 				},
 				params: {
 					iconLayout: ymaps.templateLayoutFactory
-						.createClass('<div class=\'ya-map__icon ya-map__icon--red\'></div>'),
+						.createClass('<div class=\'ya-map__icon ya-map__icon--blue\'></div>'),
 
 					iconShape: {
 						type			: 'Rectangle',
@@ -30,7 +30,7 @@ const yaMap = {
 				},
 				params: {
 					iconLayout: ymaps.templateLayoutFactory
-						.createClass('<div class=\'ya-map__icon ya-map__icon--blue\'></div>'),
+						.createClass('<div class=\'ya-map__icon ya-map__icon--red\'></div>'),
 
 					iconShape: {
 						type			: 'Rectangle',
@@ -45,36 +45,38 @@ const yaMap = {
 	 * @param {objext} point объект с данными точки
 	 */
 	setPoint(point) {
-		yaMap.map.geoObjects.add(new ymaps.Placemark(point.coords, point.titles, point.params));
+		this.map.geoObjects.add(new ymaps.Placemark(point.coords, point.titles, point.params));
 	},
 	/**
 	 * создает карту
 	 */
 	setMap() {
-		yaMap.map = new ymaps.Map('yaMap', {
-			center: [
-				59.93159322233984,
-				30.375144682556122
-			],
-			controls: [
-				'zoomControl',
-			],
-			zoom: 13,
+		ymaps.ready(() => {
+			this.map = new ymaps.Map('yaMap', {
+				center: [
+					59.93159322233984,
+					30.375144682556122
+				],
+				controls: [
+					'zoomControl',
+				],
+				zoom: 13,
+			});
+
+			this.setPoints();
+
+			this.points.forEach(elem => {
+				this.setPoint(elem);
+			});
+
+			this.map.behaviors.disable('scrollZoom');
 		});
-
-		yaMap.setPoints();
-
-		yaMap.points.forEach(elem => {
-			yaMap.setPoint(elem);
-		});
-
-		yaMap.map.behaviors.disable('scrollZoom');
 	},
 	/**
 	 * инит функция
 	 */
 	init() {
-		ymaps.ready(yaMap.setMap);
+		this.setMap();
 	},
 };
 

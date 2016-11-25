@@ -1,20 +1,22 @@
 const wdSlider = {
+	/**
+	 * запускаемая при загрузке функция
+	 */
 	init() {
-		$('body').on('click', '.wd-slider__pag', event => {
-			const elem = event.target;
+		$('body').on('click', '.wd-slider__pag', function(event) {
 			event.preventDefault();
 
-			$(elem)
+			$(this)
 				.addClass('wd-slider__pag--active')
 				.siblings()
 				.removeClass('wd-slider__pag--active');
 				
-			if ($(elem).index() === 1) {
-				$(elem)
+			if ($(this).index() === 1) {
+				$(this)
 					.closest('.wd-slider')
 					.addClass('wd-slider--two');
 			} else {
-				$(elem)
+				$(this)
 					.closest('.wd-slider')
 					.removeClass('wd-slider--two');
 			}
