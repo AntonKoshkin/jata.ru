@@ -1,5 +1,7 @@
 'use strict';
 
+import vars			from './vars';
+
 import driverForm	from '../blocks/driver-form/driver-form';
 import input		from '../blocks/input/input';
 import message		from '../blocks/message/message';
@@ -15,7 +17,6 @@ import dotStrip	from '../blocks/dot-strip/dot-strip';
 import question	from '../blocks/question/question';
 import upBtn		from '../blocks/up-btn/up-btn';
 import yaMap		from '../blocks/ya-map/ya-map';
-import vars			from './vars';
 import gallery		from '../blocks/gallery/gallery';
 
 require('../../bower_components/jquery_lazyload/jquery.lazyload');
@@ -36,6 +37,7 @@ const jata = {
 	 * инит функция
 	 */
 	init() {
+		vars.init();
 		burger.init();
 		upBtn.init();
 
@@ -46,6 +48,9 @@ const jata = {
 				message.init();
 				scrollBtn.init();
 				wdSlider.init();
+				break;
+
+			case '/about.html':
 				break;
 
 			case '/foradv.html':
