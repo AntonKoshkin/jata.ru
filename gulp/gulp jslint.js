@@ -31,7 +31,7 @@ module.exports = function() {
 			.src(config.pathTo.src.allJs)
 			.pipe(plumber({
 				errorHandler: notify.onError({
-					message: 'some problem'
+					message: 'lint errors'
 				})
 			}))
 			.pipe(jsHint(config.jsHintRules))

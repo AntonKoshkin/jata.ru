@@ -1,17 +1,17 @@
 'use strict';
 
 const
-	gulp		= require('gulp'),
-	config	= require('./config'),
-	gulpIf	= require('gulp-if'),
-	jade		= require('gulp-jade'),
-	plumber	= require('gulp-plumber'),
-	rev		= require('gulp-rev'),
-	replace	= require('gulp-rev-replace'),
-	server	= require('browser-sync'),
-	NODE_ENV	= process.env.NODE_ENV || 'development';
+	gulp			= require('gulp'),
+	config		= require('./config'),
+	gulpIf		= require('gulp-if'),
+	jade			= require('gulp-jade'),
+	plumber		= require('gulp-plumber'),
+	rev			= require('gulp-rev'),
+	replace		= require('gulp-rev-replace'),
+	server		= require('browser-sync');
 
 module.exports = function() {
+	const production	= process.env.NODE_ENV === 'production';
 	return function() {
 		return gulp
 			.src(config.pathTo.src.jade)
@@ -20,7 +20,7 @@ module.exports = function() {
 				pretty: '\t',
 			}))
 			.pipe(gulpIf(
-				NODE_ENV === 'production',
+				production,
 				replace({
 					manifest: gulp.src('./manifests/manifest.json')
 				})

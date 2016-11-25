@@ -2,12 +2,12 @@
 
 const
 	gulp		= require('gulp'),
-	series	= require('run-sequence'),
-	NODE_ENV	= process.env.NODE_ENV || 'development';
+	series	= require('run-sequence');
 
 module.exports = function() {
+	const production	= process.env.NODE_ENV === 'production';
 	return function() {
-		if (NODE_ENV === 'production') {
+		if (production) {
 			return series('build');
 		} else {
 			return series(

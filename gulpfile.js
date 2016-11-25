@@ -1,8 +1,8 @@
 'use strict';
 
-const
-	bs		= require('browser-sync').create(),
-	gulp	= require('gulp');
+const bs				= require('browser-sync').create();
+const gulp			= require('gulp');
+const production	= process.env.NODE_ENV === 'production';
 
 // Lazy Task Run function
 function lazyRequireTask(taskName, path) {

@@ -13,17 +13,15 @@ const
 	rev			= require('gulp-rev'),
 	server		= require('browser-sync'),
 	source		= require('vinyl-source-stream'),
-	uglify		= require('gulp-uglify'),
-
-	production	= process.env.NODE_ENV === 'production';
+	uglify		= require('gulp-uglify');
 
 module.exports = function() {
+	const production	= process.env.NODE_ENV === 'production';
 	return function() {
-
 		return browserify({
 			entries		: config.pathTo.src.js,
 			extensions	: ['.js'],
-			debug			: !production,
+			debug			: true,
 		})
 			.transform(babelify)
 			.bundle()

@@ -22,16 +22,16 @@ const
 	flexFix	= require('postcss-flexbugs-fixes'),
 	fonts		= require('postcss-font-magician'),
 	prefixes	= require('autoprefixer'),
-	short		= require('postcss-short'),
-	NODE_ENV	= process.env.NODE_ENV || 'development';
+	short		= require('postcss-short');
 
 module.exports = function() {
+	const production	= process.env.NODE_ENV === 'production';
 	return function() {
 		return gulp
 			.src(config.pathTo.src.stylus)
 			.pipe(plumber())
 			.pipe(gulpIf(
-				NODE_ENV === 'development',
+				!production,
 				maps.init()))
 			.pipe(stylus({'include css': true}))
 			.pipe(postCss([
@@ -51,7 +51,7 @@ module.exports = function() {
 			.on('error', notify.onError())
 			.pipe(gulp.dest(config.pathTo.build.stylus))
 			.pipe(gulpIf(
-				NODE_ENV === 'development',
+				!production,
 				combine(
 					maps.write('.')
 				),
@@ -65,7 +65,7 @@ module.exports = function() {
 			))
 			.pipe(gulp.dest(config.pathTo.build.stylus))
 			.pipe(gulpIf(
-				NODE_ENV === 'production',
+				production,
 				combine(
 					rev.manifest('manifests/manifest.json', {
 						merge: true,
