@@ -10,6 +10,7 @@ const
 	gulp			= require('gulp'),
 	gulpIf		= require('gulp-if'),
 	notifier		= require('node-notifier'),
+	replace		= require('gulp-replace'),
 	rev			= require('gulp-rev'),
 	server		= require('browser-sync'),
 	source		= require('vinyl-source-stream'),
@@ -19,9 +20,10 @@ module.exports = function() {
 	const production	= process.env.NODE_ENV === 'production';
 	return function() {
 		return browserify({
-			entries		: config.pathTo.src.js,
-			extensions	: ['.js'],
-			debug			: true,
+			entries			: config.pathTo.src.js,
+			debug				: true,
+			insertGlobals	: true,
+			detectGlobals	: true,
 		})
 			.transform(babelify)
 			.bundle()
@@ -37,6 +39,7 @@ module.exports = function() {
 			})
 			.pipe(source('main.js'))
 			.pipe(buffer())
+			.pipe(replace('environment', () => process.env.NODE_ENV))
 			.pipe(gulpIf(
 				production,
 				combine(

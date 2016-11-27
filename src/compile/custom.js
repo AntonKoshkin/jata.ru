@@ -50,9 +50,6 @@ const jata = {
 				wdSlider.init();
 				break;
 
-			case '/about.html':
-				break;
-
 			case '/foradv.html':
 				dotStrip.init();
 				map.init();
@@ -73,10 +70,6 @@ const jata = {
 
 			case '/gallery.html':
 				gallery.init();
-				break;
-
-			default:
-				location.href = vars.server;
 				break;
 		}
 	},

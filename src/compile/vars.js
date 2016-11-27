@@ -1,5 +1,5 @@
 const vars = {
-	production	: false,
+	production	: 'environment' === 'production',
 	server		: '',
 	
 	api: {
@@ -9,6 +9,7 @@ const vars = {
 
 	init() {
 		this.server = this.production ? 'https://jata.ru' : 'http://dev.jata.ru';
+		console.log(this.production)
 	},
 };
 
