@@ -3977,7 +3977,7 @@ jata.ready();
 'use strict';
 
 var vars = {
-	production: 'development' === 'production',
+	production: '' === 'production',
 	server: '',
 
 	api: {
