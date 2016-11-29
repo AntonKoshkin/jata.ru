@@ -1,10 +1,12 @@
+/* global $ */
+
 const tablet = {
-	mobOne	: $('#tablet').attr('data-mob-x1'),
-	mobTwo	: $('#tablet').attr('data-mob-x2'),
-	mobThree	: $('#tablet').attr('data-mob-x3'),
-	tabOne	: $('#tablet').attr('data-tab-x1'),
-	tabTwo	: $('#tablet').attr('data-tab-x2'),
-	tabThree	: $('#tablet').attr('data-tab-x3'),
+	mobOne  : $('#tablet').attr('data-mob-x1'),
+	mobTwo  : $('#tablet').attr('data-mob-x2'),
+	mobThree: $('#tablet').attr('data-mob-x3'),
+	tabOne  : $('#tablet').attr('data-tab-x1'),
+	tabTwo  : $('#tablet').attr('data-tab-x2'),
+	tabThree: $('#tablet').attr('data-tab-x3'),
 	/**
 	 * запускаемая при загрузке функция
 	 */
@@ -21,7 +23,7 @@ const tablet = {
 			} else {
 				$('#tablet').attr('data-original', this.tabTwo);
 			}
-		} else  {
+		} else {
 			if ($('html').hasClass('mobile')) {
 				$('#tablet').attr('data-original', this.mobOne);
 			} else {
@@ -31,7 +33,7 @@ const tablet = {
 
 		$('#tablet').lazyload({
 			threshold: 200,
-			effect	: 'fadeIn',
+			effect   : 'fadeIn',
 		});
 	},
 };

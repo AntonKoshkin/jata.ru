@@ -1,15 +1,17 @@
+/* global $ */
+
 const pin = {
-	sec		: 55555,
-	hours		: new Date().getHours(),
-	minutes	: new Date().getMinutes(),
-	seconds	: new Date().getSeconds(),
+	sec    : 55555,
+	hours  : new Date().getHours(),
+	minutes: new Date().getMinutes(),
+	seconds: new Date().getSeconds(),
 	/**
 	 * счетчик, увеличивает время
 	 */
 	countdown() {
-		$('[data-clock=\'h\']').text(Math.floor(this.sec/3600));
-		$('[data-clock=\'m\']').text(Math.floor(this.sec%3600/60));
-		$('[data-clock=\'s\']').text(Math.floor(this.sec%3600%60));
+		$('[data-clock=\'h\']').text(Math.floor(this.sec / 3600));
+		$('[data-clock=\'m\']').text(Math.floor((this.sec % 3600) / 60));
+		$('[data-clock=\'s\']').text(Math.floor(this.sec % 3600 % 60));
 
 		this.sec += 1;
 	},
@@ -19,10 +21,13 @@ const pin = {
 	 * @return {number}        двузначное число
 	 */
 	twoNumbers(number) {
+		let newNumber = null;
+
 		if (number < 10) {
-			number = '0' + number.toString();
+			newNumber = '0' + number.toString();
 		}
-		return number;
+
+		return newNumber;
 	},
 	/**
 	 * обновляет время
@@ -31,17 +36,17 @@ const pin = {
 	setTime() {
 		return () => {
 			this.hours = new Date().getHours();
-					
+
 			$('[data-clock=\'h\'').text(this.twoNumbers(this.hours));
 
 			this.minutes = new Date().getMinutes();
-			
+
 			$('[data-clock=\'m\'').text(this.twoNumbers(this.minutes));
 
 			this.seconds = new Date().getSeconds();
-			
+
 			$('[data-clock=\'s\'').text(this.twoNumbers(this.seconds));
-		}
+		};
 	},
 	/**
 	 * инит функция
@@ -51,7 +56,7 @@ const pin = {
 			event.preventDefault();
 
 			let elem = $(event.target).closest('.pin');
-			
+
 			elem
 				.removeClass('pin--show')
 				.css('z-index', '2')
@@ -70,22 +75,21 @@ const pin = {
 			$('[data-clock=\'s\'').text(this.seconds);
 
 			setInterval(this.setTime, 1000);
-
 		} else {
 			$('[data-clock=\'h\']')
-				.text(Math.floor(this.sec/3600) < 10 ?
-							'0' + Math.floor(this.sec/3600) :
-							Math.floor(this.sec/3600));
+				.text(Math.floor(this.sec / 3600) < 10 ?
+							'0' + Math.floor(this.sec / 3600) :
+							Math.floor(this.sec / 3600));
 
 			$('[data-clock=\'m\']')
-				.text(Math.floor(this.sec%3600/60) < 10 ?
-							'0' + Math.floor(this.sec%3600/60) :
-							Math.floor(this.sec%3600/60));
+				.text(Math.floor((this.sec % 3600) / 60) < 10 ?
+							'0' + Math.floor((this.sec % 3600) / 60) :
+							Math.floor((this.sec % 3600) / 60));
 
 			$('[data-clock=\'s\']')
-				.text(Math.floor(this.sec%3600%60) < 10 ?
-							'0' + Math.floor(this.sec%3600%60) :
-							Math.floor(this.sec%3600%60));
+				.text(Math.floor((this.sec % 3600) % 60) < 10 ?
+							'0' + Math.floor((this.sec % 3600) % 60) :
+							Math.floor((this.sec % 3600) % 60));
 
 			this.sec += 1;
 

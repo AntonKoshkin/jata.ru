@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 ;(function(window, document) {
 	'use strict';
 	var file = 'img/svg-sprite.svg',	// path to svg-sprite file

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 $('body').on('click', '.select__input', function(event) {
 	if (!$(this).closest('.select--open').length) {
 		$('.select--open')

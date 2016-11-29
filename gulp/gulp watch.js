@@ -1,9 +1,8 @@
 'use strict';
 
-const
-	config	= require('./config'),
-	gulp		= require('gulp'),
-	watch		= require('gulp-watch');
+const config	= require('./config');
+const gulp		= require('gulp');
+const watch		= require('gulp-watch');
 
 module.exports = function() {
 	return function() {
@@ -17,6 +16,9 @@ module.exports = function() {
 			gulp.start('img');
 		});
 		watch(config.pathTo.watch.js, function() {
+			gulp.start('jslint');
+		});
+		watch(config.pathTo.watch.js, function() {
 			gulp.start('js');
 		});
 		watch(config.pathTo.watch.svgSprite, function() {
@@ -28,5 +30,5 @@ module.exports = function() {
 		watch(config.pathTo.watch.video, function() {
 			gulp.start('video');
 		});
-	}
-}
+	};
+};

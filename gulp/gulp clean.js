@@ -1,14 +1,10 @@
 'use srtict';
 
-const
-	gulp		= require('gulp'),
-	del		= require('del'),
-	config	= require('./config');
+const del		= require('del');
+const config	= require('./config');
 
 module.exports = function() {
 	return function() {
-		return del([config.pathTo.clean], {
-			force: true
-		});
-	}
-}
+		return del([config.pathTo.clean], {force: true});
+	};
+};

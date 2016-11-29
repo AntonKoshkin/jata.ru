@@ -1,41 +1,29 @@
 'use strict';
 
-const
-	config	= require('./config'),
-	events	= require('events'),
-	emmitter	= new events.EventEmitter(),
-	gulp		= require('gulp'),
-	jsHint	= require('gulp-jshint'),
-	map		= require('map-stream'),
-	notify	= require('gulp-notify'),
-	plumber	= require('gulp-plumber'),
-	stylish	= require('jshint-stylish');
+const config	= require('./config');
+const eslint	= require('gulp-eslint');
+const gulp		= require('gulp');
+const notify	= require('gulp-notify');
+const plumber	= require('gulp-plumber');
 
 module.exports = function() {
-	return function() {
+	const production = process.env.NODE_ENV === 'production';
 
-		const jsHintErrorReporter = (file, cb) => {
-			return map((file, cb) => {
-				if (!file.jsHint.success) {
-					file.jsHint.results.forEach(err => {
-						if (err) {
-							emmitter.emit('error');
-						}
-					});
-				}
-				cb(null, file);
-			});
-		};
+	return function() {
+		if (production) {
+			return gulp
+				.src(config.pathTo.src.allJs)
+				.pipe(plumber({errorHandler: notify.onError({message: 'lint errors'})}))
+				.pipe(eslint({configFile: config.eslintrc}))
+				.pipe(eslint.format())
+				.pipe(eslint.failAfterError());
+		}
 
 		return gulp
 			.src(config.pathTo.src.allJs)
-			.pipe(plumber({
-				errorHandler: notify.onError({
-					message: 'lint errors'
-				})
-			}))
-			.pipe(jsHint(config.jsHintRules))
-			.pipe(jsHint.reporter(stylish))
-			.pipe(jsHintErrorReporter());
+			.pipe(plumber({errorHandler: notify.onError({message: 'lint errors'})}))
+			.pipe(eslint({configFile: config.eslintrc}))
+			.pipe(eslint.format())
+			.pipe(eslint.failAfterError());
 	};
-}
+};

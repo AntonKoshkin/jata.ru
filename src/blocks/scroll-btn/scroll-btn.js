@@ -1,3 +1,5 @@
+/* global $ */
+
 const scrollBtn = {
 	/**
 	 * инит функция
@@ -6,7 +8,7 @@ const scrollBtn = {
 		$('body').on('click', '.scroll-btn', event => {
 			const elem = $(event.target).closest('.scroll-btn');
 			event.preventDefault();
-			
+
 			$('html, body')
 				.animate(
 					{scrollTop: elem.closest('.section').outerHeight()},

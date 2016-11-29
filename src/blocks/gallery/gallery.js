@@ -1,15 +1,17 @@
+/* global $ */
+
 import vars from '../../compile/vars';
 
 const gallery = {
 	numToLoad: 20,
 	container: $('.gallery'),
-	loader	: $('.gallery__loading'),
-	moreBtn	: $('.gallery__btn'),
-	busy		: true,
-	watched	: false,
-	
+	loader   : $('.gallery__loading'),
+	moreBtn  : $('.gallery__btn'),
+	busy     : true,
+	watched  : false,
+
 	urls: {
-		all	: [],
+		all   : [],
 		toPush: [],
 	},
 
@@ -75,13 +77,13 @@ const gallery = {
 		if (isFirst) {
 			this.container
 				.masonry({
-					columnWidth		: '.gallery__item',
-					isAnimated		: true,
-					isInitLayout	: true,
-					isResizable		: true,
-					itemSelector	: '.gallery__item',
+					columnWidth    : '.gallery__item',
+					isAnimated     : true,
+					isInitLayout   : true,
+					isResizable    : true,
+					itemSelector   : '.gallery__item',
 					percentPosition: true,
-					singleMode		: true,
+					singleMode     : true,
 				})
 				.append(this.items.toPush);
 		} else {
@@ -109,7 +111,7 @@ const gallery = {
 				this.onScroll();
 
 				if (!this.watched) {
-					$(window).scroll(() => {this.onScroll()});
+					$(window).scroll(() => this.onScroll());
 				}
 			});
 
@@ -155,16 +157,16 @@ const gallery = {
 				}
 			);
 
-		$('body').on('click', '.gallery__item', function(event) {
+		$('body').on('click', '.gallery__item', function() {
 			let imgUrl = $(this).attr('data-url');
 
 			$('[data-gal-modal]')
 				.attr('src', imgUrl)
 				.closest('.gallery__bg')
 				.fadeIn(300);
-			});
+		});
 
-		$('body').on('click', '.gallery__bg', function(event) {
+		$('body').on('click', '.gallery__bg', function() {
 			$(this).fadeOut(300);
 		});
 	},

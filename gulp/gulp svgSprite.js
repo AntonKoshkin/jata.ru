@@ -1,12 +1,11 @@
 'use strict';
 
-const
-	config	= require('./config'),
-	gulp		= require('gulp'),
-	plumber	= require('gulp-plumber'),
-	rename	= require('gulp-rename'),
-	server	= require('browser-sync'),
-	svgStore	= require('gulp-svgstore');
+const config	= require('./config');
+const gulp		= require('gulp');
+const plumber	= require('gulp-plumber');
+const rename	= require('gulp-rename');
+const server	= require('browser-sync');
+const svgStore	= require('gulp-svgstore');
 
 
 module.exports = function() {
@@ -17,6 +16,6 @@ module.exports = function() {
 			.pipe(svgStore())
 			.pipe(rename('svg-sprite.svg'))
 			.pipe(gulp.dest(config.pathTo.build.svgSprite))
-			.pipe(server.reload({stream:true}));
-	}
-}
+			.pipe(server.reload({stream: true}));
+	};
+};

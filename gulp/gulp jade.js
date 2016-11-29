@@ -1,14 +1,12 @@
 'use strict';
 
-const
-	gulp			= require('gulp'),
-	config		= require('./config'),
-	gulpIf		= require('gulp-if'),
-	jade			= require('gulp-jade'),
-	plumber		= require('gulp-plumber'),
-	rev			= require('gulp-rev'),
-	replace		= require('gulp-rev-replace'),
-	server		= require('browser-sync');
+const gulp			= require('gulp');
+const config		= require('./config');
+const gulpIf		= require('gulp-if');
+const jade			= require('gulp-jade');
+const plumber		= require('gulp-plumber');
+const replace		= require('gulp-rev-replace');
+const server		= require('browser-sync');
 
 module.exports = function() {
 	const production	= process.env.NODE_ENV === 'production';
@@ -21,11 +19,9 @@ module.exports = function() {
 			}))
 			.pipe(gulpIf(
 				production,
-				replace({
-					manifest: gulp.src('./manifests/manifest.json')
-				})
+				replace({manifest: gulp.src('./manifests/manifest.json')})
 			))
 			.pipe(gulp.dest(config.pathTo.build.jade))
-			.pipe(server.reload({stream:true}));
-	}
+			.pipe(server.reload({stream: true}));
+	};
 };

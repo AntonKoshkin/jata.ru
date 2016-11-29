@@ -1,3 +1,5 @@
+/* global $ */
+
 const input = {
 	/**
 	 * инит функция
@@ -50,7 +52,6 @@ const input = {
 					break;
 
 				case 'tel':
-					// /^([\+]+)*[0-9\x20\x28\x29\-]{7,11}$/
 					if (elem.val().length === 18) {
 						elem.attr('data-correct', 'true');
 					} else {
@@ -59,7 +60,7 @@ const input = {
 					break;
 
 				case 'name':
-					if (/^[a-zA-Zа-яёА-ЯЁ][a-zA-Zа-яёА-ЯЁ0-9-_\.]{1,20}$/.test(elem.val())) {
+					if (/^[a-zA-Zа-яёА-ЯЁ][a-zA-Zа-яёА-ЯЁ0-9-_.]{1,20}$/.test(elem.val())) {
 						elem.attr('data-correct', 'true');
 					} else {
 						elem.attr('data-correct', 'false');
@@ -78,13 +79,15 @@ const input = {
 
 				case 'year':
 					if (elem.val() &&
-						parseInt(elem.val()) >= 1900 &&
-						parseInt(elem.val()) <= new Date().getFullYear()) {
+						parseInt(elem.val(), 10) >= 1900 &&
+						parseInt(elem.val(), 10) <= new Date().getFullYear()) {
 						elem.attr('data-correct', 'true');
 					} else {
 						elem.attr('data-correct', 'false');
 					}
 					break;
+
+				// skip default
 			}
 		});
 
@@ -101,92 +104,97 @@ const input = {
 	 * @return {string}        отформатированное значение
 	 */
 	format(data, format) {
+		let newData = '';
+
 		switch (format) {
 			case 'number':
-				return data.replace(/\D/g, '');
+				newData = data.replace(/\D/g, '');
+				break;
 
 			case 'year':
-				data = input.format(data, 'number');
+				newData = input.format(data, 'number');
 
-				if (data.length > 4) {
-					data = data.slice(0, 4);
+				if (newData.length > 4) {
+					newData = newData.slice(0, 4);
 				}
-
-				return data;
+				break;
 
 			case 'tel':
-				data = input.format(data, 'number');
+				newData = input.format(data, 'number');
 
-				let newData = '';
-
-				if (data.length <= 11) {
-					switch(data.length) {
+				if (newData.length <= 11) {
+					switch (newData.length) {
 						case 0:
 							newData = '+7 (';
 							break;
 						case 1:
-							if(data[0] !== '7') {
-								newData = '+7 (' + data[0];
+							if (newData[0] !== '7') {
+								newData = '+7 (' + newData[0];
 							} else {
 								newData = '+7 (';
 							}
 							break;
 						case 2:
-							newData = '+7 (' + data[1];
+							newData = '+7 (' + newData[1];
 							break;
 						case 3:
-							newData = '+7 (' + data[1] + data[2];
+							newData = '+7 (' + newData[1] + newData[2];
 							break;
 						case 4:
-							newData = '+7 (' + data[1] + data[2] + data[3];
+							newData = '+7 (' + newData[1] + newData[2] + newData[3];
 							break;
 						case 5:
-							newData = '+7 (' + data[1] + data[2] + data[3] +
-											') ' + data[4];
+							newData = '+7 (' + newData[1] + newData[2] + newData[3] +
+											') ' + newData[4];
 							break;
 						case 6:
-							newData = '+7 (' + data[1] + data[2] + data[3] +
-											') ' + data[4] + data[5];
+							newData = '+7 (' + newData[1] + newData[2] + newData[3] +
+											') ' + newData[4] + newData[5];
 							break;
 						case 7:
-							newData = '+7 (' + data[1] + data[2] + data[3] +
-											') ' + data[4] + data[5] + data[6];
+							newData = '+7 (' + newData[1] + newData[2] + newData[3] +
+											') ' + newData[4] + newData[5] + newData[6];
 							break;
 						case 8:
-							newData = '+7 (' + data[1] + data[2] + data[3] +
-											') ' + data[4] + data[5] + data[6] +
-											'-' + data[7];
+							newData = '+7 (' + newData[1] + newData[2] + newData[3] +
+											') ' + newData[4] + newData[5] + newData[6] +
+											'-' + newData[7];
 							break;
 						case 9:
-							newData = '+7 (' + data[1] + data[2] + data[3] +
-											') ' + data[4] + data[5] + data[6] +
-											'-' + data[7] + data[8];
+							newData = '+7 (' + newData[1] + newData[2] + newData[3] +
+											') ' + newData[4] + newData[5] + newData[6] +
+											'-' + newData[7] + newData[8];
 							break;
 						case 10:
-							newData = '+7 (' + data[1] + data[2] + data[3] +
-											') ' + data[4] + data[5] + data[6] +
-											'-' + data[7] + data[8] +
-											'-' + data[9];
+							newData = '+7 (' + newData[1] + newData[2] + newData[3] +
+											') ' + newData[4] + newData[5] + newData[6] +
+											'-' + newData[7] + newData[8] +
+											'-' + newData[9];
 							break;
 						case 11:
-							newData = '+7 (' + data[1] + data[2] + data[3] +
-											') ' + data[4] + data[5] + data[6] +
-											'-' + data[7] + data[8] +
-											'-' + data[9] + data[10];
+							newData = '+7 (' + newData[1] + newData[2] + newData[3] +
+											') ' + newData[4] + newData[5] + newData[6] +
+											'-' + newData[7] + newData[8] +
+											'-' + newData[9] + newData[10];
 							break;
+
+						// skip default
 					}
 				} else {
-					newData = '+7 (' + data[1] + data[2] + data[3] +
-									') ' + data[4] + data[5] + data[6] +
-									'-' + data[7] + data[8] +
-									'-' + data[9] + data[10];
+					newData = '+7 (' + newData[1] + newData[2] + newData[3] +
+									') ' + newData[4] + newData[5] + newData[6] +
+									'-' + newData[7] + newData[8] +
+									'-' + newData[9] + newData[10];
 				}
-				return newData;
+				break;
 
 			default:
+				newData = data;
 				console.log('wrong input format');
 				break;
 		}
+
+		return newData;
 	},
 };
 

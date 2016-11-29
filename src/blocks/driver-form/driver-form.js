@@ -1,25 +1,27 @@
+/* global $*/
+
 'use strict';
 
 import vars from '../../compile/vars';
 
 const driverForm = {
-	busy				: false,
-	fieldsCorrect	: false,
-	
+	busy         : false,
+	fieldsCorrect: false,
+
 	data: {
-		first_name				: '',
-		last_name				: '',
-		email						: '',
-		phone						: '',
-		how_did_you_know		: '',
-		car_year					: '',
-		car_state				: '',
-		car_brand				: '',
-		car_model				: '',
-		car_color				: '',
-		avg_mileage_day		: '',
-		avg_mileage_weekend	: '',
-		comment					: '',
+		first_name         : '',
+		last_name          : '',
+		email              : '',
+		phone              : '',
+		how_did_you_know   : '',
+		car_year           : '',
+		car_state          : '',
+		car_brand          : '',
+		car_model          : '',
+		car_color          : '',
+		avg_mileage_day    : '',
+		avg_mileage_weekend: '',
+		comment            : '',
 	},
 	/**
 	 * инит функция
@@ -43,6 +45,7 @@ const driverForm = {
 				switch (dataPage) {
 					case 1:
 						this.data.how_did_you_know = $('#how_did_you_know').val();
+						// falls through
 
 					case 2:
 						currentPage
@@ -51,20 +54,20 @@ const driverForm = {
 								if ($(el).length && ($(el).attr('data-correct') !== 'true')) {
 									currentPage
 										.find('[data-mask]')
-										.each((index, el) => {
-											if ($(el).attr('data-correct') !== 'true') {
-												$(el).attr('data-correct', 'false');
+										.each((i, item) => {
+											if ($(item).attr('data-correct') !== 'true') {
+												$(item).attr('data-correct', 'false');
 											}
 										});
 
 									this.fieldsCorrect = false;
 									return false;
-
-								} else {
-									this.data[$(el).attr('id')] = $(el).val();
-
-									this.fieldsCorrect = true;
 								}
+
+								this.data[$(el).attr('id')] = $(el).val();
+								this.fieldsCorrect = true;
+
+								return true;
 							});
 
 						this.data.phone = this.data.phone.replace(/\D/g, '');
@@ -77,24 +80,26 @@ const driverForm = {
 								if ($(el).length && $(el).attr('data-correct') !== 'true') {
 									currentPage
 									.find('[data-mask]')
-									.each(function(index, el) {
-										if ($(el).attr('data-correct') !== 'true') {
-											$(el).attr('data-correct', 'false');
+									.each(function(i, item) {
+										if ($(item).attr('data-correct') !== 'true') {
+											$(item).attr('data-correct', 'false');
 										}
 									});
 
-								this.fieldsCorrect = false;
+									this.fieldsCorrect = false;
 
-								return false;
-								} else {
-									currentPage
-										.find('[data-filled]')
-										.each((index, el) => {
-											this.data[$(el).attr('id')] = $(el).val();
-										});
-
-									this.fieldsCorrect = true;
+									return false;
 								}
+
+								currentPage
+									.find('[data-filled]')
+									.each((i, item) => {
+										this.data[$(item).attr('id')] = $(item).val();
+									});
+
+								this.fieldsCorrect = true;
+
+								return true;
 							});
 						break;
 
@@ -147,11 +152,11 @@ const driverForm = {
 			this.busy = true;
 
 			$.ajax({
-				url	: vars.server + vars.api.becomeDriver,
-				type	: 'POST',
-				data	: this.data,
+				url : vars.server + vars.api.becomeDriver,
+				type: 'POST',
+				data: this.data,
 			})
-				.success(result => {
+				.success(() => {
 					$('.message--success').addClass('message--show');
 
 					// переключить страницу
@@ -173,7 +178,7 @@ const driverForm = {
 				.fail(error => {
 					$('.message--fail').addClass('message--show');
 					if (error.responseText) {
-						console.log('servers answer:\n',error.responseText);
+						console.log('servers answer:\n', error.responseText);
 					} else {
 						console.log('UFO have interrupted our server\'s work\nwe\'l try to fix it');
 					}

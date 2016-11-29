@@ -1,13 +1,11 @@
 'use strict';
 
-const bs				= require('browser-sync').create();
-const gulp			= require('gulp');
-const production	= process.env.NODE_ENV === 'production';
+const gulp = require('gulp');
 
 // Lazy Task Run function
 function lazyRequireTask(taskName, path) {
 	gulp.task(taskName, function(callback) {
-		let task = require(path).call(this);
+		let task = require(path).call(this); // eslint-disable-line global-require
 
 		return task(callback);
 	});

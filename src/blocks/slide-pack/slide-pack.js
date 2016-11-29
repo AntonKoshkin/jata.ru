@@ -1,3 +1,5 @@
+/* global $ */
+
 const slidePack = {
 	/**
 	 * инит функция

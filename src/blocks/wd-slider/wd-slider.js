@@ -1,3 +1,5 @@
+/* global $ */
+
 const wdSlider = {
 	/**
 	 * запускаемая при загрузке функция
@@ -10,7 +12,7 @@ const wdSlider = {
 				.addClass('wd-slider__pag--active')
 				.siblings()
 				.removeClass('wd-slider__pag--active');
-				
+
 			if ($(this).index() === 1) {
 				$(this)
 					.closest('.wd-slider')

@@ -1,9 +1,8 @@
 'use strict';
 
-const
-	config	= require('./config'),
-	gulp		= require('gulp'),
-	gulpIf	= require('gulp-if');
+const config	= require('./config');
+const gulp		= require('gulp');
+const gulpIf	= require('gulp-if');
 
 module.exports = function() {
 	return function() {
@@ -11,9 +10,9 @@ module.exports = function() {
 			// if (file.path.split('\\')[2] === 'bower_components') {
 			if (file.path.includes('bower_components')) {
 				return true;
-			} else {
-				return false;
 			}
+
+			return false;
 		};
 
 		return gulp
@@ -23,5 +22,5 @@ module.exports = function() {
 				gulp.dest(config.pathTo.build.assets.js),
 				gulp.dest(config.pathTo.build.assets.else)
 			));
-	}
-}
+	};
+};

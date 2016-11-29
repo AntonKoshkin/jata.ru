@@ -1,9 +1,11 @@
+/* global $ */
+
 const burger = {
 	/**
 	 * инит функция
 	 */
 	init() {
-		$('body').on('click', '.burger', () => {			
+		$('body').on('click', '.burger', () => {
 			$('.navigation').toggleClass('navigation--open');
 		});
 	},

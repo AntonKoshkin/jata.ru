@@ -1,3 +1,5 @@
+/* global $ */
+
 const map = {
 	/**
 	 * инит функция
@@ -5,7 +7,7 @@ const map = {
 	init() {
 		$('#map').lazyload({
 			threshold: 200,
-			effect	: 'fadeIn',
+			effect   : 'fadeIn',
 		});
 	},
 };

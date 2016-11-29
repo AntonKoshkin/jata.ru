@@ -1,69 +1,73 @@
 'use strict';
 
 // const buildRoot = '../../OpenServer/domains/admin.jata.ru';
-const buildRoot	= 'build';
+const buildRoot = 'build';
 
 module.exports = {
-	jsHintRules: '.stylelintrc',
+	eslintrc: '.eslintrc.js',
+
 	pathTo: {
 		src: {
 			allJs: [
 				'src/blocks/**/*.js',
-				'src/compile/custom.js',
+				'src/compile/custom.js'
 			],
 			assets: [
 				'bower_components/jquery/dist/jquery.min.js',
 				'bower_components/masonry/dist/masonry.pkgd.min.js',
 				'bower_components/imagesloaded/imagesloaded.pkgd.min.js',
-				'src/assets/**/*.*',
+				'src/assets/**/*.*'
 			],
 
 			img: [
 				'src/blocks/**/*.{jpg,png,svg}',
-				'!src/blocks/**/svg-*.svg',
+				'!src/blocks/**/svg-*.svg'
 			],
 
 			// js				: [
 			// 	'src/compile/jsVendor.js',
 			// 	'src/compile/jsCustom.js'
 			// ],
-			jade		: 'src/layouts/*.jade',
-			js			: 'src/compile/custom.js',
+
+			jade     : 'src/layouts/*.jade',
+			js       : 'src/compile/custom.js',
 			pngSprite: 'src/blocks/**/png-*.png',
-			stylus	: 'src/compile/style.styl',
+			stylus   : 'src/compile/style.styl',
 			svgSprite: 'src/blocks/**/svg-*.svg',
-			video		: 'src/blocks/**/*.mp4',
+			video    : 'src/blocks/**/*.mp4',
 		},
-		build	: {
+		build: {
 			assets: {
-				else	: buildRoot,
-				js		: buildRoot + '/js/',
+				else: buildRoot,
+				js  : buildRoot + '/js/',
 			},
 
-			img		: buildRoot + '/img/',
-			jade		: buildRoot + '/',
-			js			: buildRoot + '/js/',
+			img      : buildRoot + '/img/',
+			jade     : buildRoot + '/',
+			js       : buildRoot + '/js/',
 			pngSprite: buildRoot + '/img/',
-			stylus	: buildRoot + '/css/',
+			stylus   : buildRoot + '/css/',
 			svgSprite: buildRoot + '/img/',
-			video		: buildRoot + '/video/',
+			video    : buildRoot + '/video/',
 		},
-		watch	: {
+
+		watch: {
 			assets: 'src/assets/**/*.*',
-			all	: 'src/**/*.*',
+			all   : 'src/**/*.*',
 
 			img: [
 				'src/blocks/**/*.(jpg|png|svg)',
-				'!src/blocks/**/svg-*.svg',
+				'!src/blocks/**/svg-*.svg'
 			],
 
-			jade		: 'src/**/*.jade',
-			js			: 'src/**/*.js',
+			jade     : 'src/**/*.jade',
+			js       : 'src/**/*.js',
 			pngSprite: 'src/blocks/**/png-*.png',
-			stylus	: 'src/**/*.styl',
+			stylus   : 'src/**/*.styl',
 			svgSprite: 'src/blocks/**/svg-*.svg',
-			video		: 'src/blocks/**/*.mp4',
+			video    : 'src/blocks/**/*.mp4',
 		},
-		clean	: buildRoot + '/*',
+
+		clean: buildRoot + '/*',
 	},
 };

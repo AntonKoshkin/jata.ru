@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 jQuery(document).ready(function($) {
 	$('body').on('click', '[data-next-block]', function(event) {
 		event.preventDefault();

@@ -1,28 +1,22 @@
 'use strict';
 
-const
-	combine	= require('stream-combiner2').obj,
-	config	= require('./config'),
-	gulp		= require('gulp'),
-	gulpIf	= require('gulp-if'),
-	maps		= require('gulp-sourcemaps'),
-	notify	= require('gulp-notify'),
-	plumber	= require('gulp-plumber'),
-	rename	= require('gulp-rename'),
-	rev		= require('gulp-rev'),
-	server	= require('browser-sync'),
-	stylus	= require('gulp-stylus'),
+const combine	= require('stream-combiner2').obj;
+const config	= require('./config');
+const gulp		= require('gulp');
+const gulpIf	= require('gulp-if');
+const maps		= require('gulp-sourcemaps');
+const notify	= require('gulp-notify');
+const plumber	= require('gulp-plumber');
+const rev		= require('gulp-rev');
+const server	= require('browser-sync');
+const stylus	= require('gulp-stylus');
 
 	// postCSS and it's plagins
-	postCss	= require('gulp-postcss'),
-	cssComb	= require('postcss-sorting'),
-	cssLint	= require('stylelint'),
-	cssNano	= require('cssnano'),
-	doiuse	= require('doiuse'),
-	flexFix	= require('postcss-flexbugs-fixes'),
-	fonts		= require('postcss-font-magician'),
-	prefixes	= require('autoprefixer'),
-	short		= require('postcss-short');
+const postCss	= require('gulp-postcss');
+// const cssLint	= require('stylelint');
+const cssNano	= require('cssnano');
+const flexFix	= require('postcss-flexbugs-fixes');
+const prefixes	= require('autoprefixer');
 
 module.exports = function() {
 	const production	= process.env.NODE_ENV === 'production';
@@ -35,17 +29,14 @@ module.exports = function() {
 				maps.init()))
 			.pipe(stylus({'include css': true}))
 			.pipe(postCss([
-				// fonts({
-				// 	formats: 'woff'
-				// }),
-				// short(),
-				// flexFix(),
-				prefixes({browsers: [
-					'> 1%',
-					'ie > 9',
-					'last 3 versions']
-				}),
-				// cssComb({'sort-order': 'zen'}),
+				flexFix(),
+				prefixes({
+					browsers: [
+						'> 1%',
+						'ie > 9',
+						'last 3 versions'
+					],
+				})
 				// cssLint({'extends':'src/'}),
 			]))
 			.on('error', notify.onError())
@@ -58,7 +49,6 @@ module.exports = function() {
 				combine(
 					postCss([
 						cssNano()
-						// doiuse({browsers: 'last 2 versions'}),
 					]),
 					rev()
 				)
@@ -73,6 +63,6 @@ module.exports = function() {
 					gulp.dest('')
 				)
 			))
-			.pipe(server.reload({stream:true}));
+			.pipe(server.reload({stream: true}));
 	};
-}
+};

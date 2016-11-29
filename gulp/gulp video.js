@@ -1,16 +1,15 @@
 'use strict';
 
-const
-	config	= require('./config'),
-	gulp		= require('gulp');
+const config	= require('./config');
+const gulp		= require('gulp');
 
 module.exports = function() {
 	return function() {
 		return gulp
 			.src(config.pathTo.src.video)
 			.on('data', function(file) {
-				const a = file.path.split(/\/|\\/),
-						b = a.length - 2;
+				const a = file.path.split(/\/|\\/);
+				const b = a.length - 2;
 
 				a.splice(b, 1);
 				const c = a.join('/');
@@ -19,5 +18,5 @@ module.exports = function() {
 				return file;
 			})
 			.pipe(gulp.dest(config.pathTo.build.video));
-	}
-}
+	};
+};

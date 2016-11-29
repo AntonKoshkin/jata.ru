@@ -1,14 +1,13 @@
 'use strict';
 
-const
-	config	= require('./config'),
-	debug		= require('gulp-debug'),
-	gulp		= require('gulp'),
-	imageMin	= require('gulp-imagemin'),
-	newer		= require('gulp-newer'),
-	plumber	= require('gulp-plumber'),
-	pngQuant	= require('imagemin-pngquant'),
-	server	= require('browser-sync');
+const config	= require('./config');
+// const debug		= require('gulp-debug');
+const gulp		= require('gulp');
+const imageMin	= require('gulp-imagemin');
+const newer		= require('gulp-newer');
+const plumber	= require('gulp-plumber');
+const pngQuant	= require('imagemin-pngquant');
+const server	= require('browser-sync');
 
 module.exports = function() {
 	return function() {
@@ -17,18 +16,18 @@ module.exports = function() {
 			.pipe(plumber())
 			.pipe(newer(config.pathTo.build.img))
 			.pipe(imageMin({
-				intarlaced			: true,
-				optimizationLevel	: 5,
-				progressive			: true,
-				arithmetic			: true,
-				svgoPlugins			: [{
-					removeViewBox	: true,
+				intarlaced       : true,
+				optimizationLevel: 5,
+				progressive      : true,
+				arithmetic       : true,
+				svgoPlugins      : [{
+					removeViewBox: true,
 				}],
-				use					: [
+				use: [
 					pngQuant({
-						quality	: '65-80',
-						speed		: 6,
-						verbose	: true,
+						quality: '65-80',
+						speed  : 6,
+						verbose: true,
 					})
 				],
 			}))
@@ -43,6 +42,6 @@ module.exports = function() {
 				return file;
 			})
 			.pipe(gulp.dest(config.pathTo.build.img))
-			.pipe(server.reload({stream:true}));
-	}
+			.pipe(server.reload({stream: true}));
+	};
 };

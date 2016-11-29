@@ -1,3 +1,5 @@
+/* global $ */
+
 const upBtn = {
 	/**
 	 * включает/выключает видимость кнопки
@@ -24,7 +26,7 @@ const upBtn = {
 				.stop()
 				.animate(
 					{scrollTop: 0},
-					$(window).scrollTop()/4);
+					$(window).scrollTop() / 4);
 		});
 	},
 };
