@@ -30,7 +30,7 @@ block content
 					icon='smartphone'
 					mods='smartphone')
 					+mPhone(phoneNumber.main.call, phoneNumber.main.read)
-					+mTime('10:00', '18:00')
+					+mTime(workingTime.start, workingTime.end)
 				
 				+mansoor(mods='social')
 					+paragraph('Мы в социальных сетях')(mods='mansoor-soc')
@@ -56,7 +56,7 @@ block content
 					+paragraph(address.office)(mods='mansoor-address')
 					+block(mods='offis')
 						+mNumber(phoneNumber.main.call, phoneNumber.main.read)
-						+mTime('10:00', '18:00')
+						+mTime(workingTime.start, workingTime.end)
 					//- +paragraph(address.office)(mods='mansoor-address')
 					//- +mTime('10:00', '18:00')
 
@@ -74,7 +74,7 @@ block content
 						data-icon='blue-pointer')
 					+block(mods=['offis', 'mb10'])
 						+mNumber(phoneNumber.main.call, phoneNumber.main.read)
-						+mTime('10:00', '18:00')
+						//- +mTime('10:00', '18:00')
 					//- +paragraph('Спб, Московский проспект, 97а')(
 					//- 	data-icon='blue-pointer')
 					//- +block(mods=['offis', 'mb10'])

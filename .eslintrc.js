@@ -11,23 +11,26 @@ module.exports = {
 		}
 	},
 	"rules": {
-		"no-tabs": "off",
-		"indent": ["error", "tab", {
-			"SwitchCase": 1
-		}],
 		"comma-dangle": ["error", {
 			"arrays": "never",
 			"objects": "always-multiline",
 			"functions": "ignore"
 		}],
-		"key-spacing": ["error", {"align": "colon"}],
-		"func-names": ["error", "never"],
-		"space-before-function-paren": ["error", "never"],
-		"object-curly-spacing": ["error", "never"],
-		"no-param-reassign": ["error", { "props": false }],
-		"no-console": ["error", {allow: ["log", "warn", "error"]}],
-		"default-case": ["error", { "commentPattern": "^skip\\sdefault" }],
 		"consistent-return": ["error", {"treatUndefinedAsUnspecified": true}],
-		"no-lonely-if": "off"
-	}
+		"default-case": ["error", { "commentPattern": "^skip\\sdefault" }],
+		"func-names": ["error", "never"],
+		"indent": ["error", "tab", {
+			"SwitchCase": 1
+		}],
+		"key-spacing": ["error", {"align": "colon"}],
+		"no-console": ["error", {allow: ["log", "warn", "error"]}],
+		"no-lonely-if": "off",
+		"no-param-reassign": ["error", { "props": false }],
+		"no-tabs": "off",
+		"no-unused-vars": ["error", { "vars": "local", "args": "after-used" }],
+		"object-curly-spacing": ["error", "never"],
+		"space-before-function-paren": ["error", "never"],
+		"no-plusplus": "off",
+		"no-restricted-syntax": ["error", "WithStatement"]
+	},
 }
