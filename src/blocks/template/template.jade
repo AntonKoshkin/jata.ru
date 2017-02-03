@@ -26,16 +26,16 @@ html(lang='ru')
 			+header
 				+logo(mods=['index'])
 				+navigation(mods=['index'])
-					+navItem('/about.html', 'О jata.ru')(title='О jata.ru')
-					+navItem('/how.html', 'Вопросы и ответы')(title='Вопросы и ответы')
-					//- +navItem('/cap.html', 'Рекламные места')(title='Рекламные места')
-					+navItem('/gallery.html', 'Галерея')(title='Галерея')
-					+navItem('/contacts.html', 'Контакты')(title='Контакты')
+					+navItem('./about.html', 'О jata.ru')(title='О jata.ru')
+					+navItem('./how.html', 'Вопросы и ответы')(title='Вопросы и ответы')
+					//- +navItem('./cap.html', 'Рекламные места')(title='Рекламные места')
+					+navItem('./gallery.html', 'Галерея')(title='Галерея')
+					+navItem('./contacts.html', 'Контакты')(title='Контакты')
 				+hBtn(linkTo.reg, 'Вход/<br>Регистрация')(mods=['enter', 'enter-reg-fix'])
 				if pageId === 'foradv'
-					+hBtn('/index.html', 'Водителям')(mods=['for-advers'])
+					+hBtn('./index.html', 'Водителям')(mods=['for-advers'])
 				else
-					+hBtn('/foradv.html', 'Рекламодателям')(mods=['for-advers'])
+					+hBtn('./foradv.html', 'Рекламодателям')(mods=['for-advers'])
 				+burger(mods=['mb14'])
 		
 		if pageId === 'foradv'
@@ -49,15 +49,15 @@ html(lang='ru')
 			+footer
 				+footNav
 					+fnHalf
-						+fnItem('/about.html', 'О компании')
-						+fnItem('/rules.html', 'Правила пользования')
-						+fnItem('/data.html', 'Защита данных')
+						+fnItem('./about.html', 'О компании')
+						+fnItem('./rules.html', 'Правила пользования')
+						+fnItem('./data.html', 'Защита данных')
 					+fnHalf
-						+fnItem('/how.html', 'Вопросы и ответы')
-						+fnItem('/contacts.html', 'Контакты')
-						//- +fnItem('/cap.html', 'О нас')
-						//- +fnItem('/team.html', 'Команда')
-						+fnItem('/cap.html', 'Пресса о нас')
+						+fnItem('./how.html', 'Вопросы и ответы')
+						+fnItem('./contacts.html', 'Контакты')
+						//- +fnItem('./cap.html', 'О нас')
+						//- +fnItem('./team.html', 'Команда')
+						+fnItem('./cap.html', 'Пресса о нас')
 					.footer__soc
 						+socIcon(linkTo.vk, 'Вконтакте')(data-icon='vk')
 						+socIcon(linkTo.fb, 'Фейсбук')(data-icon='fb')
@@ -86,18 +86,18 @@ html(lang='ru')
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
 		//- если не загружается, то подтягиваем свой
 		script.
-			window.jQuery || document.write('<script src=\'js/jquery.min.js\'><\/script>')
+			window.jQuery || document.write('<script src=\'./js/jquery.min.js\'><\/script>')
 
 		//- загружаем масонри с цдн
 		script(src='https://npmcdn.com/masonry-layout@4.1/dist/masonry.pkgd.min.js')
 		//- если не загружается, то подтягиваем свой
 		script.
-			window.Masonry || document.write('<script src=\'js/masonry.pkgd.min.js\'><\/script>')
+			window.Masonry || document.write('<script src=\'./js/masonry.pkgd.min.js\'><\/script>')
 
 		//- загружальщик картинок
 		script(src='https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js')
 		script.
-			window.imagesloaded || document.write('<script src=\'js/imagesloaded.pkgd.min.js\'><\/script>')
+			window.imagesloaded || document.write('<script src=\'./js/imagesloaded.pkgd.min.js\'><\/script>')
 
 		//- свои скрипты
-		script(src='js/main.js')
+		script(src='./js/main.js')
