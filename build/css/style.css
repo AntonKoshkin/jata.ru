@@ -2299,7 +2299,7 @@ html > body .control__img {
   }
 }
 .driver-form {
-  background-image: url("/img/driver-form__bg.png");
+  background-image: url("../img/driver-form__bg.png");
   padding: 30px 20px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -2557,7 +2557,7 @@ html > body .control__img {
   height: 100%;
   left: 0;
   top: 0;
-  background-image: url("/img/face__frame.svg");
+  background-image: url("../img/face__frame.svg");
   border-radius: 10px;
 }
 .face__face:hover .face__frame {
@@ -2580,7 +2580,7 @@ html > body .control__img {
   height: 24px;
 }
 .footer {
-  background-image: url("/img/footer__bg.png");
+  background-image: url("../img/footer__bg.png");
   position: relative;
 }
 html > body .main--foradv + .footer:after {
@@ -3398,11 +3398,11 @@ a.main-btn__btn {
 }
 .message--success .message__window:before {
   height: 154px;
-  background-image: url("/img/message__img.png");
+  background-image: url("../img/message__img.png");
 }
 .message--fail .message__window:before {
   height: 151px;
-  background-image: url("/img/message__img--fail.png");
+  background-image: url("../img/message__img--fail.png");
 }
 .message__close {
   width: 25px;
@@ -3599,7 +3599,7 @@ a.main-btn__btn {
   margin-bottom: 30px;
 }
 .page {
-  background-image: url("/img/template__bg.png");
+  background-image: url("../img/template__bg.png");
 }
 .page--registration,
 .page--enter {
@@ -4487,7 +4487,7 @@ a.main-btn__btn {
   right: 15px;
 }
 .rectangle--bus {
-  background-image: url("/img/rectangle__bg.jpg");
+  background-image: url("../img/rectangle__bg.jpg");
   background-size: cover;
   background-position: 100% 100%;
   width: 100%;
@@ -4586,7 +4586,7 @@ a.main-btn__btn {
   border-radius: 50%;
   overflow: hidden;
   box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
-  background-image: url("/img/search__map.png");
+  background-image: url("../img/search__map.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -5021,7 +5021,7 @@ body {
 }
 .section--promo-adv {
   background-color: #17253a;
-  background-image: url("/img/section__bg--promo-rek.jpg");
+  background-image: url("../img/section__bg--promo-rek.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -5034,7 +5034,7 @@ body {
   padding-top: 30px;
   background-color: #1a1b22;
   background-repeat: no-repeat;
-  background-image: url("/img/section__bg--how-works.jpg");
+  background-image: url("../img/section__bg--how-works.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -5043,7 +5043,7 @@ body {
 .section--earn {
   box-shadow: 0 10px 20px -5px rgba(0,0,0,0.75);
   background-color: #e1ebf4;
-  background-image: url("/img/section__bg--earn.jpg");
+  background-image: url("../img/section__bg--earn.jpg");
   background-repeat: no-repeat;
   background-position: 48% 13%;
   position: relative;
@@ -5060,7 +5060,7 @@ html > body .section--way {
 }
 .section--promo-about {
   background-color: #251a1d;
-  background-image: url("/img/section__bg--promo-about.jpg");
+  background-image: url("../img/section__bg--promo-about.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -5068,16 +5068,16 @@ html > body .section--way {
   background-color: #625a55;
   background-size: cover;
   background-position: center;
-  background-image: url("/img/section__bg--promo-hdiw.jpg");
+  background-image: url("../img/section__bg--promo-hdiw.jpg");
 }
 .section--promo-gallery {
   background-color: #663701;
   background-size: cover;
   background-position: center;
-  background-image: url("/img/video-bg__poster--3.jpg");
+  background-image: url("../img/video-bg__poster--3.jpg");
 }
 .section--promo-contacts {
-  background-image: url("/img/section__bg--contacts.jpg");
+  background-image: url("../img/section__bg--contacts.jpg");
   background-position: center bottom;
   background-size: cover;
 }
@@ -5120,15 +5120,15 @@ html > body .section--way {
   box-shadow: inset 0 -80px 45px -50px rgba(0,0,0,0.9);
 }
 .section--promo-team {
-  background-image: url("/img/section__bg--team.jpg");
+  background-image: url("../img/section__bg--team.jpg");
   background-position: 50% 100%;
 }
 .section--promo-rules {
-  background-image: url("/img/section__bg--rules.jpg");
+  background-image: url("../img/section__bg--rules.jpg");
   background-position: center;
 }
 .section--promo-data {
-  background-image: url("/img/section__data.jpg");
+  background-image: url("../img/section__data.jpg");
   background-position: center;
 }
 .section--developers {
@@ -5140,7 +5140,7 @@ html > body .section--way {
   left: 0;
   width: 100%;
   height: 460px;
-  background-image: url("/img/section__bg--promo3.jpg");
+  background-image: url("../img/section__bg--promo3.jpg");
   background-size: cover;
   background-position: 20% center;
   background-repeat: no-repeat;
@@ -5680,13 +5680,13 @@ html > body .section--way {
   background-position: center;
 }
 .video-bg--about {
-  background-image: url("/img/video-bg__poster--1.jpg");
+  background-image: url("../img/video-bg__poster--1.jpg");
 }
 .video-bg--hdiw {
-  background-image: url("/img/video-bg__poster--2.jpg");
+  background-image: url("../img/video-bg__poster--2.jpg");
 }
 .video-bg--gallery {
-  background-image: url("/img/video-bg__poster--3.jpg");
+  background-image: url("../img/video-bg__poster--3.jpg");
 }
 @media (min-width: 980px) {
   .tablet .video-bg,
@@ -5703,7 +5703,7 @@ html > body .section--way {
   padding-top: 35px;
 }
 .way--start {
-  background-image: url("/img/way__bg--start.jpg");
+  background-image: url("../img/way__bg--start.jpg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;

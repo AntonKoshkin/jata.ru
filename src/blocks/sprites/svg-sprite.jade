@@ -2,10 +2,10 @@ mixin svg(name, style)
 	-var style = style || ''
 	if style != ''
 		svg(role='img' title='svg_'+name class='svg-' + name + ' ' + style)
-			use(xlink:href='img/svg-sprite.svg#svg-'+name)
+			use(xlink:href='.img/svg-sprite.svg#svg-'+name)
 	else
 		svg(role='img' title='svg-'+name class='svg-' + name)
-			use(xlink:href='img/svg-sprite.svg#svg-'+name)
+			use(xlink:href='.img/svg-sprite.svg#svg-'+name)
 
 //- usage
 //- +svg('name of svg image without "svg-"')

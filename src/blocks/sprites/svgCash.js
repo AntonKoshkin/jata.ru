@@ -2,7 +2,7 @@
 
 ;(function(window, document) {
 	'use strict';
-	var file = 'img/svg-sprite.svg',	// path to svg-sprite file
+	var file = './img/svg-sprite.svg',	// path to svg-sprite file
 			revision = 1;
 
 	if (!document.createElementNS ||
