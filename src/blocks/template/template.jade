@@ -10,6 +10,7 @@ include ../../blocks/navigation/navigation
 include ../../blocks/phone-number/phone-number
 include ../../blocks/store-btn/store-btn
 include ../../blocks/up-btn/up-btn
+include ../../blocks/new/new
 include links
 
 block includes
@@ -23,8 +24,10 @@ html(lang='ru')
 		include head
 	body
 		header.header
+			+new
 			+header
 				+logo(mods=['index'])
+				+new(true)
 				+navigation(mods=['index'])
 					+navItem('./about.html', 'О jata.ru')(title='О jata.ru')
 					+navItem('./how.html', 'Вопросы и ответы')(title='Вопросы и ответы')

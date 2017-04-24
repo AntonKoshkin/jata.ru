@@ -75,10 +75,20 @@
 	&--cap
 		min-height 500px
 		height calc(100vh - 225px)
-		border-top 87px solid blue-dark
+		// border-top 87px solid blue-dark
+		border-top 155px solid blue-dark
 		display flex
 		justify-content center
 		align-items center
+		
+		@media (min-width new-1)
+			border-top 87px solid blue-dark
+		
+		@media (min-width tablet)
+			border-top 155px solid blue-dark
+		
+		@media (min-width new-3)
+			border-top 87px solid blue-dark
 	
 	&--404
 		min-height 500px
@@ -115,18 +125,26 @@
 		right 0
 		left 0
 		width 100%
-		height 460px
+		// height 460px
+		height 510px
 		background-image url('../img/section__bg--promo3.jpg')
 		background-size cover
 		background-position 20% center
 		background-repeat no-repeat
 		min-width 460px
+		
+		@media (min-width 890px)
+			height 460px
 	
 	&--promo &__content
-		padding-top 105px
+		// padding-top 105px
+		padding-top 170px
 		position relative
 		width 100%
 		min-height 735px
+		
+		@media (min-width new-1)
+			padding-top 105px
 	
 	&--promo-adv &__content
 		display flex
@@ -163,7 +181,8 @@
 	
 	&--promo-about &__content
 	&--promo-contacts &__content
-		height 250px
+		// height 250px
+		height 400px
 		display flex
 		align-items center
 		justify-content center
@@ -175,7 +194,8 @@
 		overflow hidden
 	
 	&--promo-hdiw &__content
-		height 250px
+		// height 250px
+		height 400px
 		position relative
 		overflow hidden
 		display flex
@@ -186,7 +206,8 @@
 		align-items center
 		
 	&--promo-gallery &__content
-		height 250px
+		// height 250px
+		height 400px
 		position relative
 		overflow hidden
 		display flex
@@ -254,7 +275,11 @@
 		&--promo &__content
 			display flex
 			justify-content space-between
-			padding 100px 50px 40px
+			// padding 100px 50px 40px
+			padding 160px 50px 40px
+			
+			@media (min-width new-3)
+				padding-top 105px
 		
 		&--promo-adv &__content
 			height 100vh
@@ -268,7 +293,8 @@
 			height 340px
 	
 		&--promo-hdiw &__content
-			height 340px
+			// height 340px
+			height 470px
 			padding-top 20px
 	
 		&--questions &__content

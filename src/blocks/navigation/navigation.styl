@@ -63,11 +63,13 @@
 			left 24px
 
 	@media (min-width tablet)
-		flex-basis 100%
-		flex-shrink 1
+		// flex-shrink 1
 		height auto
 		position static
 		transform translateY(0)
+		
+		@media (max-width new-2)
+			flex-basis 100%
 		
 		&--open
 			height auto
