@@ -1,0 +1,56 @@
+.new
+	display flex
+	justify-content center
+	margin-bottom 20px
+	
+	&--in-header
+		display none
+		margin-bottom 0
+		position relative
+		flex-grow 1
+		flex-shrink 0
+		
+		@media (min-width new-1)
+			display flex
+			left -20px
+		
+		@media (min-width tablet)
+			display none
+		
+		@media (min-width new-3)
+			display flex
+			left auto
+			// right -20px
+			justify-content flex-end
+	
+	&:not(&--in-header)
+		@media (min-width new-1)
+			display none
+		
+		@media (min-width tablet)
+			display flex
+		
+		@media (min-width new-3)
+			display none
+
+	&__content
+		border-radius 25px
+		background-color blue
+		padding-top 15px
+		padding-bottom @padding-top
+		padding-left 20px
+		padding-right @padding-left
+
+	&__text
+		color white
+		font-style italic
+		margin-right 10px
+	
+	&__link
+		color white
+		font-size .75rem
+		background-color red
+		padding 5px
+		border-radius 5px
+		font-style italic
+		text-transform lowercase
